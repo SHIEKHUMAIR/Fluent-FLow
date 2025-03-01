@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "industry": "Food Processing",
+      "description": "We supply high-quality rice and salt to food processing units worldwide.",
+      "icon": "icon-crane"
+    },
+    {
+      "id": 2,
+      "industry": "Retail & Supermarkets",
+      "description": "Our rice and salt are available in major supermarkets and retail stores.",
+      "icon": "icon-shopping-cart"
+    },
+    {
+      "id": 3,
+      "industry": "Hospitality & Restaurants",
+      "description": "Trusted by top restaurants and hotels for premium rice and salt supplies.",
+      "icon": "icon-chef-hat"
+    },
+    {
+      "id": 4,
+      "industry": "Pharmaceutical Industry",
+      "description": "We provide pure salt used in pharmaceutical and medical applications.",
+      "icon": "icon-medicine"
+    },
+    {
+      "id": 5,
+      "industry": "Agriculture & Animal Feed",
+      "description": "Our salt is widely used in agriculture and livestock feed production.",
+      "icon": "icon-tractor"
+    }
+  ]
+  

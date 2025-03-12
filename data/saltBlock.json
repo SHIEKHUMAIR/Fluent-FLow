@@ -1,0 +1,90 @@
+{
+  "whyChooseUs": {
+    "tagline": "Himalayan Salt Cooking Blocks",
+    "title": "Himalayan Salt Cooking Blocks Exporter from Pakistan",
+    "description": "Himalayan Salt Cooking Blocks are usually used for cooking processes. Being a renowned company regarding Himalayan Salt manufacturing & exporting, we offer you premium quality Himalayan Salt Cooking Blocks for grilling. We extracted these Himalayan Salt Cooking Blocks from the Himalayan Salt range. The food on it absorbs the salt from there, so adding more salt to your food is unnecessary. Indeed, you’ll get such a delicious flavor, because it makes everything taste even richer. If you’re looking for a reliable Himalayan Salt Cooking Blocks supplier, look no further. Our country is home to some of the world’s most abundant and high-quality deposits of Himalayan Pink Salt.",
+    "buttonText": "Contact Us",
+    "buttonLink": "/about",
+    "image": "/assets/saltBlock/banner.webp"
+  },
+  "products": [
+    {
+      "id": 1,
+      "image": "/assets/saltBlock/1.webp",
+      "packing": "24 pcs",
+      "weight": "1-2 kg",
+      "size": "8\" x 4\" x 1\""
+    },
+    {
+      "id": 2,
+      "image": "/assets/saltBlock/1.webp",
+      "packing": "12 pcs",
+      "weight": "2.25 kg",
+      "size": "8\" x 4\" x 2\""
+    },
+    {
+      "id": 3,
+      "image": "/assets/saltBlock/1.webp",
+      "packing": "12 pcs",
+      "weight": "2.25 kg",
+      "size": "8\" x 8\" x 1\""
+    },
+    {
+      "id": 4,
+      "image": "/assets/saltBlock/1.webp",
+      "packing": "8 pcs",
+      "weight": "4 kg",
+      "size": "8\" x 8\" x 1.5\""
+    },
+    {
+      "id": 5,
+      "image": "/assets/saltBlock/1.webp",
+      "packing": "6 pcs",
+      "weight": "4 kg",
+      "size": "8\" x 8\" x 2\""
+    },
+    {
+      "id": 6,
+      "image": "/assets/saltBlock/1.webp",
+      "packing": "6 pcs",
+      "weight": "4.5 kg",
+      "size": "8\" x 8\" x 2\""
+    },
+    {
+      "id": 7,
+      "image": "/assets/saltBlock/1.webp",
+      "packing": "4 pcs",
+      "weight": "5.5 kg",
+      "size": "10\" x 6\" x 2\""
+    },
+    {
+      "id": 8,
+      "image": "/assets/saltBlock/1.webp",
+      "packing": "5 pcs",
+      "weight": "5-6 kg",
+      "size": "12\" x 8\" x 1.5\""
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do I use a Himalayan Salt Cooking Block?",
+      "answer": "Preheat the block slowly over a low flame, then increase the temperature gradually before cooking your food on it."
+    },
+    {
+      "question": "How do I clean a Himalayan Salt Cooking Block?",
+      "answer": "After use, let the block cool, then scrub it with a damp sponge. Do not use soap or immerse it in water."
+    },
+    {
+      "question": "Can I use the salt block in the oven?",
+      "answer": "Yes, you can heat it in the oven, but make sure to increase the temperature gradually to prevent cracking."
+    },
+    {
+      "question": "How long does a Himalayan Salt Cooking Block last?",
+      "answer": "With proper care, a salt block can last for many uses. It will gradually shrink over time as salt dissolves into food."
+    },
+    {
+      "question": "What foods work best on a salt block?",
+      "answer": "Seafood, meats, vegetables, and even desserts like chocolate or fruits can be enhanced with the unique salty flavor."
+    }
+  ]
+}

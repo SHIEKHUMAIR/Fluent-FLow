@@ -1,0 +1,64 @@
+{
+  "faqs": [
+    {
+      "question": "What is a Himalayan Salt Shot Glass used for?",
+      "answer": "Himalayan Salt Shot Glasses are used for serving tequila and other beverages, enhancing the taste with a subtle saltiness."
+    },
+    {
+      "question": "How do I clean a Himalayan Salt Shot Glass?",
+      "answer": "Simply wipe it with a damp cloth and dry immediately. Avoid submerging in water as it can dissolve the salt."
+    },
+    {
+      "question": "How long does a Himalayan Salt Shot Glass last?",
+      "answer": "With proper care, it can last for dozens of uses before gradually wearing down."
+    },
+    {
+      "question": "Are Himalayan Salt products safe for food use?",
+      "answer": "Yes, they are made from 100% natural Himalayan salt and are food-safe."
+    },
+    {
+      "question": "Do salt products change the flavor of food?",
+      "answer": "Yes, they add a mild salty flavor, which enhances the natural taste of food and beverages."
+    }
+  ],
+  "whyChooseUs": {
+    "tagline": "Himalayan Salt Shot Glass",
+    "title": "Himalayan Salt Shot Glass Exporter",
+    "description": "Himalayan Salt Shot Glass is a unique product that has gained immense popularity in recent years. It is made from 100% natural Himalayan salt, which is known for its purity and health benefits. Himalayan-PinkSalt.com is the largest exporter of Himalayan Salt Shot Glasses from Pakistan, as it is home to the world’s largest salt mines located in the Khewra Salt Range.",
+    "buttonText": "Contact Us",
+    "buttonLink": "/about",
+    "image": "/assets/saltCrockery/banner.webp"
+  },
+  "products": [
+    {
+      "id": 1,
+      "image": "/assets/saltCrockery/1.webp",
+      "shape": "Salt Pestle",
+      "dimension": "6\" x 4\""
+    },
+    {
+      "id": 2,
+      "image": "/assets/saltCrockery/1.webp",
+      "shape": "Salad Bowl",
+      "dimension": "6\""
+    },
+    {
+      "id": 3,
+      "image": "/assets/saltCrockery/1.webp",
+      "shape": "Serving Plate",
+      "dimension": "6\" x 1.5\""
+    },
+    {
+      "id": 4,
+      "image": "/assets/saltCrockery/1.webp",
+      "shape": "Shot Glass",
+      "dimension": "3\""
+    },
+    {
+      "id": 5,
+      "image": "/assets/saltCrockery/1.webp",
+      "shape": "Mortar & Pestle",
+      "dimension": "4.6\" x 4.4\""
+    }
+  ]
+}

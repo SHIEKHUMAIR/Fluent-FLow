@@ -2,71 +2,71 @@
   {
       "id": 1,
       "title": "Himalayan Salt Lamps",
-      "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
+      "image": "/assets/lamps/bg.webp",
       "description": "Experience the soothing glow and air-purifying benefits of Himalayan salt lamps.",
-      "link": "blog-details.html"
+      "link": "/salt_lamp"
   },
   {
       "id": 2,
       "title": "Himalayan Salt Tiles",
       "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
       "description": "Add a natural and aesthetic touch to your home or spa with Himalayan salt tiles.",
-      "link": "blog-details.html"
+      "link": "/salt_tile"
   },
   {
       "id": 3,
       "title": "Edible Rock Salt",
-      "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
+      "image": "/assets/edibleSalt/bg.webp",
       "description": "Enhance your meals with the rich minerals and natural taste of edible rock salt.",
-      "link": "blog-details.html"
+      "link": "/edible_salt"
   },
   {
       "id": 4,
       "title": "Himalayan Salt Cooking Blocks",
-      "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
+      "image": "/assets/saltBlock/bg.webp",
       "description": "Cook, grill, and serve food on Himalayan salt blocks for a unique flavor experience.",
-      "link": "blog-details.html"
+      "link": "/salt_block"
   },
   {
       "id": 5,
       "title": "Animal Lick Salt",
-      "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
+      "image": "/assets/animalLickSalt/bg.webp",
       "description": "Support the health of your animals with pure Himalayan animal lick salt.",
-      "link": "blog-details.html"
+      "link": "/animal_lick_salt"
   },
   {
       "id": 6,
       "title": "Compressed Animal Lick Salt",
       "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
       "description": "Provide your livestock with essential nutrients using compressed Himalayan lick salt.",
-      "link": "blog-details.html"
+      "link": "/compressed_animal_lick_salt"
   },
   {
       "id": 7,
       "title": "Himalayan Bath Salt",
       "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
       "description": "Enjoy a soothing and detoxifying bath with mineral-rich Himalayan bath salt.",
-      "link": "blog-details.html"
+      "link": "/bath_salt"
   },
   {
       "id": 8,
       "title": "Himalayan Salt Crockery",
       "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
       "description": "Enhance your dining experience with naturally antibacterial Himalayan salt crockery.",
-      "link": "blog-details.html"
+      "link": "/salt_crockery"
   },
   {
       "id": 9,
       "title": "Aromatherapy Salt Lamp",
       "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
       "description": "Create a calming atmosphere with an aromatherapy Himalayan salt lamp.",
-      "link": "blog-details.html"
+      "link": "salt_diffuser"
   },
   {
       "id": 10,
       "title": "Himalayan Salt Candle Holder",
       "image": "/assets/logo/himalayan-salt-tiles-300x300-1.webp",
       "description": "Add warmth to your space with beautifully crafted Himalayan salt candle holders.",
-      "link": "blog-details.html"
+      "link": "/salt_candle_holder"
   }
 ]

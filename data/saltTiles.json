@@ -1,0 +1,82 @@
+{
+  "whyChooseUs": {
+    "tagline": "Salt Tiles",
+    "title": "Salt Tiles Manufacturer & Exporter",
+    "description": "We are a leading manufacturer and exporter of Himalayan salt tiles. Our products are made from 100% natural Himalayan salt crystals that are hand-mined from the Khewra Salt Mines in Pakistan. We offer a wide range of salt tiles in various shapes and sizes to suit your needs. Our salt tiles are known for their natural beauty and health benefits, making them a popular choice for homes, spas, and wellness centers. Whether you are looking to add a touch of nature to your space or improve your health and well-being, our salt tiles are the perfect solution.",
+    "buttonText": "Contact Us",
+    "buttonLink": "/about",
+    "image": "/assets/lamps/banner.webp"
+  },
+  "products": [
+    {
+      "id": 1,
+      "image": "/assets/lamps/1.webp",
+      "dimension": "4\" x 4\" x 1\"",
+      "weight": "500g"
+    },
+    {
+      "id": 2,
+      "image": "/assets/lamps/1.webp",
+      "dimension": "8\" x 4\" x 1\"",
+      "weight": "1.1kg"
+    },
+    {
+      "id": 3,
+      "image": "/assets/lamps/1.webp",
+      "dimension": "8\" x 4\" x 2\"",
+      "weight": "2.4kg"
+    },
+    {
+      "id": 4,
+      "image": "/assets/lamps/1.webp",
+      "dimension": "8\" x 8\" x 1\"",
+      "weight": "2.25kg"
+    },
+    {
+      "id": 5,
+      "image": "/assets/lamps/1.webp",
+      "dimension": "8\" x 8\" x 2\"",
+      "weight": "5kg"
+    },
+    {
+      "id": 6,
+      "image": "/assets/lamps/1.webp",
+      "dimension": "10\" x 6\" x 2\"",
+      "weight": "4.5kg"
+    },
+    {
+      "id": 7,
+      "image": "/assets/lamps/1.webp",
+      "dimension": "12\" x 8\" x 1.5\"",
+      "weight": "5.5kg"
+    },
+    {
+      "id": 8,
+      "image": "/assets/lamps/1.webp",
+      "dimension": "12\" x 8\" x 2\"",
+      "weight": "6.5kg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What are Himalayan salt tiles used for?",
+      "answer": "Himalayan salt tiles are commonly used for wall decor, salt therapy rooms, spas, and even cooking surfaces."
+    },
+    {
+      "question": "How do Himalayan salt tiles improve air quality?",
+      "answer": "Salt tiles naturally release negative ions that help purify the air by reducing dust, allergens, and pollutants."
+    },
+    {
+      "question": "Can I use salt tiles in my home?",
+      "answer": "Yes, salt tiles are great for home decor, meditation spaces, and wellness areas to create a relaxing environment."
+    },
+    {
+      "question": "How do I maintain and clean salt tiles?",
+      "answer": "Simply wipe them with a dry or slightly damp cloth. Avoid excess moisture to prevent dissolving."
+    },
+    {
+      "question": "Do salt tiles last forever?",
+      "answer": "With proper care, salt tiles can last for years, but exposure to high humidity or water can erode them over time."
+    }
+  ]
+}

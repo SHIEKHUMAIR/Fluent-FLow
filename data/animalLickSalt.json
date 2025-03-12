@@ -1,0 +1,82 @@
+{
+  "whyChooseUs": {
+    "tagline": "Animal Lick Salt",
+    "title": "Animal Lick Salt Exporter and Manufacturer",
+    "description": "Animal Lick Salt ideally, farmers prefer animal lick salt blocks for their horses and other livestock all around the world. And, for that purpose, we as animal lick salt manufacturers offer the best lick salt processed uniquely for animals. We’re offering animal-licking salt in different sizes, weights, and shapes so you conveniently give them to your animals.",
+    "buttonText": "Contact Us",
+    "buttonLink": "/contact",
+    "image": "/assets/animalLickSalt/banner.webp"
+  },
+  "products": [
+    {
+      "id": 1,
+      "image": "/assets/animalLickSalt/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 2,
+      "image": "/assets/animalLickSalt/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 3,
+      "image": "/assets/animalLickSalt/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 4,
+      "image": "/assets/animalLickSalt/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 5,
+      "image": "/assets/animalLickSalt/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 6,
+      "image": "/assets/animalLickSalt/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 7,
+      "image": "/assets/animalLickSalt/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 8,
+      "image": "/assets/animalLickSalt/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why do animals need lick salt?",
+      "answer": "Lick salt provides essential minerals like sodium, calcium, and magnesium, which are crucial for livestock health, digestion, and overall well-being."
+    },
+    {
+      "question": "Which animals can use Himalayan Lick Salt?",
+      "answer": "Himalayan Lick Salt is suitable for horses, cows, goats, sheep, camels, and other livestock animals."
+    },
+    {
+      "question": "How often should animals use lick salt?",
+      "answer": "Animals can use lick salt daily as needed. They naturally regulate their intake based on their mineral requirements."
+    },
+    {
+      "question": "Is Himalayan Lick Salt better than regular salt blocks?",
+      "answer": "Yes, Himalayan Lick Salt is natural, free from additives, and contains 84 trace minerals, making it healthier than processed salt blocks."
+    },
+    {
+      "question": "Can lick salt be used in all weather conditions?",
+      "answer": "Yes, Himalayan Lick Salt is durable and can withstand different weather conditions, making it suitable for both indoor and outdoor use."
+    }
+  ]
+}

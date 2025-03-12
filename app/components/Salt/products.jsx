@@ -1,16 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import products from "@/data/saltproducts.json"; 
 
 const Products = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("saltproducts.json")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error loading product data:", error));
-  }, []);
-
+ 
   return (
     <section className="blog-one">
       <div className="container mx-auto px-4">

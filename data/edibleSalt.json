@@ -1,0 +1,76 @@
+{
+  "whyChooseUs": {
+    "tagline": "Edible Rock Salt",
+    "title": "Edible Rock Salt Manufacturer & Exporter",
+    "description": "We are an FDA-approved wholesale supplier of Edible Rock Salt from Pakistan. Our products are certified by KOSHER, HALAL, ISO22000, GMP, HACCP, ensuring the highest quality standards. Sourced directly from the Himalayan Mountains, our rock salt is hand-mined, washed, and packed to preserve its natural 84 minerals and nutrients. With a rich history dating back to 320 BC, our salt is known for its purity, health benefits, and global demand. Whether for culinary or wellness purposes, our Edible Rock Salt is the perfect choice.",
+    "buttonText": "Contact Us",
+    "buttonLink": "/about",
+    "image": "/assets/edibleSalt/banner.webp"
+  },
+  "products": [
+    {
+      "id": 1,
+      "image": "/assets/edibleSalt/1.webp",
+      "size": "20 - 50 (mesh)",
+      "quantity": "1 Ton",
+      "color": "Light Pink"
+    },
+    {
+      "id": 2,
+      "image": "/assets/edibleSalt/1.webp",
+      "size": "20 - 50 (mesh)",
+      "quantity": "1 Ton",
+      "color": "Medium Pink"
+    },
+    {
+      "id": 3,
+      "image": "/assets/edibleSalt/1.webp",
+      "size": "20 - 50 (mesh)",
+      "quantity": "1 Ton",
+      "color": "Pink Powder"
+    },
+    {
+      "id": 4,
+      "image": "/assets/edibleSalt/1.webp",
+      "size": "1 - 2 mm",
+      "quantity": "1 Ton",
+      "color": "Light Pink"
+    },
+    {
+      "id": 5,
+      "image": "/assets/edibleSalt/1.webp",
+      "size": "2 - 5 mm",
+      "quantity": "1 Ton",
+      "color": "Crystal Salt"
+    },
+    {
+      "id": 6,
+      "image": "/assets/edibleSalt/1.webp",
+      "size": "5 - 7 mm",
+      "quantity": "1 Ton",
+      "color": "Light Pink"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What are the health benefits of Edible Rock Salt?",
+      "answer": "Edible Rock Salt contains 84 minerals that help regulate hydration, improve digestion, and balance pH levels in the body."
+    },
+    {
+      "question": "Is Himalayan Rock Salt better than regular table salt?",
+      "answer": "Yes, Himalayan Rock Salt is unprocessed and retains essential minerals, unlike refined table salt, which is often stripped of nutrients."
+    },
+    {
+      "question": "How can I use Edible Rock Salt in cooking?",
+      "answer": "It can be used as a seasoning, in brining, pickling, and even as a finishing salt for enhanced flavor."
+    },
+    {
+      "question": "Does Edible Rock Salt expire?",
+      "answer": "No, if stored in a dry place, Edible Rock Salt has an indefinite shelf life as it is a natural mineral."
+    },
+    {
+      "question": "Is your Edible Rock Salt certified?",
+      "answer": "Yes, our salt is FDA-approved and certified by KOSHER, HALAL, ISO22000, GMP, and HACCP for quality assurance."
+    }
+  ]
+}

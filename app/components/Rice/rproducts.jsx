@@ -1,16 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import products from "@/data/riceproducts.json"; 
 
 const RProducts = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("saltproducts.json")
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error("Error loading product data:", error));
-  }, []);
-
   return (
     <section className="blog-one">
       <div className="container mx-auto px-4">
@@ -36,7 +28,6 @@ const RProducts = () => {
                     <a href={product.link}>{product.title}</a>
                   </h3>
                   <p className="w-100 border-b-2 border-black pt-2"></p>
-                  {/* <p className="blog-one__text">{product.description}</p> */}
                   <div className="blog-one__read-more pt-2">
                     <a href={product.link}>
                       Read More<span className="icon-arrow-right"></span>

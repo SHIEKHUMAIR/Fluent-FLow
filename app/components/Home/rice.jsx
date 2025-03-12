@@ -15,7 +15,7 @@ const rice = () => {
             </div>
           </div>
           <div className="w-full lg:w-1/2">
-            <div className="why-choose-one__left pl-40 mr-0">
+            <div className="why-choose-one__left pl-32 mr-0">
               <div className="section-title text-left">
                 <div className="section-title__tagline-box">
                   <span className="section-title__tagline">Why Chose us</span>

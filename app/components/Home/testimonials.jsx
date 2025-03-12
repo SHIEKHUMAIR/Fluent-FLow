@@ -1,22 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import teamData from "@/data/teamData.json"; // Import JSON directly
 
 const Testimonials = () => {
-  const [team, setTeam] = useState([]);
-
-  // Fetch data from JSON file
-  useEffect(() => {
-    fetch("/teamData.json")
-      .then((response) => response.json())
-      .then((data) => setTeam(data))
-      .catch((error) => console.error("Error fetching team data:", error));
-  }, []);
-
   return (
     <section className="team-one">
       <div className="container mx-auto px-4">
@@ -27,19 +18,18 @@ const Testimonials = () => {
               <span className="section-title__tagline">Our Team</span>
             </div>
             <h2 className="section-title__title">
-              Simplifying your logistics of <br /> the challenges
+              Simplifying Your Logistics <br /> Challenges
             </h2>
           </div>
+
           {/* Swiper Navigation Buttons */}
           <div className="team-one__nav flex space-x-4">
-          <div className="swiper-button-prev"style={{color: "#c11425 !important"}}>
+            <button className="swiper-button-prev custom-nav">
               <i className="icon-arrow-left"></i>
-            </div>
-          <div className="swiper-button-next"style={{color: "#c11425 !important"}}>
+            </button>
+            <button className="swiper-button-next custom-nav">
               <i className="icon-arrow-right"></i>
-            </div>
-          
-            
+            </button>
           </div>
         </div>
 
@@ -61,8 +51,8 @@ const Testimonials = () => {
             1200: { slidesPerView: 3 },
           }}
         >
-          {team.map((member, index) => (
-            <SwiperSlide key={index}>
+          {teamData.map((member) => (
+            <SwiperSlide key={member.id}>
               <div className="team-one__single">
                 <div className="team-one__img">
                   <img src={member.image} alt={member.name} />
@@ -82,6 +72,22 @@ const Testimonials = () => {
         {/* Swiper Pagination */}
         <div className="swiper-pagination"></div>
       </div>
+
+      {/* Custom Styling for Swiper Navigation */}
+      <style jsx>{`
+        .custom-nav {
+          background-color: #c11425;
+          color: white;
+          border: none;
+          padding: 8px 12px;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: 0.3s ease;
+        }
+        .custom-nav:hover {
+          background-color: #a10f1e;
+        }
+      `}</style>
     </section>
   );
 };

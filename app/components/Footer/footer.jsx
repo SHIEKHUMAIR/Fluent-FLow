@@ -42,19 +42,19 @@ function Footer() {
                 </div>
                 <ul className="footer-widget__company-list list-unstyled">
                   <li>
-                    <a href="about.html">About Us</a>
+                    <a href="/">Home</a>
                   </li>
                   <li>
-                    <a href="faq.html">FAQ</a>
+                    <a href="/about">About</a>
                   </li>
                   <li>
-                    <a href="testimonials.html">Testimonial</a>
+                    <a href="/salt">Salt</a>
                   </li>
                   <li>
-                    <a href="services.html">Service</a>
+                    <a href="/rice">Rice</a>
                   </li>
                   <li>
-                    <a href="blog.html">Blog And News</a>
+                    <a href="/factory_tour">Factory Tour</a>
                   </li>
                 </ul>
               </div>

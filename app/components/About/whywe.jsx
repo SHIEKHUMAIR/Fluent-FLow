@@ -8,7 +8,7 @@ const WhyWe = () => {
           <div className="w-full xl:w-1/3">
             <div className="why-are-we__left">
               <div className="why-are-we__img">
-                <img src="assets/images/resources/why-are-we-img-1.jpg" alt="" />
+                <img src="assets/rice/About-Us.webp" alt="" />
               </div>
             </div>
           </div>
@@ -58,7 +58,7 @@ const WhyWe = () => {
                 </li>
               </ul>
               <div className="why-are-we__img-2 relative mt-8">
-                <img src="assets/images/resources/why-are-we-img-2.jpg" alt="" />
+                <img src="assets/rice/images.jpg" alt="" />
                 <div className="why-are-we__year absolute bottom-0 left-0 bg-white p-4 wow fadeInLeft" data-wow-delay="300ms">
                   <h3 className="text-2xl font-bold">Since 1920</h3>
                   <p>

@@ -1,0 +1,82 @@
+{
+  "whyChooseUs": {
+    "tagline": "Salt Lamps",
+    "title": "Salt Lamps Manufacturer & Exporter",
+    "description": "We are a leading manufacturer and exporter of Himalayan salt lamps. Our products are made from 100% natural Himalayan salt crystals that are hand-mined from the Khewra Salt Mines in Pakistan. We offer a wide range of salt lamps in various shapes and sizes to suit your needs. Our salt lamps are known for their soothing glow and air-purifying benefits, making them a popular choice for homes, offices, and spas. Whether you are looking to create a relaxing atmosphere or improve the air quality in your space, our salt lamps are the perfect solution.",
+    "buttonText": "Contact Us",
+    "buttonLink": "/about",
+    "image": "/assets/lamps/banner.webp"
+  },
+  "products": [
+    {
+      "id": 1,
+      "image": "/assets/lamps/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 2,
+      "image": "/assets/lamps/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 3,
+      "image": "/assets/lamps/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 4,
+      "image": "/assets/lamps/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 5,
+      "image": "/assets/lamps/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 6,
+      "image": "/assets/lamps/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 7,
+      "image": "/assets/lamps/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    },
+    {
+      "id": 8,
+      "image": "/assets/lamps/1.webp",
+      "pack": "8 pcs",
+      "weight": "2-3 kg"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How do Himalayan salt lamps work?",
+      "answer": "Himalayan salt lamps emit negative ions, which help neutralize pollutants and allergens in the air."
+    },
+    {
+      "question": "Do salt lamps require maintenance?",
+      "answer": "Yes, they should be wiped with a dry cloth and kept away from excessive humidity."
+    },
+    {
+      "question": "Can I leave my salt lamp on all night?",
+      "answer": "Yes, salt lamps are safe to use continuously and can help create a calming atmosphere."
+    },
+    {
+      "question": "Do Himalayan salt lamps help with allergies?",
+      "answer": "Yes, they may help reduce airborne allergens and improve air quality."
+    },
+    {
+      "question": "Why is my salt lamp leaking water?",
+      "answer": "Salt lamps absorb moisture from the air. If they 'sweat,' keep them in a dry place and turn them on more often."
+    }
+  ]
+}

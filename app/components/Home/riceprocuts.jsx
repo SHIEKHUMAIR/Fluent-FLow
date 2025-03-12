@@ -1,16 +1,8 @@
-'use client';
-import React, { useState, useEffect } from "react";
+"use client";
+import React from "react";
+import products from "@/data/riceproducts.json"; // Import JSON directly
 
-const riceprocuts = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("saltproducts.json")
-      .then((response) => response.json())
-      .then((data) => setProducts(data.slice(0, 5)))
-      .catch((error) => console.error("Error loading blog data:", error));
-  }, []);
-
+const RiceProducts = () => {
   return (
     <section className="project-two">
       <div className="container mx-auto px-4">
@@ -21,37 +13,42 @@ const riceprocuts = () => {
               <div className="project-two__content-box">
                 <div className="section-title text-left">
                   <div className="section-title__tagline-box">
-                    <span className="section-title__tagline">latest project</span>
+                    <span className="section-title__tagline">Latest Project</span>
                   </div>
-                  <h2 className="section-title__title">Seamless logistics for your logo</h2>
+                  <h2 className="section-title__title">
+                    Seamless logistics for your logo
+                  </h2>
                 </div>
                 <div className="project-two__btn-box">
                   <a href="project-details.html" className="thm-btn project-two__btn">
-                    more project<span></span>
+                    More Products<span></span>
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          {products.map((products) => (
-            <div key={products.id}className="wow fadeInUp" data-wow-delay="300ms" >
-            <div className="project-two__single">
-              <div className="project-two__img">
-                <img src={products.image} alt={products.title} />
-                <div className="project-two__content">
-                  <p className="project-two__sub-title">{products.title}</p>
-                  <h3 className="project-two__title">
-                    <a href={products}>{products.description}</a>
-                  </h3>
+
+          {/* Map through products JSON */}
+          {products.slice(0, 5).map((product) => (
+            <div key={product.id} className="wow fadeInUp" data-wow-delay="300ms">
+              <div className="project-two__single">
+                <div className="project-two__img">
+                  <img src={product.image} alt={product.title} />
+                  <div className="project-two__content">
+                    <p className="project-two__sub-title">{product.title}</p>
+                    <h3 className="project-two__title">
+                      <a href={product.link}>{product.description}</a>
+                    </h3>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-))}
-  </div>
+          ))}
+
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default riceprocuts
+export default RiceProducts;

@@ -125,7 +125,7 @@ function Navbar() {
                         </a>
                         <ul>
                         <li className="dropdown">
-                            <a href="#">Salt Lamps</a>
+                            <a href="/salt_lamp">Salt Lamps</a>
                             <ul>
                               <li>
                                 <a href="index.html">Geomatric Salt Lamp</a>
@@ -136,10 +136,10 @@ function Navbar() {
                             </ul>
                           </li>
                           <li>
-                            <a href="index2.html">Salt Tiles</a>
+                            <a href="/salt_tile">Salt Tiles</a>
                           </li>
                           <li className="dropdown">
-                            <a href="#">Edible Rock Salt</a>
+                            <a href="/edible_salt">Edible Rock Salt</a>
                             <ul>
                               <li>
                                 <a href="index.html">Edible Salt Jars & Pouches</a>
@@ -147,47 +147,43 @@ function Navbar() {
                             </ul>
                           </li>
                           <li>
-                            <a href="index2.html">Salt Tiles</a>
+                            <a href="/salt_block">Salt Cooking Block</a>
                           </li>
                           <li>
-                            <a href="index.html">Salt Cooking Block</a>
+                            <a href="/animal_lick_salt">Animal Lick Salt</a>
                           </li>
                           <li>
-                            <a href="index2.html">Animal Lick Salt</a>
+                            <a href="/compressed_animal_lick_salt">Compressed Animal Lick Salt</a>
                           </li>
                           <li>
-                            <a href="index.html">Compressed Animal Lick Salt</a>
+                            <a href="/bath_salt">Bath Salt</a>
                           </li>
                           <li>
-                            <a href="index2.html">Bath Salt</a>
-                          </li>
-                          <li>
-                            <a href="index2.html">Salt Crockery</a>
+                            <a href="/salt_crockery">Salt Crockery</a>
                           </li>
                           <li className="dropdown">
                             <a href="#">Aroma Therapy Salt Lamps</a>
                             <ul>
                               <li>
-                                <a href="index.html">Salt Diffuser</a>
+                                <a href="/salt_diffuser">Salt Diffuser</a>
                               </li>
                               <li>
-                                <a href="index2.html">Salt Foot Detox</a>
+                                <a href="/salt_foot_detox">Salt Foot Detox</a>
                               </li>
                             </ul>
                           </li>
                           <li>
-                            <a href="index2.html">Salt Candle Holder</a>
+                            <a href="/salt_candle_holder">Salt Candle Holder</a>
                           </li>
                         </ul>
                       </li>
-                      <li
+                      {/* <li
                         className={`dropdown ${
                           expandedDropdowns.has("rice") ? "expanded" : ""
                         }`}
                       >
                         <a href="/rice">
                           Rice
-                          {/* <FontAwesomeIcon icon={faArrowDown} /> */}
                           <button
                             aria-label="dropdown toggler"
                             onClick={(e) => toggleDropdown(e, "rice")}
@@ -255,16 +251,17 @@ function Navbar() {
                             <a href="index2.html">Salt Candle Holder</a>
                           </li>
                         </ul>
-                      </li>
+                      </li> */}
                       <li>
-                      <a href="/certifications">Certifications</a>
+                      <a href="/rice">Rice</a>
                       </li>
+                      {/* <li>
+                      <a href="/certifications">Certifications</a>
+                      </li> */}
                       <li>
                       <a href="/factory_tour">Factory Tour</a>
                       </li>
-                      {/* <li>
-                        <a href="contact.html">Contact</a>
-                      </li> */}
+                      
                     </ul>
                   </div>
                 </div>
@@ -283,8 +280,8 @@ function Navbar() {
                         <span className="icon-dots-menu-three"></span>
                       </a>
                     </div> */}
-                    <div className="main-menu__btn-box">
-                      <a href="about.html" className="thm-btn main-menu__btn">
+                    <div className="main-menu__btn-box md:block" >
+                      <a href="/contact" className="thm-btn main-menu__btn">
                         Contact Us<span></span>
                       </a>
                     </div>

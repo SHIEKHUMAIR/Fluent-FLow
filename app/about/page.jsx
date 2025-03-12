@@ -1,5 +1,6 @@
 import React from 'react'
 import WhyWe from '../components/About/whywe';
+import Industries from '../components/Home/industries';
 
 export const metadata = {
     title: "About",
@@ -11,7 +12,10 @@ export const metadata = {
 
 function page() {
   return (
-    <WhyWe  />
+    <>
+    <Industries />
+    </>
+   
   )
 }
 

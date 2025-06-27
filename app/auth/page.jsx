@@ -12,6 +12,6 @@
 import Auth from '../components/auth';
 
 export default function AuthPage({ searchParams }) {
-  const tab = searchParams?.tab || 'login'; // Get tab from URL (e.g. /auth?tab=register)
+  const tab = searchParams?.tab || 'login'; 
   return <Auth defaultTab={tab} />;
 }

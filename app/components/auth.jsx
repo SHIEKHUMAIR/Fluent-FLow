@@ -14,7 +14,7 @@ const Auth = ({ defaultTab = 'login' }) => {
         <div className="text-center">
           <div className="mb-6">
             <div className="w-24 h-24 bg-[#1e3a8a] rounded-2xl mx-auto flex items-center justify-center mb-4 shadow-lg">
-              <img alt="Logo" className="w-16 h-16" src="./assets/group11.png" />
+              <img alt="Logo" className="w-16 h-16" src="./assets/mono.png" />
             </div>
           </div>
           <h2 className="text-2xl sm:text-xl lg:text-4xl font-extrabold bg-blue-900 bg-clip-text text-transparent mb-4">

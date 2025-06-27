@@ -20,15 +20,19 @@ export default function Sidebar() {
   return (
     <nav className="hidden lg:flex flex-col w-72 bg-white border-r border-gray-200 h-screen sticky top-0">
       {/* Logo Section */}
-      <div className="flex items-center justify-center py-4 pr-6 border-b border-gray-200">
-        <Image
-          src="/assets/logo.png"
-          alt="Fluent Flow Logo"
-          width={160}
-          height={160}
-          className="object-contain"
-        />
-      </div>
+      
+     <div className="flex items-center justify-center py-4 pr-6 border-b border-gray-200">
+  <Link href="/" className="inline-block">
+    <Image
+      src="/assets/logo.png"
+      alt="Fluent Flow Logo"
+      width={160}
+      height={160}
+      priority
+      className="object-contain hover:opacity-90 transition-opacity"
+    />
+  </Link>
+</div>
 
       {/* Navigation Links */}
       <div className="flex-1 px-4 py-6 space-y-2">

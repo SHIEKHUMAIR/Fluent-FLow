@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const banner = () => {
   return (
@@ -68,9 +69,11 @@ const banner = () => {
       <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded_cstm text-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
         Start Free Trial
       </button>
-      <button className="bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-medium py-3 px-8 rounded_cstm text-lg transition-all duration-300">
-        Sign Up Now
-      </button>
+      <Link href="/auth?tab=register" scroll={false}>
+  <button className="bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-medium py-3 px-8 rounded_cstm text-lg transition-all duration-300">
+    Sign Up Now
+  </button>
+</Link>
     </div>
 
     {/* Footer info */}

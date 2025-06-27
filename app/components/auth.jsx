@@ -1,15 +1,10 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
 import LoginForm from './loginForm';
 import RegisterForm from './registerForm';
-const Auth = () => {
 
-  
-
-const searchParams = useSearchParams();
-const defaultTab = searchParams.get('tab') === 'register' ? 'register' : 'login';
-const [activeTab, setActiveTab] = useState(defaultTab);
+const Auth = ({ defaultTab = 'login' }) => {
+  const [activeTab, setActiveTab] = useState(defaultTab);
   return (
     <section
       className="page-section min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 max-w-[720px] mx-auto"

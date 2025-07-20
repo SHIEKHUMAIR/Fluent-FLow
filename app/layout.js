@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
       <body 
       cz-shortcut-listen="true"
       >
-       <main className="flex h-screen overflow-hidden">
+       <main className="flex h-screen overflow-hidden bg-gradient-to-br from-slate-50 to-blue-50 ">
         <Sidebar />
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto pt-16 lg:pt-0">
           {children}
         </div>
       </main>

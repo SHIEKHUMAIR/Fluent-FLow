@@ -25,6 +25,7 @@ const Auth = ({ defaultTab = 'login' }) => {
           </p>
         </div>
 
+        {/* <div className="text-center text-sm text-gray-500 mb-6">
         {/* Toggle Tabs */}
        <div>
   <div className="bg-neutral-100/80 rounded-2xl flex backdrop-blur-md mb-6 shadow-inner ring-1 ring-white/40">

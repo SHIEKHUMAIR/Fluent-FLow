@@ -66,14 +66,17 @@ const banner = () => {
 
     {/* Buttons */}
     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-      <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded_cstm text-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
-        Start Free Trial
-      </button>
+      <Link href="/demoexercise" scroll={false}>
+        <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-8 rounded_cstm text-lg transition-all duration-300 shadow-lg hover:shadow-blue-500/25">
+          Start Free Trial
+        </button>
+      </Link>
+      
       <Link href="/auth?tab=register" scroll={false}>
-  <button className="bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-medium py-3 px-8 rounded_cstm text-lg transition-all duration-300">
-    Sign Up Now
-  </button>
-</Link>
+        <button className="bg-transparent border-2 border-white/20 hover:border-white/40 text-white font-medium py-3 px-8 rounded_cstm text-lg transition-all duration-300">
+          Sign Up Now
+        </button>
+      </Link>
     </div>
 
     {/* Footer info */}

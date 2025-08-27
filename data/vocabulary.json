@@ -1,0 +1,165 @@
+{
+  "basicVocabulary": [
+  {
+    "id": "1",
+    "chinese": "你好",
+    "pinyin": "nǐ hǎo",
+    "english": "hello",
+    "responses": [
+      { "chinese": "你好", "pinyin": "nǐ hǎo", "english": "hello", "correct": true },
+      { "chinese": "谢谢", "pinyin": "xiè xiè", "english": "thank you", "correct": false },
+      { "chinese": "再见", "pinyin": "zài jiàn", "english": "goodbye", "correct": false }
+    ]
+  },
+  {
+    "id": "2",
+    "chinese": "你好吗？",
+    "pinyin": "nǐ hǎo ma?",
+    "english": "How are you?",
+    "responses": [
+      
+      { "chinese": "谢谢", "pinyin": "xiè xiè", "english": "thank you", "correct": false },
+      { "chinese": "再见", "pinyin": "zài jiàn", "english": "goodbye", "correct": false },
+      { "chinese": "我很好", "pinyin": "wǒ hěn hǎo", "english": "I’m good", "correct": true }
+    ]
+  },
+  {
+    "id": "3",
+    "chinese": "早上好",
+    "pinyin": "zǎo shàng hǎo",
+    "english": "Good morning",
+    "responses": [
+      
+      { "chinese": "下午好", "pinyin": "xià wǔ hǎo", "english": "Good afternoon", "correct": false },
+      { "chinese": "早上好", "pinyin": "zǎo shàng hǎo", "english": "Good morning", "correct": true },
+      { "chinese": "晚上好", "pinyin": "wǎn shàng hǎo", "english": "Good evening", "correct": false }
+    ]
+  },
+  {
+    "id": "4",
+    "chinese": "下午好",
+    "pinyin": "xià wǔ hǎo",
+    "english": "Good afternoon",
+    "responses": [
+      { "chinese": "下午好", "pinyin": "xià wǔ hǎo", "english": "Good afternoon", "correct": true },
+      { "chinese": "早上好", "pinyin": "zǎo shàng hǎo", "english": "Good morning", "correct": false },
+      { "chinese": "再见", "pinyin": "zài jiàn", "english": "Goodbye", "correct": false }
+    ]
+  },
+  {
+    "id": "5",
+    "chinese": "晚上好",
+    "pinyin": "wǎn shàng hǎo",
+    "english": "Good evening",
+    "responses": [
+      { "chinese": "晚上好", "pinyin": "wǎn shàng hǎo", "english": "Good evening", "correct": true },
+      { "chinese": "早上好", "pinyin": "zǎo shàng hǎo", "english": "Good morning", "correct": false },
+      { "chinese": "谢谢", "pinyin": "xiè xiè", "english": "Thank you", "correct": false }
+    ]
+  },
+  {
+    "id": "6",
+    "chinese": "晚安",
+    "pinyin": "wǎn ān",
+    "english": "Good night",
+    "responses": [
+      { "chinese": "晚安", "pinyin": "wǎn ān", "english": "Good night", "correct": true },
+      { "chinese": "再见", "pinyin": "zài jiàn", "english": "Goodbye", "correct": false },
+      { "chinese": "你好", "pinyin": "nǐ hǎo", "english": "Hello", "correct": false }
+    ]
+  },
+  {
+    "id": "7",
+    "chinese": "谢谢",
+    "pinyin": "xiè xiè",
+    "english": "Thank you",
+    "responses": [
+      
+      { "chinese": "你好", "pinyin": "nǐ hǎo", "english": "Hello", "correct": false },
+      { "chinese": "再见", "pinyin": "zài jiàn", "english": "Goodbye", "correct": false },
+      { "chinese": "不客气", "pinyin": "bú kè qì", "english": "You’re welcome", "correct": true }
+    ]
+  },
+  {
+    "id": "8",
+    "chinese": "不客气",
+    "pinyin": "bú kè qì",
+    "english": "You’re welcome",
+    "responses": [
+      { "chinese": "再见", "pinyin": "zài jiàn", "english": "Goodbye", "correct": false },
+      { "chinese": "谢谢", "pinyin": "xiè xiè", "english": "Thank you", "correct": true },
+      { "chinese": "你好", "pinyin": "nǐ hǎo", "english": "Hello", "correct": false }
+    ]
+  },
+  {
+    "id": "9",
+    "chinese": "对不起",
+    "pinyin": "duì bù qǐ",
+    "english": "Sorry",
+    "responses": [
+      { "chinese": "没关系", "pinyin": "méi guān xi", "english": "It’s okay / No problem", "correct": true },
+      { "chinese": "谢谢", "pinyin": "xiè xiè", "english": "Thank you", "correct": false },
+      { "chinese": "你好", "pinyin": "nǐ hǎo", "english": "Hello", "correct": false }
+    ]
+  },
+  {
+    "id": "10",
+    "chinese": "请",
+    "pinyin": "qǐng",
+    "english": "Please",
+    "responses": [
+      { "chinese": "好的", "pinyin": "hǎo de", "english": "Okay / Sure", "correct": true },
+      { "chinese": "谢谢", "pinyin": "xiè xiè", "english": "Thank you", "correct": false },
+      { "chinese": "再见", "pinyin": "zài jiàn", "english": "Goodbye", "correct": false }
+    ]
+  }
+  ,
+
+  { "id": "11", "chinese": "爸爸", "pinyin": "bà ba", "english": "father" },
+  { "id": "12", "chinese": "妈妈", "pinyin": "mā ma", "english": "mother" },
+  { "id": "13", "chinese": "哥哥", "pinyin": "gē ge", "english": "older brother" },
+  { "id": "14", "chinese": "姐姐", "pinyin": "jiě jie", "english": "older sister" },
+  { "id": "15", "chinese": "弟弟", "pinyin": "dì di", "english": "younger brother" },
+  { "id": "16", "chinese": "妹妹", "pinyin": "mèi mei", "english": "younger sister" },
+  { "id": "17", "chinese": "爷爷", "pinyin": "yé ye", "english": "grandfather (paternal)" },
+  { "id": "18", "chinese": "奶奶", "pinyin": "nǎi nai", "english": "grandmother (paternal)" },
+  { "id": "19", "chinese": "朋友", "pinyin": "péng yǒu", "english": "friend" },
+  { "id": "20", "chinese": "家人", "pinyin": "jiā rén", "english": "family member(s)" },
+
+  { "id": "21", "chinese": "一", "pinyin": "yī", "english": "one" },
+  { "id": "22", "chinese": "二", "pinyin": "èr", "english": "two" },
+  { "id": "23", "chinese": "三", "pinyin": "sān", "english": "three" },
+  { "id": "24", "chinese": "四", "pinyin": "sì", "english": "four" },
+  { "id": "25", "chinese": "五", "pinyin": "wǔ", "english": "five" },
+  { "id": "26", "chinese": "六", "pinyin": "liù", "english": "six" },
+  { "id": "27", "chinese": "七", "pinyin": "qī", "english": "seven" },
+  { "id": "28", "chinese": "八", "pinyin": "bā", "english": "eight" },
+  { "id": "29", "chinese": "九", "pinyin": "jiǔ", "english": "nine" },
+  { "id": "30", "chinese": "十", "pinyin": "shí", "english": "ten" }
+
+  ],
+  "exercises": [
+  {
+  "id": "vocab-1",
+  "type": "vocabulary",
+  "title": "Basic Greetings",
+  "items": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+  "completed": false
+},
+{
+  "id": "relations-1",
+  "type": "relations",
+  "title": "Family & Relationships",
+  "items": [10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+  "completed": false
+},
+{
+  "id": "counting-1",
+  "type": "counting-number",
+  "title": "Numbers 1 to 10",
+  "items": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+  "completed": false
+}
+
+  ]
+}

@@ -71,13 +71,18 @@ export default function DemoExercise() {
         <div className="max-w-7xl mx-auto">
          <button
   onClick={() => setCurrentExerciseIndex(null)}
-  className="flex items-center gap-2 bg-blue-900 text-white hover:bg-blue-50 hover:text-blue-900 font-medium px-4 py-2 rounded-full shadow-sm transition-all duration-200 mb-4"
+  className="flex items-center gap-2 bg-blue-900 text-white hover:translate-x-2 font-medium px-4 py-2 rounded-full shadow-sm transition-all duration-200"
 >
-  <span className="text-xl">←</span>
+  <img
+    src="/assets/arrow-small.png"
+    alt="Back"
+    className="w-5 h-5"
+  />
   <span className="hidden sm:inline">Back</span>
 </button>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold bg-blue-900 bg-clip-text text-transparent pb-6 text-center">{currentExercise.title}</h1>
+
+          <h1 className="text-4xl sm:text-5xl font-extrabold bg-blue-900 bg-clip-text text-transparent pb-2 text-center">{currentExercise.title}</h1>
 
           {currentExercise.type === "vocabulary" && (
             <VocabularyCard words={currentExercise.items} onComplete={handleExerciseComplete} />
@@ -118,7 +123,7 @@ export default function DemoExercise() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">{exercise.title}</h3>
+              <h3 className="text-2xl font-bold text-slate-900">{exercise.title}</h3>
               <p className="text-slate-600 mb-6 leading-relaxed">
                {exercise.type === "vocabulary" && "Build your vocabulary with interactive flashcards"}
 {exercise.type === "relations" && "Practice family & relations in Chinese with matching exercises"}

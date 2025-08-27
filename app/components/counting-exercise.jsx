@@ -62,13 +62,6 @@ export default function Countingexercise({ words = [], onComplete }) {
 // ---------------- Listen Activity ----------------
 function ListenActivity({ words, onNext, speak }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
-   if (!words || words.length === 0) {
-    return (
-      <div className="bg-white rounded-2xl p-6 text-center">
-        <p className="text-slate-500">No words available.</p>
-      </div>
-    )
-  }
   const currentWord = words[currentWordIndex]
 
   const playAudio = () => {
@@ -84,38 +77,57 @@ function ListenActivity({ words, onNext, speak }) {
   }
 
   return (
-    <Card className="border-none shadow-none bg-transparent">
-      <CardHeader className="text-center pb-4">
-        <CardTitle className="text-2xl font-semibold text-slate-800">
-          👂 Listen & Learn ({currentWordIndex + 1}/{words.length})
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="bg-white rounded-2xl p-12 text-center shadow border border-slate-100">
-          <div className="text-6xl font-bold text-slate-900 mb-4">{currentWord.chinese}</div>
-          <div className="text-2xl text-blue-900 font-medium mb-4">{currentWord.pinyin}</div>
-          <div className="text-xl text-emerald-600 font-semibold bg-emerald-50 px-6 py-3 rounded-lg border border-emerald-200 mb-8">
-            "{currentWord.english}"
-          </div>
+   <Card className="border-none shadow-none bg-transparent">
+  <CardHeader className="text-center pb-4">
+    <CardTitle className="text-2xl font-semibold text-slate-800"> 👂 Listen & Learn ({currentWordIndex + 1}/{words.length}) </CardTitle>
+  </CardHeader>
 
-          <button
-            className="px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-600 transition"
-            onClick={playAudio}
-          >
-            🔊 Listen & Practice
-          </button>
+  <CardContent>
+    <div className="bg-white rounded-2xl p-8 text-center items-center shadow border border-slate-100">
+      <div className="text-4xl font-bold text-slate-900 mb-4">{currentWord.chinese}</div>
+      <div className="text-xl text-blue-900 font-medium mb-4">{currentWord.pinyin}</div>
+      <div className="text-lg text-emerald-600 font-semibold bg-emerald-50 px-6 py-3 rounded-lg border border-emerald-200 mb-8">
+        "{currentWord.english}"
+      </div>
 
-          <div className="mt-6">
-            <button
-              className="px-8 py-4 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition"
-              onClick={nextWord}
-            >
-              {currentWordIndex < words.length - 1 ? "Next Word →" : "Continue to Quiz →"}
-            </button>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+      {/* Listen Button - Centered */}
+      <div className="flex justify-center">
+        <button
+          className="flex items-center gap-2 px-6 py-3 bg-blue-900 text-white rounded-2xl hover:translate-x-1 transition"
+          onClick={playAudio}
+        >
+          <img
+            src="/assets/volume.png"
+            alt="Listen"
+            className="w-5 h-5"
+          />
+          Listen & Practice
+        </button>
+      </div>
+
+      {/* Next Button with PNG Arrow */}
+      <div className="mt-6 flex justify-center">
+        <button
+          className="flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white rounded-2xl hover:translate-x-1 transition"
+          onClick={nextWord}
+        >
+          {currentWordIndex < words.length - 1 ? (
+            <>
+              Next Word
+              <img src="/assets/arrow-small-right.png" alt="Next" className="w-6 h-6" />
+            </>
+          ) : (
+            <>
+              Continue to Quiz
+              <img src="/assets/arrow-small-right.png" alt="Next" className="w-6 h-6" />
+            </>
+          )}
+        </button>
+      </div>
+    </div>
+  </CardContent>
+</Card>
+
   )
 }
 

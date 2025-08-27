@@ -37,7 +37,7 @@ export default function VocabularyCard({ words = [], onComplete }) {
       </div>
 
       {/* Activity Navigation */}
-      <div className="flex flex-wrap justify-center gap-3 mb-8">
+      <div className="flex flex-wrap justify-center gap-3 mb-4">
         {activities.map((activity) => (
           <button
             key={activity.id}
@@ -78,60 +78,74 @@ function ListenActivity({ words, onNext, speak }) {
   }
 
   return (
-    <Card className="border-none shadow-none bg-transparent">
-      <CardHeader className="text-center pb-4">
-        <CardTitle className="text-2xl font-semibold text-slate-800">
-          👂 Listen & Learn ({currentWordIndex + 1}/{words.length})
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="bg-white rounded-2xl p-12 text-center shadow border border-slate-100">
-          <div className="text-6xl font-bold text-slate-900 mb-4">{currentWord.chinese}</div>
-          <div className="text-2xl text-blue-900 font-medium mb-4">{currentWord.pinyin}</div>
-          <div className="text-xl text-emerald-600 font-semibold bg-emerald-50 px-6 py-3 rounded-lg border border-emerald-200 mb-8">
-            "{currentWord.english}"
-          </div>
+   <Card className="border-none shadow-none bg-transparent">
+  <CardHeader className="text-center pb-4">
+    <CardTitle className="text-2xl font-semibold text-slate-800"> 👂 Listen & Learn ({currentWordIndex + 1}/{words.length}) </CardTitle>
+  </CardHeader>
 
-          <button
-            className="px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-600 transition"
-            onClick={playAudio}
-          >
-            🔊 Listen & Practice
-          </button>
+  <CardContent>
+    <div className="bg-white rounded-2xl p-8 text-center items-center shadow border border-slate-100">
+      <div className="text-4xl font-bold text-slate-900 mb-4">{currentWord.chinese}</div>
+      <div className="text-xl text-blue-900 font-medium mb-4">{currentWord.pinyin}</div>
+      <div className="text-lg text-emerald-600 font-semibold bg-emerald-50 px-6 py-3 rounded-lg border border-emerald-200 mb-8">
+        "{currentWord.english}"
+      </div>
 
-          <div className="mt-6">
-            <button
-              className="px-8 py-4 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition"
-              onClick={nextWord}
-            >
-              {currentWordIndex < words.length - 1 ? "Next Word →" : "Continue to Conversation →"}
-            </button>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+      {/* Listen Button - Centered */}
+      <div className="flex justify-center">
+        <button
+          className="flex items-center gap-2 px-6 py-3 bg-blue-900 text-white rounded-2xl hover:translate-x-1 transition"
+          onClick={playAudio}
+        >
+          <img
+            src="/assets/volume.png"
+            alt="Listen"
+            className="w-5 h-5"
+          />
+          Listen & Practice
+        </button>
+      </div>
+
+      {/* Next Button with PNG Arrow */}
+      <div className="mt-6 flex justify-center">
+        <button
+          className="flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white rounded-2xl hover:translate-x-1 transition"
+          onClick={nextWord}
+        >
+          {currentWordIndex < words.length - 1 ? (
+            <>
+              Next Word
+              <img src="/assets/arrow-small-right.png" alt="Next" className="w-6 h-6" />
+            </>
+          ) : (
+            <>
+              Continue to Conversation
+              <img src="/assets/arrow-small-right.png" alt="Next" className="w-6 h-6" />
+            </>
+          )}
+        </button>
+      </div>
+    </div>
+  </CardContent>
+</Card>
+
   )
 }
 
-// ---------------- Conversation Activity ----------------
 function ConversationActivity({ words, onNext, speak }) {
   const [currentStep, setCurrentStep] = useState(0)
   const [selectedResponse, setSelectedResponse] = useState(null)
 
-  // ✅ Build conversation list
   const conversation = words.map((word) => {
     if (word.responses) {
-      // Use predefined responses from JSON
       return {
         speaker: "李明",
         chinese: word.chinese,
         pinyin: word.pinyin,
         english: word.english,
-        responses: word.responses, // directly use provided
+        responses: word.responses,
       }
     }
-
-    // Otherwise fallback to auto-generated fake responses
     const wrongOptions = words
       .filter((w) => w.id !== word.id)
       .sort(() => Math.random() - 0.5)
@@ -160,7 +174,7 @@ function ConversationActivity({ words, onNext, speak }) {
       } else {
         onNext()
       }
-    }, 2000)
+    }, 1500)
   }
 
   const playAudio = (text) => {
@@ -168,44 +182,46 @@ function ConversationActivity({ words, onNext, speak }) {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-3 sm:p-5">
+    <div className="bg-white rounded-xl p-4 sm:p-6 flex flex-col h-[80vh] justify-between">
       {/* Header */}
-      <div className="text-center mb-6">
-        <h3 className="text-xl sm:text-2xl font-semibold text-slate-900">
-          💬 Conversation Practice ({currentStep + 1}/{conversation.length})
+      <div className="text-center mb-3">
+        <h3 className="text-lg sm:text-xl font-semibold text-slate-900">
+          💬 Conversation ({currentStep + 1}/{conversation.length})
         </h3>
-        <p className="text-slate-500 text-sm sm:text-base">Choose the appropriate response</p>
+        <p className="text-slate-500 text-xs sm:text-sm">
+          Choose the correct response
+        </p>
       </div>
 
       {/* Speaker */}
-      <div className="bg-slate-50 p-4 sm:p-6 md:p-7 rounded-2xl mb-6 sm:mb-8">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-blue-900 rounded-full flex items-center justify-center text-xl sm:text-2xl">
+      <div className="bg-slate-50 p-3 sm:p-4 rounded-xl mb-4">
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-lg text-white">
             👨
           </div>
           <div>
-            <div className="font-semibold text-base sm:text-lg">{currentConversation.speaker}</div>
+            <div className="font-semibold text-sm sm:text-base">{currentConversation.speaker}</div>
             <button
-              className="text-sm text-blue-900 hover:underline"
+              className="text-xs text-blue-900 hover:underline"
               onClick={() => playAudio(currentConversation.chinese)}
             >
               🔊 Listen
             </button>
           </div>
         </div>
-        <div className="bg-white p-4 rounded-xl">
-          <div className="text-xl sm:text-2xl font-semibold">{currentConversation.chinese}</div>
-          <div className="text-blue-900 text-sm sm:text-base">{currentConversation.pinyin}</div>
-          <div className="text-slate-500 text-sm sm:text-base">"{currentConversation.english}"</div>
+        <div className="bg-white p-3 rounded-lg text-center">
+          <div className="text-lg font-semibold">{currentConversation.chinese}</div>
+          <div className="text-blue-900 text-sm">{currentConversation.pinyin}</div>
+          <div className="text-slate-500 text-xs">"{currentConversation.english}"</div>
         </div>
       </div>
 
       {/* Responses */}
-      <div className="space-y-3">
+      <div className="space-y-2 flex-1 overflow-y-auto">
         {currentConversation.responses.map((response, idx) => (
           <button
             key={idx}
-            className={`w-full p-4 sm:p-5 border-2 rounded-xl transition text-left
+            className={`w-full p-3 sm:p-4 border-2 rounded-lg transition text-left text-sm
               ${selectedResponse
                 ? response.correct
                   ? "bg-emerald-500 border-emerald-500 text-white"
@@ -216,12 +232,12 @@ function ConversationActivity({ words, onNext, speak }) {
             onClick={() => !selectedResponse && handleResponse(response)}
             disabled={!!selectedResponse}
           >
-            <div className="text-base sm:text-lg font-semibold">{response.chinese}</div>
-            <div className="text-xs sm:text-sm">
+            <div className="font-semibold">{response.chinese}</div>
+            <div className="text-xs">
               {response.pinyin} - "{response.english}"
             </div>
             {selectedResponse === response && (
-              <div className="mt-2 sm:mt-3 font-semibold text-sm sm:text-base">
+              <div className="mt-1 font-semibold text-xs">
                 {response.correct ? "✅ Correct!" : "❌ Try again next time!"}
               </div>
             )}
@@ -231,6 +247,7 @@ function ConversationActivity({ words, onNext, speak }) {
     </div>
   )
 }
+
 
 
 

@@ -20,10 +20,17 @@ export default function VocabularyCard({ words = [], onComplete }) {
     const currentIndex = activities.findIndex((a) => a.id === currentActivity)
     if (currentIndex < activities.length - 1) {
       setCurrentActivity(activities[currentIndex + 1].id)
-      setProgress(((currentIndex + 1) / activities.length) * 100)
     } else if (onComplete) {
       onComplete(score)
     }
+  }
+
+  // Calculate incremental progress
+  const calculateProgress = (activity, step, totalSteps) => {
+    const activityIndex = activities.findIndex((a) => a.id === activity)
+    const activityWeight = 100 / activities.length
+    const stepProgress = (step / totalSteps) * activityWeight
+    return (activityIndex * activityWeight) + stepProgress
   }
 
   return (
@@ -53,15 +60,39 @@ export default function VocabularyCard({ words = [], onComplete }) {
       </div>
 
       {/* Activity Content */}
-      {currentActivity === "listen" && <ListenActivity words={words} onNext={nextActivity} speak={speak} />}
-      {currentActivity === "conversation" && <ConversationActivity words={words} onNext={nextActivity} speak={speak} />}
-      {currentActivity === "quiz" && <QuizActivity words={words} onNext={nextActivity} setScore={setScore} />}
+      {currentActivity === "listen" && (
+        <ListenActivity 
+          words={words} 
+          onNext={nextActivity} 
+          speak={speak} 
+          setProgress={setProgress}
+          calculateProgress={calculateProgress}
+        />
+      )}
+      {currentActivity === "conversation" && (
+        <ConversationActivity 
+          words={words} 
+          onNext={nextActivity} 
+          speak={speak} 
+          setProgress={setProgress}
+          calculateProgress={calculateProgress}
+        />
+      )}
+      {currentActivity === "quiz" && (
+        <QuizActivity 
+          words={words} 
+          onNext={nextActivity} 
+          setScore={setScore} 
+          setProgress={setProgress}
+          calculateProgress={calculateProgress}
+        />
+      )}
     </div>
   )
 }
 
 // ---------------- Listen Activity ----------------
-function ListenActivity({ words, onNext, speak }) {
+function ListenActivity({ words, onNext, speak, setProgress, calculateProgress }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
   const currentWord = words[currentWordIndex]
 
@@ -72,67 +103,66 @@ function ListenActivity({ words, onNext, speak }) {
   const nextWord = () => {
     if (currentWordIndex < words.length - 1) {
       setCurrentWordIndex(currentWordIndex + 1)
+      // Update progress for each word completed
+      setProgress(calculateProgress("listen", currentWordIndex + 1, words.length))
     } else {
       onNext()
     }
   }
 
   return (
-   <Card className="border-none shadow-none bg-transparent">
-  <CardHeader className="text-center pb-4">
-    <CardTitle className="text-2xl font-semibold text-slate-800"> 👂 Listen & Learn ({currentWordIndex + 1}/{words.length}) </CardTitle>
-  </CardHeader>
+    <Card className="border-none shadow-none bg-transparent">
+      <CardHeader className="text-center pb-4">
+        <CardTitle className="text-2xl font-semibold text-slate-800"> 👂 Listen & Learn ({currentWordIndex + 1}/{words.length}) </CardTitle>
+      </CardHeader>
 
-  <CardContent>
-    <div className="bg-white rounded-2xl p-8 text-center items-center shadow border border-slate-100">
-      <div className="text-4xl font-bold text-slate-900 mb-4">{currentWord.chinese}</div>
-      <div className="text-xl text-blue-900 font-medium mb-4">{currentWord.pinyin}</div>
-      <div className="text-lg text-emerald-600 font-semibold bg-emerald-50 px-6 py-3 rounded-lg border border-emerald-200 mb-8">
-        "{currentWord.english}"
-      </div>
+      <CardContent>
+        <div className="bg-white rounded-2xl p-8 text-center items-center shadow border border-slate-100">
+          <div className="text-4xl font-bold text-slate-900 mb-4">{currentWord.chinese}</div>
+          <div className="text-xl text-blue-900 font-medium mb-4">{currentWord.pinyin}</div>
+          <div className="text-lg text-emerald-600 font-semibold bg-emerald-50 px-6 py-3 rounded-lg border border-emerald-200 mb-8">
+            "{currentWord.english}"
+          </div>
 
-      {/* Listen Button - Centered */}
-      <div className="flex justify-center">
-        <button
-          className="flex items-center gap-2 px-6 py-3 bg-blue-900 text-white rounded-2xl hover:translate-x-1 transition"
-          onClick={playAudio}
-        >
-          <img
-            src="/assets/volume.png"
-            alt="Listen"
-            className="w-5 h-5"
-          />
-          Listen & Practice
-        </button>
-      </div>
+          <div className="flex justify-center">
+            <button
+              className="flex items-center gap-2 px-6 py-3 bg-blue-900 text-white rounded-2xl hover:scale-105 transition"
+              onClick={playAudio}
+            >
+              <img
+                src="/assets/volume.png"
+                alt="Listen"
+                className="w-5 h-5"
+              />
+              Listen & Practice
+            </button>
+          </div>
 
-      {/* Next Button with PNG Arrow */}
-      <div className="mt-6 flex justify-center">
-        <button
-          className="flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white rounded-2xl hover:translate-x-1 transition"
-          onClick={nextWord}
-        >
-          {currentWordIndex < words.length - 1 ? (
-            <>
-              Next Word
-              <img src="/assets/arrow-small-right.png" alt="Next" className="w-6 h-6" />
-            </>
-          ) : (
-            <>
-              Continue to Conversation
-              <img src="/assets/arrow-small-right.png" alt="Next" className="w-6 h-6" />
-            </>
-          )}
-        </button>
-      </div>
-    </div>
-  </CardContent>
-</Card>
-
+          <div className="mt-6 flex justify-center">
+            <button
+              className="flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white rounded-2xl hover:scale-105 transition"
+              onClick={nextWord}
+            >
+              {currentWordIndex < words.length - 1 ? (
+                <>
+                  Next Word
+                  <img src="/assets/arrow-small-right.png" alt="Next" className="w-6 h-6" />
+                </>
+              ) : (
+                <>
+                  Continue to Conversation
+                  <img src="/assets/arrow-small-right.png" alt="Next" className="w-6 h-6" />
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   )
 }
 
-function ConversationActivity({ words, onNext, speak }) {
+function ConversationActivity({ words, onNext, speak, setProgress, calculateProgress }) {
   const [currentStep, setCurrentStep] = useState(0)
   const [selectedResponse, setSelectedResponse] = useState(null)
 
@@ -171,6 +201,8 @@ function ConversationActivity({ words, onNext, speak }) {
       if (currentStep < conversation.length - 1) {
         setCurrentStep((prev) => prev + 1)
         setSelectedResponse(null)
+        // Update progress for each conversation step completed
+        setProgress(calculateProgress("conversation", currentStep + 1, conversation.length))
       } else {
         onNext()
       }
@@ -248,25 +280,21 @@ function ConversationActivity({ words, onNext, speak }) {
   )
 }
 
-
-
-
 // ---------------- Quiz Activity ----------------
-function QuizActivity({ words, onNext, setScore }) {
+function QuizActivity({ words, onNext, setScore, setProgress, calculateProgress }) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [quizScore, setQuizScore] = useState(0)
 
   const questions = useMemo(() => {
-    return words.map((word) => {
-      const wrongOptions = words
+    const shuffledWords = [...words].sort(() => Math.random() - 0.5)
+    return shuffledWords.map((word) => {
+      const wrongOptions = shuffledWords
         .filter((w) => w.id !== word.id)
         .sort(() => Math.random() - 0.5)
         .slice(0, 2)
-
       const options = [word.english, ...wrongOptions.map((w) => w.english)]
         .sort(() => Math.random() - 0.5)
-
       return {
         question: `What does "${word.chinese}" (${word.pinyin}) mean?`,
         correct: word.english,
@@ -288,10 +316,12 @@ function QuizActivity({ words, onNext, setScore }) {
       if (currentQuestion < questions.length - 1) {
         setCurrentQuestion((prev) => prev + 1)
         setSelectedAnswer(null)
+        // Update progress for each quiz question completed
+        setProgress(calculateProgress("quiz", currentQuestion + 1, questions.length))
       } else {
         onNext()
       }
-    }, 2000)
+    }, 1000)
   }
 
   return (

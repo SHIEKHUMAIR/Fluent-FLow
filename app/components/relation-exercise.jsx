@@ -93,7 +93,7 @@ function ListenActivity({ words, onNext, speak }) {
       {/* Listen Button - Centered */}
       <div className="flex justify-center">
         <button
-          className="flex items-center gap-2 px-6 py-3 bg-blue-900 text-white rounded-2xl hover:translate-x-1 transition"
+          className="flex items-center gap-2 px-6 py-3 bg-blue-900 text-white rounded-2xl hover:scale-105 transition"
           onClick={playAudio}
         >
           <img
@@ -108,7 +108,7 @@ function ListenActivity({ words, onNext, speak }) {
       {/* Next Button with PNG Arrow */}
       <div className="mt-6 flex justify-center">
         <button
-          className="flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white rounded-2xl hover:translate-x-1 transition"
+          className="flex items-center gap-2 px-8 py-4 bg-emerald-500 text-white rounded-2xl hover:scale-105 transition"
           onClick={nextWord}
         >
           {currentWordIndex < words.length - 1 ? (
@@ -138,22 +138,27 @@ function QuizActivity({ words, onNext, setScore }) {
   const [quizScore, setQuizScore] = useState(0)
 
   const questions = useMemo(() => {
-    return words.map((word) => {
-      const wrongOptions = words
-        .filter((w) => w.id !== word.id)
-        .sort(() => Math.random() - 0.5)
-        .slice(0, 2)
+  // Shuffle words array first so questions are not in sequence
+  const shuffledWords = [...words].sort(() => Math.random() - 0.5)
 
-      const options = [word.english, ...wrongOptions.map((w) => w.english)]
-        .sort(() => Math.random() - 0.5)
+  return shuffledWords.map((word) => {
+    // Pick 2 random wrong options
+    const wrongOptions = shuffledWords
+      .filter((w) => w.id !== word.id)
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 2)
 
-      return {
-        question: `What does "${word.chinese}" (${word.pinyin}) mean?`,
-        correct: word.english,
-        options,
-      }
-    })
-  }, [words])
+    // Mix correct + wrong options
+    const options = [word.english, ...wrongOptions.map((w) => w.english)]
+      .sort(() => Math.random() - 0.5)
+
+    return {
+      question: `What does "${word.chinese}" (${word.pinyin}) mean?`,
+      correct: word.english,
+      options,
+    }
+  })
+}, [words])
 
   const currentQ = questions[currentQuestion]
 
@@ -171,7 +176,7 @@ function QuizActivity({ words, onNext, setScore }) {
       } else {
         onNext()
       }
-    }, 2000)
+    }, 1000)
   }
 
   return (

@@ -3,11 +3,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState , useEffect } from 'react';
 
 export default function Sidebar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
 
   const navItems = [
     { href: '/', label: 'Home' },

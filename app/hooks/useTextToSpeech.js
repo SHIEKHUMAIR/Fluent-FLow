@@ -6,7 +6,7 @@ export default function useTextToSpeech() {
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
       const utterance = new SpeechSynthesisUtterance(text)
       utterance.lang = "zh-CN" // Mandarin Chinese
-      utterance.rate = 0.8     // Slightly slower for learners
+      utterance.rate = 0.6     // Slightly slower for learners
       utterance.pitch = 1
       speechSynthesis.speak(utterance)
     } else {

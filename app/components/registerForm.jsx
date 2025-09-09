@@ -1,16 +1,92 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const registerForm = () => {
+const RegisterForm = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  });
+
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (formData.password !== formData.confirmPassword) {
+      setMessage("❌ Passwords do not match");
+      return;
+    }
+
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          password: formData.password,
+          confirmPassword: formData.confirmPassword,
+        }),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        setMessage("✅ " + data.message);
+      } else {
+        setMessage("❌ " + data.message);
+      }
+    } catch (err) {
+      setMessage("⚠️ Something went wrong. Try again.");
+    }
+  };
+
   return (
     <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/50">
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 gap-4">
-          <InputField id="first-name" label="First Name" type="text" />
-          <InputField id="last-name" label="Last Name" type="text" />
+          <InputField
+            id="firstName"
+            label="First Name"
+            type="text"
+            value={formData.firstName}
+            onChange={handleChange}
+          />
+          <InputField
+            id="lastName"
+            label="Last Name"
+            type="text"
+            value={formData.lastName}
+            onChange={handleChange}
+          />
         </div>
-        <InputField id="reg-email" label="Email Address" type="email" />
-        <InputField id="reg-password" label="Password" type="password" />
-        <InputField id="confirm-password" label="Confirm Password" type="password" />
+        <InputField
+          id="email"
+          label="Email Address"
+          type="email"
+          value={formData.email}
+          onChange={handleChange}
+        />
+        <InputField
+          id="password"
+          label="Password"
+          type="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+        <InputField
+          id="confirmPassword"
+          label="Confirm Password"
+          type="password"
+          value={formData.confirmPassword}
+          onChange={handleChange}
+        />
 
         <label className="flex items-start text-sm text-neutral-700 font-medium">
           <input
@@ -21,12 +97,18 @@ const registerForm = () => {
             className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded mt-1"
           />
           <span className="ml-3">
-            I agree to the{' '}
-            <a href="#" className="text-blue-600 hover:text-blue-500 underline underline-offset-2">
+            I agree to the{" "}
+            <a
+              href="#"
+              className="text-blue-600 hover:text-blue-500 underline underline-offset-2"
+            >
               Terms of Service
-            </a>{' '}
-            and{' '}
-            <a href="#" className="text-blue-600 hover:text-blue-500 underline underline-offset-2">
+            </a>{" "}
+            and{" "}
+            <a
+              href="#"
+              className="text-blue-600 hover:text-blue-500 underline underline-offset-2"
+            >
               Privacy Policy
             </a>
           </span>
@@ -39,6 +121,10 @@ const registerForm = () => {
           Create Account
         </button>
       </form>
+
+      {message && (
+        <p className="mt-4 text-center font-medium">{message}</p>
+      )}
 
       {/* Social sign up */}
       <div className="mt-8">
@@ -61,7 +147,7 @@ const registerForm = () => {
   );
 };
 
-const InputField = ({ id, label, type }) => (
+const InputField = ({ id, label, type, value, onChange }) => (
   <div>
     <label htmlFor={id} className="block text-sm font-semibold text-neutral-800 mb-3">
       {label}
@@ -72,6 +158,8 @@ const InputField = ({ id, label, type }) => (
       type={type}
       required
       placeholder={label}
+      value={value}
+      onChange={onChange}
       className="w-full px-4 py-3.5 border border-neutral-200/50 rounded-xl bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
     />
   </div>
@@ -80,35 +168,33 @@ const InputField = ({ id, label, type }) => (
 const SocialButton = ({ type }) => {
   const icons = {
     Google: (
-            <svg
-                        className="h-5 w-5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                          fill="currentColor"
-                        />
-                      </svg>
+      <svg className="h-5 w-5" viewBox="0 0 24 24">
+        <path
+          d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+          fill="currentColor"
+        />
+        <path
+          d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+          fill="currentColor"
+        />
+        <path
+          d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+          fill="currentColor"
+        />
+        <path
+          d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+          fill="currentColor"
+        />
+      </svg>
     ),
     Facebook: (
-      <svg className="h-5 w-5"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                      </svg>
+      <svg
+        className="h-5 w-5"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+      </svg>
     ),
   };
 
@@ -120,4 +206,4 @@ const SocialButton = ({ type }) => {
   );
 };
 
-export default registerForm;
+export default RegisterForm;

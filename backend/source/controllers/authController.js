@@ -3,7 +3,7 @@ const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/User");
 
 // Initialize Google OAuth client
-const client = new OAuth2Client("339979194785-6lhopg8pnu9h95foakm7s5h4cfkkdtob.apps.googleusercontent.com");
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // -----------------------------
 // POST /api/auth/signup

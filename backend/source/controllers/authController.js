@@ -1,7 +1,13 @@
 const bcrypt = require("bcrypt");
+const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/User");
 
+// Initialize Google OAuth client
+const client = new OAuth2Client("339979194785-6lhopg8pnu9h95foakm7s5h4cfkkdtob.apps.googleusercontent.com");
+
+// -----------------------------
 // POST /api/auth/signup
+// -----------------------------
 async function signup(req, res) {
   try {
     const { firstName, lastName, email, password, confirmPassword } = req.body;
@@ -48,7 +54,9 @@ async function signup(req, res) {
   }
 }
 
+// -----------------------------
 // POST /api/auth/login
+// -----------------------------
 async function login(req, res) {
   try {
     const { email, password } = req.body;
@@ -78,4 +86,47 @@ async function login(req, res) {
   }
 }
 
-module.exports = { signup, login };
+// -----------------------------
+// POST /api/auth/google
+// -----------------------------
+async function googleLogin(req, res) {
+  try {
+    const { token } = req.body;
+    if (!token) return res.status(400).json({ message: "Token is required" });
+
+    // Verify token with Google
+    const ticket = await client.verifyIdToken({
+      idToken: token,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const payload = ticket.getPayload();
+    const { email, given_name, family_name } = payload;
+
+    let user = await User.findOne({ email });
+
+    // Create user if not exists
+    if (!user) {
+      user = await User.create({
+        firstName: given_name,
+        lastName: family_name,
+        email,
+        password: await bcrypt.hash(Math.random().toString(36).slice(-8), 10), // random password
+      });
+    }
+
+    const safeUser = {
+      id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+    };
+
+    return res.status(200).json({ message: "Google login successful", user: safeUser });
+  } catch (err) {
+    console.error("Google login error:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+}
+
+module.exports = { signup, login, googleLogin };

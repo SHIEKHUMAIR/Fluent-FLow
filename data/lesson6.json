@@ -1,0 +1,149 @@
+{
+  "learningSlides": [
+    { "id": "b1", "chinese": "是", "pinyin": "shì", "english": "is / are", "image": "/assets/lesson6/1.jpg" },
+    { "id": "b2", "chinese": "不是", "pinyin": "bú shì", "english": "not", "image": "/assets/lesson6/2.jpg" },
+    { "id": "b3", "chinese": "有", "pinyin": "yǒu", "english": "have", "image": "/assets/lesson6/3.jpg" },
+    { "id": "b4", "chinese": "没有", "pinyin": "méiyǒu", "english": "not have", "image": "/assets/lesson6/4.jpg" },
+    { "id": "b5", "chinese": "什么", "pinyin": "shénme", "english": "what", "image": "/assets/lesson6/5.jpg" },
+    { "id": "b6", "chinese": "哪", "pinyin": "nǎ", "english": "which", "image": "/assets/lesson6/6.jpg" },
+    { "id": "b7", "chinese": "吗", "pinyin": "ma", "english": "question particle", "image": "/assets/lesson6/7.jpg" },
+    { "id": "b8", "chinese": "也", "pinyin": "yě", "english": "also", "image": "/assets/lesson6/8.jpg" },
+    { "id": "b9", "chinese": "很", "pinyin": "hěn", "english": "very", "image": "/assets/lesson6/9.jpg" },
+    { "id": "b10", "chinese": "不", "pinyin": "bù", "english": "no / not", "image": "/assets/lesson6/10.jpg" },
+    { "id": "b11", "chinese": "还", "pinyin": "hái", "english": "still", "image": "/assets/lesson6/11.jpg" },
+    { "id": "b12", "chinese": "都", "pinyin": "dōu", "english": "all", "image": "/assets/lesson6/12.jpg" },
+    { "id": "b13", "chinese": "是的", "pinyin": "shì de", "english": "yes", "image": "/assets/lesson6/13.jpg" }
+  ],
+
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "text": "Which of the following is used to say 'still' in Chinese?",
+      "choices": ["还 (hái)", "很 (hěn)", "什么 (shénme)", "不 (bù)"],
+      "correct": 0
+    },
+    {
+      "id": "q2",
+      "text": "The Chinese word '是 (shì)' is used for:",
+      "choices": ["Very", "Yes/No particle", "Is / are", "Also"],
+      "correct": 2
+    },
+    {
+      "id": "q3",
+      "text": "In Chinese, how do you say 'what'?",
+      "choices": ["也 (yě)", "什么 (shénme)", "哪 (nǎ)", "都 (dōu)"],
+      "correct": 1
+    },
+    {
+      "id": "q4",
+      "text": "Which word means 'not have'?",
+      "choices": ["有 (yǒu)", "没有 (méiyǒu)", "是 (shì)", "不是 (bú shì)"],
+      "correct": 1
+    },
+    {
+      "id": "q5",
+      "text": "The particle '吗 (ma)' is used to:",
+      "choices": ["Show possession", "Make a yes/no question", "Indicate 'still'", "Say 'not'"],
+      "correct": 1
+    },
+    {
+      "id": "q6",
+      "text": "Which word means 'which' in Chinese?",
+      "choices": ["哪 (nǎ)", "还 (hái)", "都 (dōu)", "是的 (shì de)"],
+      "correct": 0
+    },
+    {
+      "id": "q7",
+      "text": "Which is the opposite of '是 (shì)'?",
+      "choices": ["没有 (méiyǒu)", "不 (bù)", "不是 (bú shì)", "很 (hěn)"],
+      "correct": 2
+    },
+    {
+      "id": "q8",
+      "text": "The Chinese word '也 (yě)' translates to:",
+      "choices": ["All", "Very", "Also", "Still"],
+      "correct": 2
+    },
+    {
+      "id": "q9",
+      "text": "Which word means 'have' in Chinese?",
+      "choices": ["不 (bù)", "有 (yǒu)", "哪 (nǎ)", "还 (hái)"],
+      "correct": 1
+    },
+    {
+      "id": "q10",
+      "text": "How do you say 'very' in Chinese?",
+      "choices": ["很 (hěn)", "什么 (shénme)", "是的 (shì de)", "不 (bù)"],
+      "correct": 0
+    },
+    {
+      "id": "q11",
+      "text": "Which of these is the correct way to say 'all' in Chinese?",
+      "choices": ["也 (yě)", "都 (dōu)", "是 (shì)", "还 (hái)"],
+      "correct": 1
+    },
+    {
+      "id": "q12",
+      "text": "How do you say 'no / not' in Chinese?",
+      "choices": ["不 (bù)", "没有 (méiyǒu)", "是 (shì)", "也 (yě)"],
+      "correct": 0
+    },
+    {
+      "id": "q13",
+      "text": "The phrase '是的 (shì de)' is used for:",
+      "choices": ["No", "Yes", "Which", "What"],
+      "correct": 1
+    }
+  ],
+
+  "matchingTasks": {
+    "basics": {
+      "left": [
+        { "id": "b1", "label": "is / are" },
+        { "id": "b2", "label": "not" },
+        { "id": "b3", "label": "have" },
+        { "id": "b4", "label": "not have" },
+        { "id": "b5", "label": "what" },
+        { "id": "b6", "label": "which" },
+        { "id": "b7", "label": "question particle" },
+        { "id": "b8", "label": "also" },
+        { "id": "b9", "label": "very" },
+        { "id": "b10", "label": "no / not" },
+        { "id": "b11", "label": "still" },
+        { "id": "b12", "label": "all" },
+        { "id": "b13", "label": "yes" }
+      ],
+      "right": [
+        { "id": "b1", "label": "是 (shì)" },
+        { "id": "b2", "label": "不是 (bú shì)" },
+        { "id": "b3", "label": "有 (yǒu)" },
+        { "id": "b4", "label": "没有 (méiyǒu)" },
+        { "id": "b5", "label": "什么 (shénme)" },
+        { "id": "b6", "label": "哪 (nǎ)" },
+        { "id": "b7", "label": "吗 (ma)" },
+        { "id": "b8", "label": "也 (yě)" },
+        { "id": "b9", "label": "很 (hěn)" },
+        { "id": "b10", "label": "不 (bù)" },
+        { "id": "b11", "label": "还 (hái)" },
+        { "id": "b12", "label": "都 (dōu)" },
+        { "id": "b13", "label": "是的 (shì de)" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "是", "audioText": "是", "choices": ["shì", "bú shì", "yǒu", "méiyǒu"], "correct": 0 },
+    { "id": "a2", "chinese": "不是", "audioText": "不是", "choices": ["bù", "bú shì", "shì de", "hái"], "correct": 1 },
+    { "id": "a3", "chinese": "有", "audioText": "有", "choices": ["yǒu", "méiyǒu", "shénme", "nǎ"], "correct": 0 },
+    { "id": "a4", "chinese": "没有", "audioText": "没有", "choices": ["méiyǒu", "yě", "bù", "dōu"], "correct": 0 },
+    { "id": "a5", "chinese": "什么", "audioText": "什么", "choices": ["shénme", "nǎ", "hěn", "shì"], "correct": 0 },
+    { "id": "a6", "chinese": "哪", "audioText": "哪", "choices": ["hái", "nǎ", "dōu", "shì de"], "correct": 1 },
+    { "id": "a7", "chinese": "吗", "audioText": "吗", "choices": ["yě", "bù", "ma", "shénme"], "correct": 2 },
+    { "id": "a8", "chinese": "也", "audioText": "也", "choices": ["yě", "dōu", "hěn", "nǎ"], "correct": 0 },
+    { "id": "a9", "chinese": "很", "audioText": "很", "choices": ["hěn", "shì", "yǒu", "bú shì"], "correct": 0 },
+    { "id": "a10", "chinese": "不", "audioText": "不", "choices": ["bù", "yǒu", "shénme", "hái"], "correct": 0 },
+    { "id": "a11", "chinese": "还", "audioText": "还", "choices": ["hái", "dōu", "nǎ", "bù"], "correct": 0 },
+    { "id": "a12", "chinese": "都", "audioText": "都", "choices": ["shì", "hái", "dōu", "yě"], "correct": 2 },
+    { "id": "a13", "chinese": "是的", "audioText": "是的", "choices": ["bú shì", "shì de", "yǒu", "hěn"], "correct": 1 }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "learningSlides": [
+    { "id": "r1", "chinese": "爸爸", "pinyin": "bàba", "english": "father", "image": "/assets/lesson3/1.jpg" },
+    { "id": "r2", "chinese": "妈妈", "pinyin": "māma", "english": "mother", "image": "/assets/lesson3/2.jpg" },
+    { "id": "r3", "chinese": "哥哥", "pinyin": "gēge", "english": "older brother", "image": "/assets/lesson3/3.jpg" },
+    { "id": "r4", "chinese": "姐姐", "pinyin": "jiějie", "english": "older sister", "image": "/assets/lesson3/4.jpg" },
+    { "id": "r5", "chinese": "弟弟", "pinyin": "dìdi", "english": "younger brother", "image": "/assets/lesson3/5.jpg" },
+    { "id": "r6", "chinese": "妹妹", "pinyin": "mèimei", "english": "younger sister", "image": "/assets/lesson3/6.jpg" },
+    { "id": "r7", "chinese": "爷爷", "pinyin": "yéye", "english": "grandfather (paternal)", "image": "/assets/lesson3/7.jpg" },
+    { "id": "r8", "chinese": "奶奶", "pinyin": "nǎinai", "english": "grandmother (paternal)", "image": "/assets/lesson3/8.jpg" },
+    { "id": "r9", "chinese": "朋友", "pinyin": "péngyǒu", "english": "friend", "image": "/assets/lesson3/9.jpg" },
+    { "id": "r10", "chinese": "家人", "pinyin": "jiārén", "english": "family member(s)", "image": "/assets/lesson3/10.jpg" }
+  ],
+
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "text": "Which word means 'Older brother'?",
+      "choices": ["dìdi (弟弟)", "gēge (哥哥)", "jiějie (姐姐)", "bàba (爸爸)"],
+      "correct": 1
+    },
+    {
+      "id": "q2",
+      "text": "Which word means 'Grandmother (paternal)'?",
+      "choices": ["nǎinai (奶奶)", "yéye (爷爷)", "māma (妈妈)", "péngyǒu (朋友)"],
+      "correct": 0
+    },
+    {
+      "id": "q3",
+      "text": "Which word means 'Father'?",
+      "choices": ["dìdi (弟弟)", "bàba (爸爸)", "mèimei (妹妹)", "jiārén (家人)"],
+      "correct": 1
+    },
+    {
+      "id": "q4",
+      "text": "Which word means 'Mother'?",
+      "choices": ["māma (妈妈)", "nǎinai (奶奶)", "gēge (哥哥)", "péngyǒu (朋友)"],
+      "correct": 0
+    },
+    {
+      "id": "q5",
+      "text": "Which word means 'Younger sister'?",
+      "choices": ["mèimei (妹妹)", "dìdi (弟弟)", "jiějie (姐姐)", "bàba (爸爸)"],
+      "correct": 0
+    },
+    {
+      "id": "q6",
+      "text": "Which word means 'Grandfather (paternal)'?",
+      "choices": ["yéye (爷爷)", "nǎinai (奶奶)", "māma (妈妈)", "péngyǒu (朋友)"],
+      "correct": 0
+    },
+    {
+      "id": "q7",
+      "text": "Which word means 'Friend'?",
+      "choices": ["jiārén (家人)", "péngyǒu (朋友)", "dìdi (弟弟)", "māma (妈妈)"],
+      "correct": 1
+    },
+    {
+      "id": "q8",
+      "text": "Which word means 'Family member(s)'?",
+      "choices": ["péngyǒu (朋友)", "yéye (爷爷)", "jiārén (家人)", "dìdi (弟弟)"],
+      "correct": 2
+    },
+    {
+      "id": "q9",
+      "text": "Which word means 'Older sister'?",
+      "choices": ["mèimei (妹妹)", "jiějie (姐姐)", "dìdi (弟弟)", "nǎinai (奶奶)"],
+      "correct": 1
+    },
+    {
+      "id": "q10",
+      "text": "Which word means 'Younger brother'?",
+      "choices": ["dìdi (弟弟)", "bàba (爸爸)", "jiārén (家人)", "māma (妈妈)"],
+      "correct": 0
+    }
+  ],
+
+ "matchingTasks": {
+    "relationships": {
+      "left": [
+      { "id": "r1", "label": "Father" },
+      { "id": "r2", "label": "Mother" },
+      { "id": "r3", "label": "Older brother" },
+      { "id": "r4", "label": "Older sister" },
+      { "id": "r5", "label": "Younger brother" },
+      { "id": "r6", "label": "Younger sister" },
+      { "id": "r7", "label": "Grandfather (paternal)" },
+      { "id": "r8", "label": "Grandmother (paternal)" },
+      { "id": "r9", "label": "Friend" },
+      { "id": "r10", "label": "Family member(s)" }
+    ],
+    "right": [
+      { "id": "r1", "label": "bàba" },
+      { "id": "r2", "label": "māma" },
+      { "id": "r3", "label": "gēge" },
+      { "id": "r4", "label": "jiějie" },
+      { "id": "r5", "label": "dìdi" },
+      { "id": "r6", "label": "mèimei" },
+      { "id": "r7", "label": "yéye" },
+      { "id": "r8", "label": "nǎinai" },
+      { "id": "r9", "label": "péngyǒu" },
+      { "id": "r10", "label": "jiārén" }
+    ]
+  }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "爸爸", "audioText": "爸爸", "choices": ["bàba", "māma", "gēge", "dìdi"], "correct": 0 },
+    { "id": "a2", "chinese": "妈妈", "audioText": "妈妈", "choices": ["māma", "jiārén", "péngyǒu", "nǎinai"], "correct": 0 },
+    { "id": "a3", "chinese": "哥哥", "audioText": "哥哥", "choices": ["gēge", "dìdi", "jiějie", "yéye"], "correct": 0 },
+    { "id": "a4", "chinese": "姐姐", "audioText": "姐姐", "choices": ["dìdi", "mèimei", "jiějie", "péngyǒu"], "correct": 2 },
+    { "id": "a5", "chinese": "弟弟", "audioText": "弟弟", "choices": ["dìdi", "gēge", "bàba", "māma"], "correct": 0 },
+    { "id": "a6", "chinese": "妹妹", "audioText": "妹妹", "choices": ["mèimei", "dìdi", "jiějie", "péngyǒu"], "correct": 0 },
+    { "id": "a7", "chinese": "爷爷", "audioText": "爷爷", "choices": ["nǎinai", "yéye", "bàba", "jiārén"], "correct": 1 },
+    { "id": "a8", "chinese": "奶奶", "audioText": "奶奶", "choices": ["yéye", "māma", "nǎinai", "dìdi"], "correct": 2 },
+    { "id": "a9", "chinese": "朋友", "audioText": "朋友", "choices": ["péngyǒu", "jiārén", "mèimei", "gēge"], "correct": 0 },
+    { "id": "a10", "chinese": "家人", "audioText": "家人", "choices": ["péngyǒu", "dìdi", "māma", "jiārén"], "correct": 3 }
+  ]
+}

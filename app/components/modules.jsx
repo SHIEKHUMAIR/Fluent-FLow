@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link'
 const modules = () => {
   return (
     <section
@@ -13,7 +13,7 @@ const modules = () => {
             Learning Modules
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Begin your Chinese learning journey with structured, beginner-friendly modules that build your foundation step-by-step.
+            Begin your Chinese learning journey with structured, beginner-friendly modules that build your foundation step by step.
           </p>
         </div>
 
@@ -26,15 +26,17 @@ const modules = () => {
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
     </svg>
   </div>
-  <h3 className="text-2xl font-bold text-slate-900 mb-4">Pinyin & Pronunciation Basics</h3>
+  <h3 className="text-2xl font-bold text-slate-900 mb-4">UNIT 1: FOUNDATION</h3>
   <p className="text-slate-600 mb-6 leading-relaxed">
     Learn the essential Chinese sounds and tones through native audio, guided pinyin charts, and AI-powered pronunciation practice.
   </p>
   <div className="flex items-center justify-between">
-    <span className="text-sm text-slate-500 font-medium">25 lessons</span>
+    <span className="text-sm text-slate-500 font-medium">10 lessons</span>
+    <Link href="/unit01" scroll={false}>
     <button className="bg-blue-900 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg">
       Start Module
     </button>
+    </Link>
   </div>
 </div>
 

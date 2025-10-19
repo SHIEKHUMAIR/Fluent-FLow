@@ -1,0 +1,84 @@
+{
+  "learningSlides": [
+    { "id": "p1", "chinese": "我", "pinyin": "wǒ", "english": "I / me", "image": "/assets/lesson4/1.jpg" },
+    { "id": "p2", "chinese": "你", "pinyin": "nǐ", "english": "you (informal)", "image": "/assets/lesson4/2.jpg" },
+    { "id": "p3", "chinese": "您", "pinyin": "nín", "english": "you (formal / respectful)", "image": "/assets/lesson4/3.jpg" },
+    { "id": "p4", "chinese": "他", "pinyin": "tā", "english": "he / him", "image": "/assets/lesson4/4.jpg" },
+    { "id": "p5", "chinese": "她", "pinyin": "tā", "english": "she / her", "image": "/assets/lesson4/5.jpg" },
+    { "id": "p6", "chinese": "它", "pinyin": "tā", "english": "it", "image": "/assets/lesson4/6.jpg" },
+    { "id": "p7", "chinese": "我们", "pinyin": "wǒmen", "english": "we / us", "image": "/assets/lesson4/7.jpg" },
+    { "id": "p8", "chinese": "你们", "pinyin": "nǐmen", "english": "you (plural, informal)", "image": "/assets/lesson4/8.jpg" },
+    { "id": "p9", "chinese": "他们", "pinyin": "tāmen", "english": "they / them (male or mixed group)", "image": "/assets/lesson4/9.jpg" },
+    { "id": "p10", "chinese": "她们", "pinyin": "tāmen", "english": "they / them (female group)", "image": "/assets/lesson4/10.jpg" },
+    { "id": "p11", "chinese": "它们", "pinyin": "tāmen", "english": "they / them (objects, animals, abstract things)", "image": "/assets/lesson4/11.jpg" },
+    { "id": "p12", "chinese": "这", "pinyin": "zhè", "english": "this", "image": "/assets/lesson4/12.jpg" },
+    { "id": "p13", "chinese": "人人", "pinyin": "rénrén", "english": "everyone / each person", "image": "/assets/lesson4/13.jpg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "text": "What does 它们 (tāmen) mean?", "choices": ["it", "they / them (female group)", "they / them (objects, animals, abstract things)", "you (plural, informal)"], "correct": 2 },
+    { "id": "q2", "text": "What does 你们 (nǐmen) mean?", "choices": ["you (plural, informal)", "we / us", "they / them (male group)", "this"], "correct": 0 },
+    { "id": "q3", "text": "What does 她 (tā) mean?", "choices": ["he / him", "she / her", "it", "you (formal)"], "correct": 1 },
+    { "id": "q4", "text": "What does 这 (zhè) mean?", "choices": ["everyone", "this", "that", "I / me"], "correct": 1 },
+    { "id": "q5", "text": "What does 他 (tā) mean?", "choices": ["she / her", "he / him", "they / them (objects)", "we / us"], "correct": 1 },
+    { "id": "q6", "text": "What does 您 (nín) mean?", "choices": ["you (formal / respectful)", "you (informal)", "they / them (male group)", "it"], "correct": 0 },
+    { "id": "q7", "text": "What does 我们 (wǒmen) mean?", "choices": ["you (plural, informal)", "everyone", "we / us", "it"], "correct": 2 },
+    { "id": "q8", "text": "What does 她们 (tāmen) mean?", "choices": ["they / them (female group)", "they / them (male or mixed group)", "they / them (objects)", "I / me"], "correct": 0 },
+    { "id": "q9", "text": "What does 你 (nǐ) mean?", "choices": ["you (informal)", "you (formal)", "they / them (female group)", "this"], "correct": 0 },
+    { "id": "q10", "text": "What does 我 (wǒ) mean?", "choices": ["I / me", "he / him", "she / her", "it"], "correct": 0 },
+    { "id": "q11", "text": "What does 人人 (rénrén) mean?", "choices": ["they / them (male group)", "we / us", "everyone / each person", "this"], "correct": 2 },
+    { "id": "q12", "text": "What does 他们 (tāmen) mean?", "choices": ["they / them (male or mixed group)", "they / them (female group)", "you (informal)", "it"], "correct": 0 },
+    { "id": "q13", "text": "What does 它 (tā) mean?", "choices": ["she / her", "he / him", "it", "we / us"], "correct": 2 }
+  ],
+
+  "matchingTasks": {
+    "pronouns": {
+      "left": [
+        { "id": "p1", "label": "I / me" },
+        { "id": "p2", "label": "you (informal)" },
+        { "id": "p3", "label": "you (formal / respectful)" },
+        { "id": "p4", "label": "he / him" },
+        { "id": "p5", "label": "she / her" },
+        { "id": "p6", "label": "it" },
+        { "id": "p7", "label": "we / us" },
+        { "id": "p8", "label": "you (plural, informal)" },
+        { "id": "p9", "label": "they / them (male or mixed group)" },
+        { "id": "p10", "label": "they / them (female group)" },
+        { "id": "p11", "label": "they / them (objects, animals, abstract things)" },
+        { "id": "p12", "label": "this" },
+        { "id": "p13", "label": "everyone / each person" }
+      ],
+      "right": [
+        { "id": "p1", "label": "wǒ" },
+        { "id": "p2", "label": "nǐ" },
+        { "id": "p3", "label": "nín" },
+        { "id": "p4", "label": "tā" },
+        { "id": "p5", "label": "tā" },
+        { "id": "p6", "label": "tā" },
+        { "id": "p7", "label": "wǒmen" },
+        { "id": "p8", "label": "nǐmen" },
+        { "id": "p9", "label": "tāmen" },
+        { "id": "p10", "label": "tāmen" },
+        { "id": "p11", "label": "tāmen" },
+        { "id": "p12", "label": "zhè" },
+        { "id": "p13", "label": "rénrén" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "我", "audioText": "我", "choices": ["wǒ", "nǐ", "tā", "wǒmen"], "correct": 0 },
+    { "id": "a2", "chinese": "你", "audioText": "你", "choices": ["wǒ", "nǐ", "tā", "nín"], "correct": 1 },
+    { "id": "a3", "chinese": "您", "audioText": "您", "choices": ["nǐ", "tā", "nín", "wǒmen"], "correct": 2 },
+    { "id": "a4", "chinese": "他", "audioText": "他", "choices": ["tā", "nǐ", "wǒ", "nín"], "correct": 0 },
+    { "id": "a5", "chinese": "她", "audioText": "她", "choices": ["tā", "tāmen", "wǒmen", "nǐmen"], "correct": 0 },
+    { "id": "a6", "chinese": "它", "audioText": "它", "choices": ["tā", "tāmen", "zhè", "rénrén"], "correct": 0 },
+    { "id": "a7", "chinese": "我们", "audioText": "我们", "choices": ["nǐmen", "wǒmen", "tāmen", "zhè"], "correct": 1 },
+    { "id": "a8", "chinese": "你们", "audioText": "你们", "choices": ["nǐmen", "wǒmen", "tāmen", "nín"], "correct": 0 },
+    { "id": "a9", "chinese": "他们", "audioText": "他们", "choices": ["tāmen", "tā", "nǐmen", "wǒmen"], "correct": 0 },
+    { "id": "a10", "chinese": "她们", "audioText": "她们", "choices": ["tā", "tāmen", "wǒ", "nǐ"], "correct": 1 },
+    { "id": "a11", "chinese": "它们", "audioText": "它们", "choices": ["tāmen", "tā", "rénrén", "zhè"], "correct": 0 },
+    { "id": "a12", "chinese": "这", "audioText": "这", "choices": ["zhè", "tā", "nín", "wǒ"], "correct": 0 },
+    { "id": "a13", "chinese": "人人", "audioText": "人人", "choices": ["rénrén", "wǒmen", "tāmen", "nǐ"], "correct": 0 }
+  ]
+}

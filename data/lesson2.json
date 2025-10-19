@@ -1,0 +1,119 @@
+{
+  "learningSlides": [
+    { "id": "g1", "chinese": "你好", "pinyin": "nǐ hǎo", "english": "hello", "image": "/assets/lesson2/hello.jpg" },
+    { "id": "g2", "chinese": "你好吗？", "pinyin": "nǐ hǎo ma?", "english": "How are you?", "image": "/assets/lesson2/how.jpg" },
+    { "id": "g3", "chinese": "早上好", "pinyin": "zǎo shàng hǎo", "english": "Good morning", "image": "/assets/lesson2/morning.jpg" },
+    { "id": "g4", "chinese": "下午好", "pinyin": "xià wǔ hǎo", "english": "Good afternoon", "image": "/assets/lesson2/afternoon.jpg" },
+    { "id": "g5", "chinese": "晚上好", "pinyin": "wǎn shàng hǎo", "english": "Good evening", "image": "/assets/lesson2/evening.jpg" },
+    { "id": "g6", "chinese": "晚安", "pinyin": "wǎn ān", "english": "Good night", "image": "/assets/lesson2/night.jpg" },
+    { "id": "g7", "chinese": "谢谢", "pinyin": "xiè xiè", "english": "Thank you", "image": "/assets/lesson2/thank.jpg" },
+    { "id": "g8", "chinese": "不客气", "pinyin": "bú kè qì", "english": "You're welcome", "image": "/assets/lesson2/welcome.jpg" },
+    { "id": "g9", "chinese": "对不起", "pinyin": "duì bù qǐ", "english": "Sorry", "image": "/assets/lesson2/sorry.jpg" },
+    { "id": "g10", "chinese": "请", "pinyin": "qǐng", "english": "Please", "image": "/assets/lesson2/please.jpg" }
+  ],
+
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "text": "Which phrase in Chinese means “Please”?",
+      "choices": ["不客气 (bú kè qì)", "谢谢 (xiè xiè)", "请 (qǐng)", "晚上好 (wǎn shàng hǎo)"],
+      "correct": 2
+    },
+    {
+      "id": "q2",
+      "text": "Which phrase in Chinese means “Good night”?",
+      "choices": ["晚安 (wǎn ān)", "早上好 (zǎo shàng hǎo)", "对不起 (duì bù qǐ)", "不客气 (bú kè qì)"],
+      "correct": 0
+    },
+    {
+      "id": "q3",
+      "text": "Which phrase in Chinese means “Hello”?",
+      "choices": ["你好 (nǐ hǎo)", "晚安 (wǎn ān)", "你好吗？ (nǐ hǎo ma?)", "下午好 (xià wǔ hǎo)"],
+      "correct": 0
+    },
+    {
+      "id": "q4",
+      "text": "Which phrase in Chinese means “Sorry”?",
+      "choices": ["对不起 (duì bù qǐ)", "谢谢 (xiè xiè)", "晚上好 (wǎn shàng hǎo)", "请 (qǐng)"],
+      "correct": 0
+    },
+    {
+      "id": "q5",
+      "text": "Which phrase in Chinese means “Thank you”?",
+      "choices": ["谢谢 (xiè xiè)", "不客气 (bú kè qì)", "你好 (nǐ hǎo)", "你好吗？ (nǐ hǎo ma?)"],
+      "correct": 0
+    },
+    {
+      "id": "q6",
+      "text": "Which phrase in Chinese means “Good morning”?",
+      "choices": ["下午好 (xià wǔ hǎo)", "晚上好 (wǎn shàng hǎo)", "早上好 (zǎo shàng hǎo)", "不客气 (bú kè qì)"],
+      "correct": 2
+    },
+    {
+      "id": "q7",
+      "text": "Which phrase in Chinese means “How are you?”",
+      "choices": ["你好 (nǐ hǎo)", "你好吗？ (nǐ hǎo ma?)", "晚安 (wǎn ān)", "请 (qǐng)"],
+      "correct": 1
+    },
+    {
+      "id": "q8",
+      "text": "Which phrase in Chinese means “Good afternoon”?",
+      "choices": ["下午好 (xià wǔ hǎo)", "谢谢 (xiè xiè)", "早上好 (zǎo shàng hǎo)", "对不起 (duì bù qǐ)"],
+      "correct": 0
+    },
+    {
+      "id": "q9",
+      "text": "Which phrase in Chinese means “Good evening”?",
+      "choices": ["晚上好 (wǎn shàng hǎo)", "你好 (nǐ hǎo)", "不客气 (bú kè qì)", "早上好 (zǎo shàng hǎo)"],
+      "correct": 0
+    },
+    {
+      "id": "q10",
+      "text": "Which phrase in Chinese means “You’re welcome”?",
+      "choices": ["对不起 (duì bù qǐ)", "晚安 (wǎn ān)", "谢谢 (xiè xiè)", "不客气 (bú kè qì)"],
+      "correct": 3
+    }
+  ],
+
+  "matchingTasks": {
+    "greetings": {
+      "left": [
+        { "id": "g1", "label": "nǐ hǎo" },
+        { "id": "g2", "label": "nǐ hǎo ma?" },
+        { "id": "g3", "label": "zǎo shàng hǎo" },
+        { "id": "g4", "label": "xià wǔ hǎo" },
+        { "id": "g5", "label": "wǎn shàng hǎo" },
+        { "id": "g6", "label": "wǎn ān" },
+        { "id": "g7", "label": "xiè xiè" },
+        { "id": "g8", "label": "bú kè qì" },
+        { "id": "g9", "label": "duì bù qǐ" },
+        { "id": "g10", "label": "qǐng" }
+      ],
+      "right": [
+        { "id": "g1", "label": "hello" },
+        { "id": "g2", "label": "How are you?" },
+        { "id": "g3", "label": "Good morning" },
+        { "id": "g4", "label": "Good afternoon" },
+        { "id": "g5", "label": "Good evening" },
+        { "id": "g6", "label": "Good night" },
+        { "id": "g7", "label": "Thank you" },
+        { "id": "g8", "label": "You're welcome" },
+        { "id": "g9", "label": "Sorry" },
+        { "id": "g10", "label": "Please" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "你好", "audioText": "你好", "choices": ["nǐ hǎo", "wǎn ān", "zǎo shàng hǎo", "xiè xiè"], "correct": 0 },
+    { "id": "a2", "chinese": "晚安", "audioText": "晚安", "choices": ["wǎn shàng hǎo", "wǎn ān", "bú kè qì", "nǐ hǎo ma?"], "correct": 1 },
+    { "id": "a3", "chinese": "谢谢", "audioText": "谢谢", "choices": ["duì bù qǐ", "qǐng", "xiè xiè", "bú kè qì"], "correct": 2 },
+    { "id": "a4", "chinese": "请", "audioText": "请", "choices": ["bú kè qì", "xiè xiè", "请", "晚安"], "correct": 2 },
+    { "id": "a5", "chinese": "早上好", "audioText": "早上好", "choices": ["zǎo shàng hǎo", "xià wǔ hǎo", "wǎn ān", "nǐ hǎo"], "correct": 0 },
+    { "id": "a6", "chinese": "对不起", "audioText": "对不起", "choices": ["bú kè qì", "duì bù qǐ", "xiè xiè", "zǎo shàng hǎo"], "correct": 1 },
+    { "id": "a7", "chinese": "下午好", "audioText": "下午好", "choices": ["xià wǔ hǎo", "zǎo shàng hǎo", "wǎn shàng hǎo", "nǐ hǎo ma?"], "correct": 0 },
+    { "id": "a8", "chinese": "不客气", "audioText": "不客气", "choices": ["xiè xiè", "bú kè qì", "duì bù qǐ", "wǎn ān"], "correct": 1 },
+    { "id": "a9", "chinese": "晚上好", "audioText": "晚上好", "choices": ["wǎn shàng hǎo", "zǎo shàng hǎo", "xià wǔ hǎo", "nǐ hǎo"], "correct": 0 },
+    { "id": "a10", "chinese": "你好吗？", "audioText": "你好吗？", "choices": ["wǎn ān", "nǐ hǎo", "nǐ hǎo ma?", "qǐng"], "correct": 2 }
+  ]
+}

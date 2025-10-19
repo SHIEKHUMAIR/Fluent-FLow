@@ -1,0 +1,127 @@
+{
+  "learningSlides": [
+    { "id": "d1", "chinese": "今天", "pinyin": "jīntiān", "english": "today", "image": "/assets/lesson8/1.jpg" },
+    { "id": "d2", "chinese": "明天", "pinyin": "míngtiān", "english": "tomorrow", "image": "/assets/lesson8/2.jpg" },
+    { "id": "d3", "chinese": "昨天", "pinyin": "zuótiān", "english": "yesterday", "image": "/assets/lesson8/3.jpg" },
+    { "id": "d4", "chinese": "早上", "pinyin": "zǎoshang", "english": "morning", "image": "/assets/lesson8/4.jpg" },
+    { "id": "d5", "chinese": "下午", "pinyin": "xiàwǔ", "english": "afternoon", "image": "/assets/lesson8/5.jpg" },
+    { "id": "d6", "chinese": "晚上", "pinyin": "wǎnshang", "english": "evening", "image": "/assets/lesson8/6.jpg" },
+    { "id": "d7", "chinese": "星期", "pinyin": "xīngqī", "english": "week", "image": "/assets/lesson8/7.jpg" },
+    { "id": "d8", "chinese": "月", "pinyin": "yuè", "english": "month", "image": "/assets/lesson8/8.jpg" },
+    { "id": "d9", "chinese": "年", "pinyin": "nián", "english": "year", "image": "/assets/lesson8/9.jpg" },
+    { "id": "d10", "chinese": "点", "pinyin": "diǎn", "english": "o’clock", "image": "/assets/lesson8/10.jpg" },
+    { "id": "d11", "chinese": "分钟", "pinyin": "fēnzhōng", "english": "minute", "image": "/assets/lesson8/11.jpg" },
+    { "id": "d12", "chinese": "现在", "pinyin": "xiànzài", "english": "now", "image": "/assets/lesson8/12.jpg" }
+  ],
+
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "text": "Which of the following means 'today'?",
+      "choices": ["míngtiān", "jīntiān", "zuótiān", "xiànzài"],
+      "correct": 1
+    },
+    {
+      "id": "q2",
+      "text": "The word 'wǎnshang' means:",
+      "choices": ["afternoon", "morning", "evening", "now"],
+      "correct": 2
+    },
+    {
+      "id": "q3",
+      "text": "'Minute' in Chinese is:",
+      "choices": ["diǎn", "fēnzhōng", "nián", "yuè"],
+      "correct": 1
+    },
+    {
+      "id": "q4",
+      "text": "Which word means 'week'?",
+      "choices": ["yuè", "xīngqī", "zǎoshang", "zuótiān"],
+      "correct": 1
+    },
+    {
+      "id": "q5",
+      "text": "The pinyin for 'o’clock' is:",
+      "choices": ["diǎn", "fēnzhōng", "míngtiān", "zǎoshang"],
+      "correct": 0
+    },
+    {
+      "id": "q6",
+      "text": "Which word means 'month'?",
+      "choices": ["xīngqī", "yuè", "nián", "diǎn"],
+      "correct": 1
+    },
+    {
+      "id": "q7",
+      "text": "The word 'nián' means:",
+      "choices": ["week", "month", "year", "now"],
+      "correct": 2
+    },
+    {
+      "id": "q8",
+      "text": "Which word means 'yesterday'?",
+      "choices": ["zuótiān", "míngtiān", "jīntiān", "xiànzài"],
+      "correct": 0
+    },
+    {
+      "id": "q9",
+      "text": "Which word means 'tomorrow'?",
+      "choices": ["zuótiān", "míngtiān", "zǎoshang", "nián"],
+      "correct": 1
+    },
+    {
+      "id": "q10",
+      "text": "Which word means 'now'?",
+      "choices": ["xiànzài", "jīntiān", "zǎoshang", "wǎnshang"],
+      "correct": 0
+    }
+  ],
+
+  "matchingTasks": {
+    "days_time": {
+      "left": [
+        { "id": "d1", "label": "today" },
+        { "id": "d2", "label": "tomorrow" },
+        { "id": "d3", "label": "yesterday" },
+        { "id": "d4", "label": "morning" },
+        { "id": "d5", "label": "afternoon" },
+        { "id": "d6", "label": "evening" },
+        { "id": "d7", "label": "week" },
+        { "id": "d8", "label": "month" },
+        { "id": "d9", "label": "year" },
+        { "id": "d10", "label": "o’clock" },
+        { "id": "d11", "label": "minute" },
+        { "id": "d12", "label": "now" }
+      ],
+      "right": [
+        { "id": "d1", "label": "今天 (jīntiān)" },
+        { "id": "d2", "label": "明天 (míngtiān)" },
+        { "id": "d3", "label": "昨天 (zuótiān)" },
+        { "id": "d4", "label": "早上 (zǎoshang)" },
+        { "id": "d5", "label": "下午 (xiàwǔ)" },
+        { "id": "d6", "label": "晚上 (wǎnshang)" },
+        { "id": "d7", "label": "星期 (xīngqī)" },
+        { "id": "d8", "label": "月 (yuè)" },
+        { "id": "d9", "label": "年 (nián)" },
+        { "id": "d10", "label": "点 (diǎn)" },
+        { "id": "d11", "label": "分钟 (fēnzhōng)" },
+        { "id": "d12", "label": "现在 (xiànzài)" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "今天", "audioText": "今天", "choices": ["jīntiān", "míngtiān", "zuótiān", "xiànzài"], "correct": 0 },
+    { "id": "a2", "chinese": "明天", "audioText": "明天", "choices": ["zuótiān", "míngtiān", "早上", "下午"], "correct": 1 },
+    { "id": "a3", "chinese": "昨天", "audioText": "昨天", "choices": ["明天", "晚上", "昨天", "现在"], "correct": 2 },
+    { "id": "a4", "chinese": "早上", "audioText": "早上", "choices": ["下午", "早上", "晚上", "星期"], "correct": 1 },
+    { "id": "a5", "chinese": "下午", "audioText": "下午", "choices": ["早上", "晚上", "下午", "点"], "correct": 2 },
+    { "id": "a6", "chinese": "晚上", "audioText": "晚上", "choices": ["晚上", "今天", "星期", "月"], "correct": 0 },
+    { "id": "a7", "chinese": "星期", "audioText": "星期", "choices": ["星期", "年", "月", "分钟"], "correct": 0 },
+    { "id": "a8", "chinese": "月", "audioText": "月", "choices": ["年", "月", "点", "现在"], "correct": 1 },
+    { "id": "a9", "chinese": "年", "audioText": "年", "choices": ["年", "月", "天", "分钟"], "correct": 0 },
+    { "id": "a10", "chinese": "点", "audioText": "点", "choices": ["分钟", "点", "现在", "早上"], "correct": 1 },
+    { "id": "a11", "chinese": "分钟", "audioText": "分钟", "choices": ["点", "分钟", "年", "月"], "correct": 1 },
+    { "id": "a12", "chinese": "现在", "audioText": "现在", "choices": ["现在", "今天", "早上", "晚上"], "correct": 0 }
+  ]
+}

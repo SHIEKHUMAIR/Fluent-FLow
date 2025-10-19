@@ -1,0 +1,65 @@
+{
+  "learningSlides": [
+    { "id": "ma1", "chinese": "妈", "pinyin": "mā", "english": "mother", "image": "/assets/lesson1/mother.jpg" },
+    { "id": "ma2", "chinese": "麻", "pinyin": "má", "english": "hemp", "image": "/assets/lesson1/hemp.jpg" },
+    { "id": "ma3", "chinese": "马", "pinyin": "mǎ", "english": "horse", "image": "/assets/lesson1/horse.jpg" },
+    { "id": "ma4", "chinese": "骂", "pinyin": "mà", "english": "scold", "image": "/assets/lesson1/scold.jpg" },
+    { "id": "ba1", "chinese": "八", "pinyin": "bā", "english": "eight", "image": "/assets/lesson1/eight.jpg" },
+    { "id": "ba2", "chinese": "拔", "pinyin": "bá", "english": "pull", "image": "/assets/lesson1/pull.jpg" },
+    { "id": "ba3", "chinese": "把", "pinyin": "bǎ", "english": "hold", "image": "/assets/lesson1/hold.jpg" },
+    { "id": "ba4", "chinese": "爸", "pinyin": "bà", "english": "dad", "image": "/assets/lesson1/dad.jpg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson1/horse.jpg", "choices": ["mā", "má", "mǎ", "mà"], "correct": 2 },
+    { "id": "q2", "image": "/assets/lesson1/mother.jpg", "choices": ["mā", "má", "mǎ", "mà"], "correct": 0 },
+    { "id": "q3", "image": "/assets/lesson1/hemp.jpg", "choices": ["mā", "má", "mǎ", "mà"], "correct": 1 },
+    { "id": "q4", "image": "/assets/lesson1/scold.jpg", "choices": ["mā", "má", "mǎ", "mà"], "correct": 3 },
+    { "id": "q5", "image": "/assets/lesson1/hold.jpg", "choices": ["bā", "bá", "bǎ", "bà"], "correct": 2 },
+    { "id": "q6", "image": "/assets/lesson1/pull.jpg", "choices": ["bā", "bá", "bǎ", "bà"], "correct": 1 },
+    { "id": "q7", "image": "/assets/lesson1/eight.jpg", "choices": ["bā", "bá", "bǎ", "bà"], "correct": 0 },
+    { "id": "q8", "image": "/assets/lesson1/dad.jpg", "choices": ["bā", "bá", "bǎ", "bà"], "correct": 3 }
+  ],
+
+  "matchingTasks": {
+    "ma": {
+      "left": [
+        { "id": "ma1", "label": "mā" },
+        { "id": "ma2", "label": "má" },
+        { "id": "ma3", "label": "mǎ" },
+        { "id": "ma4", "label": "mà" }
+      ],
+      "right": [
+        { "id": "ma1", "label": "mother" },
+        { "id": "ma2", "label": "hemp" },
+        { "id": "ma3", "label": "horse" },
+        { "id": "ma4", "label": "scold" }
+      ]
+    },
+    "ba": {
+      "left": [
+        { "id": "ba1", "label": "bā" },
+        { "id": "ba2", "label": "bá" },
+        { "id": "ba3", "label": "bǎ" },
+        { "id": "ba4", "label": "bà" }
+      ],
+      "right": [
+        { "id": "ba1", "label": "eight" },
+        { "id": "ba2", "label": "pull" },
+        { "id": "ba3", "label": "hold" },
+        { "id": "ba4", "label": "dad" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "妈", "audioText": "妈", "choices": ["mā", "má", "mǎ", "mà"], "correct": 0 },
+    { "id": "a2", "chinese": "麻", "audioText": "麻", "choices": ["mā", "má", "mǎ", "mà"], "correct": 1 },
+    { "id": "a3", "chinese": "马", "audioText": "马", "choices": ["mā", "má", "mǎ", "mà"], "correct": 2 },
+    { "id": "a4", "chinese": "骂", "audioText": "骂", "choices": ["mā", "má", "mǎ", "mà"], "correct": 3 },
+    { "id": "a5", "chinese": "八", "audioText": "八", "choices": ["bā", "bá", "bǎ", "bà"], "correct": 0 },
+    { "id": "a6", "chinese": "拔", "audioText": "拔", "choices": ["bā", "bá", "bǎ", "bà"], "correct": 1 },
+    { "id": "a7", "chinese": "把", "audioText": "把", "choices": ["bā", "bá", "bǎ", "bà"], "correct": 2 },
+    { "id": "a8", "chinese": "爸", "audioText": "爸", "choices": ["bā", "bá", "bǎ", "bà"], "correct": 3 }
+  ]
+}

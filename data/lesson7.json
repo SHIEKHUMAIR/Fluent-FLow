@@ -1,0 +1,151 @@
+{
+  "learningSlides": [
+    { "id": "p1", "chinese": "请问", "pinyin": "qǐngwèn", "english": "excuse me", "image": "/assets/lesson7/1.jpg" },
+    { "id": "p2", "chinese": "厕所", "pinyin": "cèsuǒ", "english": "toilet", "image": "/assets/lesson7/2.jpg" },
+    { "id": "p3", "chinese": "哪里", "pinyin": "nǎlǐ", "english": "where", "image": "/assets/lesson7/3.jpg" },
+    { "id": "p4", "chinese": "怎么", "pinyin": "zěnme", "english": "how", "image": "/assets/lesson7/4.jpg" },
+    { "id": "p5", "chinese": "可以", "pinyin": "kěyǐ", "english": "can / may", "image": "/assets/lesson7/5.jpg" },
+    { "id": "p6", "chinese": "要", "pinyin": "yào", "english": "want", "image": "/assets/lesson7/6.jpg" },
+    { "id": "p7", "chinese": "喜欢", "pinyin": "xǐhuan", "english": "like", "image": "/assets/lesson7/7.jpg" },
+    { "id": "p8", "chinese": "不要", "pinyin": "bú yào", "english": "don't want", "image": "/assets/lesson7/8.jpg" },
+    { "id": "p9", "chinese": "好", "pinyin": "hǎo", "english": "good", "image": "/assets/lesson7/9.jpg" },
+    { "id": "p10", "chinese": "不好", "pinyin": "bù hǎo", "english": "not good", "image": "/assets/lesson7/10.jpg" },
+    { "id": "p11", "chinese": "行", "pinyin": "xíng", "english": "okay", "image": "/assets/lesson7/11.jpg" },
+    { "id": "p12", "chinese": "明白", "pinyin": "míngbai", "english": "understand", "image": "/assets/lesson7/12.jpg" }
+  ],
+
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "text": "Which of the following means 'excuse me'?",
+      "choices": ["cèsuǒ", "qǐngwèn", "míngbai", "bù hǎo"],
+      "correct": 1
+    },
+    {
+      "id": "q2",
+      "text": "The word 'yào' means:",
+      "choices": ["like", "want", "don't want", "understand"],
+      "correct": 1
+    },
+    {
+      "id": "q3",
+      "text": "Which one is 'don't want'?",
+      "choices": ["bú yào", "xǐhuan", "xíng", "hǎo"],
+      "correct": 0
+    },
+    {
+      "id": "q4",
+      "text": "The pinyin for 'understand' is:",
+      "choices": ["míngbai", "kěyǐ", "qǐngwèn", "xíng"],
+      "correct": 0
+    },
+    {
+      "id": "q5",
+      "text": "Which phrase means 'toilet'?",
+      "choices": ["xǐhuan", "nǎlǐ", "cèsuǒ", "hǎo"],
+      "correct": 2
+    },
+    {
+      "id": "q6",
+      "text": "Which word means 'where'?",
+      "choices": ["zěnme", "nǎlǐ", "xíng", "hǎo"],
+      "correct": 1
+    },
+    {
+      "id": "q7",
+      "text": "The word 'zěnme' is used for asking:",
+      "choices": ["What", "How", "Where", "Why"],
+      "correct": 1
+    },
+    {
+      "id": "q8",
+      "text": "Which word means 'still'?",
+      "choices": ["dōu", "bú yào", "hái", "míngbai"],
+      "correct": 2
+    },
+    {
+      "id": "q9",
+      "text": "Which word means 'all / everyone'?",
+      "choices": ["bú yào", "xíng", "hǎo", "dōu"],
+      "correct": 3
+    },
+    {
+      "id": "q10",
+      "text": "Which word means 'good'?",
+      "choices": ["hǎo", "bù hǎo", "míngbai", "yào"],
+      "correct": 0
+    },
+    {
+      "id": "q11",
+      "text": "Which word means 'not good'?",
+      "choices": ["好 (hǎo)", "不好 (bù hǎo)", "行 (xíng)", "明白 (míngbai)"],
+      "correct": 1
+    },
+    {
+      "id": "q12",
+      "text": "How do you say 'can / may' in Chinese?",
+      "choices": ["kěyǐ", "xǐhuan", "bú yào", "míngbai"],
+      "correct": 0
+    },
+    {
+      "id": "q13",
+      "text": "Which word means 'okay'?",
+      "choices": ["好 (hǎo)", "喜欢 (xǐhuan)", "行 (xíng)", "请问 (qǐngwèn)"],
+      "correct": 2
+    },
+    {
+      "id": "q14",
+      "text": "Which word means 'like'?",
+      "choices": ["喜欢 (xǐhuan)", "要 (yào)", "明白 (míngbai)", "可以 (kěyǐ)"],
+      "correct": 0
+    }
+  ],
+
+  "matchingTasks": {
+    "polite_phrases": {
+      "left": [
+        { "id": "p1", "label": "excuse me" },
+        { "id": "p2", "label": "toilet" },
+        { "id": "p3", "label": "where" },
+        { "id": "p4", "label": "how" },
+        { "id": "p5", "label": "can / may" },
+        { "id": "p6", "label": "want" },
+        { "id": "p7", "label": "like" },
+        { "id": "p8", "label": "don't want" },
+        { "id": "p9", "label": "good" },
+        { "id": "p10", "label": "not good" },
+        { "id": "p11", "label": "okay" },
+        { "id": "p12", "label": "understand" }
+      ],
+      "right": [
+        { "id": "p1", "label": "请问 (qǐngwèn)" },
+        { "id": "p2", "label": "厕所 (cèsuǒ)" },
+        { "id": "p3", "label": "哪里 (nǎlǐ)" },
+        { "id": "p4", "label": "怎么 (zěnme)" },
+        { "id": "p5", "label": "可以 (kěyǐ)" },
+        { "id": "p6", "label": "要 (yào)" },
+        { "id": "p7", "label": "喜欢 (xǐhuan)" },
+        { "id": "p8", "label": "不要 (bú yào)" },
+        { "id": "p9", "label": "好 (hǎo)" },
+        { "id": "p10", "label": "不好 (bù hǎo)" },
+        { "id": "p11", "label": "行 (xíng)" },
+        { "id": "p12", "label": "明白 (míngbai)" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "请问", "audioText": "请问", "choices": ["qǐngwèn", "cèsuǒ", "nǎlǐ", "zěnme"], "correct": 0 },
+    { "id": "a2", "chinese": "厕所", "audioText": "厕所", "choices": ["míngbai", "hǎo", "cèsuǒ", "bú yào"], "correct": 2 },
+    { "id": "a3", "chinese": "哪里", "audioText": "哪里", "choices": ["nǎlǐ", "xǐhuan", "yào", "xíng"], "correct": 0 },
+    { "id": "a4", "chinese": "怎么", "audioText": "怎么", "choices": ["zěnme", "kěyǐ", "bú yào", "míngbai"], "correct": 0 },
+    { "id": "a5", "chinese": "可以", "audioText": "可以", "choices": ["kěyǐ", "hǎo", "xíng", "yào"], "correct": 0 },
+    { "id": "a6", "chinese": "要", "audioText": "要", "choices": ["yào", "bú yào", "xǐhuan", "zěnme"], "correct": 0 },
+    { "id": "a7", "chinese": "喜欢", "audioText": "喜欢", "choices": ["bú yào", "xǐhuan", "cèsuǒ", "míngbai"], "correct": 1 },
+    { "id": "a8", "chinese": "不要", "audioText": "不要", "choices": ["yào", "bú yào", "hǎo", "xǐhuan"], "correct": 1 },
+    { "id": "a9", "chinese": "好", "audioText": "好", "choices": ["bù hǎo", "xíng", "hǎo", "míngbai"], "correct": 2 },
+    { "id": "a10", "chinese": "不好", "audioText": "不好", "choices": ["bú yào", "bù hǎo", "xǐhuan", "kěyǐ"], "correct": 1 },
+    { "id": "a11", "chinese": "行", "audioText": "行", "choices": ["hǎo", "xíng", "yào", "míngbai"], "correct": 1 },
+    { "id": "a12", "chinese": "明白", "audioText": "明白", "choices": ["míngbai", "kěyǐ", "zěnme", "bú yào"], "correct": 0 }
+  ]
+}

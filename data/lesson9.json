@@ -1,0 +1,143 @@
+{
+  "learningSlides": [
+    { "id": "s1", "chinese": "名字", "pinyin": "míngzi", "english": "name", "image": "/assets/lesson9/1.jpg" },
+    { "id": "s2", "chinese": "学生", "pinyin": "xuésheng", "english": "student", "image": "/assets/lesson9/2.jpg" },
+    { "id": "s3", "chinese": "老师", "pinyin": "lǎoshī", "english": "teacher", "image": "/assets/lesson9/3.jpg" },
+    { "id": "s4", "chinese": "中国", "pinyin": "Zhōngguó", "english": "China", "image": "/assets/lesson9/4.jpg" },
+    { "id": "s5", "chinese": "美国", "pinyin": "Měiguó", "english": "USA", "image": "/assets/lesson9/5.jpg" },
+    { "id": "s6", "chinese": "英国", "pinyin": "Yīngguó", "english": "UK", "image": "/assets/lesson9/6.jpg" },
+    { "id": "s7", "chinese": "会", "pinyin": "huì", "english": "can / know how", "image": "/assets/lesson9/7.jpg" },
+    { "id": "s8", "chinese": "说", "pinyin": "shuō", "english": "speak", "image": "/assets/lesson9/8.jpg" },
+    { "id": "s9", "chinese": "中文", "pinyin": "Zhōngwén", "english": "Chinese", "image": "/assets/lesson9/9.jpg" },
+    { "id": "s10", "chinese": "英文", "pinyin": "Yīngwén", "english": "English", "image": "/assets/lesson9/10.jpg" },
+    { "id": "s11", "chinese": "哪国人", "pinyin": "nǎ guó rén", "english": "which nationality", "image": "/assets/lesson9/11.jpg" },
+    { "id": "s12", "chinese": "欢迎", "pinyin": "huānyíng", "english": "welcome", "image": "/assets/lesson9/12.jpg" },
+    { "id": "s13", "chinese": "巴基斯坦", "pinyin": "Bājīsītǎn", "english": "Pakistan", "image": "/assets/lesson9/13.jpg" }
+  ],
+
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "text": "Which of the following means 'student'?",
+      "choices": ["lǎoshī", "xuésheng", "huānyíng", "shuō"],
+      "correct": 1
+    },
+    {
+      "id": "q2",
+      "text": "'Name' in pinyin is:",
+      "choices": ["Yīngwén", "míngzi", "Zhōngguó", "nǎ guó rén"],
+      "correct": 1
+    },
+    {
+      "id": "q3",
+      "text": "Which word means 'welcome'?",
+      "choices": ["Zhōngwén", "huānyíng", "shuō", "huì"],
+      "correct": 1
+    },
+    {
+      "id": "q4",
+      "text": "The pinyin for 'USA' is:",
+      "choices": ["Zhōngguó", "Měiguó", "Yīngguó", "Bājīsītǎn"],
+      "correct": 1
+    },
+    {
+      "id": "q5",
+      "text": "Which of these is 'Chinese language'?",
+      "choices": ["Zhōngwén", "Yīngwén", "huì", "míngzi"],
+      "correct": 0
+    },
+    {
+      "id": "q6",
+      "text": "The word 'shuō' means:",
+      "choices": ["teacher", "speak", "student", "can / know how"],
+      "correct": 1
+    },
+    {
+      "id": "q7",
+      "text": "Which word means 'China'?",
+      "choices": ["Měiguó", "Yīngguó", "Zhōngguó", "huānyíng"],
+      "correct": 2
+    },
+    {
+      "id": "q8",
+      "text": "The word 'Yīngguó' means:",
+      "choices": ["USA", "UK", "China", "Pakistan"],
+      "correct": 1
+    },
+    {
+      "id": "q9",
+      "text": "Which of these is 'English language'?",
+      "choices": ["Zhōngguó", "Yīngwén", "Zhōngwén", "huì"],
+      "correct": 1
+    },
+    {
+      "id": "q10",
+      "text": "Which of the following means 'can / know how'?",
+      "choices": ["shuō", "huì", "míngzi", "huānyíng"],
+      "correct": 1
+    },
+    {
+      "id": "q11",
+      "text": "Which phrase is used to ask 'which nationality'?",
+      "choices": ["Zhōngguó", "nǎ guó rén", "Yīngguó", "míngzi"],
+      "correct": 1
+    },
+    {
+      "id": "q12",
+      "text": "Which word means 'Pakistan'?",
+      "choices": ["Yīngwén", "Zhōngguó", "Bājīsītǎn", "xuésheng"],
+      "correct": 2
+    }
+  ],
+
+  "matchingTasks": {
+    "review_intro": {
+      "left": [
+        { "id": "s1", "label": "name" },
+        { "id": "s2", "label": "student" },
+        { "id": "s3", "label": "teacher" },
+        { "id": "s4", "label": "China" },
+        { "id": "s5", "label": "USA" },
+        { "id": "s6", "label": "UK" },
+        { "id": "s7", "label": "can / know how" },
+        { "id": "s8", "label": "speak" },
+        { "id": "s9", "label": "Chinese language" },
+        { "id": "s10", "label": "English language" },
+        { "id": "s11", "label": "which nationality" },
+        { "id": "s12", "label": "welcome" },
+        { "id": "s13", "label": "Pakistan" }
+      ],
+      "right": [
+        { "id": "s1", "label": "名字 (míngzi)" },
+        { "id": "s2", "label": "学生 (xuésheng)" },
+        { "id": "s3", "label": "老师 (lǎoshī)" },
+        { "id": "s4", "label": "中国 (Zhōngguó)" },
+        { "id": "s5", "label": "美国 (Měiguó)" },
+        { "id": "s6", "label": "英国 (Yīngguó)" },
+        { "id": "s7", "label": "会 (huì)" },
+        { "id": "s8", "label": "说 (shuō)" },
+        { "id": "s9", "label": "中文 (Zhōngwén)" },
+        { "id": "s10", "label": "英文 (Yīngwén)" },
+        { "id": "s11", "label": "哪国人 (nǎ guó rén)" },
+        { "id": "s12", "label": "欢迎 (huānyíng)" },
+        { "id": "s13", "label": "巴基斯坦 (Bājīsītǎn)" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "名字", "audioText": "名字", "choices": ["míngzi", "xuésheng", "lǎoshī", "huì"], "correct": 0 },
+    { "id": "a2", "chinese": "学生", "audioText": "学生", "choices": ["xuésheng", "lǎoshī", "Zhōngguó", "Měiguó"], "correct": 0 },
+    { "id": "a3", "chinese": "老师", "audioText": "老师", "choices": ["xuésheng", "lǎoshī", "Yīngguó", "shuō"], "correct": 1 },
+    { "id": "a4", "chinese": "中国", "audioText": "中国", "choices": ["Yīngguó", "Zhōngguó", "Měiguó", "Bājīsītǎn"], "correct": 1 },
+    { "id": "a5", "chinese": "美国", "audioText": "美国", "choices": ["Zhōngguó", "Měiguó", "Yīngguó", "huānyíng"], "correct": 1 },
+    { "id": "a6", "chinese": "英国", "audioText": "英国", "choices": ["Yīngguó", "Zhōngguó", "Bājīsītǎn", "Zhōngwén"], "correct": 0 },
+    { "id": "a7", "chinese": "会", "audioText": "会", "choices": ["shuō", "huì", "míngzi", "Yīngwén"], "correct": 1 },
+    { "id": "a8", "chinese": "说", "audioText": "说", "choices": ["Zhōngwén", "huānyíng", "shuō", "Zhōngguó"], "correct": 2 },
+    { "id": "a9", "chinese": "中文", "audioText": "中文", "choices": ["Zhōngwén", "Yīngwén", "xuésheng", "míngzi"], "correct": 0 },
+    { "id": "a10", "chinese": "英文", "audioText": "英文", "choices": ["Zhōngwén", "Yīngwén", "Zhōngguó", "Bājīsītǎn"], "correct": 1 },
+    { "id": "a11", "chinese": "哪国人", "audioText": "哪国人", "choices": ["nǎ guó rén", "míngzi", "Zhōngguó", "Yīngwén"], "correct": 0 },
+    { "id": "a12", "chinese": "欢迎", "audioText": "欢迎", "choices": ["huānyíng", "shuō", "huì", "xuésheng"], "correct": 0 },
+    { "id": "a13", "chinese": "巴基斯坦", "audioText": "巴基斯坦", "choices": ["Zhōngguó", "Bājīsītǎn", "Měiguó", "Yīngguó"], "correct": 1 }
+  ]
+}

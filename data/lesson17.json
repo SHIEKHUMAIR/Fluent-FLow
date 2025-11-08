@@ -1,0 +1,80 @@
+{
+    "learningSlides": [
+      { "id": "review1", "chinese": "饭店", "pinyin": "fàndiàn", "english": "restaurant", "image": "/assets/lesson17/restaurant.jpg" },
+      { "id": "review2", "chinese": "商店", "pinyin": "shāngdiàn", "english": "store", "image": "/assets/lesson17/store.jpg" },
+      { "id": "review3", "chinese": "学校", "pinyin": "xuéxiào", "english": "school", "image": "/assets/lesson17/school.jpg" },
+      { "id": "review4", "chinese": "医院", "pinyin": "yīyuàn", "english": "hospital", "image": "/assets/lesson17/hospital.jpg" },
+      { "id": "review5", "chinese": "银行", "pinyin": "yínháng", "english": "bank", "image": "/assets/lesson17/bank.jpg" },
+      { "id": "review6", "chinese": "公园", "pinyin": "gōngyuán", "english": "park", "image": "/assets/lesson17/park.jpg" },
+      { "id": "review7", "chinese": "机场", "pinyin": "jīchǎng", "english": "airport", "image": "/assets/lesson17/airport.jpg" },
+      { "id": "review8", "chinese": "火车站", "pinyin": "huǒchē zhàn", "english": "train station", "image": "/assets/lesson17/trainstation.jpg" },
+      { "id": "review9", "chinese": "家", "pinyin": "jiā", "english": "home", "image": "/assets/lesson17/home.jpg" },
+      { "id": "review10", "chinese": "办公室", "pinyin": "bàngōngshì", "english": "office", "image": "/assets/lesson17/office.jpg" },
+      { "id": "review11", "chinese": "邮局", "pinyin": "yóujú", "english": "post office", "image": "/assets/lesson17/postoffice.jpg" },
+      { "id": "review12", "chinese": "街", "pinyin": "jiē", "english": "street", "image": "/assets/lesson17/street.jpg" }
+    ],
+  
+    "mcqQuestions": [
+      { "id": "q1", "image": "/assets/lesson17/restaurant.jpg", "choices": ["fàndiàn", "xuéxiào", "shāngdiàn", "yīyuàn"], "correct": 0 },
+      { "id": "q2", "image": "/assets/lesson17/store.jpg", "choices": ["fàndiàn", "shāngdiàn", "yínháng", "jiē"], "correct": 1 },
+      { "id": "q3", "image": "/assets/lesson17/school.jpg", "choices": ["yínháng", "xuéxiào", "bàngōngshì", "jiā"], "correct": 1 },
+      { "id": "q4", "image": "/assets/lesson17/hospital.jpg", "choices": ["bàngōngshì", "yīyuàn", "shāngdiàn", "fàndiàn"], "correct": 1 },
+      { "id": "q5", "image": "/assets/lesson17/bank.jpg", "choices": ["yínháng", "gōngyuán", "bàngōngshì", "fàndiàn"], "correct": 0 },
+      { "id": "q6", "image": "/assets/lesson17/park.jpg", "choices": ["gōngyuán", "fàndiàn", "jiē", "yóujú"], "correct": 0 },
+      { "id": "q7", "image": "/assets/lesson17/airport.jpg", "choices": ["jīchǎng", "gōngjiāochē", "huǒchē", "bàngōngshì"], "correct": 0 },
+      { "id": "q8", "image": "/assets/lesson17/trainstation.jpg", "choices": ["huǒchē zhàn", "dìtiě", "gōngjiāochē", "lù"], "correct": 0 },
+      { "id": "q9", "image": "/assets/lesson17/home.jpg", "choices": ["jiā", "xuéxiào", "bàngōngshì", "shāngdiàn"], "correct": 0 },
+      { "id": "q10", "image": "/assets/lesson17/office.jpg", "choices": ["yínháng", "bàngōngshì", "xuéxiào", "jiā"], "correct": 1 },
+      { "id": "q11", "image": "/assets/lesson17/postoffice.jpg", "choices": ["xuéxiào", "yóujú", "shāngdiàn", "yínháng"], "correct": 1 },
+      { "id": "q12", "image": "/assets/lesson17/street.jpg", "choices": ["jiē", "lù", "dìtú", "zhàn"], "correct": 0 }
+    ],
+  
+    "matchingTasks": {
+      "review": {
+        "left": [
+          { "id": "review1", "label": "fàndiàn" },
+          { "id": "review2", "label": "shāngdiàn" },
+          { "id": "review3", "label": "xuéxiào" },
+          { "id": "review4", "label": "yīyuàn" },
+          { "id": "review5", "label": "yínháng" },
+          { "id": "review6", "label": "gōngyuán" },
+          { "id": "review7", "label": "jīchǎng" },
+          { "id": "review8", "label": "huǒchē zhàn" },
+          { "id": "review9", "label": "jiā" },
+          { "id": "review10", "label": "bàngōngshì" },
+          { "id": "review11", "label": "yóujú" },
+          { "id": "review12", "label": "jiē" }
+        ],
+        "right": [
+          { "id": "review1", "label": "restaurant" },
+          { "id": "review2", "label": "store" },
+          { "id": "review3", "label": "school" },
+          { "id": "review4", "label": "hospital" },
+          { "id": "review5", "label": "bank" },
+          { "id": "review6", "label": "park" },
+          { "id": "review7", "label": "airport" },
+          { "id": "review8", "label": "train station" },
+          { "id": "review9", "label": "home" },
+          { "id": "review10", "label": "office" },
+          { "id": "review11", "label": "post office" },
+          { "id": "review12", "label": "street" }
+        ]
+      }
+    },
+  
+    "audioQuiz": [
+      { "id": "a1", "chinese": "饭店", "audioText": "饭店", "choices": ["fàndiàn", "xuéxiào", "shāngdiàn", "yīyuàn"], "correct": 0 },
+      { "id": "a2", "chinese": "商店", "audioText": "商店", "choices": ["fàndiàn", "shāngdiàn", "yínháng", "jiē"], "correct": 1 },
+      { "id": "a3", "chinese": "学校", "audioText": "学校", "choices": ["yínháng", "xuéxiào", "bàngōngshì", "jiā"], "correct": 1 },
+      { "id": "a4", "chinese": "医院", "audioText": "医院", "choices": ["bàngōngshì", "yīyuàn", "shāngdiàn", "fàndiàn"], "correct": 1 },
+      { "id": "a5", "chinese": "银行", "audioText": "银行", "choices": ["yínháng", "gōngyuán", "bàngōngshì", "fàndiàn"], "correct": 0 },
+      { "id": "a6", "chinese": "公园", "audioText": "公园", "choices": ["gōngyuán", "fàndiàn", "jiē", "yóujú"], "correct": 0 },
+      { "id": "a7", "chinese": "机场", "audioText": "机场", "choices": ["jīchǎng", "gōngjiāochē", "huǒchē", "bàngōngshì"], "correct": 0 },
+      { "id": "a8", "chinese": "火车站", "audioText": "火车站", "choices": ["huǒchē zhàn", "dìtiě", "gōngjiāochē", "lù"], "correct": 0 },
+      { "id": "a9", "chinese": "家", "audioText": "家", "choices": ["jiā", "xuéxiào", "bàngōngshì", "shāngdiàn"], "correct": 0 },
+      { "id": "a10", "chinese": "办公室", "audioText": "办公室", "choices": ["yínháng", "bàngōngshì", "xuéxiào", "jiā"], "correct": 1 },
+      { "id": "a11", "chinese": "邮局", "audioText": "邮局", "choices": ["xuéxiào", "yóujú", "shāngdiàn", "yínháng"], "correct": 1 },
+      { "id": "a12", "chinese": "街", "audioText": "街", "choices": ["jiē", "lù", "dìtú", "zhàn"], "correct": 0 }
+    ]
+  }
+  

@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Sidebar from "./components/sidebar";
+import ChatbotWidget from "./components/ChatbotWidget";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const geistSans = Geist({
@@ -34,6 +35,7 @@ export default function RootLayout({ children }) {
             <div className="flex-1 overflow-y-auto pt-16 lg:pt-0">
               {children}
             </div>
+            <ChatbotWidget />
           </main>
         </GoogleOAuthProvider>
       </body>

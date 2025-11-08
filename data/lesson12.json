@@ -1,0 +1,80 @@
+{
+    "learningSlides": [
+      { "id": "weather1", "chinese": "天气", "pinyin": "tiānqì", "english": "weather", "image": "/assets/lesson12/weather.jpg" },
+      { "id": "weather2", "chinese": "太阳", "pinyin": "tàiyáng", "english": "sun", "image": "/assets/lesson12/sun.jpg" },
+      { "id": "weather3", "chinese": "雨", "pinyin": "yǔ", "english": "rain", "image": "/assets/lesson12/rain.jpg" },
+      { "id": "weather4", "chinese": "雪", "pinyin": "xuě", "english": "snow", "image": "/assets/lesson12/snow.jpg" },
+      { "id": "weather5", "chinese": "云", "pinyin": "yún", "english": "cloud", "image": "/assets/lesson12/cloud.jpg" },
+      { "id": "weather6", "chinese": "风", "pinyin": "fēng", "english": "wind", "image": "/assets/lesson12/wind.jpg" },
+      { "id": "weather7", "chinese": "热", "pinyin": "rè", "english": "hot", "image": "/assets/lesson12/hot.jpg" },
+      { "id": "weather8", "chinese": "冷", "pinyin": "lěng", "english": "cold", "image": "/assets/lesson12/cold.jpg" },
+      { "id": "weather9", "chinese": "天空", "pinyin": "tiānkōng", "english": "sky", "image": "/assets/lesson12/sky.jpg" },
+      { "id": "weather10", "chinese": "花", "pinyin": "huā", "english": "flower", "image": "/assets/lesson12/flower.jpg" },
+      { "id": "weather11", "chinese": "树", "pinyin": "shù", "english": "tree", "image": "/assets/lesson12/tree.jpg" },
+      { "id": "weather12", "chinese": "草", "pinyin": "cǎo", "english": "grass", "image": "/assets/lesson12/grass.jpg" }
+    ],
+  
+    "mcqQuestions": [
+      { "id": "q1", "image": "/assets/lesson12/weather.jpg", "choices": ["xuě", "fēng", "tiānqì", "rè"], "correct": 2 },
+      { "id": "q2", "image": "/assets/lesson12/sun.jpg", "choices": ["huā", "tàiyáng", "tiānkōng", "yún"], "correct": 1 },
+      { "id": "q3", "image": "/assets/lesson12/rain.jpg", "choices": ["yún", "yǔ", "fēng", "xuě"], "correct": 1 },
+      { "id": "q4", "image": "/assets/lesson12/snow.jpg", "choices": ["xuě", "tiānkōng", "yǔ", "rè"], "correct": 0 },
+      { "id": "q5", "image": "/assets/lesson12/cloud.jpg", "choices": ["fēng", "yún", "xuě", "rè"], "correct": 1 },
+      { "id": "q6", "image": "/assets/lesson12/wind.jpg", "choices": ["fēng", "lěng", "yǔ", "tiānqì"], "correct": 0 },
+      { "id": "q7", "image": "/assets/lesson12/hot.jpg", "choices": ["lěng", "fēng", "rè", "yún"], "correct": 2 },
+      { "id": "q8", "image": "/assets/lesson12/cold.jpg", "choices": ["rè", "lěng", "tiānqì", "yǔ"], "correct": 1 },
+      { "id": "q9", "image": "/assets/lesson12/sky.jpg", "choices": ["tiānkōng", "yún", "rè", "xuě"], "correct": 0 },
+      { "id": "q10", "image": "/assets/lesson12/flower.jpg", "choices": ["huā", "cǎo", "shù", "tàiyáng"], "correct": 0 },
+      { "id": "q11", "image": "/assets/lesson12/tree.jpg", "choices": ["cǎo", "shù", "huā", "tiānkōng"], "correct": 1 },
+      { "id": "q12", "image": "/assets/lesson12/grass.jpg", "choices": ["cǎo", "shù", "huā", "yún"], "correct": 0 }
+    ],
+  
+    "matchingTasks": {
+      "nature": {
+        "left": [
+          { "id": "weather1", "label": "tiānqì" },
+          { "id": "weather2", "label": "tàiyáng" },
+          { "id": "weather3", "label": "yǔ" },
+          { "id": "weather4", "label": "xuě" },
+          { "id": "weather5", "label": "yún" },
+          { "id": "weather6", "label": "fēng" },
+          { "id": "weather7", "label": "rè" },
+          { "id": "weather8", "label": "lěng" },
+          { "id": "weather9", "label": "tiānkōng" },
+          { "id": "weather10", "label": "huā" },
+          { "id": "weather11", "label": "shù" },
+          { "id": "weather12", "label": "cǎo" }
+        ],
+        "right": [
+          { "id": "weather1", "label": "weather" },
+          { "id": "weather2", "label": "sun" },
+          { "id": "weather3", "label": "rain" },
+          { "id": "weather4", "label": "snow" },
+          { "id": "weather5", "label": "cloud" },
+          { "id": "weather6", "label": "wind" },
+          { "id": "weather7", "label": "hot" },
+          { "id": "weather8", "label": "cold" },
+          { "id": "weather9", "label": "sky" },
+          { "id": "weather10", "label": "flower" },
+          { "id": "weather11", "label": "tree" },
+          { "id": "weather12", "label": "grass" }
+        ]
+      }
+    },
+  
+    "audioQuiz": [
+      { "id": "a1", "chinese": "天气", "audioText": "天气", "choices": ["fēng", "rè", "tiānqì", "xuě"], "correct": 2 },
+      { "id": "a2", "chinese": "太阳", "audioText": "太阳", "choices": ["yún", "tàiyáng", "huā", "tiānkōng"], "correct": 1 },
+      { "id": "a3", "chinese": "雨", "audioText": "雨", "choices": ["yǔ", "xuě", "yún", "lěng"], "correct": 0 },
+      { "id": "a4", "chinese": "雪", "audioText": "雪", "choices": ["rè", "xuě", "yǔ", "fēng"], "correct": 1 },
+      { "id": "a5", "chinese": "云", "audioText": "云", "choices": ["tiānkōng", "rè", "yún", "xuě"], "correct": 2 },
+      { "id": "a6", "chinese": "风", "audioText": "风", "choices": ["yún", "fēng", "xuě", "lěng"], "correct": 1 },
+      { "id": "a7", "chinese": "热", "audioText": "热", "choices": ["lěng", "rè", "fēng", "yún"], "correct": 1 },
+      { "id": "a8", "chinese": "冷", "audioText": "冷", "choices": ["rè", "lěng", "xuě", "fēng"], "correct": 1 },
+      { "id": "a9", "chinese": "天空", "audioText": "天空", "choices": ["yún", "xuě", "tiānkōng", "rè"], "correct": 2 },
+      { "id": "a10", "chinese": "花", "audioText": "花", "choices": ["cǎo", "huā", "shù", "tàiyáng"], "correct": 1 },
+      { "id": "a11", "chinese": "树", "audioText": "树", "choices": ["huā", "shù", "cǎo", "tiānkōng"], "correct": 1 },
+      { "id": "a12", "chinese": "草", "audioText": "草", "choices": ["shù", "cǎo", "huā", "yún"], "correct": 1 }
+    ]
+  }
+  

@@ -6,25 +6,42 @@ export default function Unit1Overview() {
   
 
   const lessons = [
-    { id: 0, title: "Lesson 0 - Introduction", desc: "Get started with Pinyin, tones, and Chinese pronunciation.", duration: "10 min", progress: 0, path: "/unit1lesson0" },
-    { id: 1, title: "Lesson 1 - Tones", desc: "Learn the 4 tones of Mandarin with examples and practice audio.", duration: "12 min", progress: 0, path: "/unit1lesson1" },
-    { id: 2, title: "Lesson 2 - Basic Greetings", desc: "Learn greetings, introductions, and farewells in Chinese.", duration: "15 min", progress: 0, path: "/unit1lesson2" },
-    { id: 3, title: "Lesson 3 - Relationships", desc: "Explore family and relationship words in Mandarin.", duration: "14 min", progress: 0, path: "/unit1lesson3" },
-    { id: 4, title: "Lesson 4 - Pronouns", desc: "Learn I, You, He, She, and They in Chinese.", duration: "9 min", progress: 0, path: "/unit1lesson4" },
-    { id: 5, title: "Lesson 5 - Numbers 0 to 10", desc: "Master counting from 1 to 10 in Chinese.", duration: "11 min", progress: 0, path: "/unit1lesson5" },
-    { id: 6, title: "Lesson 6 - Yes / No Basics", desc: "Understand how to say yes and no in conversations.", duration: "8 min", progress: 0, path: "/unit1lesson6" },
-    { id: 7, title: "Lesson 7 - Polite Phrases & Needs", desc: "Say please, thank you, and express needs politely.", duration: "13 min", progress: 0, path: "/unit1lesson7" },
-    { id: 8, title: "Lesson 8 - Days & Time", desc: "Talk about days, weeks, and time in Chinese.", duration: "12 min", progress: 0, path: "/unit1lesson8" },
-    { id: 9, title: "Lesson 9 - Country & Introduction", desc: "Learn to say where you’re from and your nationality.", duration: "14 min", progress: 0, path: "/unit1lesson9" },
+    { id: 0, title: "Lesson 0 - Introduction", desc: "Get started with Pinyin, tones, and Chinese pronunciation.", duration: "10 min", progress: 0, path: "/modules/unit01/lesson0" },
+    { id: 1, title: "Lesson 1 - Tones", desc: "Learn the 4 tones of Mandarin with examples and practice audio.", duration: "12 min", progress: 0, path: "/modules/unit01/lesson1" },
+    { id: 2, title: "Lesson 2 - Basic Greetings", desc: "Learn greetings, introductions, and farewells in Chinese.", duration: "15 min", progress: 0, path: "/modules/unit01/lesson2" },
+    { id: 3, title: "Lesson 3 - Relationships", desc: "Explore family and relationship words in Mandarin.", duration: "14 min", progress: 0, path: "/modules/unit01/lesson3" },
+    { id: 4, title: "Lesson 4 - Pronouns", desc: "Learn I, You, He, She, and They in Chinese.", duration: "9 min", progress: 0, path: "/modules/unit01/lesson4" },
+    { id: 5, title: "Lesson 5 - Numbers 0 to 10", desc: "Master counting from 1 to 10 in Chinese.", duration: "11 min", progress: 0, path: "/modules/unit01/lesson5" },
+    { id: 6, title: "Lesson 6 - Yes / No Basics", desc: "Understand how to say yes and no in conversations.", duration: "8 min", progress: 0, path: "/modules/unit01/lesson6" },
+    { id: 7, title: "Lesson 7 - Polite Phrases & Needs", desc: "Say please, thank you, and express needs politely.", duration: "13 min", progress: 0, path: "/modules/unit01/lesson7" },
+    { id: 8, title: "Lesson 8 - Days & Time", desc: "Talk about days, weeks, and time in Chinese.", duration: "12 min", progress: 0, path: "/modules/unit01/lesson8" },
+    { id: 9, title: "Lesson 9 - Country & Introduction", desc: "Learn to say where you’re from and your nationality.", duration: "14 min", progress: 0, path: "/modules/unit01/lesson9" },
   ];
 
   return (
     <div className="min-h-screen bg-slate-50 py-16 px-6">
       <div className="max-w-6xl mx-auto">
-       <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-blue-900 bg-clip-text text-transparent pb-12 text-center">
+      
+          <div className="relative flex items-center justify-center mb-12 ">
+  {/* Back Button - stays on the left */}
+  <Link href="/modules" className="absolute left-8">
+    <button
+      className="flex items-center gap-2 bg-blue-900 text-white hover:translate-x-2 font-medium px-4 py-2 rounded-full shadow-sm transition-all duration-200"
+    >
+      <img
+        src="/assets/arrow-small.png"
+        alt="Back"
+        className="w-5 h-5"
+      />
+      <span className="hidden sm:inline">Back</span>
+    </button>
+  </Link>
+
+  {/* Centered Title */}
+  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-blue-900 bg-clip-text text-transparent text-center">
             Unit 01 <br /> Basics of Mandarin
           </h2>
-
+</div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {lessons.map((lesson) => (
             <div

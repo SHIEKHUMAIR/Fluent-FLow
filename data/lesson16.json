@@ -1,0 +1,80 @@
+{
+    "learningSlides": [
+      { "id": "transport1", "chinese": "公交车", "pinyin": "gōngjiāochē", "english": "bus", "image": "/assets/lesson16/bus.jpg" },
+      { "id": "transport2", "chinese": "出租车", "pinyin": "chūzūchē", "english": "taxi", "image": "/assets/lesson16/taxi.jpg" },
+      { "id": "transport3", "chinese": "火车", "pinyin": "huǒchē", "english": "train", "image": "/assets/lesson16/train.jpg" },
+      { "id": "transport4", "chinese": "地铁", "pinyin": "dìtiě", "english": "subway", "image": "/assets/lesson16/subway.jpg" },
+      { "id": "transport5", "chinese": "自行车", "pinyin": "zìxíngchē", "english": "bicycle", "image": "/assets/lesson16/bicycle.jpg" },
+      { "id": "transport6", "chinese": "左", "pinyin": "zuǒ", "english": "left", "image": "/assets/lesson16/left.jpg" },
+      { "id": "transport7", "chinese": "右", "pinyin": "yòu", "english": "right", "image": "/assets/lesson16/right.jpg" },
+      { "id": "transport8", "chinese": "直走", "pinyin": "zhí zǒu", "english": "go straight", "image": "/assets/lesson16/straight.jpg" },
+      { "id": "transport9", "chinese": "停", "pinyin": "tíng", "english": "stop", "image": "/assets/lesson16/stop.jpg" },
+      { "id": "transport10", "chinese": "站", "pinyin": "zhàn", "english": "station", "image": "/assets/lesson16/station.jpg" },
+      { "id": "transport11", "chinese": "路", "pinyin": "lù", "english": "road", "image": "/assets/lesson16/road.jpg" },
+      { "id": "transport12", "chinese": "地图", "pinyin": "dìtú", "english": "map", "image": "/assets/lesson16/map.jpg" }
+    ],
+  
+    "mcqQuestions": [
+      { "id": "q1", "image": "/assets/lesson16/bus.jpg", "choices": ["gōngjiāochē", "huǒchē", "chūzūchē", "dìtiě"], "correct": 0 },
+      { "id": "q2", "image": "/assets/lesson16/taxi.jpg", "choices": ["chūzūchē", "gōngjiāochē", "dìtiě", "zìxíngchē"], "correct": 0 },
+      { "id": "q3", "image": "/assets/lesson16/train.jpg", "choices": ["huǒchē", "dìtiě", "gōngjiāochē", "chūzūchē"], "correct": 0 },
+      { "id": "q4", "image": "/assets/lesson16/subway.jpg", "choices": ["huǒchē", "dìtiě", "zìxíngchē", "chūzūchē"], "correct": 1 },
+      { "id": "q5", "image": "/assets/lesson16/bicycle.jpg", "choices": ["zìxíngchē", "gōngjiāochē", "huǒchē", "chūzūchē"], "correct": 0 },
+      { "id": "q6", "image": "/assets/lesson16/left.jpg", "choices": ["zuǒ", "yòu", "zhí zǒu", "tíng"], "correct": 0 },
+      { "id": "q7", "image": "/assets/lesson16/right.jpg", "choices": ["zuǒ", "yòu", "zhí zǒu", "tíng"], "correct": 1 },
+      { "id": "q8", "image": "/assets/lesson16/straight.jpg", "choices": ["zuǒ", "yòu", "zhí zǒu", "tíng"], "correct": 2 },
+      { "id": "q9", "image": "/assets/lesson16/stop.jpg", "choices": ["tíng", "zhàn", "lù", "dìtú"], "correct": 0 },
+      { "id": "q10", "image": "/assets/lesson16/station.jpg", "choices": ["zhàn", "tíng", "lù", "dìtú"], "correct": 0 },
+      { "id": "q11", "image": "/assets/lesson16/road.jpg", "choices": ["zhàn", "lù", "tíng", "dìtú"], "correct": 1 },
+      { "id": "q12", "image": "/assets/lesson16/map.jpg", "choices": ["lù", "dìtú", "zhàn", "tíng"], "correct": 1 }
+    ],
+  
+    "matchingTasks": {
+      "transport": {
+        "left": [
+          { "id": "transport1", "label": "gōngjiāochē" },
+          { "id": "transport2", "label": "chūzūchē" },
+          { "id": "transport3", "label": "huǒchē" },
+          { "id": "transport4", "label": "dìtiě" },
+          { "id": "transport5", "label": "zìxíngchē" },
+          { "id": "transport6", "label": "zuǒ" },
+          { "id": "transport7", "label": "yòu" },
+          { "id": "transport8", "label": "zhí zǒu" },
+          { "id": "transport9", "label": "tíng" },
+          { "id": "transport10", "label": "zhàn" },
+          { "id": "transport11", "label": "lù" },
+          { "id": "transport12", "label": "dìtú" }
+        ],
+        "right": [
+          { "id": "transport1", "label": "bus" },
+          { "id": "transport2", "label": "taxi" },
+          { "id": "transport3", "label": "train" },
+          { "id": "transport4", "label": "subway" },
+          { "id": "transport5", "label": "bicycle" },
+          { "id": "transport6", "label": "left" },
+          { "id": "transport7", "label": "right" },
+          { "id": "transport8", "label": "go straight" },
+          { "id": "transport9", "label": "stop" },
+          { "id": "transport10", "label": "station" },
+          { "id": "transport11", "label": "road" },
+          { "id": "transport12", "label": "map" }
+        ]
+      }
+    },
+  
+    "audioQuiz": [
+      { "id": "a1", "chinese": "公交车", "audioText": "公交车", "choices": ["gōngjiāochē", "huǒchē", "chūzūchē", "dìtiě"], "correct": 0 },
+      { "id": "a2", "chinese": "出租车", "audioText": "出租车", "choices": ["chūzūchē", "gōngjiāochē", "huǒchē", "zìxíngchē"], "correct": 0 },
+      { "id": "a3", "chinese": "火车", "audioText": "火车", "choices": ["huǒchē", "dìtiě", "gōngjiāochē", "chūzūchē"], "correct": 0 },
+      { "id": "a4", "chinese": "地铁", "audioText": "地铁", "choices": ["huǒchē", "dìtiě", "zìxíngchē", "chūzūchē"], "correct": 1 },
+      { "id": "a5", "chinese": "自行车", "audioText": "自行车", "choices": ["zìxíngchē", "gōngjiāochē", "huǒchē", "chūzūchē"], "correct": 0 },
+      { "id": "a6", "chinese": "左", "audioText": "左", "choices": ["zuǒ", "yòu", "zhí zǒu", "tíng"], "correct": 0 },
+      { "id": "a7", "chinese": "右", "audioText": "右", "choices": ["zuǒ", "yòu", "zhí zǒu", "tíng"], "correct": 1 },
+      { "id": "a8", "chinese": "直走", "audioText": "直走", "choices": ["zuǒ", "yòu", "zhí zǒu", "tíng"], "correct": 2 },
+      { "id": "a9", "chinese": "停", "audioText": "停", "choices": ["tíng", "zhàn", "lù", "dìtú"], "correct": 0 },
+      { "id": "a10", "chinese": "站", "audioText": "站", "choices": ["zhàn", "tíng", "lù", "dìtú"], "correct": 0 },
+      { "id": "a11", "chinese": "路", "audioText": "路", "choices": ["zhàn", "lù", "tíng", "dìtú"], "correct": 1 },
+      { "id": "a12", "chinese": "地图", "audioText": "地图", "choices": ["lù", "dìtú", "zhàn", "tíng"], "correct": 1 }
+    ]
+  }
+  

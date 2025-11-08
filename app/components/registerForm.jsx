@@ -22,7 +22,7 @@ const RegisterForm = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/auth/signup", {
+      const response = await fetch("https://fluent-flow-k3rx.onrender.com/api/auth/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
@@ -43,7 +43,7 @@ const RegisterForm = () => {
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/google-login", {
+      const res = await fetch("https://fluent-flow-k3rx.onrender.com/api/auth/google-login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ token: credentialResponse.credential }),
@@ -53,6 +53,44 @@ const RegisterForm = () => {
       if (res.ok) {
         console.log("Google signup success:", data.user);
         setMessage("✅ Google signup successful!");
+        
+        // Store token (Google login uses 7-day expiry, so use localStorage)
+        const token = data.token;
+        if (token) {
+          localStorage.setItem("token", token);
+        }
+        
+        // Store user info
+        try {
+          // Ensure email is stored
+          if (data.user && data.user.email) {
+            localStorage.setItem("userEmail", data.user.email);
+            console.log("Email stored:", data.user.email);
+          } else {
+            console.error("No email in response:", data);
+          }
+          
+          // Store user name
+          const fullName = data.user?.firstName && data.user?.lastName
+            ? `${data.user.firstName} ${data.user.lastName}`.trim()
+            : data.user?.firstName || data.user?.lastName || data.user?.email || 'User';
+          
+          if (fullName) {
+            localStorage.setItem("userName", fullName);
+          }
+          
+          // Note: profileImage would need to be extracted from Google payload if needed
+        } catch (err) {
+          console.error("Error storing user data:", err);
+        }
+        
+        // Dispatch event to update sidebar immediately
+        window.dispatchEvent(new CustomEvent('userLoggedIn'));
+        
+        // Redirect or refresh to update UI
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);
       } else {
         console.error("Google signup failed:", data.message);
         setMessage(`❌ ${data.message}`);

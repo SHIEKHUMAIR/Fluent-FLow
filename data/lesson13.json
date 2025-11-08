@@ -1,0 +1,81 @@
+{
+    "learningSlides": [
+      { "id": "daily1", "chinese": "吃", "pinyin": "chī", "english": "eat", "image": "/assets/lesson13/eat.jpg" },
+      { "id": "daily2", "chinese": "喝", "pinyin": "hē", "english": "drink", "image": "/assets/lesson13/drink.jpg" },
+      { "id": "daily3", "chinese": "睡觉", "pinyin": "shuìjiào", "english": "sleep", "image": "/assets/lesson13/sleep.jpg" },
+      { "id": "daily4", "chinese": "去", "pinyin": "qù", "english": "go", "image": "/assets/lesson13/go.jpg" },
+      { "id": "daily5", "chinese": "来", "pinyin": "lái", "english": "come", "image": "/assets/lesson13/come.jpg" },
+      { "id": "daily6", "chinese": "看", "pinyin": "kàn", "english": "look / watch", "image": "/assets/lesson13/look.jpg" },
+      { "id": "daily7", "chinese": "写", "pinyin": "xiě", "english": "write", "image": "/assets/lesson13/write.jpg" },
+      { "id": "daily8", "chinese": "学习", "pinyin": "xuéxí", "english": "study", "image": "/assets/lesson13/study.jpg" },
+      { "id": "daily9", "chinese": "工作", "pinyin": "gōngzuò", "english": "work", "image": "/assets/lesson13/work.jpg" },
+      { "id": "daily10", "chinese": "玩", "pinyin": "wán", "english": "play", "image": "/assets/lesson13/play.jpg" },
+      { "id": "daily11", "chinese": "走", "pinyin": "zǒu", "english": "walk", "image": "/assets/lesson13/walk.jpg" },
+      { "id": "daily12", "chinese": "买东西", "pinyin": "mǎi dōngxi", "english": "go shopping", "image": "/assets/lesson13/shopping.jpg" }
+    ],
+  
+    "mcqQuestions": [
+      { "id": "q1", "image": "/assets/lesson13/come.jpg", "choices": ["qù", "lái", "wán", "chī"], "correct": 1 },
+      { "id": "q2", "image": "/assets/lesson13/look.jpg", "choices": ["kàn", "xiě", "xuéxí", "zǒu"], "correct": 0 },
+      { "id": "q3", "image": "/assets/lesson13/write.jpg", "choices": ["xiě", "shūjiào", "gōngzuò", "chī"], "correct": 0 },
+      { "id": "q4", "image": "/assets/lesson13/study.jpg", "choices": ["xuéxí", "wán", "kàn", "lái"], "correct": 0 },
+      { "id": "q5", "image": "/assets/lesson13/work.jpg", "choices": ["gōngzuò", "xuéxí", "wán", "zǒu"], "correct": 0 },
+      { "id": "q6", "image": "/assets/lesson13/play.jpg", "choices": ["shuìjiào", "wán", "chī", "mǎi dōngxi"], "correct": 1 },
+      { "id": "q7", "image": "/assets/lesson13/walk.jpg", "choices": ["lái", "zǒu", "wán", "qù"], "correct": 1 },
+      { "id": "q8", "image": "/assets/lesson13/shopping.jpg", "choices": ["mǎi dōngxi", "chī", "xuéxí", "gōngzuò"], "correct": 0 },
+      { "id": "q9", "image": "/assets/lesson13/eat.jpg", "choices": ["chī", "hē", "wán", "xiě"], "correct": 0 },
+      { "id": "q10", "image": "/assets/lesson13/drink.jpg", "choices": ["chī", "hē", "mǎi dōngxi", "zǒu"], "correct": 1 },
+      { "id": "q11", "image": "/assets/lesson13/sleep.jpg", "choices": ["shuìjiào", "wán", "lái", "kàn"], "correct": 0 },
+      { "id": "q12", "image": "/assets/lesson13/go.jpg", "choices": ["qù", "lái", "gōngzuò", "xiě"], "correct": 0 }
+    ],
+  
+    "matchingTasks": {
+  "activities": {
+    "left": [
+      { "id": "daily1", "label": "chī" },
+      { "id": "daily2", "label": "hē" },
+      { "id": "daily3", "label": "shuìjiào" },
+      { "id": "daily4", "label": "qù" },
+      { "id": "daily5", "label": "lái" },
+      { "id": "daily6", "label": "kàn" },
+      { "id": "daily7", "label": "xiě" },
+      { "id": "daily8", "label": "xuéxí" },
+      { "id": "daily9", "label": "gōngzuò" },
+      { "id": "daily10", "label": "wán" },
+      { "id": "daily11", "label": "zǒu" },
+      { "id": "daily12", "label": "mǎi dōngxi" }
+    ],
+    "right": [
+      { "id": "daily1", "label": "eat" },
+      { "id": "daily2", "label": "drink" },
+      { "id": "daily3", "label": "sleep" },
+      { "id": "daily4", "label": "go" },
+      { "id": "daily5", "label": "come" },
+      { "id": "daily6", "label": "look / watch" },
+      { "id": "daily7", "label": "write" },
+      { "id": "daily8", "label": "study" },
+      { "id": "daily9", "label": "work" },
+      { "id": "daily10", "label": "play" },
+      { "id": "daily11", "label": "walk" },
+      { "id": "daily12", "label": "go shopping" }
+    ]
+  }
+},
+
+  
+    "audioQuiz": [
+      { "id": "a1", "chinese": "来", "audioText": "来", "choices": ["qù", "lái", "wán", "chī"], "correct": 1 },
+      { "id": "a2", "chinese": "看", "audioText": "看", "choices": ["xiě", "xuéxí", "kàn", "zǒu"], "correct": 2 },
+      { "id": "a3", "chinese": "写", "audioText": "写", "choices": ["xuéxí", "xiě", "wán", "chī"], "correct": 1 },
+      { "id": "a4", "chinese": "学习", "audioText": "学习", "choices": ["xuéxí", "wán", "kàn", "lái"], "correct": 0 },
+      { "id": "a5", "chinese": "工作", "audioText": "工作", "choices": ["xuéxí", "wán", "gōngzuò", "zǒu"], "correct": 2 },
+      { "id": "a6", "chinese": "玩", "audioText": "玩", "choices": ["shuìjiào", "wán", "chī", "mǎi dōngxi"], "correct": 1 },
+      { "id": "a7", "chinese": "走", "audioText": "走", "choices": ["lái", "zǒu", "wán", "qù"], "correct": 1 },
+      { "id": "a8", "chinese": "买东西", "audioText": "买东西", "choices": ["mǎi dōngxi", "chī", "xuéxí", "gōngzuò"], "correct": 0 },
+      { "id": "a9", "chinese": "吃", "audioText": "吃", "choices": ["chī", "hē", "wán", "xiě"], "correct": 0 },
+      { "id": "a10", "chinese": "喝", "audioText": "喝", "choices": ["chī", "hē", "mǎi dōngxi", "zǒu"], "correct": 1 },
+      { "id": "a11", "chinese": "睡觉", "audioText": "睡觉", "choices": ["shuìjiào", "wán", "lái", "kàn"], "correct": 0 },
+      { "id": "a12", "chinese": "去", "audioText": "去", "choices": ["qù", "lái", "gōngzuò", "xiě"], "correct": 0 }
+    ]
+  }
+  

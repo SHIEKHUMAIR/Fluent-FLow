@@ -32,7 +32,7 @@ const modules = () => {
   </p>
   <div className="flex items-center justify-between">
     <span className="text-sm text-slate-500 font-medium">10 lessons</span>
-    <Link href="/unit01" scroll={false}>
+    <Link href="/modules/unit01" scroll={false}>
     <button className="bg-blue-900 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg">
       Start Module
     </button>
@@ -41,24 +41,27 @@ const modules = () => {
 </div>
 
 
-          {/* Essential Characters & Vocabulary */}
-           <div className="group bg-white/90 hover:bg-white shadow-lg hover:shadow-2xl border border-white/50 rounded-3xl p-8 transition-all duration-300 transform hover:scale-105 hover:cursor-pointer">
-            <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mb-6">
-              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            </div>
-            <h3 className="text-2xl font-bold text-slate-900 mb-4">Essential Characters & Vocabulary</h3>
-            <p className="text-slate-600 mb-6 leading-relaxed">
-              Explore the top 150 foundational characters and essential words with AR object recognition and visual learning techniques.
-            </p>
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-slate-500 font-medium">18 categories</span>
-              <button className="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 shadow-lg">
-                Start Module
-              </button>
-            </div>
-          </div>
+          {/* Essential Words, Daily Life & Conversation */}
+<div className="group bg-white/90 hover:bg-white shadow-lg hover:shadow-2xl border border-white/50 rounded-3xl p-8 transition-all duration-300 transform hover:scale-105 hover:cursor-pointer">
+  <div className="w-16 h-16 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mb-6">
+    <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+    </svg>
+  </div>
+  <h3 className="text-2xl font-bold text-slate-900 mb-4">UNIT 2: Daily Life & Words</h3>
+  <p className="text-slate-600 mb-6 leading-relaxed">
+    Learn essential words and phrases for daily activities, shopping, food, transport, and common locations in Mandarin.
+  </p>
+  <div className="flex items-center justify-between">
+    <span className="text-sm text-slate-500 font-medium">8 lessons</span>
+    <Link href="/modules/unit02" scroll={false}>
+      <button className="bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 shadow-lg">
+        Start Module
+      </button>
+    </Link>
+  </div>
+</div>
+
 
           {/* Intro to Sentence Structure */}
            <div className="group bg-white/90 hover:bg-white shadow-lg hover:shadow-2xl border border-white/50 rounded-3xl p-8 transition-all duration-300 transform hover:scale-105 hover:cursor-pointer">

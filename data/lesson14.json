@@ -1,0 +1,79 @@
+{ 
+  "learningSlides": [
+    { "id": "market1", "chinese": "买", "pinyin": "mǎi", "english": "buy", "image": "/assets/lesson14/buy.jpg" },
+    { "id": "market2", "chinese": "卖", "pinyin": "mài", "english": "sell", "image": "/assets/lesson14/sell.jpg" },
+    { "id": "market3", "chinese": "多少钱", "pinyin": "duōshao qián", "english": "how much", "image": "/assets/lesson14/howmuch.jpg" },
+    { "id": "market4", "chinese": "贵", "pinyin": "guì", "english": "expensive", "image": "/assets/lesson14/expensive.jpg" },
+    { "id": "market5", "chinese": "便宜", "pinyin": "piányi", "english": "cheap", "image": "/assets/lesson14/cheap.jpg" },
+    { "id": "market6", "chinese": "苹果", "pinyin": "píngguǒ", "english": "apple", "image": "/assets/lesson14/apple.jpg" },
+    { "id": "market7", "chinese": "香蕉", "pinyin": "xiāngjiāo", "english": "banana", "image": "/assets/lesson14/banana.jpg" },
+    { "id": "market8", "chinese": "橙子", "pinyin": "chéngzi", "english": "orange", "image": "/assets/lesson14/orange.jpg" },
+    { "id": "market9", "chinese": "西瓜", "pinyin": "xīguā", "english": "watermelon", "image": "/assets/lesson14/watermelon.jpg" },
+    { "id": "market10", "chinese": "新鲜", "pinyin": "xīnxiān", "english": "fresh", "image": "/assets/lesson14/fresh.jpg" },
+    { "id": "market11", "chinese": "蔬菜", "pinyin": "shūcài", "english": "vegetables", "image": "/assets/lesson14/vegetables.jpg" },
+    { "id": "market12", "chinese": "市场", "pinyin": "shìchǎng", "english": "market", "image": "/assets/lesson14/market.jpg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson14/buy.jpg", "choices": ["piányi", "guì", "mǎi", "mài"], "correct": 2 },
+    { "id": "q2", "image": "/assets/lesson14/sell.jpg", "choices": ["shìchǎng", "mài", "xīnxiān", "mǎi"], "correct": 1 },
+    { "id": "q3", "image": "/assets/lesson14/howmuch.jpg", "choices": ["duōshao qián", "guì", "piányi", "mǎi"], "correct": 0 },
+    { "id": "q4", "image": "/assets/lesson14/expensive.jpg", "choices": ["xīnxiān", "guì", "piányi", "shūcài"], "correct": 1 },
+    { "id": "q5", "image": "/assets/lesson14/cheap.jpg", "choices": ["xīguā", "mǎi", "piányi", "guì"], "correct": 2 },
+    { "id": "q6", "image": "/assets/lesson14/apple.jpg", "choices": ["xiāngjiāo", "xīguā", "píngguǒ", "chéngzi"], "correct": 2 },
+    { "id": "q7", "image": "/assets/lesson14/banana.jpg", "choices": ["xīguā", "xiāngjiāo", "chéngzi", "píngguǒ"], "correct": 1 },
+    { "id": "q8", "image": "/assets/lesson14/orange.jpg", "choices": ["píngguǒ", "xīguā", "chéngzi", "xiāngjiāo"], "correct": 2 },
+    { "id": "q9", "image": "/assets/lesson14/watermelon.jpg", "choices": ["xiāngjiāo", "xīguā", "píngguǒ", "chéngzi"], "correct": 1 },
+    { "id": "q10", "image": "/assets/lesson14/fresh.jpg", "choices": ["xīnxiān", "shūcài", "guì", "piányi"], "correct": 0 },
+    { "id": "q11", "image": "/assets/lesson14/vegetables.jpg", "choices": ["shìchǎng", "píngguǒ", "shūcài", "xīnxiān"], "correct": 2 },
+    { "id": "q12", "image": "/assets/lesson14/market.jpg", "choices": ["mǎi", "piányi", "shìchǎng", "guì"], "correct": 2 }
+  ],
+
+  "matchingTasks": {
+    "market": {
+      "left": [
+        { "id": "market1", "label": "mǎi" },
+        { "id": "market2", "label": "mài" },
+        { "id": "market3", "label": "duōshao qián" },
+        { "id": "market4", "label": "guì" },
+        { "id": "market5", "label": "piányi" },
+        { "id": "market6", "label": "píngguǒ" },
+        { "id": "market7", "label": "xiāngjiāo" },
+        { "id": "market8", "label": "chéngzi" },
+        { "id": "market9", "label": "xīguā" },
+        { "id": "market10", "label": "xīnxiān" },
+        { "id": "market11", "label": "shūcài" },
+        { "id": "market12", "label": "shìchǎng" }
+      ],
+      "right": [
+        { "id": "market1", "label": "buy" },
+        { "id": "market2", "label": "sell" },
+        { "id": "market3", "label": "how much" },
+        { "id": "market4", "label": "expensive" },
+        { "id": "market5", "label": "cheap" },
+        { "id": "market6", "label": "apple" },
+        { "id": "market7", "label": "banana" },
+        { "id": "market8", "label": "orange" },
+        { "id": "market9", "label": "watermelon" },
+        { "id": "market10", "label": "fresh" },
+        { "id": "market11", "label": "vegetables" },
+        { "id": "market12", "label": "market" }
+      ]
+    }
+},
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "买", "audioText": "买", "choices": ["guì", "mài", "mǎi", "piányi"], "correct": 2 },
+    { "id": "a2", "chinese": "卖", "audioText": "卖", "choices": ["shìchǎng", "mài", "xīnxiān", "mǎi"], "correct": 1 },
+    { "id": "a3", "chinese": "多少钱", "audioText": "多少钱", "choices": ["piányi", "mǎi", "guì", "duōshao qián"], "correct": 3 },
+    { "id": "a4", "chinese": "贵", "audioText": "贵", "choices": ["guì", "piányi", "xīnxiān", "shūcài"], "correct": 0 },
+    { "id": "a5", "chinese": "便宜", "audioText": "便宜", "choices": ["guì", "piányi", "mǎi", "duōshao qián"], "correct": 1 },
+    { "id": "a6", "chinese": "苹果", "audioText": "苹果", "choices": ["xiāngjiāo", "píngguǒ", "xīguā", "chéngzi"], "correct": 1 },
+    { "id": "a7", "chinese": "香蕉", "audioText": "香蕉", "choices": ["xīguā", "xiāngjiāo", "chéngzi", "píngguǒ"], "correct": 1 },
+    { "id": "a8", "chinese": "橙子", "audioText": "橙子", "choices": ["píngguǒ", "xīguā", "chéngzi", "xiāngjiāo"], "correct": 2 },
+    { "id": "a9", "chinese": "西瓜", "audioText": "西瓜", "choices": ["xīguā", "xiāngjiāo", "píngguǒ", "chéngzi"], "correct": 0 },
+    { "id": "a10", "chinese": "新鲜", "audioText": "新鲜", "choices": ["shūcài", "xīnxiān", "guì", "piányi"], "correct": 1 },
+    { "id": "a11", "chinese": "蔬菜", "audioText": "蔬菜", "choices": ["xīnxiān", "shūcài", "shìchǎng", "píngguǒ"], "correct": 1 },
+    { "id": "a12", "chinese": "市场", "audioText": "市场", "choices": ["mǎi", "shìchǎng", "guì", "piányi"], "correct": 1 }
+  ]
+}

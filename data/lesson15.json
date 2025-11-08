@@ -1,0 +1,80 @@
+{
+    "learningSlides": [
+      { "id": "clothes1", "chinese": "衣服", "pinyin": "yīfu", "english": "clothes", "image": "/assets/lesson15/clothes.jpg" },
+      { "id": "clothes2", "chinese": "裤子", "pinyin": "kùzi", "english": "pants", "image": "/assets/lesson15/pants.jpg" },
+      { "id": "clothes3", "chinese": "鞋子", "pinyin": "xiézi", "english": "shoes", "image": "/assets/lesson15/shoes.jpg" },
+      { "id": "clothes4", "chinese": "帽子", "pinyin": "màozi", "english": "hat", "image": "/assets/lesson15/hat.jpg" },
+      { "id": "clothes5", "chinese": "外套", "pinyin": "wàitào", "english": "coat", "image": "/assets/lesson15/coat.jpg" },
+      { "id": "clothes6", "chinese": "大号", "pinyin": "dàhào", "english": "large size", "image": "/assets/lesson15/large.jpg" },
+      { "id": "clothes7", "chinese": "小号", "pinyin": "xiǎohào", "english": "small size", "image": "/assets/lesson15/small.jpg" },
+      { "id": "clothes8", "chinese": "好看", "pinyin": "hǎokàn", "english": "good-looking", "image": "/assets/lesson15/goodlooking.jpg" },
+      { "id": "clothes9", "chinese": "太贵了", "pinyin": "tài guì le", "english": "too expensive", "image": "/assets/lesson15/expensive.jpg" },
+      { "id": "clothes10", "chinese": "试试", "pinyin": "shìshi", "english": "try on", "image": "/assets/lesson15/tryon.jpg" },
+      { "id": "clothes11", "chinese": "买单", "pinyin": "mǎidān", "english": "pay the bill", "image": "/assets/lesson15/paybill.jpg" },
+      { "id": "clothes12", "chinese": "商店", "pinyin": "shāngdiàn", "english": "shop", "image": "/assets/lesson15/shop.jpg" }
+    ],
+  
+    "mcqQuestions": [
+      { "id": "q1", "image": "/assets/lesson15/pants.jpg", "choices": ["B", "C", "pants", "D"], "correct": 2 },
+      { "id": "q2", "image": "/assets/lesson15/large.jpg", "choices": ["dàhào", "xiǎohào", "hǎokàn", "shìshi"], "correct": 0 },
+      { "id": "q3", "image": "/assets/lesson15/small.jpg", "choices": ["xiǎohào", "dàhào", "hǎokàn", "shìshi"], "correct": 0 },
+      { "id": "q4", "image": "/assets/lesson15/goodlooking.jpg", "choices": ["hǎokàn", "太贵了", "shāngdiàn", "dàhào"], "correct": 0 },
+      { "id": "q5", "image": "/assets/lesson15/expensive.jpg", "choices": ["太贵了", "小号", "大号", "好看"], "correct": 0 },
+      { "id": "q6", "image": "/assets/lesson15/tryon.jpg", "choices": ["shìshi", "mǎidān", "kùzi", "yīfu"], "correct": 0 },
+      { "id": "q7", "image": "/assets/lesson15/paybill.jpg", "choices": ["买单", "商店", "衣服", "裤子"], "correct": 0 },
+      { "id": "q8", "image": "/assets/lesson15/shop.jpg", "choices": ["shāngdiàn", "衣服", "裤子", "鞋子"], "correct": 0 },
+      { "id": "q9", "image": "/assets/lesson15/clothes.jpg", "choices": ["衣服", "裤子", "鞋子", "帽子"], "correct": 0 },
+      { "id": "q10", "image": "/assets/lesson15/shoes.jpg", "choices": ["鞋子", "帽子", "衣服", "外套"], "correct": 0 },
+      { "id": "q11", "image": "/assets/lesson15/hat.jpg", "choices": ["帽子", "鞋子", "衣服", "外套"], "correct": 0 },
+      { "id": "q12", "image": "/assets/lesson15/coat.jpg", "choices": ["外套", "帽子", "衣服", "裤子"], "correct": 0 }
+    ],
+  
+    "matchingTasks": {
+      "clothes": {
+        "left": [
+          { "id": "clothes1", "label": "yīfu" },
+          { "id": "clothes2", "label": "kùzi" },
+          { "id": "clothes3", "label": "xiézi" },
+          { "id": "clothes4", "label": "màozi" },
+          { "id": "clothes5", "label": "wàitào" },
+          { "id": "clothes6", "label": "dàhào" },
+          { "id": "clothes7", "label": "xiǎohào" },
+          { "id": "clothes8", "label": "hǎokàn" },
+          { "id": "clothes9", "label": "tài guì le" },
+          { "id": "clothes10", "label": "shìshi" },
+          { "id": "clothes11", "label": "mǎidān" },
+          { "id": "clothes12", "label": "shāngdiàn" }
+        ],
+        "right": [
+          { "id": "clothes1", "label": "clothes" },
+          { "id": "clothes2", "label": "pants" },
+          { "id": "clothes3", "label": "shoes" },
+          { "id": "clothes4", "label": "hat" },
+          { "id": "clothes5", "label": "coat" },
+          { "id": "clothes6", "label": "large size" },
+          { "id": "clothes7", "label": "small size" },
+          { "id": "clothes8", "label": "good-looking" },
+          { "id": "clothes9", "label": "too expensive" },
+          { "id": "clothes10", "label": "try on" },
+          { "id": "clothes11", "label": "pay the bill" },
+          { "id": "clothes12", "label": "shop" }
+        ]
+      }
+    },
+  
+    "audioQuiz": [
+      { "id": "a1", "chinese": "裤子", "audioText": "裤子", "choices": ["hǎokàn", "kùzi", "yīfu", "xiézi"], "correct": 1 },
+      { "id": "a2", "chinese": "大号", "audioText": "大号", "choices": ["xiǎohào", "dàhào", "shìshi", "hǎokàn"], "correct": 1 },
+      { "id": "a3", "chinese": "小号", "audioText": "小号", "choices": ["xiǎohào", "dàhào", "hǎokàn", "shìshi"], "correct": 0 },
+      { "id": "a4", "chinese": "好看", "audioText": "好看", "choices": ["太贵了", "hǎokàn", "衣服", "小号"], "correct": 1 },
+      { "id": "a5", "chinese": "太贵了", "audioText": "太贵了", "choices": ["太贵了", "小号", "大号", "好看"], "correct": 0 },
+      { "id": "a6", "chinese": "试试", "audioText": "试试", "choices": ["shìshi", "买单", "衣服", "裤子"], "correct": 0 },
+      { "id": "a7", "chinese": "买单", "audioText": "买单", "choices": ["买单", "商店", "衣服", "裤子"], "correct": 0 },
+      { "id": "a8", "chinese": "商店", "audioText": "商店", "choices": ["商店", "衣服", "裤子", "鞋子"], "correct": 0 },
+      { "id": "a9", "chinese": "衣服", "audioText": "衣服", "choices": ["裤子", "衣服", "帽子", "鞋子"], "correct": 1 },
+      { "id": "a10", "chinese": "鞋子", "audioText": "鞋子", "choices": ["鞋子", "帽子", "衣服", "外套"], "correct": 0 },
+      { "id": "a11", "chinese": "帽子", "audioText": "帽子", "choices": ["帽子", "鞋子", "衣服", "外套"], "correct": 0 },
+      { "id": "a12", "chinese": "外套", "audioText": "外套", "choices": ["外套", "帽子", "衣服", "裤子"], "correct": 0 }
+    ]
+  }
+  

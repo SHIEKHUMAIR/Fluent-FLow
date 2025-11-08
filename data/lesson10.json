@@ -1,0 +1,69 @@
+{
+  "learningSlides": [
+    { "id": "color1", "chinese": "红色", "pinyin": "hóngsè", "english": "red", "image": "/assets/lesson10/red.jpg" },
+    { "id": "color2", "chinese": "蓝色", "pinyin": "lánsè", "english": "blue", "image": "/assets/lesson10/blue.jpg" },
+    { "id": "color3", "chinese": "黄色", "pinyin": "huángsè", "english": "yellow", "image": "/assets/lesson10/yellow.jpg" },
+    { "id": "color4", "chinese": "绿色", "pinyin": "lǜsè", "english": "green", "image": "/assets/lesson10/green.jpg" },
+    { "id": "color5", "chinese": "黑色", "pinyin": "hēisè", "english": "black", "image": "/assets/lesson10/black.jpg" },
+    { "id": "color6", "chinese": "白色", "pinyin": "báisè", "english": "white", "image": "/assets/lesson10/white.jpg" },
+    { "id": "color7", "chinese": "橙色", "pinyin": "chéngsè", "english": "orange", "image": "/assets/lesson10/orange.jpg" },
+    { "id": "color8", "chinese": "紫色", "pinyin": "zǐsè", "english": "purple", "image": "/assets/lesson10/purple.jpg" },
+    { "id": "color9", "chinese": "粉色", "pinyin": "fěnsè", "english": "pink", "image": "/assets/lesson10/pink.jpg" },
+    { "id": "color10", "chinese": "灰色", "pinyin": "huīsè", "english": "gray", "image": "/assets/lesson10/gray.jpg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson10/red.jpg", "choices": ["hóngsè", "lánsè", "lǜsè", "báisè"], "correct": 0 },
+    { "id": "q2", "image": "/assets/lesson10/blue.jpg", "choices": ["hēisè", "lánsè", "huángsè", "zǐsè"], "correct": 1 },
+    { "id": "q3", "image": "/assets/lesson10/gray.jpg", "choices": ["huīsè", "hēisè", "báisè", "fěnsè"], "correct": 0 },
+    { "id": "q4", "image": "/assets/lesson10/purple.jpg", "choices": ["zǐsè", "chéngsè", "lǜsè", "huángsè"], "correct": 0 },
+    { "id": "q5", "image": "/assets/lesson10/yellow.jpg", "choices": ["lánsè", "huángsè", "hóngsè", "báisè"], "correct": 1 },
+    { "id": "q6", "image": "/assets/lesson10/pink.jpg", "choices": ["báisè", "fěnsè", "huīsè", "hēisè"], "correct": 1 },
+    { "id": "q7", "image": "/assets/lesson10/white.jpg", "choices": ["báisè", "hēisè", "lánsè", "huīsè"], "correct": 0 },
+    { "id": "q8", "image": "/assets/lesson10/green.jpg", "choices": ["lǜsè", "zǐsè", "chéngsè", "huīsè"], "correct": 0 },
+    { "id": "q9", "image": "/assets/lesson10/black.jpg", "choices": ["hóngsè", "hēisè", "huángsè", "lǜsè"], "correct": 1 },
+    { "id": "q10", "image": "/assets/lesson10/orange.jpg", "choices": ["chéngsè", "huángsè", "zǐsè", "fěnsè"], "correct": 0 }
+  ],
+
+  "matchingTasks": {
+    "colors": {
+      "left": [
+        { "id": "color1", "label": "hóngsè" },
+        { "id": "color2", "label": "lánsè" },
+        { "id": "color3", "label": "huángsè" },
+        { "id": "color4", "label": "lǜsè" },
+        { "id": "color5", "label": "hēisè" },
+        { "id": "color6", "label": "báisè" },
+        { "id": "color7", "label": "chéngsè" },
+        { "id": "color8", "label": "zǐsè" },
+        { "id": "color9", "label": "fěnsè" },
+        { "id": "color10", "label": "huīsè" }
+      ],
+      "right": [
+        { "id": "color1", "label": "red" },
+        { "id": "color2", "label": "blue" },
+        { "id": "color3", "label": "yellow" },
+        { "id": "color4", "label": "green" },
+        { "id": "color5", "label": "black" },
+        { "id": "color6", "label": "white" },
+        { "id": "color7", "label": "orange" },
+        { "id": "color8", "label": "purple" },
+        { "id": "color9", "label": "pink" },
+        { "id": "color10", "label": "gray" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "红色", "audioText": "红色", "choices": ["hóngsè", "lánsè", "huángsè", "lǜsè"], "correct": 0 },
+    { "id": "a2", "chinese": "蓝色", "audioText": "蓝色", "choices": ["hóngsè", "lánsè", "hēisè", "báisè"], "correct": 1 },
+    { "id": "a3", "chinese": "黄色", "audioText": "黄色", "choices": ["huángsè", "lǜsè", "fěnsè", "chéngsè"], "correct": 0 },
+    { "id": "a4", "chinese": "绿色", "audioText": "绿色", "choices": ["lǜsè", "zǐsè", "báisè", "huīsè"], "correct": 0 },
+    { "id": "a5", "chinese": "黑色", "audioText": "黑色", "choices": ["hēisè", "hóngsè", "lánsè", "fěnsè"], "correct": 0 },
+    { "id": "a6", "chinese": "白色", "audioText": "白色", "choices": ["hēisè", "báisè", "zǐsè", "chéngsè"], "correct": 1 },
+    { "id": "a7", "chinese": "橙色", "audioText": "橙色", "choices": ["chéngsè", "huángsè", "fěnsè", "hóngsè"], "correct": 0 },
+    { "id": "a8", "chinese": "紫色", "audioText": "紫色", "choices": ["zǐsè", "huīsè", "hēisè", "báisè"], "correct": 0 },
+    { "id": "a9", "chinese": "粉色", "audioText": "粉色", "choices": ["fěnsè", "lǜsè", "huángsè", "hóngsè"], "correct": 0 },
+    { "id": "a10", "chinese": "灰色", "audioText": "灰色", "choices": ["huīsè", "zǐsè", "fěnsè", "chéngsè"], "correct": 0 }
+  ]
+}

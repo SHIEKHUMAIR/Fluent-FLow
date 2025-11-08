@@ -1,0 +1,80 @@
+{
+    "learningSlides": [
+      { "id": "food1", "chinese": "米饭", "pinyin": "mǐfàn", "english": "rice", "image": "/assets/lesson11/rice.jpg" },
+      { "id": "food2", "chinese": "面条", "pinyin": "miàntiáo", "english": "noodles", "image": "/assets/lesson11/noodles.jpg" },
+      { "id": "food3", "chinese": "包子", "pinyin": "bāozi", "english": "bun", "image": "/assets/lesson11/bun.jpg" },
+      { "id": "food4", "chinese": "饺子", "pinyin": "jiǎozi", "english": "dumplings", "image": "/assets/lesson11/dumplings.jpg" },
+      { "id": "food5", "chinese": "鸡肉", "pinyin": "jīròu", "english": "chicken", "image": "/assets/lesson11/chicken.jpg" },
+      { "id": "food6", "chinese": "鱼", "pinyin": "yú", "english": "fish", "image": "/assets/lesson11/fish.jpg" },
+      { "id": "food7", "chinese": "水果", "pinyin": "shuǐguǒ", "english": "fruit", "image": "/assets/lesson11/fruit.jpg" },
+      { "id": "food8", "chinese": "水", "pinyin": "shuǐ", "english": "water", "image": "/assets/lesson11/water.jpg" },
+      { "id": "food9", "chinese": "茶", "pinyin": "chá", "english": "tea", "image": "/assets/lesson11/tea.jpg" },
+      { "id": "food10", "chinese": "咖啡", "pinyin": "kāfēi", "english": "coffee", "image": "/assets/lesson11/coffee.jpg" },
+      { "id": "food11", "chinese": "牛奶", "pinyin": "niúnǎi", "english": "milk", "image": "/assets/lesson11/milk.jpg" },
+      { "id": "food12", "chinese": "菜", "pinyin": "cài", "english": "dish/vegetable", "image": "/assets/lesson11/vegetable.jpg" }
+    ],
+  
+    "mcqQuestions": [
+      { "id": "q1", "image": "/assets/lesson11/rice.jpg", "choices": ["mǐfàn", "jiǎozi", "miàntiáo", "bāozi"], "correct": 0 },
+      { "id": "q2", "image": "/assets/lesson11/noodles.jpg", "choices": ["miàntiáo", "bāozi", "jīròu", "yú"], "correct": 0 },
+      { "id": "q3", "image": "/assets/lesson11/bun.jpg", "choices": ["bāozi", "mǐfàn", "niúnǎi", "chá"], "correct": 0 },
+      { "id": "q4", "image": "/assets/lesson11/dumplings.jpg", "choices": ["jiǎozi", "shuǐguǒ", "cài", "kāfēi"], "correct": 0 },
+      { "id": "q5", "image": "/assets/lesson11/chicken.jpg", "choices": ["jīròu", "yú", "cài", "bāozi"], "correct": 0 },
+      { "id": "q6", "image": "/assets/lesson11/fish.jpg", "choices": ["shuǐ", "yú", "jīròu", "miàntiáo"], "correct": 1 },
+      { "id": "q7", "image": "/assets/lesson11/fruit.jpg", "choices": ["shuǐguǒ", "niúnǎi", "chá", "kāfēi"], "correct": 0 },
+      { "id": "q8", "image": "/assets/lesson11/water.jpg", "choices": ["kāfēi", "shuǐ", "bāozi", "shuǐguǒ"], "correct": 1 },
+      { "id": "q9", "image": "/assets/lesson11/tea.jpg", "choices": ["shuǐ", "chá", "miàntiáo", "mǐfàn"], "correct": 1 },
+      { "id": "q10", "image": "/assets/lesson11/coffee.jpg", "choices": ["niúnǎi", "kāfēi", "cài", "mǐfàn"], "correct": 1 },
+      { "id": "q11", "image": "/assets/lesson11/milk.jpg", "choices": ["niúnǎi", "chá", "kāfēi", "bāozi"], "correct": 0 },
+      { "id": "q12", "image": "/assets/lesson11/vegetable.jpg", "choices": ["cài", "shuǐguǒ", "yú", "jīròu"], "correct": 0 }
+    ],
+  
+    "matchingTasks": {
+      "food": {
+        "left": [
+          { "id": "food1", "label": "mǐfàn" },
+          { "id": "food2", "label": "miàntiáo" },
+          { "id": "food3", "label": "bāozi" },
+          { "id": "food4", "label": "jiǎozi" },
+          { "id": "food5", "label": "jīròu" },
+          { "id": "food6", "label": "yú" },
+          { "id": "food7", "label": "shuǐguǒ" },
+          { "id": "food8", "label": "shuǐ" },
+          { "id": "food9", "label": "chá" },
+          { "id": "food10", "label": "kāfēi" },
+          { "id": "food11", "label": "niúnǎi" },
+          { "id": "food12", "label": "cài" }
+        ],
+        "right": [
+          { "id": "food1", "label": "rice" },
+          { "id": "food2", "label": "noodles" },
+          { "id": "food3", "label": "bun" },
+          { "id": "food4", "label": "dumplings" },
+          { "id": "food5", "label": "chicken" },
+          { "id": "food6", "label": "fish" },
+          { "id": "food7", "label": "fruit" },
+          { "id": "food8", "label": "water" },
+          { "id": "food9", "label": "tea" },
+          { "id": "food10", "label": "coffee" },
+          { "id": "food11", "label": "milk" },
+          { "id": "food12", "label": "dish/vegetable" }
+        ]
+      }
+    },
+  
+    "audioQuiz": [
+      { "id": "a1", "chinese": "米饭", "audioText": "米饭", "choices": ["jiǎozi", "bāozi", "mǐfàn", "miàntiáo"], "correct": 2 },
+      { "id": "a2", "chinese": "面条", "audioText": "面条", "choices": ["jīròu", "miàntiáo", "bāozi", "yú"], "correct": 1 },
+      { "id": "a3", "chinese": "包子", "audioText": "包子", "choices": ["bāozi", "niúnǎi", "chá", "mǐfàn"], "correct": 0 },
+      { "id": "a4", "chinese": "饺子", "audioText": "饺子", "choices": ["kāfēi", "jiǎozi", "cài", "shuǐguǒ"], "correct": 1 },
+      { "id": "a5", "chinese": "鸡肉", "audioText": "鸡肉", "choices": ["yú", "jīròu", "cài", "bāozi"], "correct": 1 },
+      { "id": "a6", "chinese": "鱼", "audioText": "鱼", "choices": ["yú", "jīròu", "shuǐ", "miàntiáo"], "correct": 0 },
+      { "id": "a7", "chinese": "水果", "audioText": "水果", "choices": ["kāfēi", "shuǐguǒ", "shuǐ", "chá"], "correct": 1 },
+      { "id": "a8", "chinese": "水", "audioText": "水", "choices": ["shuǐ", "kāfēi", "bāozi", "shuǐguǒ"], "correct": 0 },
+      { "id": "a9", "chinese": "茶", "audioText": "茶", "choices": ["miàntiáo", "chá", "mǐfàn", "shuǐ"], "correct": 1 },
+      { "id": "a10", "chinese": "咖啡", "audioText": "咖啡", "choices": ["niúnǎi", "kāfēi", "chá", "cài"], "correct": 1 },
+      { "id": "a11", "chinese": "牛奶", "audioText": "牛奶", "choices": ["kāfēi", "bāozi", "niúnǎi", "shuǐ"], "correct": 2 },
+      { "id": "a12", "chinese": "菜", "audioText": "菜", "choices": ["cài", "niúnǎi", "jīròu", "yú"], "correct": 0 }
+    ]
+  }
+  

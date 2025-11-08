@@ -1,36 +1,80 @@
+'use client';
+
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { GoogleLogin } from "@react-oauth/google";
 
 const LoginForm = () => {
+  const router = useRouter();
+  // 🧠 Step 1: State for user input
   const [formData, setFormData] = useState({
     email: "",
     password: "",
+    rememberMe: false, // added rememberMe field
   });
+
   const [message, setMessage] = useState("");
 
+  // 🔁 Step 2: Handle input changes
   const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: type === "checkbox" ? checked : value, // handle checkbox correctly
     });
   };
 
+  // 🚀 Step 3: Submit the login form
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch("https://fluent-flow-k3rx.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
       });
 
       const data = await res.json();
 
       if (res.ok) {
         setMessage("✅ Login successful!");
-        console.log("User:", data.user);
+
+        // 🛡️ Step 4: Store token based on rememberMe
+        const token = data.token; // assuming backend sends token
+
+        if (formData.rememberMe) {
+          // Persistent login - stays after closing browser
+          localStorage.setItem("token", token);
+        } else {
+          // Temporary login - removed when tab/browser closes
+          sessionStorage.setItem("token", token);
+        }
+
+        console.log("User logged in:", data.user);
+        try {
+          // Store user name (combine firstName and lastName if available)
+          const fullName = data?.user?.firstName && data?.user?.lastName 
+            ? `${data.user.firstName} ${data.user.lastName}`.trim()
+            : data?.user?.firstName || data?.user?.name || '';
+          if (fullName) localStorage.setItem("userName", fullName);
+          
+          // Store email
+          if (data?.user?.email) localStorage.setItem("userEmail", data.user.email);
+          
+          // Store avatar if available
+          if (data?.user?.avatar) localStorage.setItem("profileImage", data.user.avatar);
+        } catch {}
+
+        // Notify other components about the login so state updates immediately
+        window.dispatchEvent(new CustomEvent('userLoggedIn'));
+        window.dispatchEvent(new CustomEvent('profileUpdated'));
+
+        router.replace('/dashboard');
       } else {
         setMessage(`❌ ${data.message}`);
       }
@@ -40,9 +84,10 @@ const LoginForm = () => {
     }
   };
 
+  // 🌐 Step 5: Handle Google login (optional)
   const handleGoogleLoginSuccess = async (credentialResponse) => {
     try {
-      const res = await fetch("http://localhost:5000/api/auth/google-login", {
+      const res = await fetch("https://fluent-flow-k3rx.onrender.com/api/auth/google-login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: credentialResponse.credential }),
@@ -51,7 +96,44 @@ const LoginForm = () => {
       const data = await res.json();
       if (res.ok) {
         setMessage("✅ Google login successful!");
-        console.log("User:", data.user);
+        
+        // Store token (Google login uses 7-day expiry, so use localStorage)
+        const token = data.token;
+        if (token) {
+          localStorage.setItem("token", token);
+        }
+        
+        // Store user info
+        try {
+          // Ensure email is stored
+          if (data.user && data.user.email) {
+            localStorage.setItem("userEmail", data.user.email);
+            console.log("Email stored:", data.user.email);
+          } else {
+            console.error("No email in response:", data);
+          }
+          
+          // Store user name
+          const fullName = data.user?.firstName && data.user?.lastName
+            ? `${data.user.firstName} ${data.user.lastName}`.trim()
+            : data.user?.firstName || data.user?.lastName || data.user?.email || 'User';
+          
+          if (fullName) {
+            localStorage.setItem("userName", fullName);
+          }
+          
+          // Note: profileImage would need to be extracted from Google payload if needed
+        } catch (err) {
+          console.error("Error storing user data:", err);
+        }
+        
+        console.log("User data:", data.user);
+        
+        // Dispatch event to update sidebar immediately
+        window.dispatchEvent(new CustomEvent('userLoggedIn'));
+        window.dispatchEvent(new CustomEvent('profileUpdated'));
+
+        router.replace('/dashboard');
       } else {
         setMessage(`❌ ${data.message}`);
       }
@@ -64,6 +146,7 @@ const LoginForm = () => {
   return (
     <div className="bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-white/50">
       <form className="space-y-6" onSubmit={handleSubmit}>
+        {/* Email */}
         <div>
           <label htmlFor="email" className="block text-sm font-semibold text-neutral-800 mb-3">
             Email Address
@@ -76,10 +159,11 @@ const LoginForm = () => {
             placeholder="Enter your email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3.5 border border-neutral-200/50 rounded-xl bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
+            className="w-full px-4 py-3.5 border border-neutral-200/50 rounded-xl bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
           />
         </div>
 
+        {/* Password */}
         <div>
           <label htmlFor="password" className="block text-sm font-semibold text-neutral-800 mb-3">
             Password
@@ -92,7 +176,7 @@ const LoginForm = () => {
             placeholder="Enter your password"
             value={formData.password}
             onChange={handleChange}
-            className="w-full px-4 py-3.5 border border-neutral-200/50 rounded-xl bg-white/80 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
+            className="w-full px-4 py-3.5 border border-neutral-200/50 rounded-xl bg-white/80 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all duration-200"
           />
         </div>
 
@@ -101,19 +185,20 @@ const LoginForm = () => {
           <label className="flex items-center text-sm text-neutral-700 font-medium">
             <input
               type="checkbox"
-              name="remember-me"
+              name="rememberMe"
+              checked={formData.rememberMe}
+              onChange={handleChange}
               className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-neutral-300 rounded"
             />
             <span className="ml-3">Remember me</span>
           </label>
-          <a
-            href="#"
-            className="text-sm text-blue-900 hover:text-blue-500 font-medium"
-          >
+
+          <a href="#" className="text-sm text-blue-900 hover:text-blue-500 font-medium">
             Forgot password?
           </a>
         </div>
 
+        {/* Submit button */}
         <button
           type="submit"
           className="w-full bg-blue-900 text-white py-3.5 px-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02]"
@@ -129,7 +214,7 @@ const LoginForm = () => {
         </p>
       )}
 
-      {/* Social Login */}
+      {/* Divider */}
       <div className="mt-8">
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
@@ -142,6 +227,7 @@ const LoginForm = () => {
           </div>
         </div>
 
+        {/* Google login */}
         <div className="mt-6 grid grid-cols-1 gap-4">
           <GoogleLogin
             onSuccess={handleGoogleLoginSuccess}

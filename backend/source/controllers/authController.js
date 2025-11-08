@@ -1,8 +1,8 @@
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const { OAuth2Client } = require("google-auth-library");
 const User = require("../models/User");
 
-// Initialize Google OAuth client
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // -----------------------------
@@ -59,7 +59,7 @@ async function signup(req, res) {
 // -----------------------------
 async function login(req, res) {
   try {
-    const { email, password } = req.body;
+    const { email, password, rememberMe } = req.body;
 
     if (!email || !password)
       return res.status(400).json({ message: "Email and password are required" });
@@ -79,7 +79,19 @@ async function login(req, res) {
       email: user.email
     };
 
-    return res.status(200).json({ message: "Login successful", user: safeUser });
+    // 🔐 Create JWT Token
+    const expiresIn = rememberMe ? "7d" : "1h"; // 7 days if "remember me" checked, else 1 hour
+    const token = jwt.sign(
+      { id: user._id, email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn }
+    );
+
+    return res.status(200).json({
+      message: "Login successful",
+      user: safeUser,
+      token
+    });
   } catch (err) {
     console.error("Login error:", err);
     return res.status(500).json({ message: "Server error" });
@@ -94,7 +106,6 @@ async function googleLogin(req, res) {
     const { token } = req.body;
     if (!token) return res.status(400).json({ message: "Token is required" });
 
-    // Verify token with Google
     const ticket = await client.verifyIdToken({
       idToken: token,
       audience: process.env.GOOGLE_CLIENT_ID,
@@ -105,13 +116,12 @@ async function googleLogin(req, res) {
 
     let user = await User.findOne({ email });
 
-    // Create user if not exists
     if (!user) {
       user = await User.create({
         firstName: given_name,
         lastName: family_name,
         email,
-        password: await bcrypt.hash(Math.random().toString(36).slice(-8), 10), // random password
+        password: await bcrypt.hash(Math.random().toString(36).slice(-8), 10),
       });
     }
 
@@ -122,7 +132,17 @@ async function googleLogin(req, res) {
       email: user.email,
     };
 
-    return res.status(200).json({ message: "Google login successful", user: safeUser });
+    const jwtToken = jwt.sign(
+      { id: user._id, email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "7d" }
+    );
+
+    return res.status(200).json({
+      message: "Google login successful",
+      user: safeUser,
+      token: jwtToken
+    });
   } catch (err) {
     console.error("Google login error:", err);
     return res.status(500).json({ message: "Server error" });

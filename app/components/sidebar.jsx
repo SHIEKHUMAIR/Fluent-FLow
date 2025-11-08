@@ -8,20 +8,124 @@ import { useState , useEffect } from 'react';
 export default function Sidebar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [userName, setUserName] = useState('User');
+  const [userEmail, setUserEmail] = useState('user@example.com');
+  const [avatar, setAvatar] = useState(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showMobileUserMenu, setShowMobileUserMenu] = useState(false);
 
     useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  const navItems = [
+  useEffect(() => {
+    try {
+      const storedName = localStorage.getItem('userName');
+      const storedEmail = localStorage.getItem('userEmail');
+      const storedAvatar = localStorage.getItem('profileImage');
+      if (storedName) setUserName(storedName);
+      if (storedEmail) {
+        setUserEmail(storedEmail);
+        console.log('Sidebar initial email load:', storedEmail);
+      }
+      if (storedAvatar) setAvatar(storedAvatar);
+    } catch (err) {
+      console.error('Error loading initial user data in sidebar:', err);
+    }
+  }, []);
+
+  useEffect(() => {
+    const checkAuth = () => {
+      try {
+        const localToken = localStorage.getItem('token');
+        const sessionToken = sessionStorage.getItem('token');
+        setIsAuthenticated(Boolean(localToken || sessionToken));
+      } catch {
+        setIsAuthenticated(false);
+      }
+    };
+    checkAuth();
+    
+    const updateUserData = () => {
+      checkAuth();
+      try {
+        const storedName = localStorage.getItem('userName');
+        const storedEmail = localStorage.getItem('userEmail');
+        const storedAvatar = localStorage.getItem('profileImage');
+        
+        // Always update if data exists, even if empty string
+        if (storedName) setUserName(storedName);
+        if (storedEmail) {
+          setUserEmail(storedEmail);
+          console.log('Sidebar email updated:', storedEmail);
+        }
+        if (storedAvatar) setAvatar(storedAvatar);
+      } catch (err) {
+        console.error('Error updating user data in sidebar:', err);
+      }
+    };
+    
+    // Initial load of user data
+    updateUserData();
+    
+    // Listen for storage events (cross-window)
+    window.addEventListener('storage', updateUserData);
+    // Listen for custom profile update events (same window)
+    window.addEventListener('profileUpdated', updateUserData);
+    // Listen for login events (same window) - for Google login
+    window.addEventListener('userLoggedIn', updateUserData);
+    
+    return () => {
+      window.removeEventListener('storage', updateUserData);
+      window.removeEventListener('profileUpdated', updateUserData);
+      window.removeEventListener('userLoggedIn', updateUserData);
+    };
+  }, []);
+
+  const guestNavItems = [
     { href: '/', label: 'Home' },
     { href: '/features', label: 'Features' },
-    { href: '/modules', label: 'Modules' },
-    { href: '/dashboard', label: 'Dashboard' },
-    { href: '/lessons', label: 'Lessons' },
-    { href: '/leaderboard', label: 'Leaderboard' },
+    { href: '/demoexercise', label: 'Demo Exercise' },
     { href: '/auth', label: 'Auth' },
   ];
+
+  const authenticatedNavItems = [
+    { href: '/dashboard', label: 'Dashboard' },
+    { href: '/modules', label: 'Modules' },
+    { href: '/lessons', label: 'Lessons' },
+    { href: '/leaderboard', label: 'Leaderboard' },
+    { href: '/profile', label: 'Profile' },
+  ];
+
+  const navItems = isAuthenticated ? authenticatedNavItems : guestNavItems;
+
+  // Handle logout
+  const handleLogout = () => {
+    try {
+      // Clear tokens
+      localStorage.removeItem('token');
+      sessionStorage.removeItem('token');
+      
+      // Clear user data
+      localStorage.removeItem('userName');
+      localStorage.removeItem('userEmail');
+      localStorage.removeItem('profileImage');
+      
+      // Reset state
+      setIsAuthenticated(false);
+      setUserName('User');
+      setUserEmail('user@example.com');
+      setAvatar(null);
+      setShowUserMenu(false);
+      setShowMobileUserMenu(false);
+      
+      // Redirect to auth page
+      window.location.href = '/auth';
+    } catch (err) {
+      console.error('Logout error:', err);
+    }
+  };
 
   return (
     <>
@@ -46,21 +150,61 @@ export default function Sidebar() {
               key={item.href}
               href={item.href}
               label={item.label}
-              active={pathname === item.href}
+              active={pathname.startsWith(item.href)}
+
             />
           ))}
         </div>
 
         <div className="px-4 py-4 border-t border-gray-200">
-          <div className="flex items-center space-x-3 px-4 py-3 rounded_cstm bg-gray-50">
-            <div className="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-medium">U</span>
+          {isAuthenticated ? (
+            <div>
+              <div 
+                onClick={() => setShowUserMenu(!showUserMenu)}
+                className="flex items-center space-x-3 px-4 py-3 rounded_cstm bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors"
+              >
+                {avatar ? (
+                  <img src={avatar} alt="avatar" className="w-8 h-8 rounded-full object-cover" />
+                ) : (
+                  <div className="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm font-medium">{userName?.[0] || 'U'}</span>
+                  </div>
+                )}
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium text-gray-900 truncate">{userName}</p>
+                  <p className="text-xs text-gray-500 truncate">{userEmail}</p>
+                </div>
+                <svg 
+                  className={`w-4 h-4 text-gray-500 transition-transform ${showUserMenu ? 'rotate-180' : ''}`}
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+              
+              {showUserMenu && (
+                <div className="mt-2">
+                  <button
+                    onClick={handleLogout}
+                    className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-200 text-sm font-medium"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    <span>Logout</span>
+                  </button>
+                </div>
+              )}
             </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900 truncate">User</p>
-              <p className="text-xs text-gray-500 truncate">user@example.com</p>
-            </div>
-          </div>
+          ) : (
+            <Link href="/auth">
+              <div className="w-full bg-blue-900 text-white text-center font-semibold py-3 rounded-xl hover:bg-blue-800 transition-all duration-200">
+                Sign In
+              </div>
+            </Link>
+          )}
         </div>
       </nav>
 
@@ -104,7 +248,7 @@ export default function Sidebar() {
 
         {/* Sidebar */}
         <aside
-          className={`fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl overflow-y-auto transform transition-transform duration-300 ease-in-out ${
+          className={`fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl flex flex-col transform transition-transform duration-300 ease-in-out ${
             mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
@@ -128,7 +272,8 @@ export default function Sidebar() {
             </button>
           </div>
 
-          <div className="px-4 py-4 mb-2 space-y-2">
+          <div className="flex-1 flex flex-col">
+            <div className="flex-1 overflow-y-auto px-4 py-4 space-y-2">
             {navItems.map((item) => (
               <SidebarLink
                 key={item.href}
@@ -139,16 +284,56 @@ export default function Sidebar() {
             ))}
           </div>
 
-          <div className="px-4 py-4 border-t border-gray-200 mt-4 absolute bottom-0 w-full">
-            <div className="flex items-center space-x-3 px-4 py-3 rounded_cstm bg-gray-50">
-              <div className="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">
-                <span className="text-white text-sm font-medium">U</span>
+            <div className="px-4 py-4 border-t border-gray-200 mt-auto">
+            {isAuthenticated ? (
+              <div>
+                <div 
+                  onClick={() => setShowMobileUserMenu(!showMobileUserMenu)}
+                  className="flex items-center space-x-3 px-4 py-3 rounded_cstm bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors"
+                >
+                  {avatar ? (
+                    <img src={avatar} alt="avatar" className="w-8 h-8 rounded-full object-cover" />
+                  ) : (
+                    <div className="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">
+                      <span className="text-white text-sm font-medium">{userName?.[0] || 'U'}</span>
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-gray-900 truncate">{userName}</p>
+                    <p className="text-xs text-gray-500 truncate">{userEmail}</p>
+                  </div>
+                  <svg 
+                    className={`w-4 h-4 text-gray-500 transition-transform ${showMobileUserMenu ? 'rotate-180' : ''}`}
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+                
+                {showMobileUserMenu && (
+                  <div className="mt-2">
+                    <button
+                      onClick={handleLogout}
+                      className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-200 text-sm font-medium"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                      </svg>
+                      <span>Logout</span>
+                    </button>
+                  </div>
+                )}
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-medium text-gray-900 truncate">User</p>
-                <p className="text-xs text-gray-500 truncate">user@example.com</p>
-              </div>
-            </div>
+            ) : (
+              <Link href="/auth">
+                <div className="w-full bg-blue-900 text-white text-center font-semibold py-3 rounded-xl hover:bg-blue-800 transition-all duration-200">
+                  Sign In
+                </div>
+              </Link>
+            )}
+          </div>
           </div>
         </aside>
       </div>
@@ -174,6 +359,13 @@ function SidebarLink({ href, label, active = false }) {
       <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
           d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+        />
+      </svg>
+    ),
+    'Demo Exercise': (
+      <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+          d="M12 6.253v13M12 6.253C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253M12 6.253C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
         />
       </svg>
     ),
@@ -209,6 +401,13 @@ function SidebarLink({ href, label, active = false }) {
       </svg>
     ),
     Auth: (
+      <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+        />
+      </svg>
+    ),
+    Profile: (
       <svg className="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
           d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"

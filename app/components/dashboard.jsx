@@ -1,24 +1,68 @@
-import React from 'react'
+'use client';
+
+import React, { useState, useEffect } from 'react'
 
 const dashboard = () => {
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    const loadUserData = () => {
+      try {
+        const storedName = localStorage.getItem('userName');
+        if (storedName) {
+          setUserName(storedName);
+        }
+      } catch (err) {
+        console.error('Error loading user data in dashboard:', err);
+      }
+    };
+
+    loadUserData();
+
+    // Listen for profile updates
+    window.addEventListener('storage', loadUserData);
+    window.addEventListener('profileUpdated', loadUserData);
+    window.addEventListener('userLoggedIn', loadUserData);
+
+    return () => {
+      window.removeEventListener('storage', loadUserData);
+      window.removeEventListener('profileUpdated', loadUserData);
+      window.removeEventListener('userLoggedIn', loadUserData);
+    };
+  }, []);
+
   return (
 <section
-  className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-8 px-4 sm:px-6 lg:px-8"
+  className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8"
   id="dashboard">
   <div className="max-w-7xl mx-auto" id="el-f5zut2y1">
     <div className="mb-8" id="el-lrzvytib">
       <div
         className="flex flex-col sm:flex-row sm:items-center sm:justify-between"
         id="el-xlbbi1e3">
-        <div id="el-d5w1bwtt">
-          <h2
-            className="text-4xl font-bold bg-blue-900 bg-clip-text text-transparent mb-2"
-            id="el-b3prvh12">
+        <div>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-blue-900 bg-clip-text text-transparent pb-6">
             Dashboard
           </h2>
-          <p className="text-slate-600 text-lg" id="el-z85sotwn">
-            Welcome back! Here's your learning progress overview.
-          </p>
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+  Welcome back
+  {userName ? (
+    <>
+      ,{' '}
+      <span className="text-3xl sm:text-3xl font-bold text-blue-900">
+        {userName
+          .split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+          .join(' ')}
+      </span>
+    </>
+  ) : (
+    ''
+  )}
+  <br />
+  Here's your learning progress overview.
+</p>
+
         </div>
         <div className="mt-4 sm:mt-0" id="el-3dpz23ut">
           <div

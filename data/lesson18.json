@@ -1,0 +1,79 @@
+{
+  "learningSlides": [
+    { "id": "l18_1", "chinese": "人", "pinyin": "rén", "english": "person", "image": "/assets/lesson18/person.jpeg" },
+    { "id": "l18_2", "chinese": "男人", "pinyin": "nánrén", "english": "man", "image": "/assets/lesson18/man.jpeg" },
+    { "id": "l18_3", "chinese": "女人", "pinyin": "nǚrén", "english": "woman", "image": "/assets/lesson18/woman.jpeg" },
+    { "id": "l18_4", "chinese": "孩子", "pinyin": "háizi", "english": "child", "image": "/assets/lesson18/child.jpeg" },
+    { "id": "l18_5", "chinese": "高", "pinyin": "gāo", "english": "tall", "image": "/assets/lesson18/tall.jpeg" },
+    { "id": "l18_6", "chinese": "矮", "pinyin": "ǎi", "english": "short", "image": "/assets/lesson18/short.jpeg" },
+    { "id": "l18_7", "chinese": "胖", "pinyin": "pàng", "english": "fat", "image": "/assets/lesson18/fat.jpeg" },
+    { "id": "l18_8", "chinese": "瘦", "pinyin": "shòu", "english": "thin", "image": "/assets/lesson18/thin.jpeg" },
+    { "id": "l18_9", "chinese": "漂亮", "pinyin": "piàoliang", "english": "beautiful", "image": "/assets/lesson18/beautiful.jpeg" },
+    { "id": "l18_10", "chinese": "帅", "pinyin": "shuài", "english": "handsome", "image": "/assets/lesson18/handsome.jpeg" },
+    { "id": "l18_11", "chinese": "年轻", "pinyin": "niánqīng", "english": "young", "image": "/assets/lesson18/young.jpeg" },
+    { "id": "l18_12", "chinese": "老", "pinyin": "lǎo", "english": "old", "image": "/assets/lesson18/old.jpeg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson18/person.jpeg", "choices": ["rén", "nǚrén", "háizi", "pàng"], "correct": 0 },
+    { "id": "q2", "image": "/assets/lesson18/man.jpeg", "choices": ["nánrén", "shòu", "gāo", "lǎo"], "correct": 0 },
+    { "id": "q3", "image": "/assets/lesson18/woman.jpeg", "choices": ["nǚrén", "niánqīng", "ǎi", "piàoliang"], "correct": 0 },
+    { "id": "q4", "image": "/assets/lesson18/child.jpeg", "choices": ["shuài", "háizi", "rén", "gāo"], "correct": 1 },
+    { "id": "q5", "image": "/assets/lesson18/tall.jpeg", "choices": ["ǎi", "pàng", "gāo", "lǎo"], "correct": 2 },
+    { "id": "q6", "image": "/assets/lesson18/short.jpeg", "choices": ["piàoliang", "ǎi", "shòu", "rén"], "correct": 1 },
+    { "id": "q7", "image": "/assets/lesson18/fat.jpeg", "choices": ["pàng", "gāo", "háizi", "shuài"], "correct": 0 },
+    { "id": "q8", "image": "/assets/lesson18/thin.jpeg", "choices": ["lǎo", "nánrén", "shòu", "rén"], "correct": 2 },
+    { "id": "q9", "image": "/assets/lesson18/beautiful.jpeg", "choices": ["shuài", "niánqīng", "piàoliang", "ǎi"], "correct": 2 },
+    { "id": "q10", "image": "/assets/lesson18/handsome.jpeg", "choices": ["pàng", "shuài", "lǎo", "nǚrén"], "correct": 1 },
+    { "id": "q11", "image": "/assets/lesson18/young.jpeg", "choices": ["niánqīng", "rén", "shòu", "gāo"], "correct": 0 },
+    { "id": "q12", "image": "/assets/lesson18/old.jpeg", "choices": ["háizi", "piàoliang", "lǎo", "ǎi"], "correct": 2 }
+  ],
+
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "l18_1", "label": "rén" },
+        { "id": "l18_2", "label": "nánrén" },
+        { "id": "l18_3", "label": "nǚrén" },
+        { "id": "l18_4", "label": "háizi" },
+        { "id": "l18_5", "label": "gāo" },
+        { "id": "l18_6", "label": "ǎi" },
+        { "id": "l18_7", "label": "pàng" },
+        { "id": "l18_8", "label": "shòu" },
+        { "id": "l18_9", "label": "piàoliang" },
+        { "id": "l18_10", "label": "shuài" },
+        { "id": "l18_11", "label": "niánqīng" },
+        { "id": "l18_12", "label": "lǎo" }
+      ],
+      "right": [
+        { "id": "l18_1", "label": "person" },
+        { "id": "l18_2", "label": "man" },
+        { "id": "l18_3", "label": "woman" },
+        { "id": "l18_4", "label": "child" },
+        { "id": "l18_5", "label": "tall" },
+        { "id": "l18_6", "label": "short" },
+        { "id": "l18_7", "label": "fat" },
+        { "id": "l18_8", "label": "thin" },
+        { "id": "l18_9", "label": "beautiful" },
+        { "id": "l18_10", "label": "handsome" },
+        { "id": "l18_11", "label": "young" },
+        { "id": "l18_12", "label": "old" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "人", "audioText": "人", "choices": ["rén", "nǚrén", "háizi", "pàng"], "correct": 0 },
+    { "id": "a2", "chinese": "男人", "audioText": "男人", "choices": ["nánrén", "shòu", "gāo", "lǎo"], "correct": 0 },
+    { "id": "a3", "chinese": "女人", "audioText": "女人", "choices": ["nǚrén", "niánqīng", "ǎi", "piàoliang"], "correct": 0 },
+    { "id": "a4", "chinese": "孩子", "audioText": "孩子", "choices": ["shuài", "háizi", "rén", "gāo"], "correct": 1 },
+    { "id": "a5", "chinese": "高", "audioText": "高", "choices": ["ǎi", "pàng", "gāo", "lǎo"], "correct": 2 },
+    { "id": "a6", "chinese": "矮", "audioText": "矮", "choices": ["piàoliang", "ǎi", "shòu", "rén"], "correct": 1 },
+    { "id": "a7", "chinese": "胖", "audioText": "胖", "choices": ["pàng", "gāo", "háizi", "shuài"], "correct": 0 },
+    { "id": "a8", "chinese": "瘦", "audioText": "瘦", "choices": ["lǎo", "nánrén", "shòu", "rén"], "correct": 2 },
+    { "id": "a9", "chinese": "漂亮", "audioText": "漂亮", "choices": ["shuài", "niánqīng", "piàoliang", "ǎi"], "correct": 2 },
+    { "id": "a10", "chinese": "帅", "audioText": "帅", "choices": ["pàng", "shuài", "lǎo", "nǚrén"], "correct": 1 },
+    { "id": "a11", "chinese": "年轻", "audioText": "年轻", "choices": ["niánqīng", "rén", "shòu", "gāo"], "correct": 0 },
+    { "id": "a12", "chinese": "老", "audioText": "老", "choices": ["háizi", "piàoliang", "lǎo", "ǎi"], "correct": 2 }
+  ]
+}

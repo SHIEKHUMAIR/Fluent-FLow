@@ -228,12 +228,33 @@ const LoginForm = () => {
         </div>
 
         {/* Google login */}
-        <div className="mt-6 grid grid-cols-1 gap-4">
-          <GoogleLogin
-            onSuccess={handleGoogleLoginSuccess}
-            onError={() => setMessage("⚠️ Google login failed")}
-          />
-        </div>
+        <div className="mt-6 flex justify-center">
+  <div
+    className="
+      
+      rounded-3xl 
+      shadow-md 
+      w-full
+      hover:shadow-lg 
+      hover:scale-[1.02] 
+      transition-all 
+      duration-200
+      active:scale-95
+    "
+  >
+    <GoogleLogin
+      onSuccess={handleGoogleLoginSuccess}
+      onError={() => setMessage("⚠️ Google login failed")}
+      theme="outline"       // cleaner look
+      size="large"          // bigger button
+      shape="pill"          // rounded
+      width="100%"           // consistent width
+      text="signin_with"    // "Sign in with Google"
+      logo_alignment="left" // logo on left
+    />
+  </div>
+</div>
+
       </div>
     </div>
   );

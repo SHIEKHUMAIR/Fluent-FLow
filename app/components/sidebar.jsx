@@ -150,7 +150,11 @@ export default function Sidebar() {
               key={item.href}
               href={item.href}
               label={item.label}
-              active={pathname.startsWith(item.href)}
+               active={
+                item.href === '/'
+                  ? pathname === item.href
+                  : pathname.startsWith(item.href)
+              }
 
             />
           ))}

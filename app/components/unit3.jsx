@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 
-export default function Unit2() {
+export default function Unit3() {
 
   const lessons = [
-    { id: 10, title: "Lesson 10 - Colors & Descriptions", desc: "Learn colors in Mandarin and how to describe objects.", duration: "12 min", progress: 0, path: "/modules/unit02/lesson10" },
-    { id: 11, title: "Lesson 11 - Foods & Drinks", desc: "Learn common foods, drinks, and eating-related phrases in Mandarin.", duration: "15 min", progress: 0, path: "/modules/unit02/lesson11" },
-    { id: 12, title: "Lesson 12 - Weather & Nature", desc: "Learn weather terms, nature words, and environmental phrases.", duration: "13 min", progress: 0, path: "/modules/unit02/lesson12" },
-    { id: 13, title: "Lesson 13 - Daily Activities", desc: "Learn daily routine verbs and expressions in Mandarin.", duration: "14 min", progress: 0, path: "/modules/unit02/lesson13" },
-    { id: 14, title: "Lesson 14 - At the Market", desc: "Learn shopping phrases, fruits, vegetables, and bargaining words.", duration: "16 min", progress: 0, path: "/modules/unit02/lesson14" },
-    { id: 15, title: "Lesson 15 - Clothes & Shopping", desc: "Learn clothing items, shopping phrases, and sizes in Mandarin.", duration: "12 min", progress: 0, path: "/modules/unit02/lesson15" },
-    { id: 16, title: "Lesson 16 - Transport & Directions", desc: "Learn transport vocabulary and giving or following directions.", duration: "15 min", progress: 0, path: "/modules/unit02/lesson16" },
-    { id: 17, title: "Lesson 17 - Review & Speaking ", desc: "Review lessons and practice speaking with real-life projects.", duration: "18 min", progress: 0, path: "/modules/unit02/lesson17" },
+    { id: 18, title: "Lesson 18 - Describing People", desc: "Learn how to describe people in Mandarin: appearance, age, and personality.", duration: "14 min", progress: 0, path: "/modules/unit03/lesson18" },
+    { id: 19, title: "Lesson 19 - Feelings & Health", desc: "Learn how to express feelings, emotions, and talk about health.", duration: "13 min", progress: 0, path: "/modules/unit03/lesson19" },
+    { id: 20, title: "Lesson 20 - Question Words", desc: "Learn basic question words to ask questions in Mandarin.", duration: "12 min", progress: 0, path: "/modules/unit03/lesson20" },
+    { id: 21, title: "Lesson 21 - Numbers 11–100", desc: "Learn numbers from 11 to 100 and how to use them in sentences.", duration: "15 min", progress: 0, path: "/modules/unit03/lesson21" },
+    { id: 22, title: "Lesson 22 - House & Rooms", desc: "Learn vocabulary related to houses, rooms, and furniture.", duration: "14 min", progress: 0, path: "/modules/unit03/lesson22" },
+    { id: 23, title: "Lesson 23 - School & Learning", desc: "Learn words related to school, studying, exams, and classroom objects.", duration: "15 min", progress: 0, path: "/modules/unit03/lesson23" },
+    { id: 24, title: "Lesson 24 - Technology", desc: "Learn vocabulary for technology, devices, internet, apps, and software.", duration: "16 min", progress: 0, path: "/modules/unit03/lesson24" },
+    { id: 25, title: "Lesson 25 - Review & Speaking Project", desc: "Review previous lessons and practice speaking with projects.", duration: "18 min", progress: 0, path: "/modules/unit03/lesson25" },
   ];
 
   return (
@@ -36,7 +36,7 @@ export default function Unit2() {
 
           {/* Centered Title */}
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-blue-900 bg-clip-text text-transparent text-center">
-            Unit 02 <br /> Elementary Mandarin
+            Unit 03 <br /> Elementary Mandarin
           </h2>
         </div>
 
@@ -49,8 +49,8 @@ export default function Unit2() {
               <div className="p-8">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
-                  <span className="bg-amber-100 text-amber-700 text-sm font-semibold px-3 py-1.5 rounded-full">
-                    Intermediate
+                  <span className="bg-purple-100 text-purple-700 text-sm font-semibold px-3 py-1.5 rounded-full">
+                    Elementary
                   </span>
                   <div className="flex items-center text-sm text-slate-500">
                     <svg

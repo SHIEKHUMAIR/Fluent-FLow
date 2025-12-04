@@ -1,0 +1,79 @@
+{
+  "learningSlides": [
+    { "id": "l22_1", "chinese": "房子", "pinyin": "fángzi", "english": "house", "image": "/assets/lesson22/house.jpg" },
+    { "id": "l22_2", "chinese": "房间", "pinyin": "fángjiān", "english": "room", "image": "/assets/lesson22/room.jpg" },
+    { "id": "l22_3", "chinese": "厨房", "pinyin": "chúfáng", "english": "kitchen", "image": "/assets/lesson22/kitchen.jpg" },
+    { "id": "l22_4", "chinese": "厕所", "pinyin": "cèsuǒ", "english": "bathroom", "image": "/assets/lesson22/bathroom.jpg" },
+    { "id": "l22_5", "chinese": "客厅", "pinyin": "kètīng", "english": "living room", "image": "/assets/lesson22/livingroom.jpg" },
+    { "id": "l22_6", "chinese": "床", "pinyin": "chuáng", "english": "bed", "image": "/assets/lesson22/bed.jpg" },
+    { "id": "l22_7", "chinese": "桌子", "pinyin": "zhuōzi", "english": "table", "image": "/assets/lesson22/table.jpg" },
+    { "id": "l22_8", "chinese": "椅子", "pinyin": "yǐzi", "english": "chair", "image": "/assets/lesson22/chair.jpg" },
+    { "id": "l22_9", "chinese": "门", "pinyin": "mén", "english": "door", "image": "/assets/lesson22/door.jpg" },
+    { "id": "l22_10", "chinese": "窗户", "pinyin": "chuānghu", "english": "window", "image": "/assets/lesson22/window.jpg" },
+    { "id": "l22_11", "chinese": "灯", "pinyin": "dēng", "english": "light/lamp", "image": "/assets/lesson22/light.jpg" },
+    { "id": "l22_12", "chinese": "钥匙", "pinyin": "yàoshi", "english": "key", "image": "/assets/lesson22/key.jpg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson22/key.jpg", "choices": ["lamp", "key", "window", "table"], "correct": 1 },
+    { "id": "q2", "image": "/assets/lesson22/house.jpg", "choices": ["kitchen", "bed", "house", "door"], "correct": 2 },
+    { "id": "q3", "image": "/assets/lesson22/table.jpg", "choices": ["table", "bathroom", "chair", "lamp"], "correct": 0 },
+    { "id": "q4", "image": "/assets/lesson22/livingroom.jpg", "choices": ["bedroom", "kitchen", "living room", "key"], "correct": 2 },
+    { "id": "q5", "image": "/assets/lesson22/door.jpg", "choices": ["window", "light", "room", "door"], "correct": 3 },
+    { "id": "q6", "image": "/assets/lesson22/bed.jpg", "choices": ["chair", "bed", "table", "bathroom"], "correct": 1 },
+    { "id": "q7", "image": "/assets/lesson22/kitchen.jpg", "choices": ["cèsuǒ", "chúfáng", "chuānghu", "fángzi"], "correct": 1 },
+    { "id": "q8", "image": "/assets/lesson22/window.jpg", "choices": ["mén", "yàoshi", "chuānghu", "kètīng"], "correct": 2 },
+    { "id": "q9", "image": "/assets/lesson22/bathroom.jpg", "choices": ["cèsuǒ", "chuáng", "yǐzi", "dēng"], "correct": 0 },
+    { "id": "q10", "image": "/assets/lesson22/light.jpg", "choices": ["dēng", "zhuōzi", "fángjiān", "mén"], "correct": 0 },
+    { "id": "q11", "image": "/assets/lesson22/chair.jpg", "choices": ["yǐzi", "chuānghu", "fángzi", "kètīng"], "correct": 0 },
+    { "id": "q12", "image": "/assets/lesson22/room.jpg", "choices": ["fángjiān", "yàoshi", "chúfáng", "dēng"], "correct": 0 }
+  ],
+
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "l22_1", "label": "fángzi" },
+        { "id": "l22_2", "label": "fángjiān" },
+        { "id": "l22_3", "label": "chúfáng" },
+        { "id": "l22_4", "label": "cèsuǒ" },
+        { "id": "l22_5", "label": "kètīng" },
+        { "id": "l22_6", "label": "chuáng" },
+        { "id": "l22_7", "label": "zhuōzi" },
+        { "id": "l22_8", "label": "yǐzi" },
+        { "id": "l22_9", "label": "mén" },
+        { "id": "l22_10", "label": "chuānghu" },
+        { "id": "l22_11", "label": "dēng" },
+        { "id": "l22_12", "label": "yàoshi" }
+      ],
+      "right": [
+        { "id": "l22_1", "label": "house" },
+        { "id": "l22_2", "label": "room" },
+        { "id": "l22_3", "label": "kitchen" },
+        { "id": "l22_4", "label": "bathroom" },
+        { "id": "l22_5", "label": "living room" },
+        { "id": "l22_6", "label": "bed" },
+        { "id": "l22_7", "label": "table" },
+        { "id": "l22_8", "label": "chair" },
+        { "id": "l22_9", "label": "door" },
+        { "id": "l22_10", "label": "window" },
+        { "id": "l22_11", "label": "light/lamp" },
+        { "id": "l22_12", "label": "key" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "房子", "audioText": "房子", "choices": ["fángzi", "fángjiān", "chúfáng", "cèsuǒ"], "correct": 0 },
+    { "id": "a2", "chinese": "房间", "audioText": "房间", "choices": ["fángzi", "fángjiān", "kètīng", "chuáng"], "correct": 1 },
+    { "id": "a3", "chinese": "厨房", "audioText": "厨房", "choices": ["chúfáng", "cèsuǒ", "chuānghu", "fángzi"], "correct": 0 },
+    { "id": "a4", "chinese": "厕所", "audioText": "厕所", "choices": ["chuáng", "cèsuǒ", "yǐzi", "dēng"], "correct": 1 },
+    { "id": "a5", "chinese": "客厅", "audioText": "客厅", "choices": ["kètīng", "chúfáng", "chuānghu", "mén"], "correct": 0 },
+    { "id": "a6", "chinese": "床", "audioText": "床", "choices": ["yǐzi", "chuáng", "zhuōzi", "cèsuǒ"], "correct": 1 },
+    { "id": "a7", "chinese": "桌子", "audioText": "桌子", "choices": ["zhuōzi", "dēng", "chuáng", "yàoshi"], "correct": 0 },
+    { "id": "a8", "chinese": "椅子", "audioText": "椅子", "choices": ["yǐzi", "chuānghu", "fángzi", "kètīng"], "correct": 0 },
+    { "id": "a9", "chinese": "门", "audioText": "门", "choices": ["mén", "yàoshi", "chuáng", "dēng"], "correct": 0 },
+    { "id": "a10", "chinese": "窗户", "audioText": "窗户", "choices": ["chuānghu", "yàoshi", "chuáng", "kètīng"], "correct": 0 },
+    { "id": "a11", "chinese": "灯", "audioText": "灯", "choices": ["dēng", "chuáng", "zhuōzi", "fángjiān"], "correct": 0 },
+    { "id": "a12", "chinese": "钥匙", "audioText": "钥匙", "choices": ["yàoshi", "dēng", "chuānghu", "fángzi"], "correct": 0 }
+  ]
+}

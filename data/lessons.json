@@ -1,0 +1,238 @@
+{
+    "lessons": [
+        {
+            "id": 0,
+            "category": "beginner",
+            "title": "Lesson 0 - Introduction",
+            "desc": "Get started with Pinyin, tones, and Chinese pronunciation.",
+            "duration": "10 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson0"
+        },
+        {
+            "id": 1,
+            "category": "beginner",
+            "title": "Lesson 1 - Tones",
+            "desc": "Learn the 4 tones of Mandarin with examples and practice audio.",
+            "duration": "12 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson1"
+        },
+        {
+            "id": 2,
+            "category": "beginner",
+            "title": "Lesson 2 - Basic Greetings",
+            "desc": "Learn greetings, introductions, and farewells in Chinese.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson2"
+        },
+        {
+            "id": 3,
+            "category": "beginner",
+            "title": "Lesson 3 - Relationships",
+            "desc": "Explore family and relationship words in Mandarin.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson3"
+        },
+        {
+            "id": 4,
+            "category": "beginner",
+            "title": "Lesson 4 - Pronouns",
+            "desc": "Learn I, You, He, She, and They in Chinese.",
+            "duration": "9 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson4"
+        },
+        {
+            "id": 5,
+            "category": "beginner",
+            "title": "Lesson 5 - Numbers 0 to 10",
+            "desc": "Master counting from 1 to 10 in Chinese.",
+            "duration": "11 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson5"
+        },
+        {
+            "id": 6,
+            "category": "beginner",
+            "title": "Lesson 6 - Yes / No Basics",
+            "desc": "Understand how to say yes and no in conversations.",
+            "duration": "8 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson6"
+        },
+        {
+            "id": 7,
+            "category": "beginner",
+            "title": "Lesson 7 - Polite Phrases & Needs",
+            "desc": "Say please, thank you, and express needs politely.",
+            "duration": "13 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson7"
+        },
+        {
+            "id": 8,
+            "category": "beginner",
+            "title": "Lesson 8 - Days & Time",
+            "desc": "Talk about days, weeks, and time in Chinese.",
+            "duration": "12 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson8"
+        },
+        {
+            "id": 9,
+            "category": "beginner",
+            "title": "Lesson 9 - Country & Introduction",
+            "desc": "Learn to say where you’re from and your nationality.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit01/lesson9"
+        },
+        {
+            "id": 10,
+            "category": "intermediate",
+            "title": "Lesson 10 - Colors & Descriptions",
+            "desc": "Learn colors in Mandarin and how to describe objects.",
+            "duration": "12 min",
+            "progress": 0,
+            "path": "/modules/unit02/lesson10"
+        },
+        {
+            "id": 11,
+            "category": "intermediate",
+            "title": "Lesson 11 - Foods & Drinks",
+            "desc": "Learn common foods, drinks, and eating-related phrases in Mandarin.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit02/lesson11"
+        },
+        {
+            "id": 12,
+            "category": "intermediate",
+            "title": "Lesson 12 - Weather & Nature",
+            "desc": "Learn weather terms, nature words, and environmental phrases.",
+            "duration": "13 min",
+            "progress": 0,
+            "path": "/modules/unit02/lesson12"
+        },
+        {
+            "id": 13,
+            "category": "intermediate",
+            "title": "Lesson 13 - Daily Activities",
+            "desc": "Learn daily routine verbs and expressions in Mandarin.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit02/lesson13"
+        },
+        {
+            "id": 14,
+            "category": "intermediate",
+            "title": "Lesson 14 - At the Market",
+            "desc": "Learn shopping phrases, fruits, vegetables, and bargaining words.",
+            "duration": "16 min",
+            "progress": 0,
+            "path": "/modules/unit02/lesson14"
+        },
+        {
+            "id": 15,
+            "category": "intermediate",
+            "title": "Lesson 15 - Clothes & Shopping",
+            "desc": "Learn clothing items, shopping phrases, and sizes in Mandarin.",
+            "duration": "12 min",
+            "progress": 0,
+            "path": "/modules/unit02/lesson15"
+        },
+        {
+            "id": 16,
+            "category": "intermediate",
+            "title": "Lesson 16 - Transport & Directions",
+            "desc": "Learn transport vocabulary and giving or following directions.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit02/lesson16"
+        },
+        {
+            "id": 17,
+            "category": "intermediate",
+            "title": "Lesson 17 - Review & Speaking",
+            "desc": "Review lessons and practice speaking with real-life projects.",
+            "duration": "18 min",
+            "progress": 0,
+            "path": "/modules/unit02/lesson17"
+        },
+        {
+            "id": 18,
+            "category": "elementary",
+            "title": "Lesson 18 - Describing People",
+            "desc": "Learn how to describe people in Mandarin: appearance, age, and personality.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit03/lesson18"
+        },
+        {
+            "id": 19,
+            "category": "elementary",
+            "title": "Lesson 19 - Feelings & Health",
+            "desc": "Learn how to express feelings, emotions, and talk about health.",
+            "duration": "13 min",
+            "progress": 0,
+            "path": "/modules/unit03/lesson19"
+        },
+        {
+            "id": 20,
+            "category": "elementary",
+            "title": "Lesson 20 - Question Words",
+            "desc": "Learn basic question words to ask questions in Mandarin.",
+            "duration": "12 min",
+            "progress": 0,
+            "path": "/modules/unit03/lesson20"
+        },
+        {
+            "id": 21,
+            "category": "elementary",
+            "title": "Lesson 21 - Numbers 11–100",
+            "desc": "Learn numbers from 11 to 100 and how to use them in sentences.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit03/lesson21"
+        },
+        {
+            "id": 22,
+            "category": "elementary",
+            "title": "Lesson 22 - House & Rooms",
+            "desc": "Learn vocabulary related to houses, rooms, and furniture.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit03/lesson22"
+        },
+        {
+            "id": 23,
+            "category": "elementary",
+            "title": "Lesson 23 - School & Learning",
+            "desc": "Learn words related to school, studying, exams, and classroom objects.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit03/lesson23"
+        },
+        {
+            "id": 24,
+            "category": "elementary",
+            "title": "Lesson 24 - Technology",
+            "desc": "Learn vocabulary for technology, devices, internet, apps, and software.",
+            "duration": "16 min",
+            "progress": 0,
+            "path": "/modules/unit03/lesson24"
+        },
+        {
+            "id": 25,
+            "category": "elementary",
+            "title": "Lesson 25 - Review & Speaking Project",
+            "desc": "Review previous lessons and practice speaking with projects.",
+            "duration": "18 min",
+            "progress": 0,
+            "path": "/modules/unit03/lesson25"
+        }
+    ]
+}

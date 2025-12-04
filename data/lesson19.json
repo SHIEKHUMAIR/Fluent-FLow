@@ -1,0 +1,79 @@
+{
+  "learningSlides": [
+    { "id": "l19_1", "chinese": "高兴", "pinyin": "gāoxìng", "english": "happy", "image": "/assets/lesson19/happy.jpg" },
+    { "id": "l19_2", "chinese": "难过", "pinyin": "nánguò", "english": "sad", "image": "/assets/lesson19/sad.jpg" },
+    { "id": "l19_3", "chinese": "累", "pinyin": "lèi", "english": "tired", "image": "/assets/lesson19/tired.jpg" },
+    { "id": "l19_4", "chinese": "饿", "pinyin": "è", "english": "hungry", "image": "/assets/lesson19/hungry.jpg" },
+    { "id": "l19_5", "chinese": "渴", "pinyin": "kě", "english": "thirsty", "image": "/assets/lesson19/thirsty.jpg" },
+    { "id": "l19_6", "chinese": "生病", "pinyin": "shēngbìng", "english": "sick", "image": "/assets/lesson19/sick.jpg" },
+    { "id": "l19_7", "chinese": "疼", "pinyin": "téng", "english": "pain", "image": "/assets/lesson19/pain.jpg" },
+    { "id": "l19_8", "chinese": "医生", "pinyin": "yīshēng", "english": "doctor", "image": "/assets/lesson19/doctor.jpg" },
+    { "id": "l19_9", "chinese": "药", "pinyin": "yào", "english": "medicine", "image": "/assets/lesson19/medicine.jpg" },
+    { "id": "l19_10", "chinese": "没事", "pinyin": "méishì", "english": "it's okay", "image": "/assets/lesson19/okay.jpg" },
+    { "id": "l19_11", "chinese": "舒服", "pinyin": "shūfu", "english": "comfortable", "image": "/assets/lesson19/comfortable.jpg" },
+    { "id": "l19_12", "chinese": "害怕", "pinyin": "hàipà", "english": "afraid", "image": "/assets/lesson19/afraid.jpg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson19/happy.jpg", "choices": ["gāoxìng", "méishì", "lèi", "yào"], "correct": 0 },
+    { "id": "q2", "image": "/assets/lesson19/sad.jpg", "choices": ["shūfu", "nánguò", "téng", "kě"], "correct": 1 },
+    { "id": "q3", "image": "/assets/lesson19/tired.jpg", "choices": ["shēngbìng", "è", "lèi", "hàipà"], "correct": 2 },
+    { "id": "q4", "image": "/assets/lesson19/hungry.jpg", "choices": ["kě", "méishì", "yīshēng", "è"], "correct": 3 },
+    { "id": "q5", "image": "/assets/lesson19/thirsty.jpg", "choices": ["kě", "gāoxìng", "yào", "nánguò"], "correct": 0 },
+    { "id": "q6", "image": "/assets/lesson19/sick.jpg", "choices": ["shēngbìng", "téng", "shūfu", "hàipà"], "correct": 0 },
+    { "id": "q7", "image": "/assets/lesson19/pain.jpg", "choices": ["yīshēng", "téng", "méishì", "è"], "correct": 1 },
+    { "id": "q8", "image": "/assets/lesson19/doctor.jpg", "choices": ["yīshēng", "kě", "shūfu", "lèi"], "correct": 0 },
+    { "id": "q9", "image": "/assets/lesson19/medicine.jpg", "choices": ["yào", "gāoxìng", "téng", "shēngbìng"], "correct": 0 },
+    { "id": "q10", "image": "/assets/lesson19/okay.jpg", "choices": ["méishì", "nánguò", "hàipà", "è"], "correct": 0 },
+    { "id": "q11", "image": "/assets/lesson19/comfortable.jpg", "choices": ["shūfu", "yào", "gāoxìng", "lèi"], "correct": 0 },
+    { "id": "q12", "image": "/assets/lesson19/afraid.jpg", "choices": ["hàipà", "kě", "méishì", "téng"], "correct": 0 }
+  ],
+
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "l19_1", "label": "gāoxìng" },
+        { "id": "l19_2", "label": "nánguò" },
+        { "id": "l19_3", "label": "lèi" },
+        { "id": "l19_4", "label": "è" },
+        { "id": "l19_5", "label": "kě" },
+        { "id": "l19_6", "label": "shēngbìng" },
+        { "id": "l19_7", "label": "téng" },
+        { "id": "l19_8", "label": "yīshēng" },
+        { "id": "l19_9", "label": "yào" },
+        { "id": "l19_10", "label": "méishì" },
+        { "id": "l19_11", "label": "shūfu" },
+        { "id": "l19_12", "label": "hàipà" }
+      ],
+      "right": [
+        { "id": "l19_1", "label": "happy" },
+        { "id": "l19_2", "label": "sad" },
+        { "id": "l19_3", "label": "tired" },
+        { "id": "l19_4", "label": "hungry" },
+        { "id": "l19_5", "label": "thirsty" },
+        { "id": "l19_6", "label": "sick" },
+        { "id": "l19_7", "label": "pain" },
+        { "id": "l19_8", "label": "doctor" },
+        { "id": "l19_9", "label": "medicine" },
+        { "id": "l19_10", "label": "it's okay" },
+        { "id": "l19_11", "label": "comfortable" },
+        { "id": "l19_12", "label": "afraid" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "高兴", "audioText": "高兴", "choices": ["gāoxìng", "méishì", "lèi", "yào"], "correct": 0 },
+    { "id": "a2", "chinese": "难过", "audioText": "难过", "choices": ["shūfu", "nánguò", "téng", "kě"], "correct": 1 },
+    { "id": "a3", "chinese": "累", "audioText": "累", "choices": ["shēngbìng", "è", "lèi", "hàipà"], "correct": 2 },
+    { "id": "a4", "chinese": "饿", "audioText": "饿", "choices": ["kě", "méishì", "yīshēng", "è"], "correct": 3 },
+    { "id": "a5", "chinese": "渴", "audioText": "渴", "choices": ["kě", "gāoxìng", "yào", "nánguò"], "correct": 0 },
+    { "id": "a6", "chinese": "生病", "audioText": "生病", "choices": ["shēngbìng", "téng", "shūfu", "hàipà"], "correct": 0 },
+    { "id": "a7", "chinese": "疼", "audioText": "疼", "choices": ["yīshēng", "téng", "méishì", "è"], "correct": 1 },
+    { "id": "a8", "chinese": "医生", "audioText": "医生", "choices": ["yīshēng", "kě", "shūfu", "lèi"], "correct": 0 },
+    { "id": "a9", "chinese": "药", "audioText": "药", "choices": ["yào", "gāoxìng", "téng", "shēngbìng"], "correct": 0 },
+    { "id": "a10", "chinese": "没事", "audioText": "没事", "choices": ["méishì", "nánguò", "hàipà", "è"], "correct": 0 },
+    { "id": "a11", "chinese": "舒服", "audioText": "舒服", "choices": ["shūfu", "yào", "gāoxìng", "lèi"], "correct": 0 },
+    { "id": "a12", "chinese": "害怕", "audioText": "害怕", "choices": ["hàipà", "kě", "méishì", "téng"], "correct": 0 }
+  ]
+}

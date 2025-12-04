@@ -1,0 +1,59 @@
+{
+  "learningSlides": [
+    { "id": "l23_1", "chinese": "学校", "pinyin": "xuéxiào", "english": "school", "image": "/assets/lesson23/school.jpg" },
+    { "id": "l23_2", "chinese": "老师", "pinyin": "lǎoshī", "english": "teacher", "image": "/assets/lesson23/teacher.jpg" },
+    { "id": "l23_3", "chinese": "学生", "pinyin": "xuéshēng", "english": "student", "image": "/assets/lesson23/student.jpg" },
+    { "id": "l23_4", "chinese": "同学", "pinyin": "tóngxué", "english": "classmate", "image": "/assets/lesson23/classmate.jpg" },
+    { "id": "l23_5", "chinese": "教室", "pinyin": "jiàoshì", "english": "classroom", "image": "/assets/lesson23/classroom.jpg" },
+    { "id": "l23_6", "chinese": "课", "pinyin": "kè", "english": "lesson/class", "image": "/assets/lesson23/lesson.jpg" },
+    { "id": "l23_7", "chinese": "作业", "pinyin": "zuòyè", "english": "homework", "image": "/assets/lesson23/homework.jpg" },
+    { "id": "l23_8", "chinese": "考试", "pinyin": "kǎoshì", "english": "exam", "image": "/assets/lesson23/exam.jpg" },
+    { "id": "l23_9", "chinese": "问题", "pinyin": "wèntí", "english": "question/problem", "image": "/assets/lesson23/question.jpg" },
+    { "id": "l23_10", "chinese": "答案", "pinyin": "dá’àn", "english": "answer", "image": "/assets/lesson23/answer.jpg" },
+    { "id": "l23_11", "chinese": "书", "pinyin": "shū", "english": "book", "image": "/assets/lesson23/book.jpg" },
+    { "id": "l23_12", "chinese": "图书馆", "pinyin": "túshūguǎn", "english": "library", "image": "/assets/lesson23/library.jpg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson23/classroom.jpg", "choices": ["classroom", "school", "library", "homework"], "correct": 0 },
+    { "id": "q2", "image": "/assets/lesson23/homework.jpg", "choices": ["exam", "homework", "answer", "book"], "correct": 1 },
+    { "id": "q3", "image": "/assets/lesson23/student.jpg", "choices": ["teacher", "student", "question", "classmate"], "correct": 1 },
+    { "id": "q4", "image": "/assets/lesson23/exam.jpg", "choices": ["answer", "book", "exam", "classroom"], "correct": 2 },
+    { "id": "q5", "image": "/assets/lesson23/teacher.jpg", "choices": ["xuéxiào", "lǎoshī", "tóngxué", "shū"], "correct": 1 },
+    { "id": "q6", "image": "/assets/lesson23/school.jpg", "choices": ["xuéxiào", "dá’àn", "jiàoshì", "kè"], "correct": 0 },
+    { "id": "q7", "image": "/assets/lesson23/book.jpg", "choices": ["shū", "zuòyè", "túshūguǎn", "wèntí"], "correct": 0 },
+    { "id": "q8", "image": "/assets/lesson23/question.jpg", "choices": ["tóngxué", "dá’àn", "wèntí", "shū"], "correct": 2 }
+  ],
+
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "l23_1", "label": "tóngxué" },
+        { "id": "l23_2", "label": "kè" },
+        { "id": "l23_3", "label": "dá’àn" },
+        { "id": "l23_4", "label": "túshūguǎn" }
+      ],
+      "right": [
+        { "id": "l23_1", "label": "classmate" },
+        { "id": "l23_2", "label": "lesson/class" },
+        { "id": "l23_3", "label": "answer" },
+        { "id": "l23_4", "label": "library" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "学校", "audioText": "学校", "choices": ["xuéxiào", "lǎoshī", "xuéshēng", "tóngxué"], "correct": 0 },
+    { "id": "a2", "chinese": "老师", "audioText": "老师", "choices": ["xuéxiào", "lǎoshī", "tóngxué", "shū"], "correct": 1 },
+    { "id": "a3", "chinese": "学生", "audioText": "学生", "choices": ["xuéshēng", "lǎoshī", "tóngxué", "shū"], "correct": 0 },
+    { "id": "a4", "chinese": "同学", "audioText": "同学", "choices": ["tóngxué", "kè", "dá’àn", "túshūguǎn"], "correct": 0 },
+    { "id": "a5", "chinese": "教室", "audioText": "教室", "choices": ["jiàoshì", "zuòyè", "kǎoshì", "xuéxiào"], "correct": 0 },
+    { "id": "a6", "chinese": "课", "audioText": "课", "choices": ["kè", "zuòyè", "xuéshēng", "shū"], "correct": 0 },
+    { "id": "a7", "chinese": "作业", "audioText": "作业", "choices": ["zuòyè", "kǎoshì", "dá’àn", "shū"], "correct": 0 },
+    { "id": "a8", "chinese": "考试", "audioText": "考试", "choices": ["kǎoshì", "zuòyè", "xuéxiào", "tóngxué"], "correct": 0 },
+    { "id": "a9", "chinese": "问题", "audioText": "问题", "choices": ["wèntí", "dá’àn", "shū", "túshūguǎn"], "correct": 0 },
+    { "id": "a10", "chinese": "答案", "audioText": "答案", "choices": ["dá’àn", "wèntí", "shū", "túshūguǎn"], "correct": 0 },
+    { "id": "a11", "chinese": "书", "audioText": "书", "choices": ["shū", "zuòyè", "dá’àn", "túshūguǎn"], "correct": 0 },
+    { "id": "a12", "chinese": "图书馆", "audioText": "图书馆", "choices": ["túshūguǎn", "shū", "dá’àn", "tóngxué"], "correct": 0 }
+  ]
+}

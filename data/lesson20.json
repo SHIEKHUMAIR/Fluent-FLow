@@ -1,0 +1,79 @@
+{
+  "learningSlides": [
+    { "id": "l20_1", "chinese": "什么", "pinyin": "shénme", "english": "what", "image": "/assets/lesson20/what.jpg" },
+    { "id": "l20_2", "chinese": "谁", "pinyin": "shéi", "english": "who", "image": "/assets/lesson20/who.jpg" },
+    { "id": "l20_3", "chinese": "哪", "pinyin": "nǎ", "english": "which", "image": "/assets/lesson20/which.jpg" },
+    { "id": "l20_4", "chinese": "哪里", "pinyin": "nǎlǐ", "english": "where", "image": "/assets/lesson20/where.jpg" },
+    { "id": "l20_5", "chinese": "多少", "pinyin": "duōshao", "english": "how many / how much", "image": "/assets/lesson20/howmanyhowmuch.jpg" },
+    { "id": "l20_6", "chinese": "为什么", "pinyin": "wèishénme", "english": "why", "image": "/assets/lesson20/why.jpg" },
+    { "id": "l20_7", "chinese": "怎么", "pinyin": "zěnme", "english": "how", "image": "/assets/lesson20/how.jpg" },
+    { "id": "l20_8", "chinese": "几", "pinyin": "jǐ", "english": "how many (small numbers)", "image": "/assets/lesson20/howmanysmall.jpg" },
+    { "id": "l20_9", "chinese": "什么时候", "pinyin": "shénme shíhòu", "english": "when", "image": "/assets/lesson20/when.jpg" },
+    { "id": "l20_10", "chinese": "怎么样", "pinyin": "zěnmeyàng", "english": "how about", "image": "/assets/lesson20/howabout.jpg" },
+    { "id": "l20_11", "chinese": "多长时间", "pinyin": "duō cháng shíjiān", "english": "how long", "image": "/assets/lesson20/howlong.jpg" },
+    { "id": "l20_12", "chinese": "几岁", "pinyin": "jǐ suì", "english": "how old (for children)", "image": "/assets/lesson20/howold.jpg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson20/who.jpg", "choices": ["shénme", "nǎ", "shéi", "shénme shíhòu"], "correct": 2 },
+    { "id": "q2", "image": "/assets/lesson20/howabout.jpg", "choices": ["zěnme", "wèishénme", "zěnmeyàng", "duō cháng shíjiān"], "correct": 2 },
+    { "id": "q3", "image": "/assets/lesson20/when.jpg", "choices": ["nǎlǐ", "shénme shíhòu", "shénme", "jǐ"], "correct": 1 },
+    { "id": "q4", "image": "/assets/lesson20/howlong.jpg", "choices": ["duō cháng shíjiān", "jǐ suì", "nǎ", "zěnme"], "correct": 0 },
+    { "id": "q5", "image": "/assets/lesson20/howmanyhowmuch.jpg", "choices": ["jǐ", "duōshao", "zěnme", "nǎlǐ"], "correct": 1 },
+    { "id": "q6", "image": "/assets/lesson20/where.jpg", "choices": ["shéi", "nǎlǐ", "shénme", "jǐ suì"], "correct": 1 },
+    { "id": "q7", "image": "/assets/lesson20/why.jpg", "choices": ["wèishénme", "nǎ", "jǐ", "zěnmeyàng"], "correct": 0 },
+    { "id": "q8", "image": "/assets/lesson20/what.jpg", "choices": ["shénme", "shéi", "nǎ", "zěnme"], "correct": 0 },
+    { "id": "q9", "image": "/assets/lesson20/howold.jpg", "choices": ["shénme shíhòu", "jǐ suì", "zěnmeyàng", "duō cháng shíjiān"], "correct": 1 },
+    { "id": "q10", "image": "/assets/lesson20/which.jpg", "choices": ["nǎ", "zěnme", "jǐ", "shénme"], "correct": 0 },
+    { "id": "q11", "image": "/assets/lesson20/how.jpg", "choices": ["duōshao", "zěnme", "nǎlǐ", "shéi"], "correct": 1 },
+    { "id": "q12", "image": "/assets/lesson20/howmanysmall.jpg", "choices": ["jǐ", "shénme", "wèishénme", "shéi"], "correct": 0 }
+  ],
+
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "l20_1", "label": "shénme" },
+        { "id": "l20_2", "label": "shéi" },
+        { "id": "l20_3", "label": "nǎ" },
+        { "id": "l20_4", "label": "nǎlǐ" },
+        { "id": "l20_5", "label": "duōshao" },
+        { "id": "l20_6", "label": "wèishénme" },
+        { "id": "l20_7", "label": "zěnme" },
+        { "id": "l20_8", "label": "jǐ" },
+        { "id": "l20_9", "label": "shénme shíhòu" },
+        { "id": "l20_10", "label": "zěnmeyàng" },
+        { "id": "l20_11", "label": "duō cháng shíjiān" },
+        { "id": "l20_12", "label": "jǐ suì" }
+      ],
+      "right": [
+        { "id": "l20_1", "label": "what" },
+        { "id": "l20_2", "label": "who" },
+        { "id": "l20_3", "label": "which" },
+        { "id": "l20_4", "label": "where" },
+        { "id": "l20_5", "label": "how many / how much" },
+        { "id": "l20_6", "label": "why" },
+        { "id": "l20_7", "label": "how" },
+        { "id": "l20_8", "label": "how many (small numbers)" },
+        { "id": "l20_9", "label": "when" },
+        { "id": "l20_10", "label": "how about" },
+        { "id": "l20_11", "label": "how long" },
+        { "id": "l20_12", "label": "how old (for children)" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "什么", "audioText": "什么", "choices": ["shénme", "nǎ", "shéi", "shénme shíhòu"], "correct": 0 },
+    { "id": "a2", "chinese": "谁", "audioText": "谁", "choices": ["shénme", "nǎ", "shéi", "shénme shíhòu"], "correct": 2 },
+    { "id": "a3", "chinese": "哪", "audioText": "哪", "choices": ["nǎ", "jǐ", "zěnme", "duōshao"], "correct": 0 },
+    { "id": "a4", "chinese": "哪里", "audioText": "哪里", "choices": ["nǎlǐ", "shéi", "shénme", "jǐ suì"], "correct": 0 },
+    { "id": "a5", "chinese": "多少", "audioText": "多少", "choices": ["jǐ", "duōshao", "zěnme", "nǎlǐ"], "correct": 1 },
+    { "id": "a6", "chinese": "为什么", "audioText": "为什么", "choices": ["wèishénme", "nǎ", "jǐ", "zěnmeyàng"], "correct": 0 },
+    { "id": "a7", "chinese": "怎么", "audioText": "怎么", "choices": ["duōshao", "zěnme", "nǎlǐ", "shéi"], "correct": 1 },
+    { "id": "a8", "chinese": "几", "audioText": "几", "choices": ["jǐ", "shénme", "wèishénme", "shéi"], "correct": 0 },
+    { "id": "a9", "chinese": "什么时候", "audioText": "什么时候", "choices": ["shénme shíhòu", "zěnme", "duōshao", "jǐ suì"], "correct": 0 },
+    { "id": "a10", "chinese": "怎么样", "audioText": "怎么样", "choices": ["zěnmeyàng", "wèishénme", "shénme", "nǎ"], "correct": 0 },
+    { "id": "a11", "chinese": "多长时间", "audioText": "多长时间", "choices": ["duō cháng shíjiān", "jǐ suì", "zěnme", "shénme shíhòu"], "correct": 0 },
+    { "id": "a12", "chinese": "几岁", "audioText": "几岁", "choices": ["jǐ suì", "duō cháng shíjiān", "shénme", "shéi"], "correct": 0 }
+  ]
+}

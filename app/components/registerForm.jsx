@@ -127,10 +127,45 @@ const RegisterForm = () => {
       </form>
 
       {message && <p className="mt-4 text-center font-medium">{message}</p>}
-
-      <div className="mt-8">
+<div className="relative mt-8">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-neutral-200/60" />
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-4 bg-white/80 text-neutral-500 font-medium rounded-full">
+              Or continue with
+            </span>
+          </div>
+        </div>
+         <div className="mt-6 flex justify-center">
+          <div
+             className="
+             
+           rounded-3xl 
+      shadow-md 
+      w-full
+      hover:shadow-lg 
+      hover:scale-[1.02] 
+      transition-all 
+      duration-200
+      active:scale-95
+            "
+          >
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess} onError={() => setMessage("❌ Google signup failed")}
+              theme="outline"       // cleaner look
+              size="3-xl"          // bigger button
+              shape="pill"          // rounded
+              width="100%"           // consistent width
+              text="signin_with"    // "Sign in with Google"
+              logo_alignment="left" // logo on left
+            />
+          </div>
+        </div>
+      {/* <div className="mt-8">
+        
         <GoogleLogin onSuccess={handleGoogleSuccess} onError={() => setMessage("❌ Google signup failed")} />
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://fluent-f-low.vercel.app/", // frontend URL
+      "https://fluent-flow-six.vercel.app", // frontend URL
       
       "http://localhost:3000"            // optional for local dev
     ],

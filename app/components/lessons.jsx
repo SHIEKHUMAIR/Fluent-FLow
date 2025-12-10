@@ -35,8 +35,8 @@ const Lessons = () => {
                     key={category}
                     onClick={() => setActiveCategory(category)}
                     className={`w-full text-left px-5 py-4 rounded-xl font-semibold transition-all duration-200 ${activeCategory === category
-                        ? 'bg-blue-900 text-white shadow-md transform scale-105'
-                        : 'text-slate-700 hover:bg-slate-100'
+                      ? 'bg-blue-900 text-white shadow-md transform scale-105'
+                      : 'text-slate-700 hover:bg-slate-100'
                       }`}
                   >
                     {category === 'All' ? 'All Lessons' : category}
@@ -52,9 +52,11 @@ const Lessons = () => {
               {filteredLessons.map((lesson) => (
                 <div
                   key={lesson.id}
-                  className="bg-white/90 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  // CHANGE 1: Added 'flex flex-col h-full' to make the card stretch and organize vertically
+                  className="bg-white/90 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col h-full"
                 >
-                  <div className="p-8">
+                  {/* CHANGE 2: Added 'flex flex-col flex-grow' to make the content fill the card height */}
+                  <div className="p-8 flex flex-col flex-grow">
                     <div className="flex items-center justify-between mb-6">
                       <span className={`text-sm font-semibold px-3 py-1.5 rounded-full ${lesson.category === 'beginner' ? 'bg-emerald-100 text-emerald-700' :
                           lesson.category === 'elementary' ? 'bg-purple-100 text-purple-700' :
@@ -92,8 +94,9 @@ const Lessons = () => {
                       </div>
                     </div>
 
-                    <Link href={lesson.path}>
-                      <button className="w-full bg-blue-800 hover:bg-blue-900 py-3 px-6 rounded-xl font-semibold transition-all duration-200 text-white">
+                    {/* CHANGE 3: Added 'mt-auto' to the Link to push it to the bottom of the flex container */}
+                    <Link href={lesson.path} className="mt-auto">
+                      <button className="w-full bg-blue-900 hover:bg-blue-800 py-3 px-6 rounded-xl font-semibold transition-all duration-200 text-white">
                         {lesson.progress === 0 ? 'Start Lesson' : 'Continue Lesson'}
                       </button>
                     </Link>

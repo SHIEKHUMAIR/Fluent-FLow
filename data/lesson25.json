@@ -1,57 +1,472 @@
 {
   "learningSlides": [
-    { "id": "l25_1", "chinese": "说话", "pinyin": "shuōhuà", "english": "to talk", "image": "/assets/lesson25/totalk.jpg" },
-    { "id": "l25_2", "chinese": "聊天", "pinyin": "liáotiān", "english": "to chat", "image": "/assets/lesson25/tochat.jpg" },
-    { "id": "l25_3", "chinese": "打电话", "pinyin": "dǎ diànhuà", "english": "to make a phone call", "image": "/assets/lesson25/tocall.jpg" },
-    { "id": "l25_4", "chinese": "写字", "pinyin": "xiězì", "english": "to write characters", "image": "/assets/lesson25/towrite.jpg" },
-    { "id": "l25_5", "chinese": "读书", "pinyin": "dúshū", "english": "to read/study", "image": "/assets/lesson25/toread.jpg" },
-    { "id": "l25_6", "chinese": "问", "pinyin": "wèn", "english": "to ask", "image": "/assets/lesson25/toask.jpg" },
-    { "id": "l25_7", "chinese": "答", "pinyin": "dá", "english": "to answer", "image": "/assets/lesson25/toanswer.jpg" },
-    { "id": "l25_8", "chinese": "学习", "pinyin": "xuéxí", "english": "to study", "image": "/assets/lesson25/study.jpg" },
-    { "id": "l25_9", "chinese": "记", "pinyin": "jì", "english": "to remember", "image": "/assets/lesson25/remember.jpg" },
-    { "id": "l25_10", "chinese": "忘", "pinyin": "wàng", "english": "to forget", "image": "/assets/lesson25/forget.jpg" },
-    { "id": "l25_11", "chinese": "开会", "pinyin": "kāihuì", "english": "to have a meeting", "image": "/assets/lesson25/meeting.jpg" },
-    { "id": "l25_12", "chinese": "演讲", "pinyin": "yǎnjiǎng", "english": "to give a speech", "image": "/assets/lesson25/speech.jpg" }
+    {
+      "id": "l25_1",
+      "chinese": "说话",
+      "pinyin": "shuōhuà",
+      "english": "to talk",
+      "image": "/assets/lesson25/totalk.jpg"
+    },
+    {
+      "id": "l25_2",
+      "chinese": "聊天",
+      "pinyin": "liáotiān",
+      "english": "to chat",
+      "image": "/assets/lesson25/tochat.jpg"
+    },
+    {
+      "id": "l25_3",
+      "chinese": "打电话",
+      "pinyin": "dǎ diànhuà",
+      "english": "to make a phone call",
+      "image": "/assets/lesson25/tocall.jpg"
+    },
+    {
+      "id": "l25_4",
+      "chinese": "写字",
+      "pinyin": "xiězì",
+      "english": "to write characters",
+      "image": "/assets/lesson25/towrite.jpg"
+    },
+    {
+      "id": "l25_5",
+      "chinese": "读书",
+      "pinyin": "dúshū",
+      "english": "to read/study",
+      "image": "/assets/lesson25/toread.jpg"
+    },
+    {
+      "id": "l25_6",
+      "chinese": "问",
+      "pinyin": "wèn",
+      "english": "to ask",
+      "image": "/assets/lesson25/toask.jpg"
+    },
+    {
+      "id": "l25_7",
+      "chinese": "答",
+      "pinyin": "dá",
+      "english": "to answer",
+      "image": "/assets/lesson25/toanswer.jpg"
+    },
+    {
+      "id": "l25_8",
+      "chinese": "学习",
+      "pinyin": "xuéxí",
+      "english": "to study",
+      "image": "/assets/lesson25/study.jpg"
+    },
+    {
+      "id": "l25_9",
+      "chinese": "记",
+      "pinyin": "jì",
+      "english": "to remember",
+      "image": "/assets/lesson25/remember.jpg"
+    },
+    {
+      "id": "l25_10",
+      "chinese": "忘",
+      "pinyin": "wàng",
+      "english": "to forget",
+      "image": "/assets/lesson25/forget.jpg"
+    },
+    {
+      "id": "l25_11",
+      "chinese": "开会",
+      "pinyin": "kāihuì",
+      "english": "to have a meeting",
+      "image": "/assets/lesson25/meeting.jpg"
+    },
+    {
+      "id": "l25_12",
+      "chinese": "演讲",
+      "pinyin": "yǎnjiǎng",
+      "english": "to give a speech",
+      "image": "/assets/lesson25/speech.jpg"
+    }
   ],
-
   "mcqQuestions": [
-    { "id": "q1", "image": "/assets/lesson25/read.jpg", "choices": ["to give a speech", "to read / study", "to forget", "to talk"], "correct": 1 },
-    { "id": "q2", "image": "/assets/lesson25/forget.jpg", "choices": ["to forget", "to chat", "to remember", "to ask"], "correct": 0 },
-    { "id": "q3", "image": "/assets/lesson25/speech.jpg", "choices": ["to answer", "to make a phone call", "to give a speech", "to chat"], "correct": 2 },
-    { "id": "q4", "image": "/assets/lesson25/ask.jpg", "choices": ["to ask", "to study", "to talk", "to write"], "correct": 0 },
-    { "id": "q5", "image": "/assets/lesson25/chat.jpg", "choices": ["to chat", "to have a meeting", "to remember", "to answer"], "correct": 0 },
-    { "id": "q6", "image": "/assets/lesson25/talk.jpg", "choices": ["to talk", "to study", "to write characters", "to give a speech"], "correct": 0 }
+    {
+      "id": "q1",
+      "image": "/assets/lesson25/totalk.jpg",
+      "choices": [
+        "liáotiān",
+        "shuōhuà",
+        "jì",
+        "yǎnjiǎng"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "q2",
+      "image": "/assets/lesson25/tochat.jpg",
+      "choices": [
+        "liáotiān",
+        "dá",
+        "xiězì",
+        "wèn"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q3",
+      "image": "/assets/lesson25/tocall.jpg",
+      "choices": [
+        "dǎ diànhuà",
+        "xuéxí",
+        "wàng",
+        "dúshū"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q4",
+      "image": "/assets/lesson25/towrite.jpg",
+      "choices": [
+        "xiězì",
+        "dá",
+        "kāihuì",
+        "shuōhuà"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q5",
+      "image": "/assets/lesson25/toread.jpg",
+      "choices": [
+        "jì",
+        "dúshū",
+        "wàng",
+        "yǎnjiǎng"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "q6",
+      "image": "/assets/lesson25/toask.jpg",
+      "choices": [
+        "liáotiān",
+        "xuéxí",
+        "wèn",
+        "dǎ diànhuà"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "q7",
+      "image": "/assets/lesson25/toanswer.jpg",
+      "choices": [
+        "dá",
+        "wàng",
+        "jì",
+        "xiězì"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q8",
+      "image": "/assets/lesson25/study.jpg",
+      "choices": [
+        "xuéxí",
+        "dúshū",
+        "yǎnjiǎng",
+        "kāihuì"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q9",
+      "image": "/assets/lesson25/remember.jpg",
+      "choices": [
+        "shuōhuà",
+        "jì",
+        "dá",
+        "liáotiān"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "q10",
+      "image": "/assets/lesson25/forget.jpg",
+      "choices": [
+        "xuéxí",
+        "wàng",
+        "kāihuì",
+        "dǎ diànhuà"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "q11",
+      "image": "/assets/lesson25/meeting.jpg",
+      "choices": [
+        "kāihuì",
+        "wàng",
+        "jì",
+        "yǎnjiǎng"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q12",
+      "image": "/assets/lesson25/speech.jpg",
+      "choices": [
+        "xiězì",
+        "yǎnjiǎng",
+        "liáotiān",
+        "dúshū"
+      ],
+      "correct": 1
+    }
   ],
-
   "matchingTasks": {
     "review": {
       "left": [
-        { "id": "l25_1", "label": "jì" },
-        { "id": "l25_2", "label": "xiězì" },
-        { "id": "l25_3", "label": "kāihuì" },
-        { "id": "l25_4", "label": "dá" }
+        {
+          "id": "m1",
+          "label": "shuōhuà"
+        },
+        {
+          "id": "m2",
+          "label": "liáotiān"
+        },
+        {
+          "id": "m3",
+          "label": "dǎ diànhuà"
+        },
+        {
+          "id": "m4",
+          "label": "xiězì"
+        },
+        {
+          "id": "m5",
+          "label": "dúshū"
+        },
+        {
+          "id": "m6",
+          "label": "wèn"
+        },
+        {
+          "id": "m7",
+          "label": "dá"
+        },
+        {
+          "id": "m8",
+          "label": "xuéxí"
+        },
+        {
+          "id": "m9",
+          "label": "jì"
+        },
+        {
+          "id": "m10",
+          "label": "wàng"
+        },
+        {
+          "id": "m11",
+          "label": "kāihuì"
+        },
+        {
+          "id": "m12",
+          "label": "yǎnjiǎng"
+        }
       ],
       "right": [
-        { "id": "l25_1", "label": "to remember" },
-        { "id": "l25_2", "label": "to write characters" },
-        { "id": "l25_3", "label": "to have a meeting" },
-        { "id": "l25_4", "label": "to answer" }
+        {
+          "id": "r1",
+          "label": "to talk"
+        },
+        {
+          "id": "r2",
+          "label": "to chat"
+        },
+        {
+          "id": "r3",
+          "label": "to make a phone call"
+        },
+        {
+          "id": "r4",
+          "label": "to write characters"
+        },
+        {
+          "id": "r5",
+          "label": "to read/study"
+        },
+        {
+          "id": "r6",
+          "label": "to ask"
+        },
+        {
+          "id": "r7",
+          "label": "to answer"
+        },
+        {
+          "id": "r8",
+          "label": "to study"
+        },
+        {
+          "id": "r9",
+          "label": "to remember"
+        },
+        {
+          "id": "r10",
+          "label": "to forget"
+        },
+        {
+          "id": "r11",
+          "label": "to have a meeting"
+        },
+        {
+          "id": "r12",
+          "label": "to give a speech"
+        }
       ]
     }
   },
-
   "audioQuiz": [
-    { "id": "a1", "chinese": "读书", "audioText": "读书", "choices": ["to give a speech", "to read / study", "to forget", "to talk"], "correct": 1 },
-    { "id": "a2", "chinese": "忘", "audioText": "忘", "choices": ["to forget", "to chat", "to remember", "to ask"], "correct": 0 },
-    { "id": "a3", "chinese": "演讲", "audioText": "演讲", "choices": ["to answer", "to make a phone call", "to give a speech", "to chat"], "correct": 2 },
-    { "id": "a4", "chinese": "问", "audioText": "问", "choices": ["to ask", "to study", "to talk", "to write"], "correct": 0 },
-    { "id": "a5", "chinese": "聊天", "audioText": "聊天", "choices": ["to chat", "to have a meeting", "to remember", "to answer"], "correct": 0 },
-    { "id": "a6", "chinese": "说话", "audioText": "说话", "choices": ["to talk", "to study", "to write characters", "to give a speech"], "correct": 0 },
-    { "id": "a7", "chinese": "记", "audioText": "记", "choices": ["to remember", "to write characters", "to have a meeting", "to answer"], "correct": 0 },
-    { "id": "a8", "chinese": "写字", "audioText": "写字", "choices": ["to remember", "to write characters", "to have a meeting", "to answer"], "correct": 1 },
-    { "id": "a9", "chinese": "开会", "audioText": "开会", "choices": ["to read/study", "to have a meeting", "to talk", "to make a phone call"], "correct": 1 },
-    { "id": "a10", "chinese": "答", "audioText": "答", "choices": ["to answer", "to study", "to chat", "to ask"], "correct": 0 },
-    { "id": "a11", "chinese": "打电话", "audioText": "打电话", "choices": ["to make a phone call", "to give a speech", "to read/study", "to remember"], "correct": 0 },
-    { "id": "a12", "chinese": "学习", "audioText": "学习", "choices": ["to talk", "to chat", "to write characters", "to study"], "correct": 3 }
+    {
+      "id": "a1",
+      "chinese": "说话",
+      "audioText": "说话",
+      "choices": [
+        "shuōhuà",
+        "liáotiān",
+        "dúshū",
+        "yǎnjiǎng"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a2",
+      "chinese": "聊天",
+      "audioText": "聊天",
+      "choices": [
+        "jì",
+        "liáotiān",
+        "kāihuì",
+        "wàng"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a3",
+      "chinese": "打电话",
+      "audioText": "打电话",
+      "choices": [
+        "xiězì",
+        "dǎ diànhuà",
+        "shuōhuà",
+        "dá"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a4",
+      "chinese": "写字",
+      "audioText": "写字",
+      "choices": [
+        "jì",
+        "yǎnjiǎng",
+        "xiězì",
+        "wèn"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a5",
+      "chinese": "读书",
+      "audioText": "读书",
+      "choices": [
+        "dúshū",
+        "kāihuì",
+        "liáotiān",
+        "shuōhuà"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a6",
+      "chinese": "问",
+      "audioText": "问",
+      "choices": [
+        "wèn",
+        "dǎ diànhuà",
+        "xiězì",
+        "xuéxí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a7",
+      "chinese": "答",
+      "audioText": "答",
+      "choices": [
+        "xuéxí",
+        "dá",
+        "wàng",
+        "yǎnjiǎng"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a8",
+      "chinese": "学习",
+      "audioText": "学习",
+      "choices": [
+        "xuéxí",
+        "jì",
+        "dá",
+        "liáotiān"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a9",
+      "chinese": "记",
+      "audioText": "记",
+      "choices": [
+        "jì",
+        "dúshū",
+        "kāihuì",
+        "shuōhuà"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a10",
+      "chinese": "忘",
+      "audioText": "忘",
+      "choices": [
+        "dǎ diànhuà",
+        "wàng",
+        "xiězì",
+        "liáotiān"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a11",
+      "chinese": "开会",
+      "audioText": "开会",
+      "choices": [
+        "yǎnjiǎng",
+        "shuōhuà",
+        "kāihuì",
+        "jì"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "a12",
+      "chinese": "演讲",
+      "audioText": "演讲",
+      "choices": [
+        "wàng",
+        "yǎnjiǎng",
+        "dúshū",
+        "xuéxí"
+      ],
+      "correct": 1
+    }
   ]
 }

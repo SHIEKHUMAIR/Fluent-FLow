@@ -1,79 +1,472 @@
 {
   "learningSlides": [
-    { "id": "l21_1", "chinese": "十一", "pinyin": "shíyī", "english": "eleven", "image": "/assets/lesson21/11.jpg" },
-    { "id": "l21_2", "chinese": "十二", "pinyin": "shí’èr", "english": "twelve", "image": "/assets/lesson21/12.jpg" },
-    { "id": "l21_3", "chinese": "二十", "pinyin": "èrshí", "english": "twenty", "image": "/assets/lesson21/20.jpg" },
-    { "id": "l21_4", "chinese": "三十", "pinyin": "sānshí", "english": "thirty", "image": "/assets/lesson21/30.jpg" },
-    { "id": "l21_5", "chinese": "四十", "pinyin": "sìshí", "english": "forty", "image": "/assets/lesson21/40.jpg" },
-    { "id": "l21_6", "chinese": "五十", "pinyin": "wǔshí", "english": "fifty", "image": "/assets/lesson21/50.jpg" },
-    { "id": "l21_7", "chinese": "六十", "pinyin": "liùshí", "english": "sixty", "image": "/assets/lesson21/60.jpg" },
-    { "id": "l21_8", "chinese": "七十", "pinyin": "qīshí", "english": "seventy", "image": "/assets/lesson21/70.jpg" },
-    { "id": "l21_9", "chinese": "八十", "pinyin": "bāshí", "english": "eighty", "image": "/assets/lesson21/80.jpg" },
-    { "id": "l21_10", "chinese": "九十", "pinyin": "jiǔshí", "english": "ninety", "image": "/assets/lesson21/90.jpg" },
-    { "id": "l21_11", "chinese": "一百", "pinyin": "yì bǎi", "english": "one hundred", "image": "/assets/lesson21/100.jpg" },
-    { "id": "l21_12", "chinese": "一千", "pinyin": "yì qiān", "english": "one thousand", "image": "/assets/lesson21/1000.jpg" }
+    {
+      "id": "l21_1",
+      "chinese": "十一",
+      "pinyin": "shíyī",
+      "english": "eleven",
+      "image": "/assets/lesson21/11.jpg"
+    },
+    {
+      "id": "l21_2",
+      "chinese": "十二",
+      "pinyin": "shí’èr",
+      "english": "twelve",
+      "image": "/assets/lesson21/12.jpg"
+    },
+    {
+      "id": "l21_3",
+      "chinese": "二十",
+      "pinyin": "èrshí",
+      "english": "twenty",
+      "image": "/assets/lesson21/20.jpg"
+    },
+    {
+      "id": "l21_4",
+      "chinese": "三十",
+      "pinyin": "sānshí",
+      "english": "thirty",
+      "image": "/assets/lesson21/30.jpg"
+    },
+    {
+      "id": "l21_5",
+      "chinese": "四十",
+      "pinyin": "sìshí",
+      "english": "forty",
+      "image": "/assets/lesson21/40.jpg"
+    },
+    {
+      "id": "l21_6",
+      "chinese": "五十",
+      "pinyin": "wǔshí",
+      "english": "fifty",
+      "image": "/assets/lesson21/50.jpg"
+    },
+    {
+      "id": "l21_7",
+      "chinese": "六十",
+      "pinyin": "liùshí",
+      "english": "sixty",
+      "image": "/assets/lesson21/60.jpg"
+    },
+    {
+      "id": "l21_8",
+      "chinese": "七十",
+      "pinyin": "qīshí",
+      "english": "seventy",
+      "image": "/assets/lesson21/70.jpg"
+    },
+    {
+      "id": "l21_9",
+      "chinese": "八十",
+      "pinyin": "bāshí",
+      "english": "eighty",
+      "image": "/assets/lesson21/80.jpg"
+    },
+    {
+      "id": "l21_10",
+      "chinese": "九十",
+      "pinyin": "jiǔshí",
+      "english": "ninety",
+      "image": "/assets/lesson21/90.jpg"
+    },
+    {
+      "id": "l21_11",
+      "chinese": "一百",
+      "pinyin": "yì bǎi",
+      "english": "one hundred",
+      "image": "/assets/lesson21/100.jpg"
+    },
+    {
+      "id": "l21_12",
+      "chinese": "一千",
+      "pinyin": "yì qiān",
+      "english": "one thousand",
+      "image": "/assets/lesson21/1000.jpg"
+    }
   ],
-
   "mcqQuestions": [
-    { "id": "q1", "image": "/assets/lesson21/30.jpg", "choices": ["60", "30", "11", "1000"], "correct": 1 },
-    { "id": "q2", "image": "/assets/lesson21/1000.jpg", "choices": ["90", "100", "50", "1000"], "correct": 3 },
-    { "id": "q3", "image": "/assets/lesson21/11.jpg", "choices": ["11", "12", "20", "80"], "correct": 0 },
-    { "id": "q4", "image": "/assets/lesson21/60.jpg", "choices": ["70", "16", "60", "40"], "correct": 2 },
-    { "id": "q5", "image": "/assets/lesson21/50.jpg", "choices": ["50", "20", "100", "30"], "correct": 0 },
-    { "id": "q6", "image": "/assets/lesson21/90.jpg", "choices": ["19", "90", "40", "11"], "correct": 1 },
-    { "id": "q7", "image": "/assets/lesson21/80.jpg", "choices": ["bāshí", "qīshí", "shí’èr", "yì bǎi"], "correct": 0 },
-    { "id": "q8", "image": "/assets/lesson21/40.jpg", "choices": ["liùshí", "sānshí", "sìshí", "èrshí"], "correct": 2 },
-    { "id": "q9", "image": "/assets/lesson21/12.jpg", "choices": ["shíyī", "shí’èr", "jiǔshí", "yì qiān"], "correct": 1 },
-    { "id": "q10", "image": "/assets/lesson21/100.jpg", "choices": ["yì qiān", "yì bǎi", "èrshí", "wǔshí"], "correct": 1 },
-    { "id": "q11", "image": "/assets/lesson21/20.jpg", "choices": ["èrshí", "sānshí", "shí’èr", "qīshí"], "correct": 0 },
-    { "id": "q12", "image": "/assets/lesson21/70.jpg", "choices": ["bāshí", "qīshí", "liùshí", "wǔshí"], "correct": 1 }
+    {
+      "id": "q1",
+      "image": "/assets/lesson21/30.jpg",
+      "choices": [
+        "liùshí",
+        "sānshí",
+        "shíyī",
+        "yì qiān"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "q2",
+      "image": "/assets/lesson21/1000.jpg",
+      "choices": [
+        "jiǔshí",
+        "yì bǎi",
+        "wǔshí",
+        "yì qiān"
+      ],
+      "correct": 3
+    },
+    {
+      "id": "q3",
+      "image": "/assets/lesson21/11.jpg",
+      "choices": [
+        "shíyī",
+        "shí’èr",
+        "èrshí",
+        "bāshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q4",
+      "image": "/assets/lesson21/60.jpg",
+      "choices": [
+        "qīshí",
+        "shíliù",
+        "liùshí",
+        "sìshí"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "q5",
+      "image": "/assets/lesson21/50.jpg",
+      "choices": [
+        "wǔshí",
+        "èrshí",
+        "yì bǎi",
+        "sānshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q6",
+      "image": "/assets/lesson21/90.jpg",
+      "choices": [
+        "shíjiǔ",
+        "jiǔshí",
+        "sìshí",
+        "shíyī"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "q7",
+      "image": "/assets/lesson21/80.jpg",
+      "choices": [
+        "bāshí",
+        "qīshí",
+        "shí’èr",
+        "yì bǎi"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q8",
+      "image": "/assets/lesson21/40.jpg",
+      "choices": [
+        "liùshí",
+        "sānshí",
+        "sìshí",
+        "èrshí"
+      ],
+      "correct": 2
+    },
+    {
+      "id": "q9",
+      "image": "/assets/lesson21/12.jpg",
+      "choices": [
+        "shíyī",
+        "shí’èr",
+        "jiǔshí",
+        "yì qiān"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "q10",
+      "image": "/assets/lesson21/100.jpg",
+      "choices": [
+        "yì qiān",
+        "yì bǎi",
+        "èrshí",
+        "wǔshí"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "q11",
+      "image": "/assets/lesson21/20.jpg",
+      "choices": [
+        "èrshí",
+        "sānshí",
+        "shí’èr",
+        "qīshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "q12",
+      "image": "/assets/lesson21/70.jpg",
+      "choices": [
+        "bāshí",
+        "qīshí",
+        "liùshí",
+        "wǔshí"
+      ],
+      "correct": 1
+    }
   ],
-
   "matchingTasks": {
     "review": {
       "left": [
-        { "id": "l21_1", "label": "shíyī" },
-        { "id": "l21_2", "label": "shí’èr" },
-        { "id": "l21_3", "label": "èrshí" },
-        { "id": "l21_4", "label": "sānshí" },
-        { "id": "l21_5", "label": "sìshí" },
-        { "id": "l21_6", "label": "wǔshí" },
-        { "id": "l21_7", "label": "liùshí" },
-        { "id": "l21_8", "label": "qīshí" },
-        { "id": "l21_9", "label": "bāshí" },
-        { "id": "l21_10", "label": "jiǔshí" },
-        { "id": "l21_11", "label": "yì bǎi" },
-        { "id": "l21_12", "label": "yì qiān" }
+        {
+          "id": "l21_1",
+          "label": "shíyī"
+        },
+        {
+          "id": "l21_2",
+          "label": "shí’èr"
+        },
+        {
+          "id": "l21_3",
+          "label": "èrshí"
+        },
+        {
+          "id": "l21_4",
+          "label": "sānshí"
+        },
+        {
+          "id": "l21_5",
+          "label": "sìshí"
+        },
+        {
+          "id": "l21_6",
+          "label": "wǔshí"
+        },
+        {
+          "id": "l21_7",
+          "label": "liùshí"
+        },
+        {
+          "id": "l21_8",
+          "label": "qīshí"
+        },
+        {
+          "id": "l21_9",
+          "label": "bāshí"
+        },
+        {
+          "id": "l21_10",
+          "label": "jiǔshí"
+        },
+        {
+          "id": "l21_11",
+          "label": "yì bǎi"
+        },
+        {
+          "id": "l21_12",
+          "label": "yì qiān"
+        }
       ],
       "right": [
-        { "id": "l21_1", "label": "eleven" },
-        { "id": "l21_2", "label": "twelve" },
-        { "id": "l21_3", "label": "twenty" },
-        { "id": "l21_4", "label": "thirty" },
-        { "id": "l21_5", "label": "forty" },
-        { "id": "l21_6", "label": "fifty" },
-        { "id": "l21_7", "label": "sixty" },
-        { "id": "l21_8", "label": "seventy" },
-        { "id": "l21_9", "label": "eighty" },
-        { "id": "l21_10", "label": "ninety" },
-        { "id": "l21_11", "label": "one hundred" },
-        { "id": "l21_12", "label": "one thousand" }
+        {
+          "id": "l21_1",
+          "label": "shíyī"
+        },
+        {
+          "id": "l21_2",
+          "label": "shí’èr"
+        },
+        {
+          "id": "l21_3",
+          "label": "èrshí"
+        },
+        {
+          "id": "l21_4",
+          "label": "sānshí"
+        },
+        {
+          "id": "l21_5",
+          "label": "sìshí"
+        },
+        {
+          "id": "l21_6",
+          "label": "wǔshí"
+        },
+        {
+          "id": "l21_7",
+          "label": "liùshí"
+        },
+        {
+          "id": "l21_8",
+          "label": "qīshí"
+        },
+        {
+          "id": "l21_9",
+          "label": "bāshí"
+        },
+        {
+          "id": "l21_10",
+          "label": "jiǔshí"
+        },
+        {
+          "id": "l21_11",
+          "label": "yì bǎi"
+        },
+        {
+          "id": "l21_12",
+          "label": "yì qiān"
+        }
       ]
     }
   },
-
   "audioQuiz": [
-    { "id": "a1", "chinese": "十一", "audioText": "十一", "choices": ["shíyī", "shí’èr", "èrshí", "sānshí"], "correct": 0 },
-    { "id": "a2", "chinese": "十二", "audioText": "十二", "choices": ["shíyī", "shí’èr", "sìshí", "wǔshí"], "correct": 1 },
-    { "id": "a3", "chinese": "二十", "audioText": "二十", "choices": ["èrshí", "sānshí", "shí’èr", "yì bǎi"], "correct": 0 },
-    { "id": "a4", "chinese": "三十", "audioText": "三十", "choices": ["sānshí", "sìshí", "èrshí", "wǔshí"], "correct": 0 },
-    { "id": "a5", "chinese": "四十", "audioText": "四十", "choices": ["sìshí", "wǔshí", "liùshí", "sānshí"], "correct": 0 },
-    { "id": "a6", "chinese": "五十", "audioText": "五十", "choices": ["wǔshí", "èrshí", "yì bǎi", "sìshí"], "correct": 0 },
-    { "id": "a7", "chinese": "六十", "audioText": "六十", "choices": ["liùshí", "qīshí", "wǔshí", "jiǔshí"], "correct": 0 },
-    { "id": "a8", "chinese": "七十", "audioText": "七十", "choices": ["bāshí", "qīshí", "liùshí", "wǔshí"], "correct": 1 },
-    { "id": "a9", "chinese": "八十", "audioText": "八十", "choices": ["bāshí", "qīshí", "jiǔshí", "yì bǎi"], "correct": 0 },
-    { "id": "a10", "chinese": "九十", "audioText": "九十", "choices": ["jiǔshí", "bāshí", "qīshí", "wǔshí"], "correct": 0 },
-    { "id": "a11", "chinese": "一百", "audioText": "一百", "choices": ["yì bǎi", "yì qiān", "jiǔshí", "bāshí"], "correct": 0 },
-    { "id": "a12", "chinese": "一千", "audioText": "一千", "choices": ["yì qiān", "yì bǎi", "liùshí", "jiǔshí"], "correct": 0 }
+    {
+      "id": "a1",
+      "chinese": "十一",
+      "audioText": "十一",
+      "choices": [
+        "shíyī",
+        "shí’èr",
+        "èrshí",
+        "sānshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a2",
+      "chinese": "十二",
+      "audioText": "十二",
+      "choices": [
+        "shíyī",
+        "shí’èr",
+        "sìshí",
+        "wǔshí"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a3",
+      "chinese": "二十",
+      "audioText": "二十",
+      "choices": [
+        "èrshí",
+        "sānshí",
+        "shí’èr",
+        "yì bǎi"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a4",
+      "chinese": "三十",
+      "audioText": "三十",
+      "choices": [
+        "sānshí",
+        "sìshí",
+        "èrshí",
+        "wǔshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a5",
+      "chinese": "四十",
+      "audioText": "四十",
+      "choices": [
+        "sìshí",
+        "wǔshí",
+        "liùshí",
+        "sānshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a6",
+      "chinese": "五十",
+      "audioText": "五十",
+      "choices": [
+        "wǔshí",
+        "èrshí",
+        "yì bǎi",
+        "sìshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a7",
+      "chinese": "六十",
+      "audioText": "六十",
+      "choices": [
+        "liùshí",
+        "qīshí",
+        "wǔshí",
+        "jiǔshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a8",
+      "chinese": "七十",
+      "audioText": "七十",
+      "choices": [
+        "bāshí",
+        "qīshí",
+        "liùshí",
+        "wǔshí"
+      ],
+      "correct": 1
+    },
+    {
+      "id": "a9",
+      "chinese": "八十",
+      "audioText": "八十",
+      "choices": [
+        "bāshí",
+        "qīshí",
+        "jiǔshí",
+        "yì bǎi"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a10",
+      "chinese": "九十",
+      "audioText": "九十",
+      "choices": [
+        "jiǔshí",
+        "bāshí",
+        "qīshí",
+        "wǔshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a11",
+      "chinese": "一百",
+      "audioText": "一百",
+      "choices": [
+        "yì bǎi",
+        "yì qiān",
+        "jiǔshí",
+        "bāshí"
+      ],
+      "correct": 0
+    },
+    {
+      "id": "a12",
+      "chinese": "一千",
+      "audioText": "一千",
+      "choices": [
+        "yì qiān",
+        "yì bǎi",
+        "liùshí",
+        "jiǔshí"
+      ],
+      "correct": 0
+    }
   ]
 }

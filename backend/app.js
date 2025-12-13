@@ -1,30 +1,39 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const connectDB = require("./source/configuration/dbConfig");
+const { connectDB } = require("./source/configuration/dbConfig");
 const authRoutes = require("./source/routes/auth");
 
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
+
+// CORS - allow all origins
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
+}));
 
 app.use(express.json());
 
-// CORS for your frontend
-app.use(
-  cors({
-    origin: [
-      "https://fluent-flow-six.vercel.app", // frontend URL
-      
-      "http://localhost:3000"            // optional for local dev
-    ],
-    credentials: true
-  })
-);
+// Debug middleware to log requests
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.path} - Origin: ${req.headers.origin || 'none'}`);
+  next();
+});
+
+// Health check route
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok', message: 'Server is running' });
+});
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/lessons", require("./source/routes/lessons"));
+app.use("/api/progress", require("./source/routes/progress"));
+app.use("/api/profile", require("./source/routes/profile"));
 
 // Start
 connectDB().then(() => {

@@ -39,36 +39,87 @@ const Profile = () => {
   const [dob, setDob] = useState("");
   const [dobError, setDobError] = useState("");
 
-  // LOAD LOCAL STORAGE DATA
+  // LOAD USER DATA
   useEffect(() => {
-    try {
-      const storedEmail = localStorage.getItem("userEmail");
-      const storedName = localStorage.getItem("userName");
-      const storedImage = localStorage.getItem("profileImage");
-      const storedPhone = localStorage.getItem("userPhone");
-      const storedCountry = localStorage.getItem("userCountry");
-      const storedResidence = localStorage.getItem("userResidenceCountry");
-      const storedDob = localStorage.getItem("userDob");
+    const loadUserData = async () => {
+      try {
+        const userId = localStorage.getItem("userId");
+        
+        // Try to load from API first
+        if (userId) {
+          try {
+            const { API_ENDPOINTS } = await import("../../lib/config");
+            const { apiGet } = await import("../../lib/api");
+            
+            const result = await apiGet(API_ENDPOINTS.PROFILE.GET(userId));
+            if (result.success && result.data) {
+              const user = result.data;
+              setUserEmail(user.email || "");
+              setFirstName(user.firstName || "");
+              setLastName(user.lastName || "");
+              if (user.profileImage) setProfileImage(user.profileImage);
+              if (user.phone) {
+                // Extract phone number (remove country code)
+                const phoneNum = user.phone.replace(/^\+\d+/, "");
+                setPhone(phoneNum);
+                // Try to find country by phone code
+                const countryCode = user.phone.match(/^\+(\d+)/)?.[1];
+                if (countryCode) {
+                  const country = countryData.find(c => c.dial.includes(countryCode));
+                  if (country) setSelectedCountry(country);
+                }
+              }
+              if (user.country) {
+                const c = countryData.find(x => x.name === user.country);
+                if (c) setSelectedCountry(c);
+              }
+              if (user.residenceCountry) setSearchResidence(user.residenceCountry);
+              if (user.dateOfBirth) setDob(user.dateOfBirth);
+              
+              // Also update localStorage
+              if (user.firstName && user.lastName) {
+                localStorage.setItem("userName", `${user.firstName} ${user.lastName}`);
+              }
+              if (user.profileImage) localStorage.setItem("profileImage", user.profileImage);
+              
+              return; // Exit early if API data loaded
+            }
+          } catch (apiErr) {
+            console.error("Error loading from API, falling back to localStorage:", apiErr);
+          }
+        }
 
-      if (storedEmail) setUserEmail(storedEmail);
-      if (storedName) {
-        const nameParts = storedName.split(" ");
-        if (nameParts.length >= 2) {
-          setFirstName(nameParts[0]);
-          setLastName(nameParts.slice(1).join(" "));
-        } else setFirstName(storedName);
+        // Fallback to localStorage
+        const storedEmail = localStorage.getItem("userEmail");
+        const storedName = localStorage.getItem("userName");
+        const storedImage = localStorage.getItem("profileImage");
+        const storedPhone = localStorage.getItem("userPhone");
+        const storedCountry = localStorage.getItem("userCountry");
+        const storedResidence = localStorage.getItem("userResidenceCountry");
+        const storedDob = localStorage.getItem("userDob");
+
+        if (storedEmail) setUserEmail(storedEmail);
+        if (storedName) {
+          const nameParts = storedName.split(" ");
+          if (nameParts.length >= 2) {
+            setFirstName(nameParts[0]);
+            setLastName(nameParts.slice(1).join(" "));
+          } else setFirstName(storedName);
+        }
+        if (storedImage) setProfileImage(storedImage);
+        if (storedPhone) setPhone(storedPhone);
+        if (storedCountry) {
+          const c = countryData.find(x => x.name === storedCountry);
+          if (c) setSelectedCountry(c);
+        }
+        if (storedResidence) setSearchResidence(storedResidence);
+        if (storedDob) setDob(storedDob);
+      } catch (err) {
+        console.error("Error loading user data:", err);
       }
-      if (storedImage) setProfileImage(storedImage);
-      if (storedPhone) setPhone(storedPhone);
-      if (storedCountry) {
-        const c = countryData.find(x => x.name === storedCountry);
-        if (c) setSelectedCountry(c);
-      }
-      if (storedResidence) setSearchResidence(storedResidence);
-      if (storedDob) setDob(storedDob);
-    } catch (err) {
-      console.error("Error loading user data:", err);
-    }
+    };
+
+    loadUserData();
   }, []);
 
   // PHONE FORMATTING + VALIDATION
@@ -94,23 +145,51 @@ const Profile = () => {
   };
 
   // FORM SUBMISSION
-  const handleProfileSubmit = (e) => {
+  const handleProfileSubmit = async (e) => {
     e.preventDefault();
     if (phoneError) { alert("Fix phone number before saving!"); return; }
     if (dobError) { alert("Fix Date of Birth before saving!"); return; }
 
     try {
+      const userId = localStorage.getItem("userId");
+      if (!userId) {
+        alert("Please login to save profile");
+        return;
+      }
+
+      // Import API utilities
+      const { API_ENDPOINTS } = await import("../../lib/config");
+      const { apiPost } = await import("../../lib/api");
+
       const fullName = `${firstName} ${lastName}`.trim();
+      const fullPhone = selectedCountry.dial + phone;
 
-      if (fullName) localStorage.setItem("userName", fullName);
-      if (profileImage) localStorage.setItem("profileImage", profileImage);
-      if (phone) localStorage.setItem("userPhone", phone);
-      if (dob) localStorage.setItem("userDob", dob);
-      if (selectedCountry) localStorage.setItem("userCountry", selectedCountry.name);
-      if (searchResidence) localStorage.setItem("userResidenceCountry", searchResidence);
+      // Save to backend
+      const result = await apiPost(API_ENDPOINTS.PROFILE.UPDATE, {
+        userId: parseInt(userId),
+        firstName: firstName,
+        lastName: lastName,
+        profileImage: profileImage,
+        phone: fullPhone,
+        dateOfBirth: dob,
+        country: selectedCountry.name,
+        residenceCountry: searchResidence
+      });
 
-      window.dispatchEvent(new CustomEvent("profileUpdated"));
-      alert("Profile saved successfully!");
+      if (result.success) {
+        // Also save to localStorage for immediate UI update
+        if (fullName) localStorage.setItem("userName", fullName);
+        if (profileImage) localStorage.setItem("profileImage", profileImage);
+        if (phone) localStorage.setItem("userPhone", phone);
+        if (dob) localStorage.setItem("userDob", dob);
+        if (selectedCountry) localStorage.setItem("userCountry", selectedCountry.name);
+        if (searchResidence) localStorage.setItem("userResidenceCountry", searchResidence);
+
+        window.dispatchEvent(new CustomEvent("profileUpdated"));
+        alert("Profile saved successfully!");
+      } else {
+        alert(result.error || "Error saving profile");
+      }
     } catch (err) {
       console.error(err);
       alert("Error saving profile.");
@@ -137,6 +216,24 @@ const Profile = () => {
       const croppedImage = await getCroppedImg(imageSrc, croppedAreaPixels);
       setProfileImage(croppedImage);
       localStorage.setItem("profileImage", croppedImage);
+      
+      // Save to backend immediately
+      const userId = localStorage.getItem("userId");
+      if (userId) {
+        try {
+          const { API_ENDPOINTS } = await import("../../lib/config");
+          const { apiPost } = await import("../../lib/api");
+          
+          await apiPost(API_ENDPOINTS.PROFILE.UPDATE, {
+            userId: parseInt(userId),
+            profileImage: croppedImage
+          });
+        } catch (apiErr) {
+          console.error("Error saving image to backend:", apiErr);
+          // Continue anyway - at least it's saved locally
+        }
+      }
+      
       window.dispatchEvent(new CustomEvent("profileUpdated"));
       setShowCropper(false);
     } catch (e) {

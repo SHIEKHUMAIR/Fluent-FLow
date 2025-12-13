@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
+    "seed": "node scripts/seedLessons.js",
+    "seed:unit": "node scripts/seedUnit.js",
+    "seed:all-units": "node scripts/seedAllUnits.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "echo 'No build step required'"
   },
@@ -18,7 +21,7 @@
     "express": "^5.1.0",
     "google-auth-library": "^10.3.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.18.0"
+    "pg": "^8.11.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
+import { API_ENDPOINTS } from "../../lib/config";
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ const RegisterForm = () => {
     }
 
     try {
-      const response = await fetch("https://fluent-flow-k3rx.onrender.com/api/auth/signup", {
+      const response = await fetch(API_ENDPOINTS.AUTH.SIGNUP, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
@@ -43,7 +44,7 @@ const RegisterForm = () => {
 
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
-      const res = await fetch("https://fluent-flow-k3rx.onrender.com/api/auth/google-login", {
+      const res = await fetch(API_ENDPOINTS.AUTH.GOOGLE_LOGIN, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ token: credentialResponse.credential }),
@@ -62,6 +63,9 @@ const RegisterForm = () => {
         
         // Store user info
         try {
+          // Store user ID
+          if (data?.user?.id) localStorage.setItem("userId", data.user.id.toString());
+          
           // Ensure email is stored
           if (data.user && data.user.email) {
             localStorage.setItem("userEmail", data.user.email);

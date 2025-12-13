@@ -1,22 +1,87 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { API_ENDPOINTS } from "../../lib/config";
+import { apiGet, getUserId } from "../../lib/api";
 
 export default function Unit1Overview() {
-  
+  const [lessons, setLessons] = useState([]);
+  const [userProgress, setUserProgress] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const lessons = [
-    { id: 0, title: "Lesson 0 - Introduction", desc: "Get started with Pinyin, tones, and Chinese pronunciation.", duration: "10 min", progress: 0, path: "/modules/unit01/lesson0" },
-    { id: 1, title: "Lesson 1 - Tones", desc: "Learn the 4 tones of Mandarin with examples and practice audio.", duration: "12 min", progress: 0, path: "/modules/unit01/lesson1" },
-    { id: 2, title: "Lesson 2 - Basic Greetings", desc: "Learn greetings, introductions, and farewells in Chinese.", duration: "15 min", progress: 0, path: "/modules/unit01/lesson2" },
-    { id: 3, title: "Lesson 3 - Relationships", desc: "Explore family and relationship words in Mandarin.", duration: "14 min", progress: 0, path: "/modules/unit01/lesson3" },
-    { id: 4, title: "Lesson 4 - Pronouns", desc: "Learn I, You, He, She, and They in Chinese.", duration: "9 min", progress: 0, path: "/modules/unit01/lesson4" },
-    { id: 5, title: "Lesson 5 - Numbers 0 to 10", desc: "Master counting from 1 to 10 in Chinese.", duration: "11 min", progress: 0, path: "/modules/unit01/lesson5" },
-    { id: 6, title: "Lesson 6 - Yes / No Basics", desc: "Understand how to say yes and no in conversations.", duration: "8 min", progress: 0, path: "/modules/unit01/lesson6" },
-    { id: 7, title: "Lesson 7 - Polite Phrases & Needs", desc: "Say please, thank you, and express needs politely.", duration: "13 min", progress: 0, path: "/modules/unit01/lesson7" },
-    { id: 8, title: "Lesson 8 - Days & Time", desc: "Talk about days, weeks, and time in Chinese.", duration: "12 min", progress: 0, path: "/modules/unit01/lesson8" },
-    { id: 9, title: "Lesson 9 - Country & Introduction", desc: "Learn to say where you’re from and your nationality.", duration: "14 min", progress: 0, path: "/modules/unit01/lesson9" },
-  ];
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        setLoading(true);
+        
+        // Get unit ID (assuming unit 1)
+        const unitsResult = await apiGet(API_ENDPOINTS.LESSONS.UNITS);
+        if (!unitsResult.success) {
+          setError("Failed to load units");
+          return;
+        }
+        
+        const unit1 = unitsResult.data.find(u => u.unit_number === 1);
+        if (!unit1) {
+          setError("Unit 1 not found");
+          return;
+        }
+
+        // Get lessons for unit 1
+        const lessonsResult = await apiGet(API_ENDPOINTS.LESSONS.BY_UNIT(unit1.id));
+        if (lessonsResult.success) {
+          setLessons(lessonsResult.data || []);
+        }
+
+        // Get user progress
+        const userId = getUserId();
+        if (userId) {
+          const progressResult = await apiGet(API_ENDPOINTS.PROGRESS.DASHBOARD(userId));
+          if (progressResult.success && progressResult.data.progress) {
+            const progressMap = {};
+            progressResult.data.progress.forEach(p => {
+              progressMap[p.lesson_id] = p.progress_percentage;
+            });
+            setUserProgress(progressMap);
+          }
+        }
+      } catch (err) {
+        console.error("Error loading unit data:", err);
+        setError("Failed to load lessons");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
+
+  const getProgress = (lessonId) => {
+    return userProgress[lessonId] || 0;
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-50 py-16 px-6 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-900 mb-4"></div>
+          <p className="text-slate-600">Loading lessons...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-slate-50 py-16 px-6 flex items-center justify-center">
+        <div className="text-center text-red-600">
+          <p>{error}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 py-16 px-6">
@@ -43,7 +108,9 @@ export default function Unit1Overview() {
           </h2>
 </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {lessons.map((lesson) => (
+          {lessons.map((lesson) => {
+            const progress = getProgress(lesson.id);
+            return (
             <div
               key={lesson.id}
               className="bg-white/90 backdrop-blur-sm rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:scale-105"
@@ -52,7 +119,7 @@ export default function Unit1Overview() {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-6">
                   <span className="bg-emerald-100 text-emerald-700 text-sm font-semibold px-3 py-1.5 rounded-full">
-                    Beginner
+                    {lesson.category || 'Beginner'}
                   </span>
                   <div className="flex items-center text-sm text-slate-500">
                     <svg
@@ -68,7 +135,7 @@ export default function Unit1Overview() {
                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
-                    {lesson.duration}
+                    {lesson.duration || '10 min'}
                   </div>
                 </div>
 
@@ -79,7 +146,7 @@ export default function Unit1Overview() {
     ))}
                 </h3>
                 <p className="text-slate-600 mb-6 leading-relaxed">
-                  {lesson.desc}
+                  {lesson.description || lesson.desc}
                 </p>
 
                 {/* Progress Bar */}
@@ -87,24 +154,23 @@ export default function Unit1Overview() {
                   <div className="flex items-center space-x-3">
                     <div className="w-full bg-slate-200 rounded-full h-3 max-w-[120px]">
                       <div
-                        className="bg-slate-300 h-3 rounded-full"
-                        style={{ width: `${lesson.progress}%` }}
+                        className="bg-blue-900 h-3 rounded-full"
+                        style={{ width: `${progress}%` }}
                       />
                     </div>
                     <span className="text-sm text-slate-500 font-semibold">
-                      {lesson.progress === 0
+                      {progress === 0
                         ? "Not Started"
-                        : lesson.progress === 100
+                        : progress === 100
                         ? "Completed"
-                        : `${lesson.progress}% Done`}
+                        : `${progress}% Done`}
                     </span>
                   </div>
                 </div>
 
                 {/* Button */}
-                <Link href ={lesson.path}  >
+                <Link href={lesson.path || `/modules/unit01/lesson${lesson.lesson_number}`}>
                 <button
-                  
                   className="w-full border-2 border-slate-300 bg-blue-900 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-200"
                 >
                   Start Lesson
@@ -112,7 +178,7 @@ export default function Unit1Overview() {
                 </Link>
               </div>
             </div>
-          ))}
+          )})}
         </div>
       </div>
     </div>

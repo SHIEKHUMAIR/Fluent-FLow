@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
-import Lesson2 from '../../../components/Unit01/lesson02';
+import Lesson from '../../../components/lessons/Lesson';
 
 const page = () => {
   return (
@@ -26,7 +26,7 @@ const page = () => {
     <span className="text-slate-600 font-medium text-3xl">Numbers 0 to 10</span>
   </h1>
 </div>
-     <Lesson2 selectedCategory={"lesson5"}/>
+     <Lesson selectedCategory={"lesson5"}/>
     </>
   )
 }

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { GoogleLogin } from "@react-oauth/google";
+import { API_ENDPOINTS } from "../../lib/config";
 
 const LoginForm = () => {
   const router = useRouter();
@@ -30,12 +31,13 @@ const LoginForm = () => {
     setMessage("");
 
     try {
-      const res = await fetch("https://fluent-flow-k3rx.onrender.com/api/auth/login", {
+      const res = await fetch(API_ENDPOINTS.AUTH.LOGIN, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email: formData.email,
           password: formData.password,
+          rememberMe: formData.rememberMe,
         }),
       });
 
@@ -57,6 +59,9 @@ const LoginForm = () => {
 
         console.log("User logged in:", data.user);
         try {
+          // Store user ID
+          if (data?.user?.id) localStorage.setItem("userId", data.user.id.toString());
+          
           // Store user name (combine firstName and lastName if available)
           const fullName = data?.user?.firstName && data?.user?.lastName 
             ? `${data.user.firstName} ${data.user.lastName}`.trim()
@@ -87,7 +92,7 @@ const LoginForm = () => {
   // 🌐 Step 5: Handle Google login (optional)
   const handleGoogleLoginSuccess = async (credentialResponse) => {
     try {
-      const res = await fetch("https://fluent-flow-k3rx.onrender.com/api/auth/google-login", {
+      const res = await fetch(API_ENDPOINTS.AUTH.GOOGLE_LOGIN, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ token: credentialResponse.credential }),
@@ -105,6 +110,9 @@ const LoginForm = () => {
         
         // Store user info
         try {
+          // Store user ID
+          if (data?.user?.id) localStorage.setItem("userId", data.user.id.toString());
+          
           // Ensure email is stored
           if (data.user && data.user.email) {
             localStorage.setItem("userEmail", data.user.email);

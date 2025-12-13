@@ -1,9 +1,29 @@
 'use client';
 
 import React, { useState, useEffect } from 'react'
+import { API_ENDPOINTS } from '../../lib/config'
+import { apiGet, getUserId } from '../../lib/api'
 
 const dashboard = () => {
   const [userName, setUserName] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+  // Dashboard data
+  const [stats, setStats] = useState({
+    totalXp: 0,
+    wordsLearned: 0,
+    lessonsCompleted: 0,
+    studyTime: 0,
+    currentStreak: 0
+  });
+  const [progressByCategory, setProgressByCategory] = useState({
+    beginner: { completed: 0, total: 0 },
+    intermediate: { completed: 0, total: 0 },
+    elementary: { completed: 0, total: 0 }
+  });
+  const [recentActivities, setRecentActivities] = useState([]);
+  const [achievements, setAchievements] = useState([]);
 
   useEffect(() => {
     const loadUserData = () => {
@@ -17,7 +37,38 @@ const dashboard = () => {
       }
     };
 
+    const loadDashboardData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        
+        const userId = getUserId();
+        if (!userId) {
+          setError('Please login to view your dashboard');
+          setLoading(false);
+          return;
+        }
+
+        const result = await apiGet(API_ENDPOINTS.PROGRESS.DASHBOARD(userId));
+        
+        if (result.success && result.data) {
+          setStats(result.data.stats || stats);
+          setProgressByCategory(result.data.progressByCategory || progressByCategory);
+          setRecentActivities(result.data.recentActivities || []);
+          setAchievements(result.data.achievements || []);
+        } else {
+          setError(result.error || 'Failed to load dashboard data');
+        }
+      } catch (err) {
+        console.error('Error loading dashboard:', err);
+        setError('Failed to load dashboard data');
+      } finally {
+        setLoading(false);
+      }
+    };
+
     loadUserData();
+    loadDashboardData();
 
     // Listen for profile updates
     window.addEventListener('storage', loadUserData);
@@ -30,6 +81,63 @@ const dashboard = () => {
       window.removeEventListener('userLoggedIn', loadUserData);
     };
   }, []);
+
+  // Format time
+  const formatTime = (minutes) => {
+    if (minutes < 60) return `${minutes}m`;
+    const hours = Math.floor(minutes / 60);
+    const mins = minutes % 60;
+    return mins > 0 ? `${hours}h ${mins}m` : `${hours}h`;
+  };
+
+  // Format date
+  const formatDate = (dateString) => {
+    if (!dateString) return '';
+    const date = new Date(dateString);
+    const now = new Date();
+    const diffMs = now - date;
+    const diffMins = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMs / 3600000);
+    const diffDays = Math.floor(diffMs / 86400000);
+
+    if (diffMins < 60) return `${diffMins} minutes ago`;
+    if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+    if (diffDays === 1) return 'Yesterday';
+    if (diffDays < 7) return `${diffDays} days ago`;
+    return date.toLocaleDateString();
+  };
+
+  // Calculate progress percentage
+  const getProgressPercentage = (category) => {
+    const cat = progressByCategory[category] || { completed: 0, total: 0 };
+    if (cat.total === 0) return 0;
+    return Math.round((cat.completed / cat.total) * 100);
+  };
+
+  if (loading) {
+    return (
+      <section className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center py-20">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-900"></div>
+            <p className="mt-4 text-slate-600">Loading dashboard...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center py-20">
+            <p className="text-red-600">{error}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
 <section
@@ -84,7 +192,7 @@ const dashboard = () => {
               <span
                 className="text-3xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent"
                 id="el-1nd708y5">
-                7
+                {stats.currentStreak}
               </span>
               <span
                 className="text-sm text-slate-500 font-medium"
@@ -110,7 +218,7 @@ const dashboard = () => {
               Total XP
             </p>
             <p className="text-3xl font-bold text-slate-900" id="el-rr16se98">
-              2,450
+              {stats.totalXp.toLocaleString()}
             </p>
           </div>
           <div
@@ -144,7 +252,7 @@ const dashboard = () => {
               Words Learned
             </p>
             <p className="text-3xl font-bold text-slate-900" id="el-f6k1za2c">
-              342
+              {stats.wordsLearned}
             </p>
           </div>
           <div
@@ -178,7 +286,7 @@ const dashboard = () => {
               Lessons Completed
             </p>
             <p className="text-3xl font-bold text-slate-900" id="el-mk4d5dqm">
-              28
+              {stats.lessonsCompleted}
             </p>
           </div>
           <div
@@ -212,7 +320,7 @@ const dashboard = () => {
               Study Time
             </p>
             <p className="text-3xl font-bold text-slate-900" id="el-ke20tauu">
-              45h
+              {formatTime(stats.studyTime)}
             </p>
           </div>
           <div
@@ -259,7 +367,7 @@ const dashboard = () => {
                 <span
                   className="text-base text-blue-600 font-bold"
                   id="el-5a73s0n2">
-                  75%
+                  {getProgressPercentage('beginner')}%
                 </span>
               </div>
               <div
@@ -269,7 +377,7 @@ const dashboard = () => {
                   className="bg-blue-900 h-4 rounded-full shadow-sm"
                   id="el-352vwn8m"
                   style={{
-                    width: "75%",
+                    width: `${getProgressPercentage('beginner')}%`,
                   }}
                 />
               </div>
@@ -286,7 +394,7 @@ const dashboard = () => {
                 <span
                   className="text-base text-green-600 font-bold"
                   id="el-i7h1nv2p">
-                  60%
+                  {getProgressPercentage('intermediate')}%
                 </span>
               </div>
               <div
@@ -296,7 +404,7 @@ const dashboard = () => {
                   className="bg-gradient-to-r from-green-500 to-green-600 h-4 rounded-full shadow-sm"
                   id="el-8azn72l4"
                   style={{
-                    width: "60%",
+                    width: `${getProgressPercentage('intermediate')}%`,
                   }}
                 />
               </div>
@@ -313,7 +421,7 @@ const dashboard = () => {
                 <span
                   className="text-base text-purple-600 font-bold"
                   id="el-v64hbhgq">
-                  45%
+                  {getProgressPercentage('elementary')}%
                 </span>
               </div>
               <div
@@ -323,7 +431,7 @@ const dashboard = () => {
                   className="bg-gradient-to-r from-purple-500 to-purple-600 h-4 rounded-full shadow-sm"
                   id="el-cg3xsz2o"
                   style={{
-                    width: "45%",
+                    width: `${getProgressPercentage('elementary')}%`,
                   }}
                 />
               </div>
@@ -339,117 +447,31 @@ const dashboard = () => {
             Recent Activity
           </h3>
           <div className="space-y-4" id="el-owm9txw6">
-            <div
-              className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100"
-              id="el-6f88x25y">
-              <div
-                className="w-12 h-12 bg-gradient-to-r from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center"
-                id="el-4uhlejts">
-                <svg
-                  className="w-6 h-6 text-blue-600"
-                  fill="none"
-                  id="el-vsaa7xyk"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24">
-                  <path
-                    d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
-                    id="el-ef0gsb7b"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </div>
-              <div className="flex-1" id="el-b9miohto">
-                <p
-                  className="text-base font-semibold text-slate-900"
-                  id="el-0ihth564">
-                  Completed "Basic Greetings" lesson
-                </p>
-                <p className="text-sm text-slate-500" id="el-zc4gfj5o">
-                  2 hours ago
-                </p>
-              </div>
-              <div
-                className="text-base text-blue-600 font-bold bg-blue-50 px-3 py-1 rounded-full"
-                id="el-a7rx4iwx">
-                +50 XP
-              </div>
-            </div>
-            <div
-              className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100"
-              id="el-hv4ju3ql">
-              <div
-                className="w-12 h-12 bg-gradient-to-r from-green-100 to-green-200 rounded-2xl flex items-center justify-center"
-                id="el-adegb65u">
-                <svg
-                  className="w-6 h-6 text-green-600"
-                  fill="none"
-                  id="el-nksqtr1b"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24">
-                  <path
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    id="el-wifbuo4l"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </div>
-              <div className="flex-1" id="el-0wj67j55">
-                <p
-                  className="text-base font-semibold text-slate-900"
-                  id="el-spd4c093">
-                  Learned 15 new vocabulary words
-                </p>
-                <p className="text-sm text-slate-500" id="el-heza0h3r">
-                  Yesterday
-                </p>
-              </div>
-              <div
-                className="text-base text-green-600 font-bold bg-green-50 px-3 py-1 rounded-full"
-                id="el-sbq6go9z">
-                +75 XP
-              </div>
-            </div>
-            <div
-              className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100"
-              id="el-69ru550g">
-              <div
-                className="w-12 h-12 bg-gradient-to-r from-purple-100 to-purple-200 rounded-2xl flex items-center justify-center"
-                id="el-jrpmeteo">
-                <svg
-                  className="w-6 h-6 text-purple-600"
-                  fill="none"
-                  id="el-hhw5i6ai"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24">
-                  <path
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    id="el-h84nd9pg"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                  />
-                </svg>
-              </div>
-              <div className="flex-1" id="el-pxqr8759">
-                <p
-                  className="text-base font-semibold text-slate-900"
-                  id="el-yycceg0y">
-                  Achieved 7-day learning streak
-                </p>
-                <p className="text-sm text-slate-500" id="el-6iquf5gb">
-                  2 days ago
-                </p>
-              </div>
-              <div
-                className="text-base text-purple-600 font-bold bg-purple-50 px-3 py-1 rounded-full"
-                id="el-j05uiupn">
-                +100 XP
-              </div>
-            </div>
+            {recentActivities.length > 0 ? (
+              recentActivities.map((activity, index) => (
+                <div
+                  key={index}
+                  className="flex items-center space-x-4 p-5 bg-slate-50 rounded-2xl border border-slate-100"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-base font-semibold text-slate-900">{activity.activity_description}</p>
+                    <p className="text-sm text-slate-500">{formatDate(activity.created_at)}</p>
+                  </div>
+                  {activity.xp_earned > 0 && (
+                    <div className="text-base text-blue-600 font-bold bg-blue-50 px-3 py-1 rounded-full">
+                      +{activity.xp_earned} XP
+                    </div>
+                  )}
+                </div>
+              ))
+            ) : (
+              <p className="text-slate-500 text-center py-8">No recent activity</p>
+            )}
           </div>
         </div>
       </div>
@@ -463,22 +485,17 @@ const dashboard = () => {
             Quick Actions
           </h3>
           <div className="space-y-4" id="el-nc67vy2j">
-            <button
-              className="w-full bg-blue-900 hover:from-blue-700 hover:to-blue-800 text-white py-4 px-6 rounded-2xl text-base font-semibold transition-all duration-200 shadow-sm hover:shadow-md"
-              data-initialized="true"
-              id="el-fjofyj9g">
+            <a href="/modules" className="block w-full bg-blue-900 hover:from-blue-700 hover:to-blue-800 text-white py-4 px-6 rounded-2xl text-base font-semibold transition-all duration-200 shadow-sm hover:shadow-md text-center">
               Continue Learning
-            </button>
+            </a>
             <button
               className="w-full border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 py-4 px-6 rounded-2xl text-base font-semibold transition-all duration-200"
-              data-initialized="true"
-              id="el-cuvqpx1a">
+            >
               Practice Vocabulary
             </button>
             <button
               className="w-full border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 py-4 px-6 rounded-2xl text-base font-semibold transition-all duration-200"
-              data-initialized="true"
-              id="el-yvw7jd1l">
+            >
               Take Quiz
             </button>
           </div>
@@ -492,63 +509,21 @@ const dashboard = () => {
             Recent Achievements
           </h3>
           <div className="space-y-5" id="el-9dvoftxa">
-            <div className="flex items-center space-x-4" id="el-29fji5qd">
-              <div
-                className="w-12 h-12 bg-gradient-to-r from-yellow-100 to-yellow-200 rounded-2xl flex items-center justify-center"
-                id="el-zm8yfq6w">
-                <span className="text-xl" id="el-xx9ol32f">
-                  🏆
-                </span>
-              </div>
-              <div id="el-kfzebw62">
-                <p
-                  className="text-base font-semibold text-slate-900"
-                  id="el-f66ue2g9">
-                  First Week
-                </p>
-                <p className="text-sm text-slate-500" id="el-q43y8jy2">
-                  Complete 7 days of learning
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4" id="el-0i6c4rgw">
-              <div
-                className="w-12 h-12 bg-gradient-to-r from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center"
-                id="el-uqfirzga">
-                <span className="text-xl" id="el-49d2bwi7">
-                  🎯
-                </span>
-              </div>
-              <div id="el-qso1dlkj">
-                <p
-                  className="text-base font-semibold text-slate-900"
-                  id="el-njy1o7f0">
-                  Vocabulary Master
-                </p>
-                <p className="text-sm text-slate-500" id="el-egay8qo9">
-                  Learn 300+ words
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4" id="el-pr2e0fgq">
-              <div
-                className="w-12 h-12 bg-gradient-to-r from-green-100 to-green-200 rounded-2xl flex items-center justify-center"
-                id="el-8l3ksyh9">
-                <span className="text-xl" id="el-0jry0jtg">
-                  ⭐
-                </span>
-              </div>
-              <div id="el-hb64yl1z">
-                <p
-                  className="text-base font-semibold text-slate-900"
-                  id="el-5b4ddtma">
-                  Perfect Score
-                </p>
-                <p className="text-sm text-slate-500" id="el-ikca54jm">
-                  Score 100% on a quiz
-                </p>
-              </div>
-            </div>
+            {achievements.length > 0 ? (
+              achievements.slice(0, 3).map((achievement, index) => (
+                <div key={index} className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-100 to-yellow-200 rounded-2xl flex items-center justify-center">
+                    <span className="text-xl">{achievement.icon || '🏆'}</span>
+                  </div>
+                  <div>
+                    <p className="text-base font-semibold text-slate-900">{achievement.title}</p>
+                    <p className="text-sm text-slate-500">{achievement.description}</p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <p className="text-slate-500 text-center py-4">No achievements yet</p>
+            )}
           </div>
         </div>
         <div
@@ -567,12 +542,12 @@ const dashboard = () => {
               className="bg-white h-3 rounded-full shadow-sm"
               id="el-4dtivp87"
               style={{
-                width: "60%",
+                width: `${Math.min((stats.studyTime / 30) * 100, 100)}%`,
               }}
             />
           </div>
           <p className="text-sm text-blue-100 font-medium" id="el-ro1cs8w9">
-            18 minutes completed
+            {Math.min(stats.studyTime, 30)} minutes completed
           </p>
         </div>
       </div>

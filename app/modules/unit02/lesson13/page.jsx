@@ -1,5 +1,5 @@
 import React from 'react'
-import Lesson1 from '../../../components/Unit01/lesson01'
+import Lesson from '../../../components/lessons/Lesson'
 import Link from 'next/link';
 
 const page = () => {
@@ -27,7 +27,7 @@ const page = () => {
   </h1>
 </div>
 
-        <Lesson1 selectedCategory={"lesson13"} />
+        <Lesson selectedCategory={"lesson13"} />
     </>
   )
 }

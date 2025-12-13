@@ -83,7 +83,8 @@ const RegisterForm = () => {
             localStorage.setItem("userName", fullName);
           }
           
-          // Note: profileImage would need to be extracted from Google payload if needed
+          // Store profile image if available
+          if (data?.user?.profileImage) localStorage.setItem("profileImage", data.user.profileImage);
         } catch (err) {
           console.error("Error storing user data:", err);
         }

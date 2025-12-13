@@ -29,7 +29,12 @@ export default function Sidebar() {
         setUserEmail(storedEmail);
         console.log('Sidebar initial email load:', storedEmail);
       }
-      if (storedAvatar) setAvatar(storedAvatar);
+      // Only use avatar if it's a valid base64 data URL or regular URL (not a blob URL)
+      if (storedAvatar && !storedAvatar.startsWith('blob:')) {
+        setAvatar(storedAvatar);
+      } else {
+        setAvatar(null);
+      }
     } catch (err) {
       console.error('Error loading initial user data in sidebar:', err);
     }
@@ -60,7 +65,12 @@ export default function Sidebar() {
           setUserEmail(storedEmail);
           console.log('Sidebar email updated:', storedEmail);
         }
-        if (storedAvatar) setAvatar(storedAvatar);
+        // Only use avatar if it's a valid base64 data URL or regular URL (not a blob URL)
+        if (storedAvatar && !storedAvatar.startsWith('blob:')) {
+          setAvatar(storedAvatar);
+        } else {
+          setAvatar(null);
+        }
       } catch (err) {
         console.error('Error updating user data in sidebar:', err);
       }

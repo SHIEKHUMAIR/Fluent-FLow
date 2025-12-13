@@ -57,7 +57,12 @@ const Profile = () => {
               setUserEmail(user.email || "");
               setFirstName(user.firstName || "");
               setLastName(user.lastName || "");
-              if (user.profileImage) setProfileImage(user.profileImage);
+              // Only use profileImage if it's a valid base64 data URL or regular URL (not a blob URL)
+              if (user.profileImage && !user.profileImage.startsWith('blob:')) {
+                setProfileImage(user.profileImage);
+              } else {
+                setProfileImage(null);
+              }
               if (user.phone) {
                 // Extract phone number (remove country code)
                 const phoneNum = user.phone.replace(/^\+\d+/, "");
@@ -80,7 +85,12 @@ const Profile = () => {
               if (user.firstName && user.lastName) {
                 localStorage.setItem("userName", `${user.firstName} ${user.lastName}`);
               }
-              if (user.profileImage) localStorage.setItem("profileImage", user.profileImage);
+              // Only store profileImage if it's valid (not a blob URL)
+              if (user.profileImage && !user.profileImage.startsWith('blob:')) {
+                localStorage.setItem("profileImage", user.profileImage);
+              } else {
+                localStorage.removeItem("profileImage");
+              }
               
               return; // Exit early if API data loaded
             }

@@ -71,8 +71,8 @@ const LoginForm = () => {
           // Store email
           if (data?.user?.email) localStorage.setItem("userEmail", data.user.email);
           
-          // Store avatar if available
-          if (data?.user?.avatar) localStorage.setItem("profileImage", data.user.avatar);
+          // Store profile image if available
+          if (data?.user?.profileImage) localStorage.setItem("profileImage", data.user.profileImage);
         } catch {}
 
         // Notify other components about the login so state updates immediately
@@ -130,7 +130,8 @@ const LoginForm = () => {
             localStorage.setItem("userName", fullName);
           }
           
-          // Note: profileImage would need to be extracted from Google payload if needed
+          // Store profile image if available
+          if (data?.user?.profileImage) localStorage.setItem("profileImage", data.user.profileImage);
         } catch (err) {
           console.error("Error storing user data:", err);
         }

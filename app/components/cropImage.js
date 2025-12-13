@@ -21,8 +21,8 @@ export default async function getCroppedImg(imageSrc, pixelCrop) {
   );
 
   return new Promise((resolve) => {
-    canvas.toBlob((blob) => {
-      resolve(URL.createObjectURL(blob));
-    }, "image/jpeg");
+    // Return base64 data URL instead of blob URL so it can be stored in database
+    const base64Image = canvas.toDataURL("image/jpeg", 0.9);
+    resolve(base64Image);
   });
 }

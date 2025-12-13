@@ -33,6 +33,13 @@ exports.updateProfile = async (req, res) => {
     const userId = req.user?.id || req.body?.userId || req.query?.userId;
     const { firstName, lastName, profileImage, phone, dateOfBirth, country, residenceCountry } = req.body;
 
+    // Debug logging
+    console.log("Profile update request:", {
+      userId,
+      hasProfileImage: profileImage !== undefined,
+      profileImageLength: profileImage ? profileImage.length : 0
+    });
+
     if (!userId) {
       return res.status(401).json({ success: false, message: "User ID is required" });
     }

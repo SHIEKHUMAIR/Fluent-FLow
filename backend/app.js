@@ -36,6 +36,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/lessons", require("./source/routes/lessons"));
 app.use("/api/progress", require("./source/routes/progress"));
 app.use("/api/profile", require("./source/routes/profile"));
+app.use("/api/leaderboard", require("./source/routes/leaderboard"));
 
 // Start
 connectDB().then(() => {

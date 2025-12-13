@@ -26,11 +26,32 @@ const dashboard = () => {
   const [achievements, setAchievements] = useState([]);
 
   useEffect(() => {
-    const loadUserData = () => {
+    const loadUserData = async () => {
       try {
         const storedName = localStorage.getItem('userName');
         if (storedName) {
           setUserName(storedName);
+        } else {
+          // Try to fetch from profile API if not in localStorage
+          const userId = getUserId();
+          if (userId) {
+            try {
+              const profileResult = await apiGet(API_ENDPOINTS.PROFILE.GET(userId));
+              if (profileResult.success && profileResult.data) {
+                const user = profileResult.data;
+                const fullName = user.firstName && user.lastName 
+                  ? `${user.firstName} ${user.lastName}`.trim()
+                  : user.firstName || user.lastName || '';
+                if (fullName) {
+                  setUserName(fullName);
+                  localStorage.setItem('userName', fullName);
+                }
+              }
+            } catch (profileErr) {
+              console.error('Error fetching profile:', profileErr);
+              // Continue without user name
+            }
+          }
         }
       } catch (err) {
         console.error('Error loading user data in dashboard:', err);
@@ -52,33 +73,62 @@ const dashboard = () => {
         const result = await apiGet(API_ENDPOINTS.PROGRESS.DASHBOARD(userId));
         
         if (result.success && result.data) {
-          setStats(result.data.stats || stats);
-          setProgressByCategory(result.data.progressByCategory || progressByCategory);
-          setRecentActivities(result.data.recentActivities || []);
+          // Set stats with proper defaults
+          setStats({
+            totalXp: result.data.stats?.totalXp || 0,
+            wordsLearned: result.data.stats?.wordsLearned || 0,
+            lessonsCompleted: result.data.stats?.lessonsCompleted || 0,
+            studyTime: result.data.stats?.studyTime || 0,
+            currentStreak: result.data.stats?.currentStreak || 0
+          });
+          
+          // Set progress by category
+          if (result.data.progressByCategory) {
+            setProgressByCategory(result.data.progressByCategory);
+          }
+          
+          // Set recent activities (ensure proper field mapping)
+          const activities = (result.data.recentActivities || []).map(activity => ({
+            ...activity,
+            activity_description: activity.activity_description || activity.activityDescription || 'Activity',
+            created_at: activity.created_at || activity.createdAt,
+            xp_earned: activity.xp_earned || activity.xpEarned || 0
+          }));
+          setRecentActivities(activities);
+          
+          // Set achievements
           setAchievements(result.data.achievements || []);
         } else {
-          setError(result.error || 'Failed to load dashboard data');
+          setError(result.error || result.message || 'Failed to load dashboard data');
         }
       } catch (err) {
         console.error('Error loading dashboard:', err);
-        setError('Failed to load dashboard data');
+        setError(err.message || 'Failed to load dashboard data. Please try again.');
       } finally {
         setLoading(false);
       }
     };
 
-    loadUserData();
-    loadDashboardData();
+    const initializeDashboard = async () => {
+      await loadUserData();
+      await loadDashboardData();
+    };
+
+    initializeDashboard();
 
     // Listen for profile updates
-    window.addEventListener('storage', loadUserData);
-    window.addEventListener('profileUpdated', loadUserData);
-    window.addEventListener('userLoggedIn', loadUserData);
+    const handleStorageUpdate = () => {
+      loadUserData();
+    };
+
+    window.addEventListener('storage', handleStorageUpdate);
+    window.addEventListener('profileUpdated', handleStorageUpdate);
+    window.addEventListener('userLoggedIn', handleStorageUpdate);
 
     return () => {
-      window.removeEventListener('storage', loadUserData);
-      window.removeEventListener('profileUpdated', loadUserData);
-      window.removeEventListener('userLoggedIn', loadUserData);
+      window.removeEventListener('storage', handleStorageUpdate);
+      window.removeEventListener('profileUpdated', handleStorageUpdate);
+      window.removeEventListener('userLoggedIn', handleStorageUpdate);
     };
   }, []);
 
@@ -132,7 +182,18 @@ const dashboard = () => {
       <section className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center py-20">
-            <p className="text-red-600">{error}</p>
+            <div className="bg-white rounded-2xl p-8 border border-red-200 shadow-sm max-w-md mx-auto">
+              <div className="text-red-600 text-6xl mb-4">⚠️</div>
+              <p className="text-red-600 text-lg font-semibold mb-4">{error}</p>
+              {error.includes('login') && (
+                <a 
+                  href="/auth" 
+                  className="inline-block bg-blue-900 text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors"
+                >
+                  Go to Login
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </section>
@@ -459,12 +520,16 @@ const dashboard = () => {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <p className="text-base font-semibold text-slate-900">{activity.activity_description}</p>
-                    <p className="text-sm text-slate-500">{formatDate(activity.created_at)}</p>
+                    <p className="text-base font-semibold text-slate-900">
+                      {activity.activity_description || activity.activityDescription || 'Activity completed'}
+                    </p>
+                    <p className="text-sm text-slate-500">
+                      {formatDate(activity.created_at || activity.createdAt)}
+                    </p>
                   </div>
-                  {activity.xp_earned > 0 && (
+                  {(activity.xp_earned || activity.xpEarned) > 0 && (
                     <div className="text-base text-blue-600 font-bold bg-blue-50 px-3 py-1 rounded-full">
-                      +{activity.xp_earned} XP
+                      +{activity.xp_earned || activity.xpEarned || 0} XP
                     </div>
                   )}
                 </div>

@@ -44,13 +44,13 @@ const Profile = () => {
     const loadUserData = async () => {
       try {
         const userId = localStorage.getItem("userId");
-        
+
         // Try to load from API first
         if (userId) {
           try {
             const { API_ENDPOINTS } = await import("../../lib/config");
             const { apiGet } = await import("../../lib/api");
-            
+
             const result = await apiGet(API_ENDPOINTS.PROFILE.GET(userId));
             if (result.success && result.data) {
               const user = result.data;
@@ -63,24 +63,37 @@ const Profile = () => {
               } else {
                 setProfileImage(null);
               }
-              if (user.phone) {
-                // Extract phone number (remove country code)
-                const phoneNum = user.phone.replace(/^\+\d+/, "");
-                setPhone(phoneNum);
-                // Try to find country by phone code
-                const countryCode = user.phone.match(/^\+(\d+)/)?.[1];
-                if (countryCode) {
-                  const country = countryData.find(c => c.dial.includes(countryCode));
-                  if (country) setSelectedCountry(country);
+              // Handle Date of Birth
+              if (user.dateOfBirth) {
+                const dateObj = new Date(user.dateOfBirth);
+                if (!isNaN(dateObj.getTime())) {
+                  setDob(dateObj.toISOString().split('T')[0]);
                 }
               }
+
+              // Handle Country and Phone
+              let currentCountry = countryData[0]; // Default
               if (user.country) {
                 const c = countryData.find(x => x.name === user.country);
-                if (c) setSelectedCountry(c);
+                if (c) {
+                  setSelectedCountry(c);
+                  currentCountry = c;
+                }
               }
+
+              if (user.phone) {
+                // Remove the country dial code if present
+                const dialCode = currentCountry.dial;
+                if (user.phone.startsWith(dialCode)) {
+                  setPhone(user.phone.slice(dialCode.length));
+                } else {
+                  // Fallback: just use the whole string if it doesn't match
+                  setPhone(user.phone);
+                }
+              }
+
               if (user.residenceCountry) setSearchResidence(user.residenceCountry);
-              if (user.dateOfBirth) setDob(user.dateOfBirth);
-              
+
               // Also update localStorage
               if (user.firstName && user.lastName) {
                 localStorage.setItem("userName", `${user.firstName} ${user.lastName}`);
@@ -91,7 +104,7 @@ const Profile = () => {
               } else {
                 localStorage.removeItem("profileImage");
               }
-              
+
               return; // Exit early if API data loaded
             }
           } catch (apiErr) {
@@ -123,7 +136,14 @@ const Profile = () => {
           if (c) setSelectedCountry(c);
         }
         if (storedResidence) setSearchResidence(storedResidence);
-        if (storedDob) setDob(storedDob);
+        if (storedDob) {
+          const dateObj = new Date(storedDob);
+          if (!isNaN(dateObj.getTime())) {
+            setDob(dateObj.toISOString().split('T')[0]);
+          } else {
+            setDob(storedDob); // Fallback
+          }
+        }
       } catch (err) {
         console.error("Error loading user data:", err);
       }
@@ -226,14 +246,14 @@ const Profile = () => {
       const croppedImage = await getCroppedImg(imageSrc, croppedAreaPixels);
       setProfileImage(croppedImage);
       localStorage.setItem("profileImage", croppedImage);
-      
+
       // Save to backend immediately
       const userId = localStorage.getItem("userId");
       if (userId) {
         try {
           const { API_ENDPOINTS } = await import("../../lib/config");
           const { apiPost } = await import("../../lib/api");
-          
+
           await apiPost(API_ENDPOINTS.PROFILE.UPDATE, {
             userId: parseInt(userId),
             profileImage: croppedImage
@@ -243,7 +263,7 @@ const Profile = () => {
           // Continue anyway - at least it's saved locally
         }
       }
-      
+
       window.dispatchEvent(new CustomEvent("profileUpdated"));
       setShowCropper(false);
     } catch (e) {

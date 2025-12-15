@@ -1,3 +1,5 @@
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "../.env") });
 const { connectDB, getPool } = require("../source/configuration/dbConfig");
 const User = require("../source/models/User");
 const UserStats = require("../source/models/UserStats");

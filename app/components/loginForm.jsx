@@ -52,28 +52,32 @@ const LoginForm = () => {
         if (formData.rememberMe) {
           // Persistent login - stays after closing browser
           localStorage.setItem("token", token);
+          // Set cookie for middleware (expires in 7 days)
+          document.cookie = `authToken=${token}; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Strict`;
         } else {
           // Temporary login - removed when tab/browser closes
           sessionStorage.setItem("token", token);
+          // Set cookie for middleware (session cookie, no max-age)
+          document.cookie = `authToken=${token}; path=/; SameSite=Strict`;
         }
 
         console.log("User logged in:", data.user);
         try {
           // Store user ID
           if (data?.user?.id) localStorage.setItem("userId", data.user.id.toString());
-          
+
           // Store user name (combine firstName and lastName if available)
-          const fullName = data?.user?.firstName && data?.user?.lastName 
+          const fullName = data?.user?.firstName && data?.user?.lastName
             ? `${data.user.firstName} ${data.user.lastName}`.trim()
             : data?.user?.firstName || data?.user?.name || '';
           if (fullName) localStorage.setItem("userName", fullName);
-          
+
           // Store email
           if (data?.user?.email) localStorage.setItem("userEmail", data.user.email);
-          
+
           // Store profile image if available
           if (data?.user?.profileImage) localStorage.setItem("profileImage", data.user.profileImage);
-        } catch {}
+        } catch { }
 
         // Notify other components about the login so state updates immediately
         window.dispatchEvent(new CustomEvent('userLoggedIn'));
@@ -101,18 +105,20 @@ const LoginForm = () => {
       const data = await res.json();
       if (res.ok) {
         setMessage("✅ Google login successful!");
-        
+
         // Store token (Google login uses 7-day expiry, so use localStorage)
         const token = data.token;
         if (token) {
           localStorage.setItem("token", token);
+          // Set cookie for middleware (Google login usually durable, so 7 days)
+          document.cookie = `authToken=${token}; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Strict`;
         }
-        
+
         // Store user info
         try {
           // Store user ID
           if (data?.user?.id) localStorage.setItem("userId", data.user.id.toString());
-          
+
           // Ensure email is stored
           if (data.user && data.user.email) {
             localStorage.setItem("userEmail", data.user.email);
@@ -120,24 +126,24 @@ const LoginForm = () => {
           } else {
             console.error("No email in response:", data);
           }
-          
+
           // Store user name
           const fullName = data.user?.firstName && data.user?.lastName
             ? `${data.user.firstName} ${data.user.lastName}`.trim()
             : data.user?.firstName || data.user?.lastName || data.user?.email || 'User';
-          
+
           if (fullName) {
             localStorage.setItem("userName", fullName);
           }
-          
+
           // Store profile image if available
           if (data?.user?.profileImage) localStorage.setItem("profileImage", data.user.profileImage);
         } catch (err) {
           console.error("Error storing user data:", err);
         }
-        
+
         console.log("User data:", data.user);
-        
+
         // Dispatch event to update sidebar immediately
         window.dispatchEvent(new CustomEvent('userLoggedIn'));
         window.dispatchEvent(new CustomEvent('profileUpdated'));
@@ -238,8 +244,8 @@ const LoginForm = () => {
 
         {/* Google login */}
         <div className="mt-6 flex justify-center">
-  <div
-    className="
+          <div
+            className="
       
       rounded-3xl 
       shadow-md 
@@ -250,19 +256,19 @@ const LoginForm = () => {
       duration-200
       active:scale-95
     "
-  >
-    <GoogleLogin
-      onSuccess={handleGoogleLoginSuccess}
-      onError={() => setMessage("⚠️ Google login failed")}
-      theme="outline"       // cleaner look
-      size="large"          // bigger button
-      shape="pill"          // rounded
-      width="100%"           // consistent width
-      text="signin_with"    // "Sign in with Google"
-      logo_alignment="left" // logo on left
-    />
-  </div>
-</div>
+          >
+            <GoogleLogin
+              onSuccess={handleGoogleLoginSuccess}
+              onError={() => setMessage("⚠️ Google login failed")}
+              theme="outline"       // cleaner look
+              size="large"          // bigger button
+              shape="pill"          // rounded
+              width="100%"           // consistent width
+              text="signin_with"    // "Sign in with Google"
+              logo_alignment="left" // logo on left
+            />
+          </div>
+        </div>
 
       </div>
     </div>

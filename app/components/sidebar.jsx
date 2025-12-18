@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState , useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -15,7 +15,7 @@ export default function Sidebar() {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showMobileUserMenu, setShowMobileUserMenu] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
@@ -51,14 +51,14 @@ export default function Sidebar() {
       }
     };
     checkAuth();
-    
+
     const updateUserData = () => {
       checkAuth();
       try {
         const storedName = localStorage.getItem('userName');
         const storedEmail = localStorage.getItem('userEmail');
         const storedAvatar = localStorage.getItem('profileImage');
-        
+
         // Always update if data exists, even if empty string
         if (storedName) setUserName(storedName);
         if (storedEmail) {
@@ -75,17 +75,17 @@ export default function Sidebar() {
         console.error('Error updating user data in sidebar:', err);
       }
     };
-    
+
     // Initial load of user data
     updateUserData();
-    
+
     // Listen for storage events (cross-window)
     window.addEventListener('storage', updateUserData);
     // Listen for custom profile update events (same window)
     window.addEventListener('profileUpdated', updateUserData);
     // Listen for login events (same window) - for Google login
     window.addEventListener('userLoggedIn', updateUserData);
-    
+
     return () => {
       window.removeEventListener('storage', updateUserData);
       window.removeEventListener('profileUpdated', updateUserData);
@@ -116,12 +116,15 @@ export default function Sidebar() {
       // Clear tokens
       localStorage.removeItem('token');
       sessionStorage.removeItem('token');
-      
+
       // Clear user data
       localStorage.removeItem('userName');
       localStorage.removeItem('userEmail');
       localStorage.removeItem('profileImage');
-      
+
+      // Clear cookie
+      document.cookie = 'authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
       // Reset state
       setIsAuthenticated(false);
       setUserName('User');
@@ -129,7 +132,7 @@ export default function Sidebar() {
       setAvatar(null);
       setShowUserMenu(false);
       setShowMobileUserMenu(false);
-      
+
       // Redirect to auth page
       window.location.href = '/auth';
     } catch (err) {
@@ -142,7 +145,7 @@ export default function Sidebar() {
       {/* Desktop Sidebar */}
       <nav className="hidden lg:flex flex-col w-72 bg-white border-r border-gray-200 h-screen sticky top-0 z-40">
         <div className="flex items-center justify-center py-4 pr-6 border-b border-gray-200">
-          <Link href="/" className="inline-block">
+          <Link href={isAuthenticated ? "/dashboard" : "/"} className="inline-block">
             <Image
               src="/assets/logo.png"
               alt="Fluent Flow Logo"
@@ -160,7 +163,7 @@ export default function Sidebar() {
               key={item.href}
               href={item.href}
               label={item.label}
-               active={
+              active={
                 item.href === '/'
                   ? pathname === item.href
                   : pathname.startsWith(item.href)
@@ -173,7 +176,7 @@ export default function Sidebar() {
         <div className="px-4 py-4 border-t border-gray-200">
           {isAuthenticated ? (
             <div>
-              <div 
+              <div
                 onClick={() => setShowUserMenu(!showUserMenu)}
                 className="flex items-center space-x-3 px-4 py-3 rounded_cstm bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors"
               >
@@ -188,16 +191,16 @@ export default function Sidebar() {
                   <p className="text-sm font-medium text-gray-900 truncate">{userName}</p>
                   <p className="text-xs text-gray-500 truncate">{userEmail}</p>
                 </div>
-                <svg 
+                <svg
                   className={`w-4 h-4 text-gray-500 transition-transform ${showUserMenu ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
-              
+
               {showUserMenu && (
                 <div className="mt-2">
                   <button
@@ -225,7 +228,7 @@ export default function Sidebar() {
       {/* Mobile Top Navbar */}
       <nav className="lg:hidden absolute right-0 top-0 w-full bg-white/50 backdrop-blur-md z-[12]">
         <div className="flex items-center justify-between px-4 py-1">
-          <Link href="/">
+          <Link href={isAuthenticated ? "/dashboard" : "/"}>
             <Image
               src="/assets/logo.png"
               alt="Logo"
@@ -254,26 +257,26 @@ export default function Sidebar() {
       <div>
         {/* Backdrop */}
         <div
-          className={`fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity duration-300 ${
-            mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}
+          className={`fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+            }`}
           onClick={() => setMobileMenuOpen(false)}
         />
 
         {/* Sidebar */}
         <aside
-          className={`fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl flex flex-col transform transition-transform duration-300 ease-in-out ${
-            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
+          className={`fixed top-0 right-0 w-64 h-full bg-white z-50 shadow-xl flex flex-col transform transition-transform duration-300 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
         >
           <div className="flex items-center justify-between px-4 py-3 border-b border-gray-200">
-            <Image
-              src="/assets/logo.png"
-              alt="Logo"
-              width={120}
-              height={40}
-              className="object-contain"
-            />
+            <Link href={isAuthenticated ? "/dashboard" : "/"} onClick={() => setMobileMenuOpen(false)}>
+              <Image
+                src="/assets/logo.png"
+                alt="Logo"
+                width={120}
+                height={40}
+                className="object-contain"
+              />
+            </Link>
             <button onClick={() => setMobileMenuOpen(false)}>
               <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -288,66 +291,66 @@ export default function Sidebar() {
 
           <div className="flex-1 flex flex-col">
             <div className="flex-1 overflow-y-auto px-4 py-4 space-y-2">
-            {navItems.map((item) => (
-              <SidebarLink
-                key={item.href}
-                href={item.href}
-                label={item.label}
-                active={pathname === item.href}
-              />
-            ))}
-          </div>
+              {navItems.map((item) => (
+                <SidebarLink
+                  key={item.href}
+                  href={item.href}
+                  label={item.label}
+                  active={pathname === item.href}
+                />
+              ))}
+            </div>
 
             <div className="px-4 py-4 border-t border-gray-200 mt-auto">
-            {isAuthenticated ? (
-              <div>
-                <div 
-                  onClick={() => setShowMobileUserMenu(!showMobileUserMenu)}
-                  className="flex items-center space-x-3 px-4 py-3 rounded_cstm bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors"
-                >
-                  {avatar ? (
-                    <img src={avatar} alt="avatar" className="w-8 h-8 rounded-full object-cover" />
-                  ) : (
-                    <div className="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-medium">{userName?.[0] || 'U'}</span>
+              {isAuthenticated ? (
+                <div>
+                  <div
+                    onClick={() => setShowMobileUserMenu(!showMobileUserMenu)}
+                    className="flex items-center space-x-3 px-4 py-3 rounded_cstm bg-gray-50 cursor-pointer hover:bg-gray-100 transition-colors"
+                  >
+                    {avatar ? (
+                      <img src={avatar} alt="avatar" className="w-8 h-8 rounded-full object-cover" />
+                    ) : (
+                      <div className="w-8 h-8 bg-blue-900 rounded-full flex items-center justify-center">
+                        <span className="text-white text-sm font-medium">{userName?.[0] || 'U'}</span>
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-gray-900 truncate">{userName}</p>
+                      <p className="text-xs text-gray-500 truncate">{userEmail}</p>
+                    </div>
+                    <svg
+                      className={`w-4 h-4 text-gray-500 transition-transform ${showMobileUserMenu ? 'rotate-180' : ''}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+
+                  {showMobileUserMenu && (
+                    <div className="mt-2">
+                      <button
+                        onClick={handleLogout}
+                        className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-200 text-sm font-medium"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                        </svg>
+                        <span>Logout</span>
+                      </button>
                     </div>
                   )}
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate">{userName}</p>
-                    <p className="text-xs text-gray-500 truncate">{userEmail}</p>
-                  </div>
-                  <svg 
-                    className={`w-4 h-4 text-gray-500 transition-transform ${showMobileUserMenu ? 'rotate-180' : ''}`}
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
                 </div>
-                
-                {showMobileUserMenu && (
-                  <div className="mt-2">
-                    <button
-                      onClick={handleLogout}
-                      className="w-full flex items-center justify-center space-x-2 px-4 py-2.5 bg-red-600 text-white rounded-xl hover:bg-red-700 transition-all duration-200 text-sm font-medium"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-                      </svg>
-                      <span>Logout</span>
-                    </button>
+              ) : (
+                <Link href="/auth">
+                  <div className="w-full bg-blue-900 text-white text-center font-semibold py-3 rounded-xl hover:bg-blue-800 transition-all duration-200">
+                    Sign In
                   </div>
-                )}
-              </div>
-            ) : (
-              <Link href="/auth">
-                <div className="w-full bg-blue-900 text-white text-center font-semibold py-3 rounded-xl hover:bg-blue-800 transition-all duration-200">
-                  Sign In
-                </div>
-              </Link>
-            )}
-          </div>
+                </Link>
+              )}
+            </div>
           </div>
         </aside>
       </div>

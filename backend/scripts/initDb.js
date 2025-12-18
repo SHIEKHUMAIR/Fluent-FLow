@@ -1,37 +1,37 @@
-const { Client } = require('pg');
-require('dotenv').config();
+// const { Client } = require('pg');
+// require('dotenv').config();
 
-async function createDatabase() {
-  const client = new Client({
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: 'postgres', // Connect to default database first to create the new one
-    ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
-  });
+// async function createDatabase() {
+//   const client = new Client({
+//     host: process.env.DB_HOST,
+//     port: process.env.DB_PORT,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//     database: 'postgres', // Connect to default database first to create the new one
+//     ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
+//   });
 
-  try {
-    await client.connect();
-    console.log('✅ Connected to postgres database');
+//   try {
+//     await client.connect();
+//     console.log('✅ Connected to postgres database');
 
-    const dbName = process.env.DB_NAME;
-    const res = await client.query(`SELECT 1 FROM pg_database WHERE datname = '${dbName}'`);
+//     const dbName = process.env.DB_NAME;
+//     const res = await client.query(`SELECT 1 FROM pg_database WHERE datname = '${dbName}'`);
 
-    if (res.rowCount === 0) {
-      console.log(`Creating database ${dbName}...`);
-      await client.query(`CREATE DATABASE "${dbName}"`);
-      console.log(`✅ Database ${dbName} created successfully`);
-    } else {
-      console.log(`ℹ️  Database ${dbName} already exists`);
-    }
+//     if (res.rowCount === 0) {
+//       console.log(`Creating database ${dbName}...`);
+//       await client.query(`CREATE DATABASE "${dbName}"`);
+//       console.log(`✅ Database ${dbName} created successfully`);
+//     } else {
+//       console.log(`ℹ️  Database ${dbName} already exists`);
+//     }
 
-  } catch (err) {
-    console.error('❌ Error creating database:', err);
-    process.exit(1);
-  } finally {
-    await client.end();
-  }
-}
+//   } catch (err) {
+//     console.error('❌ Error creating database:', err);
+//     process.exit(1);
+//   } finally {
+//     await client.end();
+//   }
+// }
 
-createDatabase();
+// createDatabase();

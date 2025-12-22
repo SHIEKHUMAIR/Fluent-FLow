@@ -61,7 +61,7 @@ export default function Lesson0() {
         {/* --- Syllable Section --- */}
         <SectionCard title="What is a Syllable?">
           <p>
-            A <strong>syllable</strong> is one unit of sound.  
+            A <strong>syllable</strong> is one unit of sound.
             In Mandarin, each syllable is built from three parts:
           </p>
           <ul className="list-disc ml-6 my-3 space-y-1">
@@ -172,14 +172,14 @@ export default function Lesson0() {
 
         {/* --- Continue Learning Button --- */}
         <div className="text-center mt-10">
-          <Link href="/unit1lesson1">
-          
-          <button
-            
-            className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-2xl shadow-md hover:scale-105 transition-all"
-          >
-         Continue Learning
-          </button>
+          <Link href="../unit01/lesson1">
+
+            <button
+
+              className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-2xl shadow-md hover:scale-105 transition-all"
+            >
+              Continue Learning
+            </button>
           </Link>
         </div>
       </div>

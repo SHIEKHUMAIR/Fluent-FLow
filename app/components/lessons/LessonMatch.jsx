@@ -77,7 +77,7 @@ export default function LessonMatch({ groups, setPhase }) {
               disabled={matched.includes(item.id)}
               className={`w-full py-3 rounded-xl border font-semibold transition-all ${
                 matched.includes(item.id)
-                  ? "bg-green-100 border-green-300 text-green-800"
+                  ? "bg-emerald-500 text-white border-emerald-500"
                   : selectedLeft?.id === item.id
                   ? "bg-blue-50 border-blue-400"
                   : "bg-white hover:bg-slate-50"
@@ -97,7 +97,7 @@ export default function LessonMatch({ groups, setPhase }) {
               disabled={matched.includes(item.id)}
               className={`w-full py-3 rounded-xl border font-semibold transition-all ${
                 matched.includes(item.id)
-                  ? "bg-green-100 border-green-300 text-green-800"
+                  ? "bg-emerald-500 text-white border-emerald-500"
                   : "bg-white hover:bg-slate-50"
               }`}
             >

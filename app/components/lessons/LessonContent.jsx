@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import LessonLearn from "./LessonLearn";
+import LessonExercise from "./LessonExercise";
 import LessonReady from "./LessonReady";
 import LessonQuiz from "./LessonQuiz";
 import LessonMatch from "./LessonMatch";
@@ -34,7 +35,7 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
       try {
         setLoading(true);
         setError(null);
-        
+
         let result;
         if (lessonId) {
           result = await apiGet(API_ENDPOINTS.LESSONS.BY_ID(lessonId));
@@ -83,8 +84,8 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
 
         const timeSpent = Math.floor((Date.now() - startTime) / 60000); // minutes
         const totalQuestions = lessonData.mcqQuestions.length + lessonData.audioQuiz.length;
-        const progressPercentage = totalQuestions > 0 
-          ? Math.round((score / totalQuestions) * 100) 
+        const progressPercentage = totalQuestions > 0
+          ? Math.round((score / totalQuestions) * 100)
           : 100;
 
         try {
@@ -164,7 +165,11 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
         <LessonReady onStartQuiz={() => setPhase("quiz")} onReview={() => setPhase("learn")} />
       )}
       {phase === "quiz" && mcqs[index] && (
-        <LessonQuiz question={mcqs[index]} current={index} total={mcqs.length} onAnswer={handleAnswer} />
+        (lessonNumber >= 2 && lessonNumber <= 9) ? (
+          <LessonExercise question={mcqs[index]} current={index} total={mcqs.length} onAnswer={handleAnswer} />
+        ) : (
+          <LessonQuiz question={mcqs[index]} current={index} total={mcqs.length} onAnswer={handleAnswer} />
+        )
       )}
       {phase === "audio" && audioQs[index] && (
         <LessonAudioQuiz

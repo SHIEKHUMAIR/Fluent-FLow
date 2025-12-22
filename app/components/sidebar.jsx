@@ -45,8 +45,17 @@ export default function Sidebar() {
       try {
         const localToken = localStorage.getItem('token');
         const sessionToken = sessionStorage.getItem('token');
-        setIsAuthenticated(Boolean(localToken || sessionToken));
-      } catch {
+
+        // Also check for authToken in cookies (matches middleware logic)
+        const cookieToken = document.cookie
+          .split('; ')
+          .find(row => row.startsWith('authToken='))
+          ?.split('=')[1];
+
+        // Consider authenticated if any valid token exists
+        setIsAuthenticated(Boolean(localToken || sessionToken || cookieToken));
+      } catch (err) {
+        console.error('Error checking auth:', err);
         setIsAuthenticated(false);
       }
     };

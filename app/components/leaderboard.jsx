@@ -119,7 +119,7 @@ const Leaderboard = () => {
             id="el-1r2y6rm2">
             <button
               onClick={() => setPeriod('week')}
-              className={`px-8 py-3 rounded_cstm font-semibold shadow-md hover:shadow-lg transition-all duration-200 ${
+              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${
                 period === 'week'
                   ? 'bg-blue-900 text-white'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
@@ -129,7 +129,7 @@ const Leaderboard = () => {
             </button>
             <button
               onClick={() => setPeriod('month')}
-              className={`px-8 py-3 rounded_cstm font-semibold transition-all duration-200 ${
+              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${
                 period === 'month'
                   ? 'bg-blue-900 text-white'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
@@ -139,7 +139,7 @@ const Leaderboard = () => {
             </button>
             <button
               onClick={() => setPeriod('alltime')}
-              className={`px-8 py-3 rounded_cstm font-semibold transition-all duration-200 ${
+              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${
                 period === 'alltime'
                   ? 'bg-blue-900 text-white'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'

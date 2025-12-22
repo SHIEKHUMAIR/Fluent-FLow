@@ -9,7 +9,6 @@ export function middleware(request) {
     '/dashboard', 
     '/profile', 
     '/assessment', 
-    '/features', 
     '/modules',
     '/lessons',
     '/leaderboard'

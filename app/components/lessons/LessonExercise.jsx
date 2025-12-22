@@ -38,9 +38,9 @@ export default function LessonExercise({ question, onAnswer, current, total }) {
 
           if (isAnswered) {
             if (idx === question.correct) {
-              buttonClass += "bg-green-100 border-green-500 text-green-700";
+              buttonClass += "bg-emerald-500 text-white border-emerald-500";
             } else if (idx === selected && selected !== question.correct) {
-              buttonClass += "bg-red-100 border-red-500 text-red-700";
+              buttonClass += "bg-red-500 text-white border-red-500";
             } else {
               buttonClass += "bg-white text-slate-700 opacity-70";
             }

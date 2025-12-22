@@ -2,6 +2,7 @@ const UserProgress = require("../models/UserProgress");
 const UserStats = require("../models/UserStats");
 const UserActivity = require("../models/UserActivity");
 const Achievement = require("../models/Achievement");
+const Lesson = require("../models/Lesson");
 
 // Get user dashboard data
 exports.getDashboard = async (req, res) => {
@@ -127,11 +128,15 @@ exports.updateProgress = async (req, res) => {
       // Award XP for completing lesson
       statsUpdates.totalXp = 50;
       
+      // Fetch lesson details for the activity description
+      const lesson = await Lesson.findById(lessonId);
+      const lessonTitle = lesson ? lesson.title : "lesson";
+
       // Create activity
       await UserActivity.create({
         userId: userIdInt,
         activityType: "lesson_completed",
-        activityDescription: `Completed lesson`,
+        activityDescription: `Completed "${lessonTitle}" lesson`,
         xpEarned: 50
       });
     }

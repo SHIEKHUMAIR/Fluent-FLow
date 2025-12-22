@@ -55,6 +55,7 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
         if (result.success && result.data) {
           // Transform API data to match component expectations
           setLessonData({
+            unitNumber: result.data.lesson ? result.data.lesson.unit_number : undefined,
             learningSlides: result.data.learningSlides || [],
             mcqQuestions: result.data.mcqQuestions || [],
             audioQuiz: result.data.audioQuiz || [],
@@ -183,7 +184,7 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
       {phase === "match" && (
         <LessonMatch groups={matchData} score={score} setScore={setScore} setPhase={setPhase} />
       )}
-      {phase === "summary" && <LessonSummary score={score} />}
+      {phase === "summary" && <LessonSummary score={score} unitNumber={unitNumber || lessonData.unitNumber} />}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-export default function LessonSummary({ score }) {
+export default function LessonSummary({ score, unitNumber }) {
   return (
     <div className="bg-gradient-to-br from-white via-slate-50 to-blue-50 rounded-2xl shadow-lg border border-slate-200 p-10 mt-10 text-center max-w-xl mx-auto">
       <div className="mb-6">
@@ -29,14 +29,12 @@ export default function LessonSummary({ score }) {
         >
           Retry Lesson
         </button>
-<Link href={"/modules/unit01"}>
-
-        <button
-         
-          className="px-8 py-3 bg-blue-900 text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
-        >
-          Continue
-        </button>
+        <Link href={`/modules/unit${(unitNumber || 1).toString().padStart(2, '0')}`}>
+          <button
+            className="px-8 py-3 bg-blue-900 text-white font-semibold rounded-xl shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
+          >
+            Continue
+          </button>
         </Link>
       </div>
 

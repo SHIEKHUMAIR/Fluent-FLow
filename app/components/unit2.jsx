@@ -1,8 +1,37 @@
 "use client";
 
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import { apiGet, getUserId } from "../../lib/api";
+import { API_ENDPOINTS } from "../../lib/config";
 
 export default function Unit2() {
+  const [progressMap, setProgressMap] = useState({});
+
+  useEffect(() => {
+    const fetchProgress = async () => {
+      try {
+        const userId = getUserId();
+        if (!userId) return;
+
+        const result = await apiGet(API_ENDPOINTS.PROGRESS.DASHBOARD(userId));
+        if (result.success && result.data && result.data.progress) {
+          const map = {};
+          result.data.progress.forEach(p => {
+            // Use lesson_number to match the hardcoded IDs in the lessons array
+            const lessonId = p.lesson_number !== undefined ? p.lesson_number : (p.lesson_id || p.lessonId) - 1;
+            const percentage = p.progress_percentage !== undefined ? p.progress_percentage : p.progressPercentage;
+            map[lessonId] = percentage || 0;
+          });
+          setProgressMap(map);
+        }
+      } catch (error) {
+        console.error("Error fetching progress:", error);
+      }
+    };
+
+    fetchProgress();
+  }, []);
 
   const lessons = [
     { id: 10, title: "Lesson 10 - Colors & Descriptions", desc: "Learn colors in Mandarin and how to describe objects.", duration: "12 min", progress: 0, path: "/modules/unit02/lesson10" },
@@ -85,16 +114,16 @@ export default function Unit2() {
                   <div className="flex items-center space-x-3">
                     <div className="w-full bg-slate-200 rounded-full h-3 max-w-[120px]">
                       <div
-                        className="bg-slate-300 h-3 rounded-full"
-                        style={{ width: `${lesson.progress}%` }}
+                        className={`h-3 rounded-full ${progressMap[lesson.id] === 100 ? 'bg-emerald-500' : 'bg-blue-900'}`}
+                        style={{ width: `${progressMap[lesson.id] || 0}%` }}
                       />
                     </div>
                     <span className="text-sm text-slate-500 font-semibold">
-                      {lesson.progress === 0
+                      {(progressMap[lesson.id] || 0) === 0
                         ? "Not Started"
-                        : lesson.progress === 100
-                        ? "Completed"
-                        : `${lesson.progress}% Done`}
+                        : (progressMap[lesson.id] || 0) === 100
+                          ? "Completed"
+                          : `${progressMap[lesson.id] || 0}% Done`}
                     </span>
                   </div>
                 </div>

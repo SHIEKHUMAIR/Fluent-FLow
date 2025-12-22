@@ -15,7 +15,7 @@ class UserProgress {
   static async findByUserId(userId) {
     const pool = getPool();
     const result = await pool.query(
-      `SELECT up.*, l.title as lesson_title, l.category, l.unit_id, u.unit_number
+      `SELECT up.*, l.title as lesson_title, l.category, l.unit_id, u.unit_number, l.lesson_number
        FROM user_progress up
        JOIN lessons l ON up.lesson_id = l.id
        JOIN units u ON l.unit_id = u.id

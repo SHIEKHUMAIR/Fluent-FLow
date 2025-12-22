@@ -1,10 +1,45 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import lessonsData from '../../data/lessons.json';
+import { API_ENDPOINTS } from "../../lib/config";
+import { apiGet, getUserId } from "../../lib/api";
 
 const Lessons = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [progressMap, setProgressMap] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchProgress = async () => {
+      try {
+        const userId = getUserId();
+        if (!userId) {
+          setLoading(false);
+          return;
+        }
+
+        const result = await apiGet(API_ENDPOINTS.PROGRESS.DASHBOARD(userId));
+        if (result.success && result.data && result.data.progress) {
+          const map = {};
+          result.data.progress.forEach(p => {
+            // Use lesson_number (from DB query join) which matches lessons.json ID
+            // Fallback to p.lesson_id - 1 if lesson_number is missing (though model update ensures it's there)
+            const lessonId = p.lesson_number !== undefined ? p.lesson_number : (p.lesson_id || p.lessonId) - 1;
+            const percentage = p.progress_percentage !== undefined ? p.progress_percentage : p.progressPercentage;
+            map[lessonId] = percentage || 0;
+          });
+          setProgressMap(map);
+        }
+      } catch (error) {
+        console.error("Error fetching lesson progress:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProgress();
+  }, []);
 
   const categories = ['All', 'Beginner', 'Elementary', 'Intermediate'];
 
@@ -59,8 +94,8 @@ const Lessons = () => {
                   <div className="p-8 flex flex-col flex-grow">
                     <div className="flex items-center justify-between mb-6">
                       <span className={`text-sm font-semibold px-3 py-1.5 rounded-full ${lesson.category === 'beginner' ? 'bg-emerald-100 text-emerald-700' :
-                          lesson.category === 'elementary' ? 'bg-purple-100 text-purple-700' :
-                            'bg-amber-100 text-amber-700'
+                        lesson.category === 'elementary' ? 'bg-purple-100 text-purple-700' :
+                          'bg-amber-100 text-amber-700'
                         }`}>
                         {lesson.category.charAt(0).toUpperCase() + lesson.category.slice(1)}
                       </span>
@@ -84,12 +119,12 @@ const Lessons = () => {
                       <div className="flex items-center space-x-3 w-full">
                         <div className="w-full bg-slate-200 rounded-full h-3 max-w-[120px]">
                           <div
-                            className={`h-3 rounded-full ${lesson.progress === 100 ? 'bg-emerald-500' : 'bg-blue-900'}`}
-                            style={{ width: `${lesson.progress}%` }}
+                            className={`h-3 rounded-full ${progressMap[lesson.id] === 100 ? 'bg-emerald-500' : 'bg-blue-900'}`}
+                            style={{ width: `${progressMap[lesson.id] || 0}%` }}
                           />
                         </div>
-                        <span className={`text-sm font-semibold ${lesson.progress === 100 ? 'text-emerald-600' : 'text-slate-500'}`}>
-                          {lesson.progress === 0 ? 'Not Started' : lesson.progress === 100 ? 'Complete' : `${lesson.progress}%`}
+                        <span className={`text-sm font-semibold ${progressMap[lesson.id] === 100 ? 'text-emerald-600' : 'text-slate-500'}`}>
+                          {(progressMap[lesson.id] || 0) === 0 ? 'Not Started' : (progressMap[lesson.id] === 100 ? 'Complete' : `${progressMap[lesson.id]}%`)}
                         </span>
                       </div>
                     </div>
@@ -97,7 +132,7 @@ const Lessons = () => {
                     {/* CHANGE 3: Added 'mt-auto' to the Link to push it to the bottom of the flex container */}
                     <Link href={lesson.path} className="mt-auto">
                       <button className="w-full bg-blue-900 hover:bg-blue-800 py-3 px-6 rounded-xl font-semibold transition-all duration-200 text-white">
-                        {lesson.progress === 0 ? 'Start Lesson' : 'Continue Lesson'}
+                        {(progressMap[lesson.id] || 0) === 0 ? 'Start Lesson' : 'Continue Lesson'}
                       </button>
                     </Link>
                   </div>

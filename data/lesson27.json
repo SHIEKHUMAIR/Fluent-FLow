@@ -1,0 +1,217 @@
+{
+  "learningSlides": [
+    {
+      "id": "l27_1",
+      "chinese": "菜单",
+      "pinyin": "càidān",
+      "english": "menu",
+      "image": "/assets/lesson27/menu.jpeg"
+    },
+    {
+      "id": "l27_2",
+      "chinese": "点菜",
+      "pinyin": "diǎn cài",
+      "english": "order food",
+      "image": "/assets/lesson27/order.jpeg"
+    },
+    {
+      "id": "l27_3",
+      "chinese": "汤",
+      "pinyin": "tāng",
+      "english": "soup",
+      "image": "/assets/lesson27/soup.jpeg"
+    },
+    {
+      "id": "l27_4",
+      "chinese": "肉",
+      "pinyin": "ròu",
+      "english": "meat",
+      "image": "/assets/lesson27/meat.jpeg"
+    },
+    {
+      "id": "l27_5",
+      "chinese": "服务员",
+      "pinyin": "fúwùyuán",
+      "english": "waiter / waitress",
+      "image": "/assets/lesson27/waiter.jpeg"
+    },
+    {
+      "id": "l27_6",
+      "chinese": "好吃",
+      "pinyin": "hǎochī",
+      "english": "tasty",
+      "image": "/assets/lesson27/tasty.jpeg"
+    },
+    {
+      "id": "l27_7",
+      "chinese": "请客",
+      "pinyin": "qǐngkè",
+      "english": "treat / invite to eat",
+      "image": "/assets/lesson27/treat.jpeg"
+    },
+    {
+      "id": "l27_8",
+      "chinese": "筷子",
+      "pinyin": "kuàizi",
+      "english": "chopsticks",
+      "image": "/assets/lesson27/chopsticks.jpeg"
+    },
+    {
+      "id": "l27_9",
+      "chinese": "盘子",
+      "pinyin": "pánzi",
+      "english": "plate",
+      "image": "/assets/lesson27/plate.jpeg"
+    }
+  ],
+
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "image": "/assets/lesson27/menu.jpeg",
+      "choices": ["tāng", "càidān", "kuàizi", "ròu"],
+      "correct": 1
+    },
+    {
+      "id": "q2",
+      "image": "/assets/lesson27/order.jpeg",
+      "choices": ["qǐngkè", "diǎn cài", "fúwùyuán", "hǎochī"],
+      "correct": 1
+    },
+    {
+      "id": "q3",
+      "image": "/assets/lesson27/chopsticks.jpeg",
+      "choices": ["pánzi", "kuàizi", "càidān", "tāng"],
+      "correct": 1
+    },
+    {
+      "id": "q4",
+      "image": "/assets/lesson27/plate.jpeg",
+      "choices": ["ròu", "pánzi", "hǎochī", "diǎn cài"],
+      "correct": 1
+    },
+    {
+      "id": "q5",
+      "image": "/assets/lesson27/tasty.jpeg",
+      "choices": ["qǐngkè", "hǎochī", "fúwùyuán", "tāng"],
+      "correct": 1
+    },
+    {
+      "id": "q6",
+      "image": "/assets/lesson27/soup.jpeg",
+      "choices": ["ròu", "tāng", "pánzi", "càidān"],
+      "correct": 1
+    },
+    {
+      "id": "q7",
+      "image": "/assets/lesson27/meat.jpeg",
+      "choices": ["tāng", "kuàizi", "ròu", "hǎochī"],
+      "correct": 2
+    },
+    {
+      "id": "q8",
+      "image": "/assets/lesson27/waiter.jpeg",
+      "choices": ["càidān", "fúwùyuán", "qǐngkè", "pánzi"],
+      "correct": 1
+    },
+    {
+      "id": "q9",
+      "image": "/assets/lesson27/treat.jpeg",
+      "choices": ["diǎn cài", "qǐngkè", "fúwùyuán", "hǎochī"],
+      "correct": 1
+    }
+  ],
+
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "m1", "label": "càidān" },
+        { "id": "m2", "label": "diǎn cài" },
+        { "id": "m3", "label": "tāng" },
+        { "id": "m4", "label": "ròu" },
+        { "id": "m5", "label": "fúwùyuán" },
+        { "id": "m6", "label": "hǎochī" },
+        { "id": "m7", "label": "qǐngkè" },
+        { "id": "m8", "label": "kuàizi" },
+        { "id": "m9", "label": "pánzi" }
+      ],
+      "right": [
+        { "id": "r1", "label": "menu" },
+        { "id": "r2", "label": "order food" },
+        { "id": "r3", "label": "soup" },
+        { "id": "r4", "label": "meat" },
+        { "id": "r5", "label": "waiter / waitress" },
+        { "id": "r6", "label": "tasty" },
+        { "id": "r7", "label": "treat / invite to eat" },
+        { "id": "r8", "label": "chopsticks" },
+        { "id": "r9", "label": "plate" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    {
+      "id": "a1",
+      "chinese": "菜单",
+      "audioText": "菜单",
+      "choices": ["càidān", "tāng", "kuàizi", "ròu"],
+      "correct": 0
+    },
+    {
+      "id": "a2",
+      "chinese": "点菜",
+      "audioText": "点菜",
+      "choices": ["qǐngkè", "diǎn cài", "hǎochī", "pánzi"],
+      "correct": 1
+    },
+    {
+      "id": "a3",
+      "chinese": "汤",
+      "audioText": "汤",
+      "choices": ["tāng", "ròu", "càidān", "kuàizi"],
+      "correct": 0
+    },
+    {
+      "id": "a4",
+      "chinese": "肉",
+      "audioText": "肉",
+      "choices": ["pánzi", "ròu", "tāng", "hǎochī"],
+      "correct": 1
+    },
+    {
+      "id": "a5",
+      "chinese": "服务员",
+      "audioText": "服务员",
+      "choices": ["fúwùyuán", "qǐngkè", "diǎn cài", "càidān"],
+      "correct": 0
+    },
+    {
+      "id": "a6",
+      "chinese": "好吃",
+      "audioText": "好吃",
+      "choices": ["hǎochī", "ròu", "tāng", "pánzi"],
+      "correct": 0
+    },
+    {
+      "id": "a7",
+      "chinese": "请客",
+      "audioText": "请客",
+      "choices": ["qǐngkè", "diǎn cài", "fúwùyuán", "kuàizi"],
+      "correct": 0
+    },
+    {
+      "id": "a8",
+      "chinese": "筷子",
+      "audioText": "筷子",
+      "choices": ["kuàizi", "pánzi", "càidān", "ròu"],
+      "correct": 0
+    },
+    {
+      "id": "a9",
+      "chinese": "盘子",
+      "audioText": "盘子",
+      "choices": ["tāng", "pánzi", "hǎochī", "qǐngkè"],
+      "correct": 1
+    }
+  ]
+}

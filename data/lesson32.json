@@ -1,0 +1,396 @@
+{
+    "learningSlides": [
+        {
+            "id": "l32_1",
+            "chinese": "公司",
+            "pinyin": "gōngsī",
+            "english": "company",
+            "image": "/assets/lesson32/company.jpeg"
+        },
+        {
+            "id": "l32_2",
+            "chinese": "老板",
+            "pinyin": "lǎobǎn",
+            "english": "boss",
+            "image": "/assets/lesson32/boss.jpeg"
+        },
+        {
+            "id": "l32_3",
+            "chinese": "同事",
+            "pinyin": "tóngshì",
+            "english": "colleague",
+            "image": "/assets/lesson32/colleague.jpeg"
+        },
+        {
+            "id": "l32_4",
+            "chinese": "员工",
+            "pinyin": "yuángōng",
+            "english": "employee",
+            "image": "/assets/lesson32/employee.jpeg"
+        },
+        {
+            "id": "l32_5",
+            "chinese": "会议",
+            "pinyin": "huìyì",
+            "english": "meeting",
+            "image": "/assets/lesson32/meeting.jpeg"
+        },
+        {
+            "id": "l32_6",
+            "chinese": "项目",
+            "pinyin": "xiàngmù",
+            "english": "project",
+            "image": "/assets/lesson32/project.jpeg"
+        },
+        {
+            "id": "l32_7",
+            "chinese": "钱",
+            "pinyin": "qián",
+            "english": "money",
+            "image": "/assets/lesson32/money.jpeg"
+        },
+        {
+            "id": "l32_8",
+            "chinese": "忙",
+            "pinyin": "máng",
+            "english": "busy",
+            "image": "/assets/lesson32/busy.jpeg"
+        },
+        {
+            "id": "l32_9",
+            "chinese": "有空",
+            "pinyin": "yǒu kòng",
+            "english": "free time",
+            "image": "/assets/lesson32/freetime.jpeg"
+        },
+        {
+            "id": "l32_10",
+            "chinese": "合作",
+            "pinyin": "hézuò",
+            "english": "cooperate",
+            "image": "/assets/lesson32/cooperate.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson32/company.jpeg",
+            "choices": [
+                "gōngsī",
+                "lǎobǎn",
+                "tóngshì",
+                "yuángōng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson32/boss.jpeg",
+            "choices": [
+                "lǎobǎn",
+                "gōngsī",
+                "huìyì",
+                "xiàngmù"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson32/colleague.jpeg",
+            "choices": [
+                "tóngshì",
+                "yuángōng",
+                "hézuò",
+                "qián"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson32/employee.jpeg",
+            "choices": [
+                "yuángōng",
+                "máng",
+                "yǒu kòng",
+                "lǎobǎn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson32/meeting.jpeg",
+            "choices": [
+                "huìyì",
+                "xiàngmù",
+                "yǒu kòng",
+                "hézuò"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson32/project.jpeg",
+            "choices": [
+                "xiàngmù",
+                "gōngsī",
+                "qián",
+                "huìyì"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson32/money.jpeg",
+            "choices": [
+                "qián",
+                "máng",
+                "yǒu kòng",
+                "yuángōng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson32/busy.jpeg",
+            "choices": [
+                "máng",
+                "yǒu kòng",
+                "xiàngmù",
+                "lǎobǎn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson32/freetime.jpeg",
+            "choices": [
+                "yǒu kòng",
+                "hézuò",
+                "gōngsī",
+                "huìyì"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson32/cooperate.jpeg",
+            "choices": [
+                "hézuò",
+                "xiàngmù",
+                "yuángōng",
+                "qián"
+            ],
+            "correct": 0
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "gōngsī"
+                },
+                {
+                    "id": "m2",
+                    "label": "lǎobǎn"
+                },
+                {
+                    "id": "m3",
+                    "label": "tóngshì"
+                },
+                {
+                    "id": "m4",
+                    "label": "yuángōng"
+                },
+                {
+                    "id": "m5",
+                    "label": "huìyì"
+                },
+                {
+                    "id": "m6",
+                    "label": "xiàngmù"
+                },
+                {
+                    "id": "m7",
+                    "label": "qián"
+                },
+                {
+                    "id": "m8",
+                    "label": "máng"
+                },
+                {
+                    "id": "m9",
+                    "label": "yǒu kòng"
+                },
+                {
+                    "id": "m10",
+                    "label": "hézuò"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "company"
+                },
+                {
+                    "id": "r2",
+                    "label": "boss"
+                },
+                {
+                    "id": "r3",
+                    "label": "colleague"
+                },
+                {
+                    "id": "r4",
+                    "label": "employee"
+                },
+                {
+                    "id": "r5",
+                    "label": "meeting"
+                },
+                {
+                    "id": "r6",
+                    "label": "project"
+                },
+                {
+                    "id": "r7",
+                    "label": "money"
+                },
+                {
+                    "id": "r8",
+                    "label": "busy"
+                },
+                {
+                    "id": "r9",
+                    "label": "free time"
+                },
+                {
+                    "id": "r10",
+                    "label": "cooperate"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "公司",
+            "audioText": "公司",
+            "choices": [
+                "gōngsī",
+                "lǎobǎn",
+                "tóngshì",
+                "yuángōng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "老板",
+            "audioText": "老板",
+            "choices": [
+                "lǎobǎn",
+                "gōngsī",
+                "huìyì",
+                "xiàngmù"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a3",
+            "chinese": "同事",
+            "audioText": "同事",
+            "choices": [
+                "tóngshì",
+                "yuángōng",
+                "hézuò",
+                "qián"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "员工",
+            "audioText": "员工",
+            "choices": [
+                "yuángōng",
+                "máng",
+                "yǒu kòng",
+                "lǎobǎn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a5",
+            "chinese": "会议",
+            "audioText": "会议",
+            "choices": [
+                "huìyì",
+                "xiàngmù",
+                "yǒu kòng",
+                "hézuò"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "项目",
+            "audioText": "项目",
+            "choices": [
+                "xiàngmù",
+                "gōngsī",
+                "qián",
+                "huìyì"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a7",
+            "chinese": "钱",
+            "audioText": "钱",
+            "choices": [
+                "qián",
+                "máng",
+                "yǒu kòng",
+                "yuángōng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a8",
+            "chinese": "忙",
+            "audioText": "忙",
+            "choices": [
+                "máng",
+                "yǒu kòng",
+                "xiàngmù",
+                "lǎobǎn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a9",
+            "chinese": "有空",
+            "audioText": "有空",
+            "choices": [
+                "yǒu kòng",
+                "hézuò",
+                "gōngsī",
+                "huìyì"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a10",
+            "chinese": "合作",
+            "audioText": "合作",
+            "choices": [
+                "hézuò",
+                "xiàngmù",
+                "yuángōng",
+                "qián"
+            ],
+            "correct": 0
+        }
+    ]
+}

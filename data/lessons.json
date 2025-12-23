@@ -233,6 +233,78 @@
             "duration": "18 min",
             "progress": 0,
             "path": "/modules/unit03/lesson25"
+        },
+        {
+            "id": 26,
+            "category": "elementary",
+            "title": "Lesson 26 - At the Restaurant",
+            "desc": "Learn restaurant vocabulary: menu, ordering, food, and tableware.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit04/lesson26"
+        },
+        {
+            "id": 27,
+            "category": "elementary",
+            "title": "Lesson 27 - At the Market",
+            "desc": "Learn market vocabulary: fruits, prices, weighing, and cashier terms.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit04/lesson27"
+        },
+        {
+            "id": 28,
+            "category": "elementary",
+            "title": "Lesson 28 - Travel & Hotel",
+            "desc": "Learn travel and hotel vocabulary: tickets, passports, luggage, and check-in.",
+            "duration": "16 min",
+            "progress": 0,
+            "path": "/modules/unit04/lesson28"
+        },
+        {
+            "id": 29,
+            "category": "elementary",
+            "title": "Lesson 29 - Emergency & Help",
+            "desc": "Learn emergency and help-related vocabulary: police, fire, danger, and first aid.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit04/lesson29"
+        },
+        {
+            "id": 30,
+            "category": "elementary",
+            "title": "Lesson 30 - Making Plans",
+            "desc": "Learn making plans vocabulary: time, date, meeting, and place.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit04/lesson30"
+        },
+        {
+            "id": 31,
+            "category": "elementary",
+            "title": "Lesson 31 - Work & Business Basics",
+            "desc": "Learn work and business basics vocabulary: company, boss, colleagues, and meetings.",
+            "duration": "16 min",
+            "progress": 0,
+            "path": "/modules/unit04/lesson31"
+        },
+        {
+            "id": 32,
+            "category": "elementary",
+            "title": "Lesson 32 - Review & Speaking Project",
+            "desc": "Review recent lessons and practice speaking with projects.",
+            "duration": "18 min",
+            "progress": 0,
+            "path": "/modules/unit04/lesson32"
+        },
+        {
+            "id": 33,
+            "category": "elementary",
+            "title": "Lesson 33 - Advanced Work & Communication",
+            "desc": "Learn advanced vocabulary for work, communication, emails, and arranging tasks.",
+            "duration": "18 min",
+            "progress": 0,
+            "path": "/modules/unit04/lesson33"
         }
     ]
 }

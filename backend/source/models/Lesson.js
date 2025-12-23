@@ -108,6 +108,13 @@ class Lesson {
     );
     return result.rows[0] || null;
   }
+
+  // Delete lesson
+  static async delete(id) {
+    const pool = getPool();
+    await pool.query("DELETE FROM lessons WHERE id = $1", [id]);
+    return true;
+  }
 }
 
 module.exports = Lesson;

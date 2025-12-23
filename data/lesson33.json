@@ -1,0 +1,434 @@
+{
+    "learningSlides": [
+        {
+            "id": "l33_1",
+            "chinese": "出差",
+            "pinyin": "chūchāi",
+            "english": "business trip",
+            "image": "/assets/lesson33/businesstrip.jpeg"
+        },
+        {
+            "id": "l33_2",
+            "chinese": "上班",
+            "pinyin": "shàngbān",
+            "english": "go to work",
+            "image": "/assets/lesson33/gotowork.jpeg"
+        },
+        {
+            "id": "l33_3",
+            "chinese": "下班",
+            "pinyin": "xiàbān",
+            "english": "get off work",
+            "image": "/assets/lesson33/getoffwork.jpeg"
+        },
+        {
+            "id": "l33_4",
+            "chinese": "赚钱",
+            "pinyin": "zhuànqián",
+            "english": "earn money",
+            "image": "/assets/lesson33/earnmoney.jpeg"
+        },
+        {
+            "id": "l33_5",
+            "chinese": "花钱",
+            "pinyin": "huā qián",
+            "english": "spend money",
+            "image": "/assets/lesson33/spendmoney.jpeg"
+        },
+        {
+            "id": "l33_6",
+            "chinese": "交流",
+            "pinyin": "jiāoliú",
+            "english": "communication",
+            "image": "/assets/lesson33/communication.jpeg"
+        },
+        {
+            "id": "l33_7",
+            "chinese": "联系",
+            "pinyin": "liánxì",
+            "english": "contact",
+            "image": "/assets/lesson33/contact.jpeg"
+        },
+        {
+            "id": "l33_8",
+            "chinese": "写邮件",
+            "pinyin": "xiě yóujiàn",
+            "english": "write email",
+            "image": "/assets/lesson33/writeemail.jpeg"
+        },
+        {
+            "id": "l33_9",
+            "chinese": "接电话",
+            "pinyin": "jiē diànhuà",
+            "english": "answer the phone",
+            "image": "/assets/lesson33/answerphone.jpeg"
+        },
+        {
+            "id": "l33_10",
+            "chinese": "安排",
+            "pinyin": "ānpái",
+            "english": "arrange",
+            "image": "/assets/lesson33/arrange.jpeg"
+        },
+        {
+            "id": "l33_11",
+            "chinese": "成功",
+            "pinyin": "chénggōng",
+            "english": "success",
+            "image": "/assets/lesson33/success.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson33/businesstrip.jpeg",
+            "choices": [
+                "chūchāi",
+                "shàngbān",
+                "xiàbān",
+                "zhuànqián"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson33/shàngbān.jpeg",
+            "choices": [
+                "shàngbān",
+                "xiàbān",
+                "jiāoliú",
+                "liánxì"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson33/getoffwork.jpeg",
+            "choices": [
+                "shàngbān",
+                "xiàbān",
+                "jiāoliú",
+                "liánxì"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson33/earnmoney.jpeg",
+            "choices": [
+                "huā qián",
+                "zhuànqián",
+                "chūchāi",
+                "ānpái"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson33/spendmoney.jpeg",
+            "choices": [
+                "huā qián",
+                "zhuànqián",
+                "xiě yóujiàn",
+                "chénggōng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson33/communication.jpeg",
+            "choices": [
+                "xiě yóujiàn",
+                "jiāoliú",
+                "liánxì",
+                "jiē diànhuà"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson33/contact.jpeg",
+            "choices": [
+                "jiāoliú",
+                "liánxì",
+                "chénggōng",
+                "xiě yóujiàn"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson33/arrange.jpeg",
+            "choices": [
+                "ānpái",
+                "jiē diànhuà",
+                "chūchāi",
+                "shàngbān"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson33/writeemail.jpeg",
+            "choices": [
+                "xiě yóujiàn",
+                "jiāoliú",
+                "liánxì",
+                "jiē diànhuà"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson33/answerphone.jpeg",
+            "choices": [
+                "jiē diànhuà",
+                "xiě yóujiàn",
+                "shàngbān",
+                "chūchāi"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q11",
+            "image": "/assets/lesson33/success.jpeg",
+            "choices": [
+                "chénggōng",
+                "ānpái",
+                "zhuànqián",
+                "huā qián"
+            ],
+            "correct": 0
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "chūchāi"
+                },
+                {
+                    "id": "m2",
+                    "label": "shàngbān"
+                },
+                {
+                    "id": "m3",
+                    "label": "xiàbān"
+                },
+                {
+                    "id": "m4",
+                    "label": "zhuànqián"
+                },
+                {
+                    "id": "m5",
+                    "label": "huā qián"
+                },
+                {
+                    "id": "m6",
+                    "label": "jiāoliú"
+                },
+                {
+                    "id": "m7",
+                    "label": "liánxì"
+                },
+                {
+                    "id": "m8",
+                    "label": "xiě yóujiàn"
+                },
+                {
+                    "id": "m9",
+                    "label": "jiē diànhuà"
+                },
+                {
+                    "id": "m10",
+                    "label": "ānpái"
+                },
+                {
+                    "id": "m11",
+                    "label": "chénggōng"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "business trip"
+                },
+                {
+                    "id": "r2",
+                    "label": "go to work"
+                },
+                {
+                    "id": "r3",
+                    "label": "get off work"
+                },
+                {
+                    "id": "r4",
+                    "label": "earn money"
+                },
+                {
+                    "id": "r5",
+                    "label": "spend money"
+                },
+                {
+                    "id": "r6",
+                    "label": "communication"
+                },
+                {
+                    "id": "r7",
+                    "label": "contact"
+                },
+                {
+                    "id": "r8",
+                    "label": "write email"
+                },
+                {
+                    "id": "r9",
+                    "label": "answer the phone"
+                },
+                {
+                    "id": "r10",
+                    "label": "arrange"
+                },
+                {
+                    "id": "r11",
+                    "label": "success"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "出差",
+            "audioText": "出差",
+            "choices": [
+                "chūchāi",
+                "shàngbān",
+                "xiàbān",
+                "zhuànqián"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "上班",
+            "audioText": "上班",
+            "choices": [
+                "shàngbān",
+                "xiàbān",
+                "jiāoliú",
+                "liánxì"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a3",
+            "chinese": "下班",
+            "audioText": "下班",
+            "choices": [
+                "shàngbān",
+                "xiàbān",
+                "jiāoliú",
+                "liánxì"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a4",
+            "chinese": "赚钱",
+            "audioText": "赚钱",
+            "choices": [
+                "huā qián",
+                "zhuànqián",
+                "chūchāi",
+                "ānpái"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "花钱",
+            "audioText": "花钱",
+            "choices": [
+                "huā qián",
+                "zhuànqián",
+                "xiě yóujiàn",
+                "chénggōng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "交流",
+            "audioText": "交流",
+            "choices": [
+                "xiě yóujiàn",
+                "jiāoliú",
+                "liánxì",
+                "jiē diànhuà"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a7",
+            "chinese": "联系",
+            "audioText": "联系",
+            "choices": [
+                "jiāoliú",
+                "liánxì",
+                "chénggōng",
+                "xiě yóujiàn"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a8",
+            "chinese": "写邮件",
+            "audioText": "写邮件",
+            "choices": [
+                "xiě yóujiàn",
+                "jiāoliú",
+                "liánxì",
+                "jiē diànhuà"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a9",
+            "chinese": "接电话",
+            "audioText": "接电话",
+            "choices": [
+                "jiē diànhuà",
+                "xiě yóujiàn",
+                "shàngbān",
+                "chūchāi"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a10",
+            "chinese": "安排",
+            "audioText": "安排",
+            "choices": [
+                "ānpái",
+                "jiē diànhuà",
+                "chūchāi",
+                "shàngbān"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a11",
+            "chinese": "成功",
+            "audioText": "成功",
+            "choices": [
+                "chénggōng",
+                "ānpái",
+                "zhuànqián",
+                "huā qián"
+            ],
+            "correct": 0
+        }
+    ]
+}

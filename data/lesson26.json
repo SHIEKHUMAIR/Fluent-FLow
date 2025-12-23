@@ -1,0 +1,472 @@
+{
+    "learningSlides": [
+        {
+            "id": "l26_1",
+            "chinese": "音乐",
+            "pinyin": "yīnyuè",
+            "english": "music",
+            "image": "/assets/lesson26/music.jpeg"
+        },
+        {
+            "id": "l26_2",
+            "chinese": "电影",
+            "pinyin": "diànyǐng",
+            "english": "movie",
+            "image": "/assets/lesson26/movie.jpeg"
+        },
+        {
+            "id": "l26_3",
+            "chinese": "跳舞",
+            "pinyin": "tiàowǔ",
+            "english": "dance",
+            "image": "/assets/lesson26/dance.jpeg"
+        },
+        {
+            "id": "l26_4",
+            "chinese": "唱歌",
+            "pinyin": "chànggē",
+            "english": "sing",
+            "image": "/assets/lesson26/sing.jpeg"
+        },
+        {
+            "id": "l26_5",
+            "chinese": "画画",
+            "pinyin": "huàhuà",
+            "english": "draw / paint",
+            "image": "/assets/lesson26/draw.jpeg"
+        },
+        {
+            "id": "l26_6",
+            "chinese": "游泳",
+            "pinyin": "yóuyǒng",
+            "english": "swim",
+            "image": "/assets/lesson26/swim.jpeg"
+        },
+        {
+            "id": "l26_7",
+            "chinese": "运动",
+            "pinyin": "yùndòng",
+            "english": "sports / exercise",
+            "image": "/assets/lesson26/sports.jpeg"
+        },
+        {
+            "id": "l26_8",
+            "chinese": "足球",
+            "pinyin": "zúqiú",
+            "english": "football / soccer",
+            "image": "/assets/lesson26/football.jpeg"
+        },
+        {
+            "id": "l26_9",
+            "chinese": "游戏",
+            "pinyin": "yóuxì",
+            "english": "game",
+            "image": "/assets/lesson26/game.jpeg"
+        },
+        {
+            "id": "l26_10",
+            "chinese": "旅行",
+            "pinyin": "lǚxíng",
+            "english": "travel",
+            "image": "/assets/lesson26/travel.jpeg"
+        },
+        {
+            "id": "l26_11",
+            "chinese": "看书",
+            "pinyin": "kàn shū",
+            "english": "read books",
+            "image": "/assets/lesson26/read.jpeg"
+        },
+        {
+            "id": "l26_12",
+            "chinese": "跑步",
+            "pinyin": "pǎobù",
+            "english": "running",
+            "image": "/assets/lesson26/run.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson26/music.jpeg",
+            "choices": [
+                "yóuxì",
+                "yīnyuè",
+                "diànyǐng",
+                "zúqiú"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson26/movie.jpeg",
+            "choices": [
+                "tiàowǔ",
+                "diànyǐng",
+                "huàhuà",
+                "pǎobù"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson26/dance.jpeg",
+            "choices": [
+                "chànggē",
+                "tiàowǔ",
+                "yóuyǒng",
+                "kàn shū"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson26/sing.jpeg",
+            "choices": [
+                "chànggē",
+                "huàhuà",
+                "yùndòng",
+                "lǚxíng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson26/draw.jpeg",
+            "choices": [
+                "pǎobù",
+                "huàhuà",
+                "zúqiú",
+                "diànyǐng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson26/swim.jpeg",
+            "choices": [
+                "yóuyǒng",
+                "kàn shū",
+                "tiàowǔ",
+                "yīnyuè"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson26/sports.jpeg",
+            "choices": [
+                "zúqiú",
+                "yùndòng",
+                "yóuxì",
+                "lǚxíng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson26/football.jpeg",
+            "choices": [
+                "pǎobù",
+                "zúqiú",
+                "diànyǐng",
+                "huàhuà"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson26/game.jpeg",
+            "choices": [
+                "yóuxì",
+                "yīnyuè",
+                "tiàowǔ",
+                "kàn shū"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson26/travel.jpeg",
+            "choices": [
+                "lǚxíng",
+                "yùndòng",
+                "pǎobù",
+                "zúqiú"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q11",
+            "image": "/assets/lesson26/read.jpeg",
+            "choices": [
+                "kàn shū",
+                "huàhuà",
+                "yóuyǒng",
+                "diànyǐng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q12",
+            "image": "/assets/lesson26/run.jpeg",
+            "choices": [
+                "tiàowǔ",
+                "pǎobù",
+                "yóuxì",
+                "yīnyuè"
+            ],
+            "correct": 1
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "yīnyuè"
+                },
+                {
+                    "id": "m2",
+                    "label": "diànyǐng"
+                },
+                {
+                    "id": "m3",
+                    "label": "tiàowǔ"
+                },
+                {
+                    "id": "m4",
+                    "label": "chànggē"
+                },
+                {
+                    "id": "m5",
+                    "label": "huàhuà"
+                },
+                {
+                    "id": "m6",
+                    "label": "yóuyǒng"
+                },
+                {
+                    "id": "m7",
+                    "label": "yùndòng"
+                },
+                {
+                    "id": "m8",
+                    "label": "zúqiú"
+                },
+                {
+                    "id": "m9",
+                    "label": "yóuxì"
+                },
+                {
+                    "id": "m10",
+                    "label": "lǚxíng"
+                },
+                {
+                    "id": "m11",
+                    "label": "kàn shū"
+                },
+                {
+                    "id": "m12",
+                    "label": "pǎobù"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "music"
+                },
+                {
+                    "id": "r2",
+                    "label": "movie"
+                },
+                {
+                    "id": "r3",
+                    "label": "dance"
+                },
+                {
+                    "id": "r4",
+                    "label": "sing"
+                },
+                {
+                    "id": "r5",
+                    "label": "draw / paint"
+                },
+                {
+                    "id": "r6",
+                    "label": "swim"
+                },
+                {
+                    "id": "r7",
+                    "label": "sports / exercise"
+                },
+                {
+                    "id": "r8",
+                    "label": "football / soccer"
+                },
+                {
+                    "id": "r9",
+                    "label": "game"
+                },
+                {
+                    "id": "r10",
+                    "label": "travel"
+                },
+                {
+                    "id": "r11",
+                    "label": "read books"
+                },
+                {
+                    "id": "r12",
+                    "label": "running"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "音乐",
+            "audioText": "音乐",
+            "choices": [
+                "yīnyuè",
+                "diànyǐng",
+                "zúqiú",
+                "pǎobù"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "电影",
+            "audioText": "电影",
+            "choices": [
+                "huàhuà",
+                "diànyǐng",
+                "yóuxì",
+                "lǚxíng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "跳舞",
+            "audioText": "跳舞",
+            "choices": [
+                "tiàowǔ",
+                "chànggē",
+                "yóuyǒng",
+                "kàn shū"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "唱歌",
+            "audioText": "唱歌",
+            "choices": [
+                "yùndòng",
+                "chànggē",
+                "zúqiú",
+                "huàhuà"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "画画",
+            "audioText": "画画",
+            "choices": [
+                "huàhuà",
+                "pǎobù",
+                "yóuxì",
+                "diànyǐng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "游泳",
+            "audioText": "游泳",
+            "choices": [
+                "yóuyǒng",
+                "tiàowǔ",
+                "kàn shū",
+                "yīnyuè"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a7",
+            "chinese": "运动",
+            "audioText": "运动",
+            "choices": [
+                "zúqiú",
+                "yùndòng",
+                "lǚxíng",
+                "huàhuà"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a8",
+            "chinese": "足球",
+            "audioText": "足球",
+            "choices": [
+                "pǎobù",
+                "zúqiú",
+                "diànyǐng",
+                "yóuxì"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a9",
+            "chinese": "游戏",
+            "audioText": "游戏",
+            "choices": [
+                "yóuxì",
+                "kàn shū",
+                "tiàowǔ",
+                "yīnyuè"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a10",
+            "chinese": "旅行",
+            "audioText": "旅行",
+            "choices": [
+                "lǚxíng",
+                "yùndòng",
+                "pǎobù",
+                "zúqiú"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a11",
+            "chinese": "看书",
+            "audioText": "看书",
+            "choices": [
+                "kàn shū",
+                "huàhuà",
+                "yóuyǒng",
+                "diànyǐng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a12",
+            "chinese": "跑步",
+            "audioText": "跑步",
+            "choices": [
+                "tiàowǔ",
+                "pǎobù",
+                "yóuxì",
+                "yīnyuè"
+            ],
+            "correct": 1
+        }
+    ]
+}

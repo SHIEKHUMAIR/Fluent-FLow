@@ -75,6 +75,13 @@ class Unit {
     );
     return result.rows[0] || null;
   }
+
+  // Delete unit
+  static async delete(id) {
+    const pool = getPool();
+    await pool.query("DELETE FROM units WHERE id = $1", [id]);
+    return true;
+  }
 }
 
 module.exports = Unit;

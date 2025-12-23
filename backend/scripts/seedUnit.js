@@ -40,6 +40,24 @@ async function seedUnit(unitNumber) {
           description: "Explore describing people, numbers, and technology, and practice vocabulary to build a solid foundation.",
           icon: "document",
           color: "purple"
+        },
+        4: {
+          title: "UNIT 4: Work & Travel",
+          description: "Master vocabulary for work, business, travel, and emergency situations.",
+          icon: "briefcase",
+          color: "orange"
+        },
+        5: {
+          title: "UNIT 5: Culture & Society",
+          description: "Learn about Chinese festivals, customs, and social etiquette.",
+          icon: "globe",
+          color: "red"
+        },
+        6: {
+          title: "UNIT 6: Advanced Topics",
+          description: "Discuss complex topics like environment, economy, and technology.",
+          icon: "lightbulb",
+          color: "cyan"
         }
       };
 
@@ -66,6 +84,12 @@ async function seedUnit(unitNumber) {
       lessonRange = { start: 10, end: 17 };
     } else if (unitNumber === 3) {
       lessonRange = { start: 18, end: 25 };
+    } else if (unitNumber === 4) {
+      lessonRange = { start: 26, end: 33 };
+    } else if (unitNumber === 5) {
+      lessonRange = { start: 34, end: 41 };
+    } else if (unitNumber === 6) {
+      lessonRange = { start: 42, end: 49 };
     } else {
       console.error(`❌ Invalid unit number: ${unitNumber}`);
       process.exit(1);
@@ -183,10 +207,10 @@ async function seedUnit(unitNumber) {
 // Get unit number from command line argument
 const unitNumber = parseInt(process.argv[2]);
 
-if (!unitNumber || isNaN(unitNumber) || unitNumber < 1 || unitNumber > 3) {
+if (!unitNumber || isNaN(unitNumber) || unitNumber < 1 || unitNumber > 6) {
   console.error("Usage: node seedUnit.js <unitNumber>");
   console.error("Example: node seedUnit.js 1");
-  console.error("Valid unit numbers: 1, 2, or 3");
+  console.error("Valid unit numbers: 1 to 6");
   process.exit(1);
 }
 

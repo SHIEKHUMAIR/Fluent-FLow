@@ -1,0 +1,320 @@
+{
+    "learningSlides": [
+        {
+            "id": "l29_1",
+            "chinese": "票",
+            "pinyin": "piào",
+            "english": "ticket",
+            "image": "/assets/lesson29/ticket.jpeg"
+        },
+        {
+            "id": "l29_2",
+            "chinese": "护照",
+            "pinyin": "hùzhào",
+            "english": "passport",
+            "image": "/assets/lesson29/passport.jpeg"
+        },
+        {
+            "id": "l29_3",
+            "chinese": "行李",
+            "pinyin": "xínglǐ",
+            "english": "luggage",
+            "image": "/assets/lesson29/luggage.jpeg"
+        },
+        {
+            "id": "l29_4",
+            "chinese": "飞机",
+            "pinyin": "fēijī",
+            "english": "airplane",
+            "image": "/assets/lesson29/airplane.jpeg"
+        },
+        {
+            "id": "l29_5",
+            "chinese": "旅馆",
+            "pinyin": "lǚguǎn",
+            "english": "hotel",
+            "image": "/assets/lesson29/hotel.jpeg"
+        },
+        {
+            "id": "l29_6",
+            "chinese": "预订",
+            "pinyin": "yùdìng",
+            "english": "reservation",
+            "image": "/assets/lesson29/reservation.jpeg"
+        },
+        {
+            "id": "l29_7",
+            "chinese": "登机口",
+            "pinyin": "dēngjīkǒu",
+            "english": "boarding gate",
+            "image": "/assets/lesson29/gate.jpeg"
+        },
+        {
+            "id": "l29_8",
+            "chinese": "入住",
+            "pinyin": "rùzhù",
+            "english": "check in",
+            "image": "/assets/lesson29/checkin.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson29/ticket.jpeg",
+            "choices": [
+                "xínglǐ",
+                "piào",
+                "lǚguǎn",
+                "yùdìng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson29/passport.jpeg",
+            "choices": [
+                "rùzhù",
+                "fēijī",
+                "hùzhào",
+                "dēngjīkǒu"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson29/luggage.jpeg",
+            "choices": [
+                "lǚguǎn",
+                "xínglǐ",
+                "yùdìng",
+                "piào"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson29/airplane.jpeg",
+            "choices": [
+                "dēngjīkǒu",
+                "rùzhù",
+                "fēijī",
+                "hùzhào"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson29/hotel.jpeg",
+            "choices": [
+                "piào",
+                "lǚguǎn",
+                "xínglǐ",
+                "yùdìng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson29/reservation.jpeg",
+            "choices": [
+                "yùdìng",
+                "dēngjīkǒu",
+                "fēijī",
+                "rùzhù"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson29/gate.jpeg",
+            "choices": [
+                "xínglǐ",
+                "dēngjīkǒu",
+                "piào",
+                "lǚguǎn"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson29/checkin.jpeg",
+            "choices": [
+                "yùdìng",
+                "rùzhù",
+                "dēngjīkǒu",
+                "fēijī"
+            ],
+            "correct": 1
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "piào"
+                },
+                {
+                    "id": "m2",
+                    "label": "hùzhào"
+                },
+                {
+                    "id": "m3",
+                    "label": "xínglǐ"
+                },
+                {
+                    "id": "m4",
+                    "label": "fēijī"
+                },
+                {
+                    "id": "m5",
+                    "label": "lǚguǎn"
+                },
+                {
+                    "id": "m6",
+                    "label": "yùdìng"
+                },
+                {
+                    "id": "m7",
+                    "label": "dēngjīkǒu"
+                },
+                {
+                    "id": "m8",
+                    "label": "rùzhù"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "ticket"
+                },
+                {
+                    "id": "r2",
+                    "label": "passport"
+                },
+                {
+                    "id": "r3",
+                    "label": "luggage"
+                },
+                {
+                    "id": "r4",
+                    "label": "airplane"
+                },
+                {
+                    "id": "r5",
+                    "label": "hotel"
+                },
+                {
+                    "id": "r6",
+                    "label": "reservation"
+                },
+                {
+                    "id": "r7",
+                    "label": "boarding gate"
+                },
+                {
+                    "id": "r8",
+                    "label": "check in"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "票",
+            "audioText": "票",
+            "choices": [
+                "piào",
+                "xínglǐ",
+                "lǚguǎn",
+                "yùdìng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "护照",
+            "audioText": "护照",
+            "choices": [
+                "rùzhù",
+                "hùzhào",
+                "fēijī",
+                "dēngjīkǒu"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "行李",
+            "audioText": "行李",
+            "choices": [
+                "xínglǐ",
+                "piào",
+                "lǚguǎn",
+                "yùdìng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "飞机",
+            "audioText": "飞机",
+            "choices": [
+                "dēngjīkǒu",
+                "fēijī",
+                "rùzhù",
+                "hùzhào"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "旅馆",
+            "audioText": "旅馆",
+            "choices": [
+                "lǚguǎn",
+                "xínglǐ",
+                "piào",
+                "yùdìng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "预订",
+            "audioText": "预订",
+            "choices": [
+                "dēngjīkǒu",
+                "yùdìng",
+                "fēijī",
+                "rùzhù"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a7",
+            "chinese": "登机口",
+            "audioText": "登机口",
+            "choices": [
+                "xínglǐ",
+                "dēngjīkǒu",
+                "piào",
+                "lǚguǎn"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a8",
+            "chinese": "入住",
+            "audioText": "入住",
+            "choices": [
+                "yùdìng",
+                "rùzhù",
+                "dēngjīkǒu",
+                "fēijī"
+            ],
+            "correct": 1
+        }
+    ]
+}

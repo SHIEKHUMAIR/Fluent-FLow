@@ -1,0 +1,320 @@
+{
+    "learningSlides": [
+        {
+            "id": "l31_1",
+            "chinese": "上午",
+            "pinyin": "shàngwǔ",
+            "english": "morning",
+            "image": "/assets/lesson31/morning.jpeg"
+        },
+        {
+            "id": "l31_2",
+            "chinese": "周末",
+            "pinyin": "zhōumò",
+            "english": "weekend",
+            "image": "/assets/lesson31/weekend.jpeg"
+        },
+        {
+            "id": "l31_3",
+            "chinese": "见面",
+            "pinyin": "jiànmiàn",
+            "english": "meet",
+            "image": "/assets/lesson31/meet.jpeg"
+        },
+        {
+            "id": "l31_4",
+            "chinese": "一起",
+            "pinyin": "yīqǐ",
+            "english": "together",
+            "image": "/assets/lesson31/together.jpeg"
+        },
+        {
+            "id": "l31_5",
+            "chinese": "打算",
+            "pinyin": "dǎsuàn",
+            "english": "plan",
+            "image": "/assets/lesson31/plan.jpeg"
+        },
+        {
+            "id": "l31_6",
+            "chinese": "约会",
+            "pinyin": "yuēhuì",
+            "english": "date / appointment",
+            "image": "/assets/lesson31/date.jpeg"
+        },
+        {
+            "id": "l31_7",
+            "chinese": "时间",
+            "pinyin": "shíjiān",
+            "english": "time",
+            "image": "/assets/lesson31/time.jpeg"
+        },
+        {
+            "id": "l31_8",
+            "chinese": "地点",
+            "pinyin": "dìdiǎn",
+            "english": "place",
+            "image": "/assets/lesson31/place.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson31/morning.jpeg",
+            "choices": [
+                "shàngwǔ",
+                "yīqǐ",
+                "jiànmiàn",
+                "dǎsuàn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson31/weekend.jpeg",
+            "choices": [
+                "zhōumò",
+                "yuēhuì",
+                "dìdiǎn",
+                "shíjiān"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson31/meet.jpeg",
+            "choices": [
+                "jiànmiàn",
+                "dǎsuàn",
+                "yīqǐ",
+                "shàngwǔ"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson31/together.jpeg",
+            "choices": [
+                "yīqǐ",
+                "shíjiān",
+                "yuēhuì",
+                "dìdiǎn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson31/plan.jpeg",
+            "choices": [
+                "dǎsuàn",
+                "shíjiān",
+                "jiànmiàn",
+                "zhōumò"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson31/date.jpeg",
+            "choices": [
+                "yuēhuì",
+                "yīqǐ",
+                "dǎsuàn",
+                "shàngwǔ"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson31/time.jpeg",
+            "choices": [
+                "shíjiān",
+                "dìdiǎn",
+                "shàngwǔ",
+                "jiànmiàn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson31/place.jpeg",
+            "choices": [
+                "dìdiǎn",
+                "yīqǐ",
+                "yuēhuì",
+                "shàngwǔ"
+            ],
+            "correct": 0
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "shàngwǔ"
+                },
+                {
+                    "id": "m2",
+                    "label": "zhōumò"
+                },
+                {
+                    "id": "m3",
+                    "label": "jiànmiàn"
+                },
+                {
+                    "id": "m4",
+                    "label": "yīqǐ"
+                },
+                {
+                    "id": "m5",
+                    "label": "dǎsuàn"
+                },
+                {
+                    "id": "m6",
+                    "label": "yuēhuì"
+                },
+                {
+                    "id": "m7",
+                    "label": "shíjiān"
+                },
+                {
+                    "id": "m8",
+                    "label": "dìdiǎn"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "morning"
+                },
+                {
+                    "id": "r2",
+                    "label": "weekend"
+                },
+                {
+                    "id": "r3",
+                    "label": "meet"
+                },
+                {
+                    "id": "r4",
+                    "label": "together"
+                },
+                {
+                    "id": "r5",
+                    "label": "plan"
+                },
+                {
+                    "id": "r6",
+                    "label": "date / appointment"
+                },
+                {
+                    "id": "r7",
+                    "label": "time"
+                },
+                {
+                    "id": "r8",
+                    "label": "place"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "上午",
+            "audioText": "上午",
+            "choices": [
+                "shàngwǔ",
+                "zhōumò",
+                "jiànmiàn",
+                "dǎsuàn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "周末",
+            "audioText": "周末",
+            "choices": [
+                "zhōumò",
+                "yīqǐ",
+                "yuēhuì",
+                "shíjiān"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a3",
+            "chinese": "见面",
+            "audioText": "见面",
+            "choices": [
+                "jiànmiàn",
+                "dǎsuàn",
+                "yīqǐ",
+                "dìdiǎn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "一起",
+            "audioText": "一起",
+            "choices": [
+                "yīqǐ",
+                "shàngwǔ",
+                "shíjiān",
+                "yuēhuì"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a5",
+            "chinese": "打算",
+            "audioText": "打算",
+            "choices": [
+                "dǎsuàn",
+                "shíjiān",
+                "dìdiǎn",
+                "jiànmiàn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "约会",
+            "audioText": "约会",
+            "choices": [
+                "yuēhuì",
+                "yīqǐ",
+                "dǎsuàn",
+                "shàngwǔ"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a7",
+            "chinese": "时间",
+            "audioText": "时间",
+            "choices": [
+                "shíjiān",
+                "dìdiǎn",
+                "zhōumò",
+                "jiànmiàn"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a8",
+            "chinese": "地点",
+            "audioText": "地点",
+            "choices": [
+                "dìdiǎn",
+                "yīqǐ",
+                "yuēhuì",
+                "shàngwǔ"
+            ],
+            "correct": 0
+        }
+    ]
+}

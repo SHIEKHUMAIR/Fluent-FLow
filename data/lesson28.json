@@ -1,0 +1,192 @@
+{
+  "learningSlides": [
+    {
+      "id": "l28_1",
+      "chinese": "葡萄",
+      "pinyin": "pútáo",
+      "english": "grapes",
+      "image": "/assets/lesson27/grapes.jpeg"
+    },
+    {
+      "id": "l28_2",
+      "chinese": "梨",
+      "pinyin": "lí",
+      "english": "pear",
+      "image": "/assets/lesson27/pear.jpeg"
+    },
+    {
+      "id": "l28_3",
+      "chinese": "一斤",
+      "pinyin": "yì jīn",
+      "english": "half kilo",
+      "image": "/assets/lesson27/halfkilo.jpeg"
+    },
+    {
+      "id": "l28_4",
+      "chinese": "称",
+      "pinyin": "chēng",
+      "english": "to weigh",
+      "image": "/assets/lesson27/weigh.jpeg"
+    },
+    {
+      "id": "l28_5",
+      "chinese": "价钱",
+      "pinyin": "jiàqian",
+      "english": "price",
+      "image": "/assets/lesson27/price.jpeg"
+    },
+    {
+      "id": "l28_6",
+      "chinese": "便宜点",
+      "pinyin": "piányi diǎn",
+      "english": "cheaper",
+      "image": "/assets/lesson27/cheaper.jpeg"
+    },
+    {
+      "id": "l28_7",
+      "chinese": "买一送一",
+      "pinyin": "mǎi yī sòng yī",
+      "english": "buy one get one free",
+      "image": "/assets/lesson27/bogo.jpeg"
+    },
+    {
+      "id": "l28_8",
+      "chinese": "收银台",
+      "pinyin": "shōuyíntái",
+      "english": "cashier counter",
+      "image": "/assets/lesson27/cashier.jpeg"
+    }
+  ],
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "image": "/assets/lesson27/grapes.jpeg",
+      "choices": ["lí", "pútáo", "jiàqian", "shōuyíntái"],
+      "correct": 1
+    },
+    {
+      "id": "q2",
+      "image": "/assets/lesson27/pear.jpeg",
+      "choices": ["pútáo", "lí", "chēng", "yì jīn"],
+      "correct": 1
+    },
+    {
+      "id": "q3",
+      "image": "/assets/lesson27/halfkilo.jpeg",
+      "choices": ["jiàqian", "yì jīn", "pútáo", "shōuyíntái"],
+      "correct": 1
+    },
+    {
+      "id": "q4",
+      "image": "/assets/lesson27/weigh.jpeg",
+      "choices": ["piányi diǎn", "chēng", "mǎi yī sòng yī", "lí"],
+      "correct": 1
+    },
+    {
+      "id": "q5",
+      "image": "/assets/lesson27/price.jpeg",
+      "choices": ["shōuyíntái", "jiàqian", "yì jīn", "pútáo"],
+      "correct": 1
+    },
+    {
+      "id": "q6",
+      "image": "/assets/lesson27/cheaper.jpeg",
+      "choices": ["chēng", "mǎi yī sòng yī", "piányi diǎn", "lí"],
+      "correct": 2
+    },
+    {
+      "id": "q7",
+      "image": "/assets/lesson27/bogo.jpeg",
+      "choices": ["piányi diǎn", "shōuyíntái", "mǎi yī sòng yī", "jiàqian"],
+      "correct": 2
+    },
+    {
+      "id": "q8",
+      "image": "/assets/lesson27/cashier.jpeg",
+      "choices": ["chēng", "shōuyíntái", "pútáo", "lí"],
+      "correct": 1
+    }
+  ],
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "m1", "label": "pútáo" },
+        { "id": "m2", "label": "lí" },
+        { "id": "m3", "label": "yì jīn" },
+        { "id": "m4", "label": "chēng" },
+        { "id": "m5", "label": "jiàqian" },
+        { "id": "m6", "label": "piányi diǎn" },
+        { "id": "m7", "label": "mǎi yī sòng yī" },
+        { "id": "m8", "label": "shōuyíntái" }
+      ],
+      "right": [
+        { "id": "r1", "label": "grapes" },
+        { "id": "r2", "label": "pear" },
+        { "id": "r3", "label": "half kilo" },
+        { "id": "r4", "label": "to weigh" },
+        { "id": "r5", "label": "price" },
+        { "id": "r6", "label": "cheaper" },
+        { "id": "r7", "label": "buy one get one free" },
+        { "id": "r8", "label": "cashier counter" }
+      ]
+    }
+  },
+  "audioQuiz": [
+    {
+      "id": "a1",
+      "chinese": "葡萄",
+      "audioText": "葡萄",
+      "choices": ["pútáo", "lí", "jiàqian", "chēng"],
+      "correct": 0
+    },
+    {
+      "id": "a2",
+      "chinese": "梨",
+      "audioText": "梨",
+      "choices": ["pútáo", "lí", "yì jīn", "shōuyíntái"],
+      "correct": 1
+    },
+    {
+      "id": "a3",
+      "chinese": "一斤",
+      "audioText": "一斤",
+      "choices": ["jiàqian", "yì jīn", "piányi diǎn", "lí"],
+      "correct": 1
+    },
+    {
+      "id": "a4",
+      "chinese": "称",
+      "audioText": "称",
+      "choices": ["chēng", "pútáo", "mǎi yī sòng yī", "lí"],
+      "correct": 0
+    },
+    {
+      "id": "a5",
+      "chinese": "价钱",
+      "audioText": "价钱",
+      "choices": ["shōuyíntái", "jiàqian", "yì jīn", "pútáo"],
+      "correct": 1
+    },
+    {
+      "id": "a6",
+      "chinese": "便宜点",
+      "audioText": "便宜点",
+      "choices": ["chēng", "piányi diǎn", "mǎi yī sòng yī", "lí"],
+      "correct": 1
+    },
+    {
+      "id": "a7",
+      "chinese": "买一送一",
+      "audioText": "买一送一",
+      "choices": ["piányi diǎn", "mǎi yī sòng yī", "jiàqian", "shōuyíntái"],
+      "correct": 1
+    },
+    {
+      "id": "a8",
+      "chinese": "收银台",
+      "audioText": "收银台",
+      "choices": ["chēng", "shōuyíntái", "pútáo", "lí"],
+      "correct": 1
+    }
+  ]
+}

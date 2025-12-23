@@ -1,0 +1,358 @@
+{
+    "learningSlides": [
+        {
+            "id": "l30_1",
+            "chinese": "帮助",
+            "pinyin": "bāngzhù",
+            "english": "help",
+            "image": "/assets/lesson30/help.jpeg"
+        },
+        {
+            "id": "l30_2",
+            "chinese": "警察",
+            "pinyin": "jǐngchá",
+            "english": "police",
+            "image": "/assets/lesson30/police.jpeg"
+        },
+        {
+            "id": "l30_3",
+            "chinese": "危险",
+            "pinyin": "wēixiǎn",
+            "english": "danger",
+            "image": "/assets/lesson30/danger.jpeg"
+        },
+        {
+            "id": "l30_4",
+            "chinese": "火",
+            "pinyin": "huǒ",
+            "english": "fire",
+            "image": "/assets/lesson30/fire.jpeg"
+        },
+        {
+            "id": "l30_5",
+            "chinese": "救命",
+            "pinyin": "jiùmìng",
+            "english": "save me",
+            "image": "/assets/lesson30/save.jpeg"
+        },
+        {
+            "id": "l30_6",
+            "chinese": "丢了",
+            "pinyin": "diū le",
+            "english": "lost",
+            "image": "/assets/lesson30/lost.jpeg"
+        },
+        {
+            "id": "l30_7",
+            "chinese": "急救",
+            "pinyin": "jíjiù",
+            "english": "first aid",
+            "image": "/assets/lesson30/firstaid.jpeg"
+        },
+        {
+            "id": "l30_8",
+            "chinese": "快",
+            "pinyin": "kuài",
+            "english": "fast",
+            "image": "/assets/lesson30/fast.jpeg"
+        },
+        {
+            "id": "l30_9",
+            "chinese": "等",
+            "pinyin": "děng",
+            "english": "wait",
+            "image": "/assets/lesson30/wait.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson30/help.jpeg",
+            "choices": [
+                "kuài",
+                "bāngzhù",
+                "huǒ",
+                "diū le"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson30/police.jpeg",
+            "choices": [
+                "jíjiù",
+                "wēixiǎn",
+                "jǐngchá",
+                "děng"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson30/danger.jpeg",
+            "choices": [
+                "wēixiǎn",
+                "kuài",
+                "huǒ",
+                "diū le"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson30/fire.jpeg",
+            "choices": [
+                "jiùmìng",
+                "huǒ",
+                "jíjiù",
+                "děng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson30/save.jpeg",
+            "choices": [
+                "diū le",
+                "jiùmìng",
+                "bāngzhù",
+                "kuài"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson30/lost.jpeg",
+            "choices": [
+                "děng",
+                "diū le",
+                "jíjiù",
+                "huǒ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson30/firstaid.jpeg",
+            "choices": [
+                "jíjiù",
+                "bāngzhù",
+                "wēixiǎn",
+                "jǐngchá"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson30/fast.jpeg",
+            "choices": [
+                "jiùmìng",
+                "kuài",
+                "děng",
+                "huǒ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson30/wait.jpeg",
+            "choices": [
+                "děng",
+                "jíjiù",
+                "diū le",
+                "kuài"
+            ],
+            "correct": 0
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "bāngzhù"
+                },
+                {
+                    "id": "m2",
+                    "label": "jǐngchá"
+                },
+                {
+                    "id": "m3",
+                    "label": "wēixiǎn"
+                },
+                {
+                    "id": "m4",
+                    "label": "huǒ"
+                },
+                {
+                    "id": "m5",
+                    "label": "jiùmìng"
+                },
+                {
+                    "id": "m6",
+                    "label": "diū le"
+                },
+                {
+                    "id": "m7",
+                    "label": "jíjiù"
+                },
+                {
+                    "id": "m8",
+                    "label": "kuài"
+                },
+                {
+                    "id": "m9",
+                    "label": "děng"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "help"
+                },
+                {
+                    "id": "r2",
+                    "label": "police"
+                },
+                {
+                    "id": "r3",
+                    "label": "danger"
+                },
+                {
+                    "id": "r4",
+                    "label": "fire"
+                },
+                {
+                    "id": "r5",
+                    "label": "save me"
+                },
+                {
+                    "id": "r6",
+                    "label": "lost"
+                },
+                {
+                    "id": "r7",
+                    "label": "first aid"
+                },
+                {
+                    "id": "r8",
+                    "label": "fast"
+                },
+                {
+                    "id": "r9",
+                    "label": "wait"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "帮助",
+            "audioText": "帮助",
+            "choices": [
+                "bāngzhù",
+                "kuài",
+                "huǒ",
+                "diū le"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "警察",
+            "audioText": "警察",
+            "choices": [
+                "jíjiù",
+                "jǐngchá",
+                "wēixiǎn",
+                "děng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "危险",
+            "audioText": "危险",
+            "choices": [
+                "wēixiǎn",
+                "kuài",
+                "bāngzhù",
+                "diū le"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "火",
+            "audioText": "火",
+            "choices": [
+                "huǒ",
+                "jiùmìng",
+                "jíjiù",
+                "děng"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a5",
+            "chinese": "救命",
+            "audioText": "救命",
+            "choices": [
+                "diū le",
+                "jiùmìng",
+                "bāngzhù",
+                "kuài"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a6",
+            "chinese": "丢了",
+            "audioText": "丢了",
+            "choices": [
+                "děng",
+                "diū le",
+                "jíjiù",
+                "huǒ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a7",
+            "chinese": "急救",
+            "audioText": "急救",
+            "choices": [
+                "jíjiù",
+                "wēixiǎn",
+                "jǐngchá",
+                "kuài"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a8",
+            "chinese": "快",
+            "audioText": "快",
+            "choices": [
+                "jiùmìng",
+                "kuài",
+                "děng",
+                "huǒ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a9",
+            "chinese": "等",
+            "audioText": "等",
+            "choices": [
+                "děng",
+                "jíjiù",
+                "diū le",
+                "bāngzhù"
+            ],
+            "correct": 0
+        }
+    ]
+}

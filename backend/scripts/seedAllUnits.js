@@ -4,7 +4,7 @@ const path = require("path");
 async function seedAllUnits() {
   console.log("📦 Starting to seed all units...\n");
 
-  const units = [1, 2, 3];
+  const units = [1, 2, 3, 4, 5, 6];
   
   for (const unitNumber of units) {
     console.log(`\n${"=".repeat(50)}`);

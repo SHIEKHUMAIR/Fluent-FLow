@@ -128,6 +128,7 @@ const ARLearningPage = () => {
         }
     }, [permissionGranted, capturedImage]);
 
+
     return (
         <div className="min-h-screen bg-slate-900 relative overflow-hidden flex flex-col">
 
@@ -182,7 +183,7 @@ const ARLearningPage = () => {
 
                 {/* Top Bar */}
                 <div className="flex items-center justify-between mb-8">
-                    <Link href="/modules">
+                    <Link href="/dashboard">
                         <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full transition-all border border-white/5">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
@@ -358,4 +359,3 @@ const ARLearningPage = () => {
 };
 
 export default ARLearningPage;
-

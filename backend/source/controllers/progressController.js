@@ -24,8 +24,9 @@ exports.getDashboard = async (req, res) => {
 
     const stats = await UserStats.findByUserId(userIdInt);
     const progress = await UserProgress.findByUserId(userIdInt);
-    const activities = await UserActivity.findByUserId(userIdInt, 10);
+    const activities = await UserActivity.findByUserId(userIdInt, 5);
     const achievements = await Achievement.findByUserId(userIdInt);
+
 
     // Get all lessons to calculate total progress
     const Lesson = require("../models/Lesson");

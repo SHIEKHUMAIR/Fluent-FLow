@@ -34,7 +34,7 @@ class Achievement {
   static async findByUserId(userId) {
     const pool = getPool();
     const result = await pool.query(
-      `SELECT a.*, ua.earned_at
+      `SELECT a.*, ua.earned_at, ua.is_seen
        FROM achievements a
        JOIN user_achievements ua ON a.id = ua.achievement_id
        WHERE ua.user_id = $1
@@ -42,6 +42,18 @@ class Achievement {
       [userId]
     );
     return result.rows;
+  }
+
+  // Mark achievement as seen
+  static async markAsSeen(userId, achievementId) {
+    const pool = getPool();
+    await pool.query(
+      `UPDATE user_achievements 
+       SET is_seen = TRUE 
+       WHERE user_id = $1 AND achievement_id = $2`,
+      [userId, achievementId]
+    );
+    return true;
   }
 
   // Award achievement to user

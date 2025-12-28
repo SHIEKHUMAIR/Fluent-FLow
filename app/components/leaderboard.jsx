@@ -21,7 +21,7 @@ const Leaderboard = () => {
       const userId = getUserId();
       const url = API_ENDPOINTS.LEADERBOARD.GET(period, userId);
       const result = await apiGet(url);
-      
+
       if (result.success) {
         setLeaderboardData(result.data);
       } else {
@@ -87,7 +87,7 @@ const Leaderboard = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <p className="text-xl text-red-600">Error: {error}</p>
-            <button 
+            <button
               onClick={fetchLeaderboard}
               className="mt-4 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800"
             >
@@ -119,31 +119,28 @@ const Leaderboard = () => {
             id="el-1r2y6rm2">
             <button
               onClick={() => setPeriod('week')}
-              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${
-                period === 'week'
-                  ? 'bg-blue-900 text-white'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
-              }`}
+              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${period === 'week'
+                ? 'bg-blue-900 text-white'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                }`}
               id="el-bbvru1yf">
               This Week
             </button>
             <button
               onClick={() => setPeriod('month')}
-              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${
-                period === 'month'
-                  ? 'bg-blue-900 text-white'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
-              }`}
+              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${period === 'month'
+                ? 'bg-blue-900 text-white'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                }`}
               id="el-shuxufhw">
               This Month
             </button>
             <button
               onClick={() => setPeriod('alltime')}
-              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${
-                period === 'alltime'
-                  ? 'bg-blue-900 text-white'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
-              }`}
+              className={`px-8 py-3 rounded_cstm font-semibold hover:shadow-lg transition-all duration-200 ${period === 'alltime'
+                ? 'bg-blue-900 text-white'
+                : 'text-slate-600 hover:text-slate-900 hover:bg-white/50'
+                }`}
               id="el-fjqt6oxn">
               All Time
             </button>
@@ -293,15 +290,14 @@ const Leaderboard = () => {
                       3: 'from-orange-400 to-orange-500',
                     };
                     const rankColor = rankColors[user.rank] || 'from-slate-600 to-slate-700';
-                    
+
                     return (
                       <div
                         key={user.userId}
-                        className={`p-5 transition-colors duration-200 ${
-                          isCurrentUser
-                            ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500'
-                            : 'hover:bg-slate-50'
-                        }`}
+                        className={`p-5 transition-colors duration-200 ${isCurrentUser
+                          ? 'bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-500'
+                          : 'hover:bg-slate-50'
+                          }`}
                         id={isCurrentUser ? "el-oycevrmc" : undefined}>
                         <div
                           className="flex items-center justify-between"
@@ -327,13 +323,12 @@ const Leaderboard = () => {
                             )}
                             {!isCurrentUser && (
                               <div
-                                className={`w-14 h-14 bg-gradient-to-r ${
-                                  user.rank <= 3 ? 'from-blue-900 to-blue-900' : 
+                                className={`w-14 h-14 bg-gradient-to-r ${user.rank <= 3 ? 'from-blue-900 to-blue-900' :
                                   user.rank % 4 === 0 ? 'from-green-500 to-green-600' :
-                                  user.rank % 4 === 1 ? 'from-purple-500 to-purple-600' :
-                                  user.rank % 4 === 2 ? 'from-red-500 to-red-600' :
-                                  'from-yellow-500 to-yellow-600'
-                                } rounded-full flex items-center justify-center shadow-lg`}>
+                                    user.rank % 4 === 1 ? 'from-purple-500 to-purple-600' :
+                                      user.rank % 4 === 2 ? 'from-red-500 to-red-600' :
+                                        'from-yellow-500 to-yellow-600'
+                                  } rounded-full flex items-center justify-center shadow-lg`}>
                                 <span className="text-white font-bold text-sm">
                                   {getInitials(user)}
                                 </span>
@@ -452,11 +447,11 @@ const Leaderboard = () => {
                 {getPeriodLabel()} Challenge
               </h3>
               <p className="text-purple-100 mb-6" id="el-73nxoogg">
-                {period === 'week' 
-                  ? 'Earn 2,000 XP this week to unlock the "Dedicated Learner" badge!'
+                {period === 'week'
+                  ? 'Earn 750 XP this week to unlock the "Dedicated Learner" badge!'
                   : period === 'month'
-                  ? 'Earn 10,000 XP this month to unlock the "Monthly Master" badge!'
-                  : 'Keep learning to climb the all-time leaderboard!'}
+                    ? 'Earn 2,500 XP this month to unlock the "Monthly Master" badge!'
+                    : 'Keep learning to climb the all-time leaderboard!'}
               </p>
               {currentUser && period === 'week' && (
                 <>
@@ -467,16 +462,39 @@ const Leaderboard = () => {
                       className="bg-white h-3 rounded-full shadow-sm"
                       id="el-rs5dgxzx"
                       style={{
-                        width: `${Math.min((currentUser.xp / 2000) * 100, 100)}%`,
+                        width: `${Math.min((currentUser.xp / 750) * 100, 100)}%`,
                       }}
                     />
                   </div>
                   <div className="flex justify-between" id="el-p26fd3ga">
                     <span className="text-purple-100 font-medium" id="el-e9e79adp">
-                      {formatXP(currentUser.xp)} / 2,000 XP
+                      {formatXP(currentUser.xp)} / 750 XP
                     </span>
                     <span className="text-white font-bold" id="el-d52uf5me">
-                      {Math.min(Math.round((currentUser.xp / 2000) * 100), 100)}%
+                      {Math.min(Math.round((currentUser.xp / 750) * 100), 100)}%
+                    </span>
+                  </div>
+                </>
+              )}
+              {currentUser && period === 'month' && (
+                <>
+                  <div
+                    className="w-full bg-pink-400/50 rounded-full h-3 mb-3"
+                    id="el-evddrgow-mo">
+                    <div
+                      className="bg-white h-3 rounded-full shadow-sm"
+                      id="el-rs5dgxzx-mo"
+                      style={{
+                        width: `${Math.min((currentUser.xp / 2500) * 100, 100)}%`,
+                      }}
+                    />
+                  </div>
+                  <div className="flex justify-between" id="el-p26fd3ga-mo">
+                    <span className="text-pink-100 font-medium" id="el-e9e79adp-mo">
+                      {formatXP(currentUser.xp)} / 2,500 XP
+                    </span>
+                    <span className="text-white font-bold" id="el-d52uf5me-mo">
+                      {Math.min(Math.round((currentUser.xp / 2500) * 100), 100)}%
                     </span>
                   </div>
                 </>

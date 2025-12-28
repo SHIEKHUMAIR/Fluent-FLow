@@ -15,8 +15,8 @@ class UserStats {
   static async initialize(userId) {
     const pool = getPool();
     const result = await pool.query(
-      `INSERT INTO user_stats (user_id, total_xp, words_learned, lessons_completed, study_time_minutes, current_streak, longest_streak, created_at, updated_at)
-       VALUES ($1, 0, 0, 0, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+      `INSERT INTO user_stats (user_id, total_xp, words_learned, lessons_completed, study_time_minutes, current_streak, longest_streak, daily_xp, created_at, updated_at)
+       VALUES ($1, 0, 0, 0, 0, 0, 0, 0, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
        ON CONFLICT (user_id) DO NOTHING
        RETURNING *`,
       [userId]
@@ -62,6 +62,10 @@ class UserStats {
     if (updates.dailyStudyTimeMinutes !== undefined) {
       fields.push(`daily_study_time_minutes = $${paramCount++}`);
       values.push(updates.dailyStudyTimeMinutes);
+    }
+    if (updates.dailyXp !== undefined) {
+      fields.push(`daily_xp = $${paramCount++}`);
+      values.push(updates.dailyXp);
     }
     if (updates.consecutiveGoalDays !== undefined) {
       fields.push(`consecutive_goal_days = $${paramCount++}`);
@@ -207,7 +211,7 @@ class UserStats {
   }
 
   // Unified method to update progress, daily goals, and streaks
-  static async updateDailyProgress(userId, timezoneOffset, timeSpentMinutes) {
+  static async updateDailyProgress(userId, timezoneOffset, timeSpentMinutes, xpEarned = 0) {
     const stats = await this.findByUserId(userId);
     if (!stats) return null;
 
@@ -229,13 +233,17 @@ class UserStats {
       lastDate = lastDate.toISOString().split('T')[0];
     }
 
-    // 3. Daily Study Time Logic
+    // 3. Daily Study Time & XP Logic
     let newDailyTime = stats.daily_study_time_minutes || 0;
+    let newDailyXp = stats.daily_xp || 0;
+
     if (lastDate !== today) {
-        // New day, reset time
+        // New day, reset time and XP
         newDailyTime = 0;
+        newDailyXp = 0;
     }
     newDailyTime += timeSpentMinutes;
+    newDailyXp += xpEarned;
 
     // 4. Daily Goal & Badge Logic
     let consecutiveDays = stats.consecutive_goal_days || 0;
@@ -250,13 +258,11 @@ class UserStats {
         lastGoalDate = lastGoalDate.toISOString().split('T')[0];
     }
 
-    // Goal: 30 minutes
-    const GOAL_MINUTES = 30;
-    const previousTime = stats.daily_study_time_minutes || 0;
+    // Goal: 150 XP (previously 30 minutes)
+    const GOAL_XP = 150;
     // Check if goal met NOW but wasn't met at start of call (or just re-verify)
-    // Actually simpler: Check if goal is met with new time, and check if we already recorded it for today.
     
-    if (newDailyTime >= GOAL_MINUTES && lastGoalDate !== today) {
+    if (newDailyXp >= GOAL_XP && lastGoalDate !== today) {
         // Goal met for the first time today
         lastGoalDate = today;
         
@@ -322,6 +328,7 @@ class UserStats {
       longestStreak: longestStreak,
       lastStudyDate: today,
       dailyStudyTimeMinutes: newDailyTime,
+      dailyXp: newDailyXp,
       consecutiveGoalDays: consecutiveDays,
       lastGoalMetDate: lastGoalDate === today ? today : undefined, // Only update if changed to today
       streakRecoveryBadges: badges

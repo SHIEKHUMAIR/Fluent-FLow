@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { API_ENDPOINTS } from '../../lib/config'
 import { apiGet, apiPost, getUserId } from '../../lib/api'
+import AchievementModal from './AchievementModal'
 
 const dashboard = () => {
   const [userName, setUserName] = useState('');
@@ -18,7 +19,8 @@ const dashboard = () => {
     currentStreak: 0,
     dailyStudyTime: 0,
     streakRecoveryBadges: 0,
-    frozenStreak: 0
+    frozenStreak: 0,
+    dailyXp: 0
   });
   const [progressByCategory, setProgressByCategory] = useState({
     beginner: { percentage: 0 },
@@ -27,6 +29,44 @@ const dashboard = () => {
   });
   const [recentActivities, setRecentActivities] = useState([]);
   const [achievements, setAchievements] = useState([]);
+
+  // Achievement Modal State
+  const [unseenAchievements, setUnseenAchievements] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [currentAchievementIndex, setCurrentAchievementIndex] = useState(0);
+
+  // Check for unseen achievements
+  useEffect(() => {
+    if (achievements.length > 0) {
+      const unseen = achievements.filter(a => !a.is_seen);
+      if (unseen.length > 0) {
+        setUnseenAchievements(unseen);
+        setShowModal(true);
+      }
+    }
+  }, [achievements]);
+
+  const handleClaim = async () => {
+    try {
+      if (unseenAchievements[currentAchievementIndex]) {
+        await apiPost(API_ENDPOINTS.PROGRESS.MARK_SEEN, {
+          userId: getUserId(),
+          achievementId: unseenAchievements[currentAchievementIndex].id
+        });
+      }
+
+      if (currentAchievementIndex < unseenAchievements.length - 1) {
+        setCurrentAchievementIndex(prev => prev + 1);
+      } else {
+        setShowModal(false);
+        // Refresh dashboard to show checkmark or just update local state if needed
+        // For now, simpler to just close
+      }
+    } catch (err) {
+      console.error("Error claiming badge:", err);
+      setShowModal(false);
+    }
+  };
 
   useEffect(() => {
     const loadUserData = async () => {
@@ -86,7 +126,8 @@ const dashboard = () => {
             currentStreak: result.data.stats?.currentStreak || 0,
             dailyStudyTime: result.data.stats?.dailyStudyTimeMinutes || 0,
             streakRecoveryBadges: result.data.stats?.streakRecoveryBadges || result.data.stats?.streak_recovery_badges || 0,
-            frozenStreak: result.data.stats?.frozenStreak || result.data.stats?.frozen_streak || 0
+            frozenStreak: result.data.stats?.frozenStreak || result.data.stats?.frozen_streak || 0,
+            dailyXp: result.data.stats?.daily_xp || result.data.stats?.dailyXp || 0
           });
 
           // Set progress by category
@@ -246,6 +287,13 @@ const dashboard = () => {
     <section
       className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-4 sm:px-6 lg:px-8"
       id="dashboard">
+
+      <AchievementModal
+        isOpen={showModal}
+        achievement={unseenAchievements[currentAchievementIndex]}
+        onClaim={handleClaim}
+      />
+
       <div className="max-w-7xl mx-auto" id="el-f5zut2y1">
         <div className="mb-8" id="el-lrzvytib">
           <div
@@ -672,7 +720,7 @@ const dashboard = () => {
               </h3>
               <div className="flex justify-between items-center mb-5">
                 <p className="text-blue-100 text-base" id="el-1hrqwyb0">
-                  Study for 30 minutes today
+                  Earn 150 XP today
                 </p>
                 {/* Badge for Daily Goal progress could go here */}
               </div>
@@ -683,12 +731,12 @@ const dashboard = () => {
                   className="bg-white h-3 rounded-full shadow-sm"
                   id="el-4dtivp87"
                   style={{
-                    width: `${Math.min((stats.dailyStudyTime / 30) * 100, 100)}%`,
+                    width: `${Math.min(((stats.dailyXp || 0) / 150) * 100, 100)}%`,
                   }}
                 />
               </div>
               <p className="text-sm text-blue-100 font-medium mb-4" id="el-ro1cs8w9">
-                {Math.min(stats.dailyStudyTime, 30)} / 30 minutes completed
+                {stats.dailyXp || 0} / 150 XP earned
               </p>
             </div>
           </div>

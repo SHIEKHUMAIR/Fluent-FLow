@@ -101,6 +101,7 @@ exports.getDashboard = async (req, res) => {
           studyTime: stats?.study_time_minutes || 0,
           currentStreak: stats?.current_streak || 0,
           dailyStudyTimeMinutes: stats?.daily_study_time_minutes || 0,
+          dailyXp: stats?.daily_xp || 0,
           consecutiveGoalDays: stats?.consecutive_goal_days || 0,
           frozenStreak: stats?.frozen_streak || 0,
           streakRecoveryBadges: stats?.streak_recovery_badges || 0
@@ -192,15 +193,90 @@ exports.updateProgress = async (req, res) => {
 
     if (Object.keys(statsUpdates).length > 0) {
       await UserStats.update(userIdInt, statsUpdates);
-      // New method handles streak, daily time, and badges
       const timeSpentMinutes = timeSpent || 0;
-      await UserStats.updateDailyProgress(userIdInt, timezoneOffset, timeSpentMinutes);
+      await UserStats.updateDailyProgress(userIdInt, timezoneOffset, timeSpentMinutes, xpEarned);
     }
 
-    res.json({ success: true, data: progress });
+    // --- ACHIEVEMENT CHECKS ---
+    const newStats = await UserStats.findByUserId(userIdInt);
+    const awardedBadges = [];
+
+    // Helper to award and track
+    const checkAndAward = async (key) => {
+        const ach = await Achievement.findByKey(key);
+        if (ach) {
+            const result = await Achievement.awardToUser(userIdInt, ach.id);
+            if (result) { // If inserted (not already owned)
+                awardedBadges.push(ach);
+            }
+        }
+    };
+    
+    // 1. First Step (1 lesson completed)
+    if (newStats.lessons_completed === 1) {
+        await checkAndAward('first_step');
+    }
+    
+    // 2. Unbroken Flow (7 day streak)
+    if (newStats.current_streak >= 7) {
+        await checkAndAward('unbroken_flow');
+    }
+
+    // 3. Wordsmith (50 words)
+    if (newStats.words_learned >= 50) {
+        await checkAndAward('wordsmith');
+    }
+
+    // 4. Perfectionist (100% score)
+    if (completed) {
+        await checkAndAward('perfectionist');
+    }
+
+    // 5 & 6. Challenges (Weekly 750 XP, Monthly 2500 XP)
+    if (xpEarned > 0) {
+        const getXpSince = async (days) => {
+            const date = new Date();
+            date.setDate(date.getDate() - days);
+            const pool = require("../configuration/dbConfig").getPool();
+            const res = await pool.query(
+                `SELECT SUM(xp_earned) as total FROM user_activity WHERE user_id = $1 AND created_at >= $2`,
+                [userIdInt, date]
+            );
+            return parseInt(res.rows[0].total) || 0;
+        };
+
+        const weeklyXp = await getXpSince(7);
+        if (weeklyXp >= 750) {
+            await checkAndAward('dedicated_learner');
+        }
+
+        const monthlyXp = await getXpSince(30);
+        if (monthlyXp >= 2500) {
+            await checkAndAward('monthly_master');
+        }
+    }
+
+    res.json({ success: true, data: { ...progress, newAchievements: awardedBadges } });
   } catch (error) {
     console.error("Error updating progress:", error);
     res.status(500).json({ success: false, message: "Failed to update progress", error: error.message });
+  }
+};
+
+// Mark achievement as seen
+exports.markInternalAchievementSeen = async (req, res) => {
+  try {
+    const userId = req.user?.id || req.body?.userId;
+    const { achievementId } = req.body;
+
+    if (!userId) return res.status(401).json({ success: false, message: "Unauthorized" });
+    if (!achievementId) return res.status(400).json({ success: false, message: "Achievement ID required" });
+
+    await Achievement.markAsSeen(userId, achievementId);
+    res.json({ success: true });
+  } catch (error) {
+    console.error("Error marking achievement seen:", error);
+    res.status(500).json({ success: false, message: "Failed" });
   }
 };
 

@@ -21,9 +21,9 @@ const dashboard = () => {
     frozenStreak: 0
   });
   const [progressByCategory, setProgressByCategory] = useState({
-    beginner: { completed: 0, total: 0 },
-    intermediate: { completed: 0, total: 0 },
-    elementary: { completed: 0, total: 0 }
+    beginner: { percentage: 0 },
+    intermediate: { percentage: 0 },
+    elementary: { percentage: 0 }
   });
   const [recentActivities, setRecentActivities] = useState([]);
   const [achievements, setAchievements] = useState([]);
@@ -203,9 +203,7 @@ const dashboard = () => {
 
   // Calculate progress percentage
   const getProgressPercentage = (category) => {
-    const cat = progressByCategory[category] || { completed: 0, total: 0 };
-    if (cat.total === 0) return 0;
-    return Math.round((cat.completed / cat.total) * 100);
+    return progressByCategory[category]?.percentage || 0;
   };
 
   if (loading) {

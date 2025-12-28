@@ -46,21 +46,39 @@ exports.getDashboard = async (req, res) => {
 
     // Calculate progress by category - include all lessons
     const progressByCategory = {
-      beginner: { completed: 0, total: 0 },
-      intermediate: { completed: 0, total: 0 },
-      elementary: { completed: 0, total: 0 }
+      beginner: { completedPercentage: 0, totalLessons: 0 },
+      intermediate: { completedPercentage: 0, totalLessons: 0 },
+      elementary: { completedPercentage: 0, totalLessons: 0 }
     };
 
-    // Count all lessons by category
+    // Count all lessons and sum progress
     allLessons.forEach(lesson => {
       const category = lesson.category;
       if (progressByCategory[category]) {
-        progressByCategory[category].total++;
+        progressByCategory[category].totalLessons++;
+        
         const userProgress = progressMap[lesson.id];
-        if (userProgress && userProgress.completed) {
-          progressByCategory[category].completed++;
+        let lessonProgress = 0;
+        
+        if (userProgress) {
+            // Add the actual percentage (0-100)
+            lessonProgress = parseFloat(userProgress.progress_percentage || 0);
         }
+        
+        progressByCategory[category].completedPercentage += lessonProgress;
       }
+    });
+
+    // Finalize percentages (Average across all lessons in category)
+    Object.keys(progressByCategory).forEach(cat => {
+        const data = progressByCategory[cat];
+        if (data.totalLessons > 0) {
+            // e.g. (Sum of Percentages) / Total Lessons
+            // If 2 lessons, one 100%, one 50%, sum=150. 150/2 = 75% total progress.
+            data.percentage = Math.round(data.completedPercentage / data.totalLessons);
+        } else {
+            data.percentage = 0;
+        }
     });
 
     // Calculate words learned from completed lessons

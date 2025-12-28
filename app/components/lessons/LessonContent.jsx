@@ -96,7 +96,7 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
             userId: parseInt(userId),
             lessonId: currentLessonId,
             progressPercentage: progressPercentage,
-            completed: true,
+            completed: score === totalQuestions, // Only mark completed if perfect score
             score: score,
             timeSpent: timeSpent,
             timezoneOffset: new Date().getTimezoneOffset()

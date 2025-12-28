@@ -23,7 +23,9 @@ export default function LessonMatch({ groups, setPhase, setScore }) {
     shuffle(firstHalf.map(p => p.right))
   );
   const [selectedLeft, setSelectedLeft] = useState(null);
-  const [matched, setMatched] = useState([]);
+
+  const [correctMatches, setCorrectMatches] = useState([]); // Array of Left IDs
+  const [failedMatches, setFailedMatches] = useState([]);   // Array of Left IDs
 
   // Helper: shuffle array
   function shuffle(arr) {
@@ -38,28 +40,55 @@ export default function LessonMatch({ groups, setPhase, setScore }) {
       const pair = allPairs.find(
         p => p.left.id === selectedLeft.id && p.right.id === item.id
       );
-      if (pair) {
-        setMatched(prev => [...prev, selectedLeft.id]);
-        setScore(prev => prev + 1); // Award point
-        setSelectedLeft(null);
 
-        // Auto move to next half when done
-        if (matched.length + 1 === leftItems.length) {
-          setTimeout(() => {
-            if (currentSet === 1 && secondHalf.length > 0) {
-              setCurrentSet(2);
-              setLeftItems(secondHalf.map(p => p.left));
-              setRightItems(shuffle(secondHalf.map(p => p.right)));
-              setMatched([]);
-            } else {
-              setPhase("summary");
-            }
-          }, 700);
-        }
+      const totalProcessed = correctMatches.length + failedMatches.length + 1;
+
+      if (pair) {
+        // Correct Match
+        setCorrectMatches(prev => [...prev, selectedLeft.id]);
+        setScore(prev => prev + 1);
       } else {
-        setSelectedLeft(null);
+        // Wrong Match
+        // Find the correct partner for the selected left item to mark it red
+        // No score increase, but mark as processed (failed)
+        setFailedMatches(prev => [...prev, selectedLeft.id]);
+      }
+
+      setSelectedLeft(null);
+
+      // Auto move to next half when all left items are processed (correct or failed)
+      if (totalProcessed === leftItems.length) {
+        setTimeout(() => {
+          if (currentSet === 1 && secondHalf.length > 0) {
+            setCurrentSet(2);
+            setLeftItems(secondHalf.map(p => p.left));
+            setRightItems(shuffle(secondHalf.map(p => p.right)));
+            setCorrectMatches([]);
+            setFailedMatches([]);
+          } else {
+            setPhase("summary");
+          }
+        }, 1000); // 1s delay to see the result
       }
     }
+  };
+
+  // Helper to check status
+  const getLeftStatus = (id) => {
+    if (correctMatches.includes(id)) return "correct";
+    if (failedMatches.includes(id)) return "failed";
+    if (selectedLeft?.id === id) return "selected";
+    return "default";
+  };
+
+  const getRightStatus = (id) => {
+    // Find the left partner for this right item
+    const pair = allPairs.find(p => p.right.id === id);
+    if (!pair) return "default";
+
+    if (correctMatches.includes(pair.left.id)) return "correct";
+    if (failedMatches.includes(pair.left.id)) return "failed";
+    return "default";
   };
 
   return (
@@ -71,38 +100,48 @@ export default function LessonMatch({ groups, setPhase, setScore }) {
       <div className="grid grid-cols-2 gap-8 max-w-2xl mx-auto">
         {/* Left Column */}
         <div className="space-y-3">
-          {leftItems.map(item => (
-            <button
-              key={item.id}
-              onClick={() => handleSelect("left", item)}
-              disabled={matched.includes(item.id)}
-              className={`w-full py-3 rounded-xl border font-semibold transition-all ${matched.includes(item.id)
+          {leftItems.map(item => {
+            const status = getLeftStatus(item.id);
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleSelect("left", item)}
+                disabled={status === "correct" || status === "failed"}
+                className={`w-full py-3 rounded-xl border font-semibold transition-all ${status === "correct"
                   ? "bg-emerald-500 text-white border-emerald-500"
-                  : selectedLeft?.id === item.id
-                    ? "bg-blue-50 border-blue-400"
-                    : "bg-white hover:bg-slate-50"
-                }`}
-            >
-              {item.label}
-            </button>
-          ))}
+                  : status === "failed"
+                    ? "bg-red-500 text-white border-red-500"
+                    : status === "selected"
+                      ? "bg-blue-50 border-blue-400"
+                      : "bg-white hover:bg-slate-50"
+                  }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
         </div>
 
         {/* Right Column */}
         <div className="space-y-3">
-          {rightItems.map(item => (
-            <button
-              key={item.id}
-              onClick={() => handleSelect("right", item)}
-              disabled={matched.includes(item.id)}
-              className={`w-full py-3 rounded-xl border font-semibold transition-all ${matched.includes(item.id)
+          {rightItems.map(item => {
+            const status = getRightStatus(item.id);
+            return (
+              <button
+                key={item.id}
+                onClick={() => handleSelect("right", item)}
+                disabled={status === "correct" || status === "failed"}
+                className={`w-full py-3 rounded-xl border font-semibold transition-all ${status === "correct"
                   ? "bg-emerald-500 text-white border-emerald-500"
-                  : "bg-white hover:bg-slate-50"
-                }`}
-            >
-              {item.label}
-            </button>
-          ))}
+                  : status === "failed"
+                    ? "bg-red-500 text-white border-red-500"
+                    : "bg-white hover:bg-slate-50"
+                  }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -84,9 +84,11 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
         if (!userId) return;
 
         const timeSpent = Math.floor((Date.now() - startTime) / 60000); // minutes
-        const totalQuestions = lessonData.mcqQuestions.length + lessonData.audioQuiz.length;
+        const matchingPairsCount = Object.values(lessonData.matchingTasks || {}).reduce((acc, group) => acc + (group.left ? group.left.length : 0), 0);
+        const totalQuestions = lessonData.mcqQuestions.length + lessonData.audioQuiz.length + matchingPairsCount;
+
         const progressPercentage = totalQuestions > 0
-          ? Math.round((score / totalQuestions) * 100)
+          ? Math.min(100, Math.round((score / totalQuestions) * 100))
           : 100;
 
         try {
@@ -96,7 +98,8 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
             progressPercentage: progressPercentage,
             completed: true,
             score: score,
-            timeSpent: timeSpent
+            timeSpent: timeSpent,
+            timezoneOffset: new Date().getTimezoneOffset()
           });
         } catch (err) {
           console.error("Error tracking progress:", err);
@@ -184,7 +187,17 @@ const LessonContent = ({ unitNumber, lessonNumber, lessonId }) => {
       {phase === "match" && (
         <LessonMatch groups={matchData} score={score} setScore={setScore} setPhase={setPhase} />
       )}
-      {phase === "summary" && <LessonSummary score={score} unitNumber={unitNumber || lessonData.unitNumber} />}
+      {phase === "summary" && (
+        <LessonSummary
+          score={score}
+          unitNumber={unitNumber || lessonData.unitNumber}
+          totalPoints={
+            mcqs.length +
+            audioQs.length +
+            Object.values(matchData).reduce((acc, group) => acc + (group.left ? group.left.length : 0), 0)
+          }
+        />
+      )}
     </div>
   );
 };

@@ -22,6 +22,12 @@ exports.getDashboard = async (req, res) => {
     // Initialize stats if they don't exist
     await UserStats.initialize(userIdInt);
 
+    // Validate streak based on timezone if provided
+    const timezoneOffset = req.query.timezoneOffset ? parseInt(req.query.timezoneOffset) : null;
+    if (timezoneOffset !== null && !isNaN(timezoneOffset)) {
+       await UserStats.validateStreak(userIdInt, timezoneOffset);
+    }
+
     const stats = await UserStats.findByUserId(userIdInt);
     const progress = await UserProgress.findByUserId(userIdInt);
     const activities = await UserActivity.findByUserId(userIdInt, 5);
@@ -75,7 +81,11 @@ exports.getDashboard = async (req, res) => {
           wordsLearned: wordsLearned || stats?.words_learned || 0,
           lessonsCompleted: stats?.lessons_completed || 0,
           studyTime: stats?.study_time_minutes || 0,
-          currentStreak: stats?.current_streak || 0
+          currentStreak: stats?.current_streak || 0,
+          dailyStudyTimeMinutes: stats?.daily_study_time_minutes || 0,
+          consecutiveGoalDays: stats?.consecutive_goal_days || 0,
+          frozenStreak: stats?.frozen_streak || 0,
+          streakRecoveryBadges: stats?.streak_recovery_badges || 0
         },
         progress,
         progressByCategory,
@@ -93,7 +103,7 @@ exports.getDashboard = async (req, res) => {
 exports.updateProgress = async (req, res) => {
   try {
     const userId = req.user?.id || req.body?.userId || req.query?.userId;
-    const { lessonId, progressPercentage, completed, score, timeSpent } = req.body;
+    const { lessonId, progressPercentage, completed, score, timeSpent, timezoneOffset } = req.body;
 
     if (!userId) {
       return res.status(401).json({ success: false, message: "User ID is required" });
@@ -109,7 +119,20 @@ exports.updateProgress = async (req, res) => {
       return res.status(400).json({ success: false, message: "Lesson ID is required" });
     }
 
-    // Update or create progress
+    // Calculate XP based on improvement (3 XP per new correct answer)
+    // 1. Fetch old progress to get previous high score
+    const oldProgress = await UserProgress.findByUserAndLesson(userIdInt, lessonId);
+    const oldScore = oldProgress ? oldProgress.score : 0;
+    const newScore = parseInt(score) || 0;
+    
+    // 2. Calculate improvement
+    // Only award XP if the new score is higher than the previous best
+    let xpEarned = 0;
+    if (newScore > oldScore) {
+       xpEarned = (newScore - oldScore) * 3;
+    }
+
+    // Update or create progress (Model handles keeping high score)
     const progress = await UserProgress.upsert({
       userId: userIdInt,
       lessonId,
@@ -124,10 +147,10 @@ exports.updateProgress = async (req, res) => {
     if (timeSpent) {
       statsUpdates.studyTimeMinutes = timeSpent;
     }
-    if (completed) {
-      statsUpdates.lessonsCompleted = 1;
-      // Award XP for completing lesson
-      statsUpdates.totalXp = 50;
+    
+    // Only update XP if earned
+    if (xpEarned > 0) {
+      statsUpdates.totalXp = xpEarned;
       
       // Fetch lesson details for the activity description
       const lesson = await Lesson.findById(lessonId);
@@ -137,14 +160,23 @@ exports.updateProgress = async (req, res) => {
       await UserActivity.create({
         userId: userIdInt,
         activityType: "lesson_completed",
-        activityDescription: `Completed "${lessonTitle}" lesson`,
-        xpEarned: 50
+        activityDescription: oldProgress 
+           ? `Improved score in "${lessonTitle}" (+${xpEarned} XP)`
+           : `Completed "${lessonTitle}" (+${xpEarned} XP)`,
+        xpEarned: xpEarned
       });
+    }
+
+    if (completed && !oldProgress) {
+       // Just marking as completed for stats if it's the first time
+       statsUpdates.lessonsCompleted = 1;
     }
 
     if (Object.keys(statsUpdates).length > 0) {
       await UserStats.update(userIdInt, statsUpdates);
-      await UserStats.updateStreak(userIdInt);
+      // New method handles streak, daily time, and badges
+      const timeSpentMinutes = timeSpent || 0;
+      await UserStats.updateDailyProgress(userIdInt, timezoneOffset, timeSpentMinutes);
     }
 
     res.json({ success: true, data: progress });
@@ -223,6 +255,30 @@ exports.getUserActivities = async (req, res) => {
   } catch (error) {
     console.error("Error fetching activities:", error);
     res.status(500).json({ success: false, message: "Failed to fetch activities", error: error.message });
+  }
+};
+
+// Recover streak
+exports.recoverStreak = async (req, res) => {
+  try {
+    const userId = req.user?.id || req.body?.userId;
+    const { timezoneOffset } = req.body; // Need offset to set date correctly
+
+    if (!userId) {
+      return res.status(401).json({ success: false, message: "User not authenticated" });
+    }
+    
+    const userIdInt = parseInt(userId);
+    const result = await UserStats.recoverStreakWithTimezone(userIdInt, timezoneOffset);
+    
+    if (result) {
+        res.json({ success: true, message: "Streak recovered successfully" });
+    } else {
+        res.status(400).json({ success: false, message: "Could not recover streak (No badges or frozen streak)" });
+    }
+  } catch (error) {
+    console.error("Error recovering streak:", error);
+    res.status(500).json({ success: false, message: "Failed to recover streak", error: error.message });
   }
 };
 

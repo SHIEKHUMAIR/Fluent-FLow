@@ -17,5 +17,8 @@ router.get("/lesson/:lessonId", progressController.getLessonProgress);
 // Update progress
 router.post("/update", progressController.updateProgress);
 
+// Recover streak
+router.post("/recover-streak", progressController.recoverStreak);
+
 module.exports = router;
 

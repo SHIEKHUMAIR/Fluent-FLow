@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { API_ENDPOINTS } from '../../lib/config'
-import { apiGet, getUserId } from '../../lib/api'
+import { apiGet, apiPost, getUserId } from '../../lib/api'
 
 const dashboard = () => {
   const [userName, setUserName] = useState('');
@@ -15,7 +15,10 @@ const dashboard = () => {
     wordsLearned: 0,
     lessonsCompleted: 0,
     studyTime: 0,
-    currentStreak: 0
+    currentStreak: 0,
+    dailyStudyTime: 0,
+    streakRecoveryBadges: 0,
+    frozenStreak: 0
   });
   const [progressByCategory, setProgressByCategory] = useState({
     beginner: { completed: 0, total: 0 },
@@ -70,7 +73,8 @@ const dashboard = () => {
           return;
         }
 
-        const result = await apiGet(API_ENDPOINTS.PROGRESS.DASHBOARD(userId));
+        const timezoneOffset = new Date().getTimezoneOffset();
+        const result = await apiGet(API_ENDPOINTS.PROGRESS.DASHBOARD(userId, timezoneOffset));
 
         if (result.success && result.data) {
           // Set stats with proper defaults
@@ -79,7 +83,10 @@ const dashboard = () => {
             wordsLearned: result.data.stats?.wordsLearned || 0,
             lessonsCompleted: result.data.stats?.lessonsCompleted || 0,
             studyTime: result.data.stats?.studyTime || 0,
-            currentStreak: result.data.stats?.currentStreak || 0
+            currentStreak: result.data.stats?.currentStreak || 0,
+            dailyStudyTime: result.data.stats?.dailyStudyTimeMinutes || 0,
+            streakRecoveryBadges: result.data.stats?.streakRecoveryBadges || result.data.stats?.streak_recovery_badges || 0,
+            frozenStreak: result.data.stats?.frozenStreak || result.data.stats?.frozen_streak || 0
           });
 
           // Set progress by category
@@ -131,6 +138,43 @@ const dashboard = () => {
       window.removeEventListener('userLoggedIn', handleStorageUpdate);
     };
   }, []);
+
+  const handleRecoverStreak = async () => {
+    try {
+      setLoading(true);
+      const userId = getUserId();
+      const timezoneOffset = new Date().getTimezoneOffset();
+
+      const result = await apiPost(API_ENDPOINTS.PROGRESS.RECOVER_STREAK, {
+        userId,
+        timezoneOffset
+      });
+
+      if (result.success) {
+        // Refresh dashboard to show recovered streak
+        const dashboardResult = await apiGet(API_ENDPOINTS.PROGRESS.DASHBOARD(userId, timezoneOffset));
+        if (dashboardResult.success && dashboardResult.data) {
+          setStats({
+            totalXp: dashboardResult.data.stats?.totalXp || 0,
+            wordsLearned: dashboardResult.data.stats?.wordsLearned || 0,
+            lessonsCompleted: dashboardResult.data.stats?.lessonsCompleted || 0,
+            studyTime: dashboardResult.data.stats?.studyTime || 0,
+            currentStreak: dashboardResult.data.stats?.currentStreak || 0,
+            dailyStudyTime: dashboardResult.data.stats?.dailyStudyTimeMinutes || 0,
+            streakRecoveryBadges: dashboardResult.data.stats?.streakRecoveryBadges || dashboardResult.data.stats?.streak_recovery_badges || 0,
+            frozenStreak: 0 // Should be cleared
+          });
+        }
+      } else {
+        setError(result.message || "Failed to recover streak");
+      }
+    } catch (err) {
+      console.error("Streak recovery error:", err);
+      setError("An error occurred while recovering streak");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   // Format time
   const formatTime = (minutes) => {
@@ -234,6 +278,8 @@ const dashboard = () => {
 
             </div>
             <div className="mt-4 sm:mt-0" id="el-3dpz23ut">
+              {/* Recovery Badges Removed from here */}
+
               <div
                 className="flex items-center space-x-4 bg-white rounded-2xl px-6 py-4 shadow-sm border border-slate-200"
                 id="el-gir8ah5q">
@@ -262,6 +308,19 @@ const dashboard = () => {
                   </span>
                 </div>
               </div>
+
+              {/* Recover Streak Button - Moved Here */}
+              {stats.currentStreak === 0 && stats.frozenStreak > 0 && stats.streakRecoveryBadges > 0 && (
+                <div className="mt-2">
+                  <button
+                    onClick={handleRecoverStreak}
+                    className="w-full py-2 px-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-bold shadow-lg hover:from-orange-600 hover:to-red-600 transition-all flex items-center justify-center space-x-2 text-sm"
+                  >
+                    <span>🛡️</span>
+                    <span>Recover {stats.frozenStreak} Day Streak</span>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -570,6 +629,26 @@ const dashboard = () => {
                 Recent Achievements
               </h3>
               <div className="space-y-5" id="el-9dvoftxa">
+                {/* Above n Beyond Badge Display */}
+                {stats.streakRecoveryBadges > 0 && (
+                  <div className="flex items-center space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center shadow-md">
+                      <span className="text-xl text-white">🛡️</span>
+                    </div>
+                    <div>
+                      <div className="flex items-center space-x-2">
+                        <p className="text-base font-bold text-slate-900">Above n Beyond</p>
+                        <span className="bg-blue-100 text-blue-700 text-xs font-extrabold px-2 py-0.5 rounded-full border border-blue-200">
+                          x{stats.streakRecoveryBadges}
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-500">
+                        Streak Recovery Badge
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 {achievements.length > 0 ? (
                   achievements.slice(0, 3).map((achievement, index) => (
                     <div key={index} className="flex items-center space-x-4">
@@ -583,7 +662,7 @@ const dashboard = () => {
                     </div>
                   ))
                 ) : (
-                  <p className="text-slate-500 text-center py-4">No achievements yet</p>
+                  stats.streakRecoveryBadges === 0 && <p className="text-slate-500 text-center py-4">No achievements yet</p>
                 )}
               </div>
             </div>
@@ -593,9 +672,12 @@ const dashboard = () => {
               <h3 className="text-xl font-bold mb-2" id="el-2cam8k53">
                 Daily Goal
               </h3>
-              <p className="text-blue-100 text-base mb-5" id="el-1hrqwyb0">
-                Study for 30 minutes today
-              </p>
+              <div className="flex justify-between items-center mb-5">
+                <p className="text-blue-100 text-base" id="el-1hrqwyb0">
+                  Study for 30 minutes today
+                </p>
+                {/* Badge for Daily Goal progress could go here */}
+              </div>
               <div
                 className="w-full bg-blue-400/30 rounded-full h-3 mb-3"
                 id="el-wco4106u">
@@ -603,18 +685,18 @@ const dashboard = () => {
                   className="bg-white h-3 rounded-full shadow-sm"
                   id="el-4dtivp87"
                   style={{
-                    width: `${Math.min((stats.studyTime / 30) * 100, 100)}%`,
+                    width: `${Math.min((stats.dailyStudyTime / 30) * 100, 100)}%`,
                   }}
                 />
               </div>
-              <p className="text-sm text-blue-100 font-medium" id="el-ro1cs8w9">
-                {Math.min(stats.studyTime, 30)} minutes completed
+              <p className="text-sm text-blue-100 font-medium mb-4" id="el-ro1cs8w9">
+                {Math.min(stats.dailyStudyTime, 30)} / 30 minutes completed
               </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 

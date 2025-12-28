@@ -214,6 +214,28 @@ async function connectDB() {
       )
     `);
 
+    // Add daily goals columns to user_stats if they don't exist
+    await client.query(`
+      DO $$ 
+      BEGIN
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_stats' AND column_name='daily_study_time_minutes') THEN
+          ALTER TABLE user_stats ADD COLUMN daily_study_time_minutes INTEGER DEFAULT 0;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_stats' AND column_name='consecutive_goal_days') THEN
+          ALTER TABLE user_stats ADD COLUMN consecutive_goal_days INTEGER DEFAULT 0;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_stats' AND column_name='frozen_streak') THEN
+          ALTER TABLE user_stats ADD COLUMN frozen_streak INTEGER DEFAULT 0;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_stats' AND column_name='last_goal_met_date') THEN
+          ALTER TABLE user_stats ADD COLUMN last_goal_met_date DATE;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_stats' AND column_name='streak_recovery_badges') THEN
+          ALTER TABLE user_stats ADD COLUMN streak_recovery_badges INTEGER DEFAULT 0;
+        END IF;
+      END $$;
+    `);
+
     // Create indexes for better performance
     await client.query(`
       CREATE INDEX IF NOT EXISTS idx_lessons_unit_id ON lessons(unit_id);

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-export default function LessonSummary({ score, unitNumber }) {
+export default function LessonSummary({ score, unitNumber, totalPoints }) {
   return (
     <div className="bg-gradient-to-br from-white via-slate-50 to-blue-50 rounded-2xl shadow-lg border border-slate-200 p-10 mt-10 text-center max-w-xl mx-auto">
       <div className="mb-6">
@@ -15,7 +15,9 @@ export default function LessonSummary({ score, unitNumber }) {
 
       {/* Score Display */}
       <div className="bg-white border border-blue-100 shadow-inner rounded-2xl p-8 mb-8 inline-block">
-        <div className="text-6xl font-extrabold text-blue-900">{score}</div>
+        <div className="text-6xl font-extrabold text-blue-900">
+          {score} <span className="text-3xl text-slate-400 font-bold">/ {totalPoints}</span>
+        </div>
         <div className="text-sm text-slate-500 font-medium tracking-wide">
           Points Earned
         </div>

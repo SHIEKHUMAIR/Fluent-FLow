@@ -34,12 +34,12 @@ class UserProgress {
        VALUES ($1, $2, $3, $4, $5, $6, CURRENT_TIMESTAMP, $7, CURRENT_TIMESTAMP)
        ON CONFLICT (user_id, lesson_id)
        DO UPDATE SET
-         progress_percentage = EXCLUDED.progress_percentage,
-         completed = EXCLUDED.completed,
-         score = EXCLUDED.score,
+         progress_percentage = GREATEST(user_progress.progress_percentage, EXCLUDED.progress_percentage),
+         completed = user_progress.completed OR EXCLUDED.completed,
+         score = GREATEST(user_progress.score, EXCLUDED.score),
          time_spent = user_progress.time_spent + EXCLUDED.time_spent,
          last_accessed = CURRENT_TIMESTAMP,
-         completed_at = EXCLUDED.completed_at,
+         completed_at = COALESCE(user_progress.completed_at, EXCLUDED.completed_at),
          updated_at = CURRENT_TIMESTAMP
        RETURNING *`,
       [userId, lessonId, progressPercentage, completed, score, timeSpent, completed ? new Date() : null]

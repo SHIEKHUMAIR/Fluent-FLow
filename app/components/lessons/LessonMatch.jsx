@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export default function LessonMatch({ groups, setPhase }) {
+export default function LessonMatch({ groups, setPhase, setScore }) {
   // Flatten all group data into a single array
   const allPairs = Object.values(groups)
     .flatMap(group =>
@@ -40,6 +40,7 @@ export default function LessonMatch({ groups, setPhase }) {
       );
       if (pair) {
         setMatched(prev => [...prev, selectedLeft.id]);
+        setScore(prev => prev + 1); // Award point
         setSelectedLeft(null);
 
         // Auto move to next half when done
@@ -75,13 +76,12 @@ export default function LessonMatch({ groups, setPhase }) {
               key={item.id}
               onClick={() => handleSelect("left", item)}
               disabled={matched.includes(item.id)}
-              className={`w-full py-3 rounded-xl border font-semibold transition-all ${
-                matched.includes(item.id)
+              className={`w-full py-3 rounded-xl border font-semibold transition-all ${matched.includes(item.id)
                   ? "bg-emerald-500 text-white border-emerald-500"
                   : selectedLeft?.id === item.id
-                  ? "bg-blue-50 border-blue-400"
-                  : "bg-white hover:bg-slate-50"
-              }`}
+                    ? "bg-blue-50 border-blue-400"
+                    : "bg-white hover:bg-slate-50"
+                }`}
             >
               {item.label}
             </button>
@@ -95,11 +95,10 @@ export default function LessonMatch({ groups, setPhase }) {
               key={item.id}
               onClick={() => handleSelect("right", item)}
               disabled={matched.includes(item.id)}
-              className={`w-full py-3 rounded-xl border font-semibold transition-all ${
-                matched.includes(item.id)
+              className={`w-full py-3 rounded-xl border font-semibold transition-all ${matched.includes(item.id)
                   ? "bg-emerald-500 text-white border-emerald-500"
                   : "bg-white hover:bg-slate-50"
-              }`}
+                }`}
             >
               {item.label}
             </button>

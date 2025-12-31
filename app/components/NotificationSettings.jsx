@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
+import TimeSelectionModal from './TimeSelectionModal';
 
 // VAPID Public Key - should match backend
 const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || "BFaip3G8l84m-VkODczkj2759AI5SPMnCGeYGTj-38GNfw2ikJIhkh1BPhtfPsvISeukD4BYA7rmnIk13fFTAgU";
@@ -26,6 +27,7 @@ const NotificationSettings = () => {
     const [notificationTime, setNotificationTime] = useState("");
     const [status, setStatus] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [showTimeModal, setShowTimeModal] = useState(false);
 
     // Get authentication token (check both localStorage and sessionStorage)
     const getAuthToken = () => {
@@ -94,6 +96,18 @@ const NotificationSettings = () => {
                         const token = getAuthToken();
                         if (token) {
                             syncSubscription(subscription, false);
+
+                            // Also fetch profile to get stored notification time
+                            fetch('http://localhost:4000/api/profile', {
+                                headers: { 'Authorization': `Bearer ${token}` }
+                            })
+                                .then(res => res.json())
+                                .then(data => {
+                                    if (data.success && data.data && data.data.notificationTime) {
+                                        setNotificationTime(data.data.notificationTime);
+                                    }
+                                })
+                                .catch(err => console.error("Error fetching profile:", err));
                         }
                     } else {
                         console.log('No existing subscription found');
@@ -194,13 +208,29 @@ const NotificationSettings = () => {
         }
     };
 
-    // Save notification preferences
-    const savePreferences = async () => {
+    const toggleTimeModal = () => {
+        setShowTimeModal(!showTimeModal);
+    };
+
+    const handleTimeSave = (newTime) => {
+        setNotificationTime(newTime);
+        // We need to call savePreferences but it relies on state. 
+        // Since setNotificationTime is async, we should use a useEffect or pass it.
+        // Let's modify savePreferences to accept an arg or just wait?
+        // Better: update state then trigger save. OR easier: call API directly here?
+        // Let's just update state and call savePreferences immediately with the new value manually passed
+        savePreferences(newTime);
+    };
+
+    // Modified savePreferences to accept optional time override
+    const savePreferences = async (timeOverride) => {
         const token = getAuthToken();
         if (!token) return;
 
         setIsLoading(true);
         setStatus("loading");
+
+        const timeToSave = typeof timeOverride === 'string' ? timeOverride : notificationTime;
 
         try {
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -212,19 +242,20 @@ const NotificationSettings = () => {
                     'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
-                    notificationTime: notificationTime,
+                    notificationTime: timeToSave,
                     timezone: timezone
                 })
             });
 
             if (response.ok) {
                 setStatus("saved");
+                // Update local state if it was an override
+                if (typeof timeOverride === 'string') {
+                    setNotificationTime(timeOverride);
+                }
             } else {
                 setStatus("error");
             }
-        } catch (e) {
-            console.error('Error saving preferences:', e);
-            setStatus("error");
         } finally {
             setIsLoading(false);
         }
@@ -290,41 +321,47 @@ const NotificationSettings = () => {
                             {isSubscribed ? 'Enabled' : 'Disabled'}
                         </span>
                     </div>
-                    <button
-                        onClick={isSubscribed ? unsubscribeUser : subscribeUser}
-                        disabled={isLoading}
-                        className={`px-4 py-2 rounded-xl font-semibold transition-all ${isSubscribed
-                                ? 'bg-red-100 text-red-700 hover:bg-red-200'
-                                : 'bg-blue-900 hover:bg-blue-800 text-white shadow-md'
-                            } ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    >
-                        {isLoading
-                            ? 'Loading...'
-                            : isSubscribed
-                                ? 'Disable'
-                                : 'Enable'}
-                    </button>
+
+                    {/* Only show loading or disable/enable toggle if not subscribed. 
+                        If subscribed, user wants to see "Set Timer" potentially? 
+                        The prompt says "when we enable it i want it to be like on upper side as it is now but for setiing time their should be button of set timer"
+                        "upper side" refers to the current enable/disable toggle probably.
+                        So we keep the toggle. The "Set Timer" button replaces the OLD time input.
+                    */}
+                    <label className="ff-toggle">
+                        <input
+                            type="checkbox"
+                            checked={isSubscribed}
+                            onChange={isSubscribed ? unsubscribeUser : subscribeUser}
+                            disabled={isLoading}
+                        />
+                        <div className="ff-toggle-track">
+                            <div className="ff-toggle-thumb"></div>
+                        </div>
+                    </label>
                 </div>
 
-                {/* Notification Time Settings */}
+                {/* Notification Time Settings - New Button Style */}
                 {isSubscribed && (
-                    <div className="mt-4 border-t border-slate-100 pt-4">
-                        <label className="block text-slate-600 text-sm font-medium mb-2">
-                            Daily Study Reminder
-                        </label>
-                        <div className="flex gap-2">
-                            <input
-                                type="time"
-                                value={notificationTime}
-                                onChange={(e) => setNotificationTime(e.target.value)}
-                                className="bg-slate-50 text-slate-900 px-3 py-2 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500 w-full"
-                            />
-                            <button
-                                onClick={savePreferences}
-                                disabled={isLoading}
-                                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl font-semibold shadow-sm text-sm whitespace-nowrap disabled:opacity-50"
-                            >
-                                Save
+                    <div className="mt-4 border-t border-slate-100 pt-6 animate-fade-in">
+                        <div className="flex items-center justify-between">
+                            <div>
+                                <label className="block text-slate-800 font-semibold mb-1">
+                                    Daily Reminder
+                                </label>
+                                <p className="text-slate-500 text-sm">
+                                    Currently set to <span className="text-blue-600 font-bold">
+                                        {notificationTime ? new Date(`2000-01-01T${notificationTime}`).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit', hour12: true }) : "Not set"}
+                                    </span>
+                                </p>
+                            </div>
+
+                            {/* New Set Timer Button */}
+                            <button className="ff-button" onClick={() => setShowTimeModal(true)}>
+                                <svg viewBox="0 0 448 512" className="ff-bell">
+                                    <path d="M224 0c-17.7 0-32 14.3-32 32V49.9C119.5 61.4 64 124.2 64 200v33.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416H424c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4V200c0-75.8-55.5-138.6-128-150.1V32c0-17.7-14.3-32-32-32zm0 96h8c57.4 0 104 46.6 104 104v33.4c0 47.9 13.9 94.6 39.7 134.6H72.3C98.1 328 112 281.3 112 233.4V200c0-57.4 46.6-104 104-104h8zm64 352H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"></path>
+                                </svg>
+                                Set Timer
                             </button>
                         </div>
                     </div>
@@ -332,32 +369,28 @@ const NotificationSettings = () => {
 
                 {/* Status Messages */}
                 {status === 'success' && (
-                    <p className="text-green-600 text-sm font-medium">
-                        Done!
+                    <p className="text-green-600 text-sm font-medium animate-pulse">
+                        Notifications enabled!
                     </p>
                 )}
                 {status === 'saved' && (
-                    <p className="text-green-600 text-sm font-medium">Saved!</p>
+                    <p className="text-green-600 text-sm font-medium">Preferences saved successfully!</p>
                 )}
                 {status === 'error' && (
                     <p className="text-red-500 text-sm font-medium">
-                        Something went wrong.
+                        Something went wrong. Please try again.
                     </p>
                 )}
 
-                {/* Test Notification Button */}
-                {isSubscribed && (
-                    <div className="mt-2">
-                        <button
-                            onClick={sendTestNotification}
-                            disabled={isLoading}
-                            className="text-slate-500 hover:text-blue-600 text-sm font-medium underline transition-colors disabled:opacity-50"
-                        >
-                            Test Notification
-                        </button>
-                    </div>
-                )}
+
             </div>
+
+            <TimeSelectionModal
+                isOpen={showTimeModal}
+                onClose={() => setShowTimeModal(false)}
+                onSave={handleTimeSave}
+                initialTime={notificationTime}
+            />
         </div>
     );
 };

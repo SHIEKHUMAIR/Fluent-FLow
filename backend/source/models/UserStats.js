@@ -120,13 +120,26 @@ class UserStats {
     }
     
     // If last study date is older than yesterday, streak is broken
+    let updates = {};
+    const today = now.toISOString().split('T')[0];
+
+    // 1. Check for Daily Reset (if last study date was not today)
+    // We explicitly check if values are > 0 to avoid unnecessary DB writes
+    if (lastDate !== today && (stats.daily_xp > 0 || stats.daily_study_time_minutes > 0)) {
+        updates.dailyXp = 0;
+        updates.dailyStudyTimeMinutes = 0;
+    }
+
+    // 2. Check for Streak Freeze (if last study date < yesterday)
+    // Note: If lastDate is today, it can't be < yesterday.
     if (lastDate && lastDate < yesterday) {
       // FREEZE the streak instead of just losing it
-      // Move current_streak to frozen_streak, reset current_streak to 0
-       return await this.update(userId, {
-        currentStreak: 0,
-        frozenStreak: stats.current_streak
-      });
+      updates.currentStreak = 0;
+      updates.frozenStreak = stats.current_streak;
+    }
+
+    if (Object.keys(updates).length > 0) {
+        return await this.update(userId, updates);
     }
     
     return null;

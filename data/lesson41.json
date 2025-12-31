@@ -1,0 +1,396 @@
+{
+    "learningSlides": [
+        {
+            "id": "l41_1",
+            "chinese": "这个多少钱？",
+            "pinyin": "Zhège duōshao qián?",
+            "english": "How much is this?",
+            "image": "/assets/lesson41/howmuch.jpeg"
+        },
+        {
+            "id": "l41_2",
+            "chinese": "太贵了，可以便宜一点吗？",
+            "pinyin": "Tài guì le, kěyǐ piányi yīdiǎn ma?",
+            "english": "Too expensive, can it be cheaper?",
+            "image": "/assets/lesson41/cheaper.jpeg"
+        },
+        {
+            "id": "l41_3",
+            "chinese": "我要这个。",
+            "pinyin": "Wǒ yào zhège.",
+            "english": "I want this one.",
+            "image": "/assets/lesson41/wantthis.jpeg"
+        },
+        {
+            "id": "l41_4",
+            "chinese": "我不要。",
+            "pinyin": "Wǒ bú yào.",
+            "english": "I don’t want it.",
+            "image": "/assets/lesson41/dontwant.jpeg"
+        },
+        {
+            "id": "l41_5",
+            "chinese": "有没有别的颜色？",
+            "pinyin": "Yǒu méiyǒu bié de yánsè?",
+            "english": "Do you have other colors?",
+            "image": "/assets/lesson41/othercolors.jpeg"
+        },
+        {
+            "id": "l41_6",
+            "chinese": "我可以试试吗？",
+            "pinyin": "Wǒ kěyǐ shìshi ma?",
+            "english": "Can I try it on?",
+            "image": "/assets/lesson41/tryon.jpeg"
+        },
+        {
+            "id": "l41_7",
+            "chinese": "这个很好看。",
+            "pinyin": "Zhège hěn hǎokàn.",
+            "english": "This looks good.",
+            "image": "/assets/lesson41/looksgood.jpeg"
+        },
+        {
+            "id": "l41_8",
+            "chinese": "我付现金。",
+            "pinyin": "Wǒ fù xiànjīn.",
+            "english": "I’ll pay cash.",
+            "image": "/assets/lesson41/paycash.jpeg"
+        },
+        {
+            "id": "l41_9",
+            "chinese": "可以刷卡吗？",
+            "pinyin": "Kěyǐ shuākǎ ma?",
+            "english": "Can I pay by card?",
+            "image": "/assets/lesson41/paycard.jpeg"
+        },
+        {
+            "id": "l41_10",
+            "chinese": "谢谢，下次见！",
+            "pinyin": "Xièxie, xià cì jiàn!",
+            "english": "Thanks, see you next time!",
+            "image": "/assets/lesson41/seeyou.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson41/dontwant.jpeg",
+            "choices": [
+                "Wǒ yào zhège.",
+                "Wǒ bú yào.",
+                "Wǒ fù xiànjīn.",
+                "Zhège hěn hǎokàn."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson41/tryon.jpeg",
+            "choices": [
+                "Yǒu méiyǒu bié de yánsè?",
+                "Wǒ kěyǐ shìshi ma?",
+                "Kěyǐ shuākǎ ma?",
+                "Zhège duōshao qián?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson41/howmuch.jpeg",
+            "choices": [
+                "Zhège hěn hǎokàn.",
+                "Tài guì le, kěyǐ piányi yīdiǎn ma?",
+                "Zhège duōshao qián?",
+                "Wǒ yào zhège."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson41/paycash.jpeg",
+            "choices": [
+                "Kěyǐ shuākǎ ma?",
+                "Wǒ fù xiànjīn.",
+                "Xièxie, xià cì jiàn!",
+                "Wǒ yào zhège."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson41/looksgood.jpeg",
+            "choices": [
+                "Zhège hěn hǎokàn.",
+                "Wǒ bú yào.",
+                "Wǒ fù xiànjīn.",
+                "Yǒu méiyǒu bié de yánsè?"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson41/cheaper.jpeg",
+            "choices": [
+                "I don’t like this.",
+                "It’s expensive, I will buy it.",
+                "Too expensive, can it be cheaper?",
+                "Can I pay by card?"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson41/othercolors.jpeg",
+            "choices": [
+                "Do you have another size?",
+                "Is this cheap?",
+                "Do you have other colors?",
+                "Can I try it on?"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson41/wantthis.jpeg",
+            "choices": [
+                "I want this one.",
+                "I don’t want it.",
+                "I like this.",
+                "This is expensive."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson41/paycard.jpeg",
+            "choices": [
+                "Can I pay cash?",
+                "Can I pay by card?",
+                "Do you accept money?",
+                "Is it cheap?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson41/seeyou.jpeg",
+            "choices": [
+                "Thank you very much.",
+                "Goodbye forever.",
+                "Thanks, see you next time!",
+                "I’ll come back tomorrow."
+            ],
+            "correct": 2
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "Zhège duōshao qián?"
+                },
+                {
+                    "id": "m2",
+                    "label": "Tài guì le, kěyǐ piányi yīdiǎn ma?"
+                },
+                {
+                    "id": "m3",
+                    "label": "Wǒ yào zhège."
+                },
+                {
+                    "id": "m4",
+                    "label": "Wǒ bú yào."
+                },
+                {
+                    "id": "m5",
+                    "label": "Yǒu méiyǒu bié de yánsè?"
+                },
+                {
+                    "id": "m6",
+                    "label": "Wǒ kěyǐ shìshi ma?"
+                },
+                {
+                    "id": "m7",
+                    "label": "Zhège hěn hǎokàn."
+                },
+                {
+                    "id": "m8",
+                    "label": "Wǒ fù xiànjīn."
+                },
+                {
+                    "id": "m9",
+                    "label": "Kěyǐ shuākǎ ma?"
+                },
+                {
+                    "id": "m10",
+                    "label": "Xièxie, xià cì jiàn!"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "How much is this?"
+                },
+                {
+                    "id": "r2",
+                    "label": "Too expensive, can it be cheaper?"
+                },
+                {
+                    "id": "r3",
+                    "label": "I want this one."
+                },
+                {
+                    "id": "r4",
+                    "label": "I don’t want it."
+                },
+                {
+                    "id": "r5",
+                    "label": "Do you have other colors?"
+                },
+                {
+                    "id": "r6",
+                    "label": "Can I try it on?"
+                },
+                {
+                    "id": "r7",
+                    "label": "This looks good."
+                },
+                {
+                    "id": "r8",
+                    "label": "I’ll pay cash."
+                },
+                {
+                    "id": "r9",
+                    "label": "Can I pay by card?"
+                },
+                {
+                    "id": "r10",
+                    "label": "Thanks, see you next time!"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "Zhège duōshao qián?",
+            "audioText": "Zhège duōshao qián?",
+            "choices": [
+                "Zhège duōshao qián?",
+                "Tài guì le, kěyǐ piányi yīdiǎn ma?",
+                "Wǒ yào zhège.",
+                "Wǒ bú yào."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "Tài guì le, kěyǐ piányi yīdiǎn ma?",
+            "audioText": "Tài guì le, kěyǐ piányi yīdiǎn ma?",
+            "choices": [
+                "Zhège duōshao qián?",
+                "Tài guì le, kěyǐ piányi yīdiǎn ma?",
+                "Wǒ yào zhège.",
+                "Wǒ bú yào."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "Wǒ yào zhège.",
+            "audioText": "Wǒ yào zhège.",
+            "choices": [
+                "Wǒ yào zhège.",
+                "Wǒ bú yào.",
+                "Zhège hěn hǎokàn.",
+                "Wǒ fù xiànjīn."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "Wǒ bú yào.",
+            "audioText": "Wǒ bú yào.",
+            "choices": [
+                "Wǒ yào zhège.",
+                "Wǒ bú yào.",
+                "Zhège hěn hǎokàn.",
+                "Wǒ fù xiànjīn."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "Yǒu méiyǒu bié de yánsè?",
+            "audioText": "Yǒu méiyǒu bié de yánsè?",
+            "choices": [
+                "Yǒu méiyǒu bié de yánsè?",
+                "Wǒ kěyǐ shìshi ma?",
+                "Zhège hěn hǎokàn.",
+                "Wǒ fù xiànjīn."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "Wǒ kěyǐ shìshi ma?",
+            "audioText": "Wǒ kěyǐ shìshi ma?",
+            "choices": [
+                "Wǒ kěyǐ shìshi ma?",
+                "Zhège hěn hǎokàn.",
+                "Wǒ fù xiànjīn.",
+                "Kěyǐ shuākǎ ma?"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a7",
+            "chinese": "Zhège hěn hǎokàn.",
+            "audioText": "Zhège hěn hǎokàn.",
+            "choices": [
+                "Zhège hěn hǎokàn.",
+                "Wǒ fù xiànjīn.",
+                "Kěyǐ shuākǎ ma?",
+                "Xièxie, xià cì jiàn!"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a8",
+            "chinese": "Wǒ fù xiànjīn.",
+            "audioText": "Wǒ fù xiànjīn.",
+            "choices": [
+                "Wǒ fù xiànjīn.",
+                "Kěyǐ shuākǎ ma?",
+                "Xièxie, xià cì jiàn!",
+                "Zhège hěn hǎokàn."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a9",
+            "chinese": "Kěyǐ shuākǎ ma?",
+            "audioText": "Kěyǐ shuākǎ ma?",
+            "choices": [
+                "Kěyǐ shuākǎ ma?",
+                "Xièxie, xià cì jiàn!",
+                "Wǒ fù xiànjīn.",
+                "Zhège hěn hǎokàn."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a10",
+            "chinese": "Xièxie, xià cì jiàn!",
+            "audioText": "Xièxie, xià cì jiàn!",
+            "choices": [
+                "Xièxie, xià cì jiàn!",
+                "Wǒ fù xiànjīn.",
+                "Kěyǐ shuākǎ ma?",
+                "Zhège hěn hǎokàn."
+            ],
+            "correct": 0
+        }
+    ]
+}

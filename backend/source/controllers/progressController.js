@@ -134,7 +134,7 @@ exports.updateProgress = async (req, res) => {
       return res.status(400).json({ success: false, message: "Invalid user ID" });
     }
 
-    if (!lessonId) {
+    if (lessonId === undefined || lessonId === null) {
       return res.status(400).json({ success: false, message: "Lesson ID is required" });
     }
 
@@ -144,10 +144,13 @@ exports.updateProgress = async (req, res) => {
     const oldScore = oldProgress ? oldProgress.score : 0;
     const newScore = parseInt(score) || 0;
     
+    // Fetch lesson details to check for Lesson 0
+    const currentLesson = await Lesson.findById(lessonId);
+
     // 2. Calculate improvement
-    // Only award XP if the new score is higher than the previous best
+    // Only award XP if the new score is higher than the previous best AND it's not Lesson 0
     let xpEarned = 0;
-    if (newScore > oldScore) {
+    if (newScore > oldScore && (!currentLesson || currentLesson.lesson_number !== 0)) {
        xpEarned = (newScore - oldScore) * 3;
     }
 
@@ -198,6 +201,12 @@ exports.updateProgress = async (req, res) => {
     }
 
     // --- ACHIEVEMENT CHECKS ---
+    
+    // Skip achievements for Lesson 0 (Introduction)
+    if (currentLesson && currentLesson.lesson_number === 0) {
+        return res.json({ success: true, data: { ...progress, newAchievements: [] } });
+    }
+
     const newStats = await UserStats.findByUserId(userIdInt);
     const awardedBadges = [];
 

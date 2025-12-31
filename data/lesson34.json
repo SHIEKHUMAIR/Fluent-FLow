@@ -1,0 +1,195 @@
+{
+  "learningSlides": [
+    {
+      "id": "l34_1",
+      "chinese": "上个星期",
+      "pinyin": "shàng ge xīngqī",
+      "english": "last week",
+      "image": "/assets/lesson34/lastweek.jpeg"
+    },
+    {
+      "id": "l34_2",
+      "chinese": "去年",
+      "pinyin": "qùnián",
+      "english": "last year",
+      "image": "/assets/lesson34/lastyear.jpeg"
+    },
+    {
+      "id": "l34_3",
+      "chinese": "以前",
+      "pinyin": "yǐqián",
+      "english": "before",
+      "image": "/assets/lesson34/before.jpeg"
+    },
+    {
+      "id": "l34_4",
+      "chinese": "刚才",
+      "pinyin": "gāngcái",
+      "english": "just now",
+      "image": "/assets/lesson34/justnow.jpeg"
+    },
+    {
+      "id": "l34_5",
+      "chinese": "已经",
+      "pinyin": "yǐjīng",
+      "english": "already",
+      "image": "/assets/lesson34/already.jpeg"
+    },
+    {
+      "id": "l34_6",
+      "chinese": "去了",
+      "pinyin": "qù le",
+      "english": "went",
+      "image": "/assets/lesson34/went.jpeg"
+    },
+    {
+      "id": "l34_7",
+      "chinese": "发生",
+      "pinyin": "fāshēng",
+      "english": "happen",
+      "image": "/assets/lesson34/happen.jpeg"
+    },
+    {
+      "id": "l34_8",
+      "chinese": "结束了",
+      "pinyin": "jiéshù le",
+      "english": "finished",
+      "image": "/assets/lesson34/finished.jpeg"
+    }
+  ],
+
+  "mcqQuestions": [
+    {
+      "id": "q1",
+      "image": "/assets/lesson34/lastweek.jpeg",
+      "choices": ["yǐqián", "gāngcái", "shàng ge xīngqī", "qùnián"],
+      "correct": 2
+    },
+    {
+      "id": "q2",
+      "image": "/assets/lesson34/lastyear.jpeg",
+      "choices": ["qù le", "qùnián", "yǐjīng", "fāshēng"],
+      "correct": 1
+    },
+    {
+      "id": "q3",
+      "image": "/assets/lesson34/before.jpeg",
+      "choices": ["gāngcái", "yǐqián", "jiéshù le", "qùnián"],
+      "correct": 1
+    },
+    {
+      "id": "q4",
+      "image": "/assets/lesson34/justnow.jpeg",
+      "choices": ["yǐjīng", "gāngcái", "qù le", "fāshēng"],
+      "correct": 1
+    },
+    {
+      "id": "q5",
+      "image": "/assets/lesson34/already.jpeg",
+      "choices": ["jiéshù le", "qùnián", "yǐjīng", "yǐqián"],
+      "correct": 2
+    },
+    {
+      "id": "q6",
+      "image": "/assets/lesson34/went.jpeg",
+      "choices": ["fāshēng", "qù le", "jiéshù le", "gāngcái"],
+      "correct": 1
+    },
+    {
+      "id": "q7",
+      "image": "/assets/lesson34/happen.jpeg",
+      "choices": ["jiéshù le", "fāshēng", "yǐjīng", "qù le"],
+      "correct": 1
+    },
+    {
+      "id": "q8",
+      "image": "/assets/lesson34/finished.jpeg",
+      "choices": ["qù le", "gāngcái", "jiéshù le", "yǐqián"],
+      "correct": 2
+    }
+  ],
+
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "m1", "label": "shàng ge xīngqī" },
+        { "id": "m2", "label": "qùnián" },
+        { "id": "m3", "label": "yǐqián" },
+        { "id": "m4", "label": "gāngcái" },
+        { "id": "m5", "label": "yǐjīng" },
+        { "id": "m6", "label": "qù le" },
+        { "id": "m7", "label": "fāshēng" },
+        { "id": "m8", "label": "jiéshù le" }
+      ],
+      "right": [
+        { "id": "r1", "label": "last week" },
+        { "id": "r2", "label": "last year" },
+        { "id": "r3", "label": "before" },
+        { "id": "r4", "label": "just now" },
+        { "id": "r5", "label": "already" },
+        { "id": "r6", "label": "went" },
+        { "id": "r7", "label": "happen" },
+        { "id": "r8", "label": "finished" }
+      ]
+    }
+  },
+
+  "audioQuiz": [
+    {
+      "id": "a1",
+      "chinese": "上个星期",
+      "audioText": "上个星期",
+      "choices": ["yǐqián", "shàng ge xīngqī", "qùnián", "gāngcái"],
+      "correct": 1
+    },
+    {
+      "id": "a2",
+      "chinese": "去年",
+      "audioText": "去年",
+      "choices": ["qù le", "yǐjīng", "qùnián", "fāshēng"],
+      "correct": 2
+    },
+    {
+      "id": "a3",
+      "chinese": "以前",
+      "audioText": "以前",
+      "choices": ["gāngcái", "yǐqián", "jiéshù le", "qùnián"],
+      "correct": 1
+    },
+    {
+      "id": "a4",
+      "chinese": "刚才",
+      "audioText": "刚才",
+      "choices": ["yǐjīng", "gāngcái", "qù le", "fāshēng"],
+      "correct": 1
+    },
+    {
+      "id": "a5",
+      "chinese": "已经",
+      "audioText": "已经",
+      "choices": ["jiéshù le", "yǐjīng", "qùnián", "yǐqián"],
+      "correct": 1
+    },
+    {
+      "id": "a6",
+      "chinese": "去了",
+      "audioText": "去了",
+      "choices": ["fāshēng", "qù le", "jiéshù le", "gāngcái"],
+      "correct": 1
+    },
+    {
+      "id": "a7",
+      "chinese": "发生",
+      "audioText": "发生",
+      "choices": ["jiéshù le", "fāshēng", "yǐjīng", "qù le"],
+      "correct": 1
+    },
+    {
+      "id": "a8",
+      "chinese": "结束了",
+      "audioText": "结束了",
+      "choices": ["qù le", "gāngcái", "jiéshù le", "yǐqián"],
+      "correct": 2
+    }
+  ]
+}

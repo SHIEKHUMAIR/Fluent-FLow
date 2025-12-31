@@ -1,0 +1,396 @@
+{
+    "learningSlides": [
+        {
+            "id": "l42_1",
+            "chinese": "请给我菜单。",
+            "pinyin": "Qǐng gěi wǒ càidān.",
+            "english": "Please give me the menu.",
+            "image": "/assets/lesson42/menu.jpeg"
+        },
+        {
+            "id": "l42_2",
+            "chinese": "你要吃什么？",
+            "pinyin": "Nǐ yào chī shénme?",
+            "english": "What do you want to eat?",
+            "image": "/assets/lesson42/whattoeat.jpeg"
+        },
+        {
+            "id": "l42_3",
+            "chinese": "我要一碗米饭。",
+            "pinyin": "Wǒ yào yī wǎn mǐfàn.",
+            "english": "I want a bowl of rice.",
+            "image": "/assets/lesson42/rice.jpeg"
+        },
+        {
+            "id": "l42_4",
+            "chinese": "请给我一杯水。",
+            "pinyin": "Qǐng gěi wǒ yī bēi shuǐ.",
+            "english": "Please give me a glass of water.",
+            "image": "/assets/lesson42/water.jpeg"
+        },
+        {
+            "id": "l42_5",
+            "chinese": "这个很好吃。",
+            "pinyin": "Zhège hěn hǎochī.",
+            "english": "This is delicious.",
+            "image": "/assets/lesson42/delicious.jpeg"
+        },
+        {
+            "id": "l42_6",
+            "chinese": "请快一点。",
+            "pinyin": "Qǐng kuài yīdiǎn.",
+            "english": "Please hurry a bit.",
+            "image": "/assets/lesson42/hurry.jpeg"
+        },
+        {
+            "id": "l42_7",
+            "chinese": "不要辣。",
+            "pinyin": "Bú yào là.",
+            "english": "Not spicy.",
+            "image": "/assets/lesson42/notspicy.jpeg"
+        },
+        {
+            "id": "l42_8",
+            "chinese": "买单，谢谢。",
+            "pinyin": "Mǎidān, xièxie.",
+            "english": "The bill, please.",
+            "image": "/assets/lesson42/bill.jpeg"
+        },
+        {
+            "id": "l42_9",
+            "chinese": "一共多少钱？",
+            "pinyin": "Yígòng duōshao qián?",
+            "english": "How much in total?",
+            "image": "/assets/lesson42/total.jpeg"
+        },
+        {
+            "id": "l42_10",
+            "chinese": "再见，慢走！",
+            "pinyin": "Zàijiàn, màn zǒu!",
+            "english": "Goodbye, take care!",
+            "image": "/assets/lesson42/goodbye.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson42/menu.jpeg",
+            "choices": [
+                "Qǐng kuài yīdiǎn.",
+                "Qǐng gěi wǒ càidān.",
+                "Mǎidān, xièxie.",
+                "Zhège hěn hǎochī."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson42/rice.jpeg",
+            "choices": [
+                "Qǐng gěi wǒ yī bēi shuǐ.",
+                "Wǒ yào yī wǎn mǐfàn.",
+                "Nǐ yào chī shénme?",
+                "Bú yào là."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson42/hurry.jpeg",
+            "choices": [
+                "Zhège hěn hǎochī.",
+                "Qǐng kuài yīdiǎn.",
+                "Zàijiàn, màn zǒu!",
+                "Yígòng duōshao qián?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson42/notspicy.jpeg",
+            "choices": [
+                "Bú yào là.",
+                "Qǐng gěi wǒ càidān.",
+                "Zhège hěn hǎochī.",
+                "Mǎidān, xièxie."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson42/bill.jpeg",
+            "choices": [
+                "Qǐng gěi wǒ yī bēi shuǐ.",
+                "Nǐ yào chī shénme?",
+                "Mǎidān, xièxie.",
+                "Zàijiàn, màn zǒu!"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson42/water.jpeg",
+            "choices": [
+                "Please give me a bowl of rice.",
+                "Please give me a glass of water.",
+                "Please hurry a bit.",
+                "Please give me the menu."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson42/delicious.jpeg",
+            "choices": [
+                "This is spicy.",
+                "This is cheap.",
+                "This is delicious.",
+                "This is hot."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson42/total.jpeg",
+            "choices": [
+                "How much is this dish?",
+                "How much in total?",
+                "Can I pay by card?",
+                "Is it expensive?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson42/whattoeat.jpeg",
+            "choices": [
+                "What do you want to drink?",
+                "What do you want to eat?",
+                "What do you like?",
+                "What did you order?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson42/goodbye.jpeg",
+            "choices": [
+                "Goodbye, take care!",
+                "Goodbye, come again!",
+                "Goodbye, see you tomorrow!",
+                "Goodbye, thank you!"
+            ],
+            "correct": 0
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "Qǐng gěi wǒ càidān."
+                },
+                {
+                    "id": "m2",
+                    "label": "Nǐ yào chī shénme?"
+                },
+                {
+                    "id": "m3",
+                    "label": "Wǒ yào yī wǎn mǐfàn."
+                },
+                {
+                    "id": "m4",
+                    "label": "Qǐng gěi wǒ yī bēi shuǐ."
+                },
+                {
+                    "id": "m5",
+                    "label": "Zhège hěn hǎochī."
+                },
+                {
+                    "id": "m6",
+                    "label": "Qǐng kuài yīdiǎn."
+                },
+                {
+                    "id": "m7",
+                    "label": "Bú yào là."
+                },
+                {
+                    "id": "m8",
+                    "label": "Mǎidān, xièxie."
+                },
+                {
+                    "id": "m9",
+                    "label": "Yígòng duōshao qián?"
+                },
+                {
+                    "id": "m10",
+                    "label": "Zàijiàn, màn zǒu!"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "Please give me the menu."
+                },
+                {
+                    "id": "r2",
+                    "label": "What do you want to eat?"
+                },
+                {
+                    "id": "r3",
+                    "label": "I want a bowl of rice."
+                },
+                {
+                    "id": "r4",
+                    "label": "Please give me a glass of water."
+                },
+                {
+                    "id": "r5",
+                    "label": "This is delicious."
+                },
+                {
+                    "id": "r6",
+                    "label": "Please hurry a bit."
+                },
+                {
+                    "id": "r7",
+                    "label": "Not spicy."
+                },
+                {
+                    "id": "r8",
+                    "label": "The bill, please."
+                },
+                {
+                    "id": "r9",
+                    "label": "How much in total?"
+                },
+                {
+                    "id": "r10",
+                    "label": "Goodbye, take care!"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "Qǐng gěi wǒ càidān.",
+            "audioText": "Qǐng gěi wǒ càidān.",
+            "choices": [
+                "Qǐng gěi wǒ càidān.",
+                "Nǐ yào chī shénme?",
+                "Wǒ yào yī wǎn mǐfàn.",
+                "Qǐng gěi wǒ yī bēi shuǐ."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "Nǐ yào chī shénme?",
+            "audioText": "Nǐ yào chī shénme?",
+            "choices": [
+                "Qǐng gěi wǒ càidān.",
+                "Nǐ yào chī shénme?",
+                "Wǒ yào yī wǎn mǐfàn.",
+                "Bú yào là."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "Wǒ yào yī wǎn mǐfàn.",
+            "audioText": "Wǒ yào yī wǎn mǐfàn.",
+            "choices": [
+                "Wǒ yào yī wǎn mǐfàn.",
+                "Qǐng gěi wǒ yī bēi shuǐ.",
+                "Zhège hěn hǎochī.",
+                "Bú yào là."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "Qǐng gěi wǒ yī bēi shuǐ.",
+            "audioText": "Qǐng gěi wǒ yī bēi shuǐ.",
+            "choices": [
+                "Wǒ yào yī wǎn mǐfàn.",
+                "Qǐng gěi wǒ yī bēi shuǐ.",
+                "Zhège hěn hǎochī.",
+                "Bú yào là."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "Zhège hěn hǎochī.",
+            "audioText": "Zhège hěn hǎochī.",
+            "choices": [
+                "Zhège hěn hǎochī.",
+                "Qǐng kuài yīdiǎn.",
+                "Bú yào là.",
+                "Mǎidān, xièxie."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "Qǐng kuài yīdiǎn.",
+            "audioText": "Qǐng kuài yīdiǎn.",
+            "choices": [
+                "Zhège hěn hǎochī.",
+                "Qǐng kuài yīdiǎn.",
+                "Bú yào là.",
+                "Mǎidān, xièxie."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a7",
+            "chinese": "Bú yào là.",
+            "audioText": "Bú yào là.",
+            "choices": [
+                "Zhège hěn hǎochī.",
+                "Qǐng kuài yīdiǎn.",
+                "Bú yào là.",
+                "Mǎidān, xièxie."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "a8",
+            "chinese": "Mǎidān, xièxie.",
+            "audioText": "Mǎidān, xièxie.",
+            "choices": [
+                "Zhège hěn hǎochī.",
+                "Qǐng kuài yīdiǎn.",
+                "Bú yào là.",
+                "Mǎidān, xièxie."
+            ],
+            "correct": 3
+        },
+        {
+            "id": "a9",
+            "chinese": "Yígòng duōshao qián?",
+            "audioText": "Yígòng duōshao qián?",
+            "choices": [
+                "Yígòng duōshao qián?",
+                "Nǐ yào chī shénme?",
+                "Wǒ yào yī wǎn mǐfàn.",
+                "Qǐng gěi wǒ yī bēi shuǐ."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a10",
+            "chinese": "Zàijiàn, màn zǒu!",
+            "audioText": "Zàijiàn, màn zǒu!",
+            "choices": [
+                "Zàijiàn, màn zǒu!",
+                "Mǎidān, xièxie.",
+                "Bú yào là.",
+                "Zhège hěn hǎochī."
+            ],
+            "correct": 0
+        }
+    ]
+}

@@ -1,0 +1,396 @@
+{
+    "learningSlides": [
+        {
+            "id": "l40_1",
+            "chinese": "你每天几点起床？",
+            "pinyin": "Nǐ měitiān jǐ diǎn qǐchuáng?",
+            "english": "What time do you get up?",
+            "image": "/assets/lesson40/getup_time.jpeg"
+        },
+        {
+            "id": "l40_2",
+            "chinese": "我早上七点起床。",
+            "pinyin": "Wǒ zǎoshang qī diǎn qǐchuáng.",
+            "english": "I get up at 7 AM.",
+            "image": "/assets/lesson40/getup_7am.jpeg"
+        },
+        {
+            "id": "l40_3",
+            "chinese": "我去学校。",
+            "pinyin": "Wǒ qù xuéxiào.",
+            "english": "I go to school.",
+            "image": "/assets/lesson40/gotoschool.jpeg"
+        },
+        {
+            "id": "l40_4",
+            "chinese": "我喜欢学习中文。",
+            "pinyin": "Wǒ xǐhuan xuéxí Zhōngwén.",
+            "english": "I like learning Chinese.",
+            "image": "/assets/lesson40/likestudy.jpeg"
+        },
+        {
+            "id": "l40_5",
+            "chinese": "中午我吃米饭。",
+            "pinyin": "Zhōngwǔ wǒ chī mǐfàn.",
+            "english": "I eat rice at noon.",
+            "image": "/assets/lesson40/eatrice.jpeg"
+        },
+        {
+            "id": "l40_6",
+            "chinese": "下午我工作。",
+            "pinyin": "Xiàwǔ wǒ gōngzuò.",
+            "english": "I work in the afternoon.",
+            "image": "/assets/lesson40/work_afternoon.jpeg"
+        },
+        {
+            "id": "l40_7",
+            "chinese": "晚上我看电视。",
+            "pinyin": "Wǎnshàng wǒ kàn diànshì.",
+            "english": "I watch TV at night.",
+            "image": "/assets/lesson40/watchtv.jpeg"
+        },
+        {
+            "id": "l40_8",
+            "chinese": "我很累。",
+            "pinyin": "Wǒ hěn lèi.",
+            "english": "I’m very tired.",
+            "image": "/assets/lesson40/verytired.jpeg"
+        },
+        {
+            "id": "l40_9",
+            "chinese": "我要睡觉了。",
+            "pinyin": "Wǒ yào shuìjiào le.",
+            "english": "I’m going to sleep.",
+            "image": "/assets/lesson40/gotosleep.jpeg"
+        },
+        {
+            "id": "l40_10",
+            "chinese": "明天见！",
+            "pinyin": "Míngtiān jiàn!",
+            "english": "See you tomorrow!",
+            "image": "/assets/lesson40/seeyou.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson40/verytired.jpeg",
+            "choices": [
+                "Wǒ yào shuìjiào le.",
+                "Wǒ hěn lèi.",
+                "Xiàwǔ wǒ gōngzuò.",
+                "Míngtiān jiàn!"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson40/watchtv.jpeg",
+            "choices": [
+                "Zhōngwǔ wǒ chī mǐfàn.",
+                "Wǒ qù xuéxiào.",
+                "Wǎnshàng wǒ kàn diànshì.",
+                "Wǒ hěn lèi."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson40/likestudy.jpeg",
+            "choices": [
+                "Wǒ zǎoshang qī diǎn qǐchuáng.",
+                "Wǒ xǐhuan xuéxí Zhōngwén.",
+                "Xiàwǔ wǒ gōngzuò.",
+                "Wǒ yào shuìjiào le."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson40/seeyou.jpeg",
+            "choices": [
+                "Wǒ hěn lèi.",
+                "Nǐ měitiān jǐ diǎn qǐchuáng?",
+                "Míngtiān jiàn!",
+                "Wǒ qù xuéxiào."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson40/getup_time.jpeg",
+            "choices": [
+                "Wǒ zǎoshang qī diǎn qǐchuáng.",
+                "Nǐ měitiān jǐ diǎn qǐchuáng?",
+                "Zhōngwǔ wǒ chī mǐfàn.",
+                "Wǒ yào shuìjiào le."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson40/gotoschool.jpeg",
+            "choices": [
+                "I go to work.",
+                "I go to school.",
+                "I study Chinese.",
+                "I like school."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson40/eatrice.jpeg",
+            "choices": [
+                "I eat rice at night.",
+                "I eat rice at noon.",
+                "I eat lunch tomorrow.",
+                "I like rice."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson40/work_afternoon.jpeg",
+            "choices": [
+                "I work in the morning.",
+                "I work at night.",
+                "I work in the afternoon.",
+                "I work tomorrow."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson40/gotosleep.jpeg",
+            "choices": [
+                "I am sleeping now.",
+                "I want to rest.",
+                "I am going to sleep.",
+                "I am tired."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson40/getup_7am.jpeg",
+            "choices": [
+                "I wake up early.",
+                "I get up at 7 AM.",
+                "I go to school at 7.",
+                "I eat breakfast at 7."
+            ],
+            "correct": 1
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "Nǐ měitiān jǐ diǎn qǐchuáng?"
+                },
+                {
+                    "id": "m2",
+                    "label": "Wǒ zǎoshang qī diǎn qǐchuáng."
+                },
+                {
+                    "id": "m3",
+                    "label": "Wǒ qù xuéxiào."
+                },
+                {
+                    "id": "m4",
+                    "label": "Wǒ xǐhuan xuéxí Zhōngwén."
+                },
+                {
+                    "id": "m5",
+                    "label": "Zhōngwǔ wǒ chī mǐfàn."
+                },
+                {
+                    "id": "m6",
+                    "label": "Xiàwǔ wǒ gōngzuò."
+                },
+                {
+                    "id": "m7",
+                    "label": "Wǎnshàng wǒ kàn diànshì."
+                },
+                {
+                    "id": "m8",
+                    "label": "Wǒ hěn lèi."
+                },
+                {
+                    "id": "m9",
+                    "label": "Wǒ yào shuìjiào le."
+                },
+                {
+                    "id": "m10",
+                    "label": "Míngtiān jiàn!"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "What time do you get up?"
+                },
+                {
+                    "id": "r2",
+                    "label": "I get up at 7 AM."
+                },
+                {
+                    "id": "r3",
+                    "label": "I go to school."
+                },
+                {
+                    "id": "r4",
+                    "label": "I like learning Chinese."
+                },
+                {
+                    "id": "r5",
+                    "label": "I eat rice at noon."
+                },
+                {
+                    "id": "r6",
+                    "label": "I work in the afternoon."
+                },
+                {
+                    "id": "r7",
+                    "label": "I watch TV at night."
+                },
+                {
+                    "id": "r8",
+                    "label": "I’m very tired."
+                },
+                {
+                    "id": "r9",
+                    "label": "I’m going to sleep."
+                },
+                {
+                    "id": "r10",
+                    "label": "See you tomorrow!"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "你每天几点起床？",
+            "audioText": "你每天几点起床？",
+            "choices": [
+                "Wǒ zǎoshang qī diǎn qǐchuáng.",
+                "Nǐ měitiān jǐ diǎn qǐchuáng?",
+                "Zhōngwǔ wǒ chī mǐfàn.",
+                "Wǒ hěn lèi."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a2",
+            "chinese": "我早上七点起床。",
+            "audioText": "我早上七点起床。",
+            "choices": [
+                "Wǒ zǎoshang qī diǎn qǐchuáng.",
+                "Wǒ qù xuéxiào.",
+                "Wǒ xǐhuan xuéxí Zhōngwén.",
+                "Xiàwǔ wǒ gōngzuò."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a3",
+            "chinese": "我去学校。",
+            "audioText": "我去学校。",
+            "choices": [
+                "Wǒ qù xuéxiào.",
+                "Wǒ xǐhuan xuéxí Zhōngwén.",
+                "Zhōngwǔ wǒ chī mǐfàn.",
+                "Wǎnshàng wǒ kàn diànshì."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "我喜欢学习中文。",
+            "audioText": "我喜欢学习中文。",
+            "choices": [
+                "Wǒ xǐhuan xuéxí Zhōngwén.",
+                "Zhōngwǔ wǒ chī mǐfàn.",
+                "Xiàwǔ wǒ gōngzuò.",
+                "Wǎnshàng wǒ kàn diànshì."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a5",
+            "chinese": "中午我吃米饭。",
+            "audioText": "中午我吃米饭。",
+            "choices": [
+                "Zhōngwǔ wǒ chī mǐfàn.",
+                "Xiàwǔ wǒ gōngzuò.",
+                "Wǎnshàng wǒ kàn diànshì.",
+                "Wǒ hěn lèi."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "下午我工作。",
+            "audioText": "下午我工作。",
+            "choices": [
+                "Xiàwǔ wǒ gōngzuò.",
+                "Wǎnshàng wǒ kàn diànshì.",
+                "Wǒ hěn lèi.",
+                "Wǒ yào shuìjiào le."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a7",
+            "chinese": "晚上我看电视。",
+            "audioText": "晚上我看电视。",
+            "choices": [
+                "Wǎnshàng wǒ kàn diànshì.",
+                "Wǒ hěn lèi.",
+                "Wǒ yào shuìjiào le.",
+                "Míngtiān jiàn!"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a8",
+            "chinese": "我很累。",
+            "audioText": "我很累。",
+            "choices": [
+                "Wǒ hěn lèi.",
+                "Wǒ yào shuìjiào le.",
+                "Míngtiān jiàn!",
+                "Wǒ zǎoshang qī diǎn qǐchuáng."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a9",
+            "chinese": "我要睡觉了。",
+            "audioText": "我要睡觉了。",
+            "choices": [
+                "Wǒ yào shuìjiào le.",
+                "Míngtiān jiàn!",
+                "Wǒ hěn lèi.",
+                "Xiàwǔ wǒ gōngzuò."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a10",
+            "chinese": "明天见！",
+            "audioText": "明天见！",
+            "choices": [
+                "Míngtiān jiàn!",
+                "Wǒ yào shuìjiào le.",
+                "Wǒ hěn lèi.",
+                "Wǎnshàng wǒ kàn diànshì."
+            ],
+            "correct": 0
+        }
+    ]
+}

@@ -1,8 +1,42 @@
 "use client";
 import useTextToSpeech from "../../hooks/useTextToSpeech";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { apiPost, apiGet, getUserId } from "../../../lib/api";
+import { API_ENDPOINTS } from "../../../lib/config";
+
 export default function Lesson0() {
   const { speak } = useTextToSpeech();
+  const router = useRouter();
+
+  const handleContinue = async () => {
+    try {
+      const userId = getUserId();
+      if (userId) {
+        // First fetch the correct Lesson ID (Unit 1, Lesson 0)
+        try {
+          const lessonRes = await apiGet(API_ENDPOINTS.LESSONS.BY_UNIT_AND_NUMBER(1, 0));
+          if (lessonRes.success && lessonRes.data && lessonRes.data.lesson) {
+            const lessonId = lessonRes.data.lesson.id;
+            await apiPost(API_ENDPOINTS.PROGRESS.UPDATE, {
+              userId,
+              lessonId: lessonId,
+              progressPercentage: 100,
+              completed: true,
+              score: 100,
+              timeSpent: 5
+            });
+          } else {
+            console.error("Could not find Lesson 0 details via API");
+          }
+        } catch (innerError) {
+          console.error("Error fetching Lesson 0 ID:", innerError);
+        }
+      }
+    } catch (error) {
+      console.error("Failed to update progress for Lesson 0:", error);
+    }
+    router.push("/modules/unit01/lesson1");
+  };
 
   const handlePlay = async (chineseText) => {
     if (!chineseText) return;
@@ -172,15 +206,12 @@ export default function Lesson0() {
 
         {/* --- Continue Learning Button --- */}
         <div className="text-center mt-10">
-          <Link href="../unit01/lesson1">
-
-            <button
-
-              className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-2xl shadow-md hover:scale-105 transition-all"
-            >
-              Continue Learning
-            </button>
-          </Link>
+          <button
+            onClick={handleContinue}
+            className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-2xl shadow-md hover:scale-105 transition-all"
+          >
+            Continue Learning
+          </button>
         </div>
       </div>
     </div>

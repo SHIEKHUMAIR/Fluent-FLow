@@ -1,0 +1,396 @@
+{
+    "learningSlides": [
+        {
+            "id": "l43_1",
+            "chinese": "请问，厕所在哪里？",
+            "pinyin": "Qǐngwèn, cèsuǒ zài nǎlǐ?",
+            "english": "Where is the toilet?",
+            "image": "/assets/lesson43/toilet.jpeg"
+        },
+        {
+            "id": "l43_2",
+            "chinese": "银行怎么走？",
+            "pinyin": "Yínháng zěnme zǒu?",
+            "english": "How do I get to the bank?",
+            "image": "/assets/lesson43/bank.jpeg"
+        },
+        {
+            "id": "l43_3",
+            "chinese": "往左走。",
+            "pinyin": "Wǎng zuǒ zǒu.",
+            "english": "Go left.",
+            "image": "/assets/lesson43/left.jpeg"
+        },
+        {
+            "id": "l43_4",
+            "chinese": "往右走。",
+            "pinyin": "Wǎng yòu zǒu.",
+            "english": "Go right.",
+            "image": "/assets/lesson43/right.jpeg"
+        },
+        {
+            "id": "l43_5",
+            "chinese": "一直走。",
+            "pinyin": "Yīzhí zǒu.",
+            "english": "Go straight.",
+            "image": "/assets/lesson43/straight.jpeg"
+        },
+        {
+            "id": "l43_6",
+            "chinese": "在前面。",
+            "pinyin": "Zài qiánmiàn.",
+            "english": "It’s ahead.",
+            "image": "/assets/lesson43/ahead.jpeg"
+        },
+        {
+            "id": "l43_7",
+            "chinese": "很近。",
+            "pinyin": "Hěn jìn.",
+            "english": "Very near.",
+            "image": "/assets/lesson43/near.jpeg"
+        },
+        {
+            "id": "l43_8",
+            "chinese": "很远。",
+            "pinyin": "Hěn yuǎn.",
+            "english": "Very far.",
+            "image": "/assets/lesson43/far.jpeg"
+        },
+        {
+            "id": "l43_9",
+            "chinese": "谢谢你的帮助。",
+            "pinyin": "Xièxie nǐ de bāngzhù.",
+            "english": "Thanks for your help.",
+            "image": "/assets/lesson43/thanks.jpeg"
+        },
+        {
+            "id": "l43_10",
+            "chinese": "不客气。",
+            "pinyin": "Bú kèqi.",
+            "english": "You’re welcome.",
+            "image": "/assets/lesson43/welcome.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson43/straight.jpeg",
+            "choices": [
+                "Wǎng yòu zǒu.",
+                "Yīzhí zǒu.",
+                "Zài qiánmiàn.",
+                "Hěn jìn."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson43/toilet.jpeg",
+            "choices": [
+                "Yínháng zěnme zǒu?",
+                "Qǐngwèn, cèsuǒ zài nǎlǐ?",
+                "Xièxie nǐ de bāngzhù.",
+                "Bú kèqi."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson43/right.jpeg",
+            "choices": [
+                "Wǎng zuǒ zǒu.",
+                "Wǎng yòu zǒu.",
+                "Yīzhí zǒu.",
+                "Zài qiánmiàn."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson43/far.jpeg",
+            "choices": [
+                "Hěn jìn.",
+                "Zài qiánmiàn.",
+                "Hěn yuǎn.",
+                "Bú kèqi."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson43/thanks.jpeg",
+            "choices": [
+                "Xièxie nǐ de bāngzhù.",
+                "Bú kèqi.",
+                "Zài qiánmiàn.",
+                "Hěn jìn."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson43/bank.jpeg",
+            "choices": [
+                "Where is the bank?",
+                "How do I get to the bank?",
+                "Is the bank near?",
+                "Go to the bank."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson43/left.jpeg",
+            "choices": [
+                "Go right.",
+                "Go straight.",
+                "Go left.",
+                "Turn around."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson43/ahead.jpeg",
+            "choices": [
+                "It’s far away.",
+                "It’s behind.",
+                "It’s ahead.",
+                "It’s nearby."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson43/near.jpeg",
+            "choices": [
+                "Very far.",
+                "Very near.",
+                "Straight ahead.",
+                "On the left."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson43/welcome.jpeg",
+            "choices": [
+                "Thank you.",
+                "Sorry.",
+                "You’re welcome.",
+                "Goodbye."
+            ],
+            "correct": 2
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "Qǐngwèn, cèsuǒ zài nǎlǐ?"
+                },
+                {
+                    "id": "m2",
+                    "label": "Yínháng zěnme zǒu?"
+                },
+                {
+                    "id": "m3",
+                    "label": "Wǎng zuǒ zǒu."
+                },
+                {
+                    "id": "m4",
+                    "label": "Wǎng yòu zǒu."
+                },
+                {
+                    "id": "m5",
+                    "label": "Yīzhí zǒu."
+                },
+                {
+                    "id": "m6",
+                    "label": "Zài qiánmiàn."
+                },
+                {
+                    "id": "m7",
+                    "label": "Hěn jìn."
+                },
+                {
+                    "id": "m8",
+                    "label": "Hěn yuǎn."
+                },
+                {
+                    "id": "m9",
+                    "label": "Xièxie nǐ de bāngzhù."
+                },
+                {
+                    "id": "m10",
+                    "label": "Bú kèqi."
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "Where is the toilet?"
+                },
+                {
+                    "id": "r2",
+                    "label": "How do I get to the bank?"
+                },
+                {
+                    "id": "r3",
+                    "label": "Go left."
+                },
+                {
+                    "id": "r4",
+                    "label": "Go right."
+                },
+                {
+                    "id": "r5",
+                    "label": "Go straight."
+                },
+                {
+                    "id": "r6",
+                    "label": "It’s ahead."
+                },
+                {
+                    "id": "r7",
+                    "label": "Very near."
+                },
+                {
+                    "id": "r8",
+                    "label": "Very far."
+                },
+                {
+                    "id": "r9",
+                    "label": "Thanks for your help."
+                },
+                {
+                    "id": "r10",
+                    "label": "You’re welcome."
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "Qǐngwèn, cèsuǒ zài nǎlǐ?",
+            "audioText": "Qǐngwèn, cèsuǒ zài nǎlǐ?",
+            "choices": [
+                "Qǐngwèn, cèsuǒ zài nǎlǐ?",
+                "Yínháng zěnme zǒu?",
+                "Wǎng zuǒ zǒu.",
+                "Wǎng yòu zǒu."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "Yínháng zěnme zǒu?",
+            "audioText": "Yínháng zěnme zǒu?",
+            "choices": [
+                "Qǐngwèn, cèsuǒ zài nǎlǐ?",
+                "Yínháng zěnme zǒu?",
+                "Yīzhí zǒu.",
+                "Zài qiánmiàn."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "Wǎng zuǒ zǒu.",
+            "audioText": "Wǎng zuǒ zǒu.",
+            "choices": [
+                "Wǎng zuǒ zǒu.",
+                "Wǎng yòu zǒu.",
+                "Yīzhí zǒu.",
+                "Zài qiánmiàn."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "Wǎng yòu zǒu.",
+            "audioText": "Wǎng yòu zǒu.",
+            "choices": [
+                "Wǎng zuǒ zǒu.",
+                "Wǎng yòu zǒu.",
+                "Yīzhí zǒu.",
+                "Zài qiánmiàn."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "Yīzhí zǒu.",
+            "audioText": "Yīzhí zǒu.",
+            "choices": [
+                "Wǎng zuǒ zǒu.",
+                "Wǎng yòu zǒu.",
+                "Yīzhí zǒu.",
+                "Zài qiánmiàn."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "a6",
+            "chinese": "Zài qiánmiàn.",
+            "audioText": "Zài qiánmiàn.",
+            "choices": [
+                "Hěn jìn.",
+                "Hěn yuǎn.",
+                "Zài qiánmiàn.",
+                "Xièxie nǐ de bāngzhù."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "a7",
+            "chinese": "Hěn jìn.",
+            "audioText": "Hěn jìn.",
+            "choices": [
+                "Hěn jìn.",
+                "Hěn yuǎn.",
+                "Zài qiánmiàn.",
+                "Bú kèqi."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a8",
+            "chinese": "Hěn yuǎn.",
+            "audioText": "Hěn yuǎn.",
+            "choices": [
+                "Hěn jìn.",
+                "Hěn yuǎn.",
+                "Zài qiánmiàn.",
+                "Bú kèqi."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a9",
+            "chinese": "Xièxie nǐ de bāngzhù.",
+            "audioText": "Xièxie nǐ de bāngzhù.",
+            "choices": [
+                "Bú kèqi.",
+                "Xièxie nǐ de bāngzhù.",
+                "Hěn jìn.",
+                "Hěn yuǎn."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a10",
+            "chinese": "Bú kèqi.",
+            "audioText": "Bú kèqi.",
+            "choices": [
+                "Bú kèqi.",
+                "Xièxie nǐ de bāngzhù.",
+                "Zài qiánmiàn.",
+                "Yīzhí zǒu."
+            ],
+            "correct": 0
+        }
+    ]
+}

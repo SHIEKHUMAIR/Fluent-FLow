@@ -1,0 +1,396 @@
+{
+    "learningSlides": [
+        {
+            "id": "l45_1",
+            "chinese": "救命！",
+            "pinyin": "Jiùmìng!",
+            "english": "Help!",
+            "image": "/assets/lesson45/help.jpeg"
+        },
+        {
+            "id": "l45_2",
+            "chinese": "请帮帮我！",
+            "pinyin": "Qǐng bāngbāng wǒ!",
+            "english": "Please help me!",
+            "image": "/assets/lesson45/please_help.jpeg"
+        },
+        {
+            "id": "l45_3",
+            "chinese": "我迷路了。",
+            "pinyin": "Wǒ mílù le.",
+            "english": "I’m lost.",
+            "image": "/assets/lesson45/lost.jpeg"
+        },
+        {
+            "id": "l45_4",
+            "chinese": "我的钱包丢了。",
+            "pinyin": "Wǒ de qiánbāo diū le.",
+            "english": "My wallet is lost.",
+            "image": "/assets/lesson45/wallet_lost.jpeg"
+        },
+        {
+            "id": "l45_5",
+            "chinese": "叫警察！",
+            "pinyin": "Jiào jǐngchá!",
+            "english": "Call the police!",
+            "image": "/assets/lesson45/police.jpeg"
+        },
+        {
+            "id": "l45_6",
+            "chinese": "叫救护车！",
+            "pinyin": "Jiào jiùhùchē!",
+            "english": "Call an ambulance!",
+            "image": "/assets/lesson45/ambulance.jpeg"
+        },
+        {
+            "id": "l45_7",
+            "chinese": "我不舒服。",
+            "pinyin": "Wǒ bú shūfu.",
+            "english": "I don’t feel well.",
+            "image": "/assets/lesson45/not_well.jpeg"
+        },
+        {
+            "id": "l45_8",
+            "chinese": "我要看医生。",
+            "pinyin": "Wǒ yào kàn yīshēng.",
+            "english": "I need to see a doctor.",
+            "image": "/assets/lesson45/see_doctor.jpeg"
+        },
+        {
+            "id": "l45_9",
+            "chinese": "没关系，我没事。",
+            "pinyin": "Méiguānxi, wǒ méishì.",
+            "english": "It’s okay, I’m fine.",
+            "image": "/assets/lesson45/its_okay.jpeg"
+        },
+        {
+            "id": "l45_10",
+            "chinese": "非常感谢。",
+            "pinyin": "Fēicháng gǎnxiè.",
+            "english": "Thank you very much.",
+            "image": "/assets/lesson45/thank_you.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson45/help.jpeg",
+            "choices": [
+                "Qǐng bāngbāng wǒ!",
+                "Jiùmìng!",
+                "Jiào jǐngchá!",
+                "Fēicháng gǎnxiè."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson45/lost.jpeg",
+            "choices": [
+                "Wǒ bú shūfu.",
+                "Wǒ mílù le.",
+                "Wǒ yào kàn yīshēng.",
+                "Méiguānxi, wǒ méishì."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson45/police.jpeg",
+            "choices": [
+                "Jiào jiùhùchē!",
+                "Jiào jǐngchá!",
+                "Qǐng bāngbāng wǒ!",
+                "Jiùmìng!"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson45/see_doctor.jpeg",
+            "choices": [
+                "Wǒ bú shūfu.",
+                "Wǒ yào kàn yīshēng.",
+                "Jiào jiùhùchē!",
+                "Wǒ de qiánbāo diū le."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson45/thank_you.jpeg",
+            "choices": [
+                "Méiguānxi, wǒ méishì.",
+                "Fēicháng gǎnxiè.",
+                "Qǐng bāngbāng wǒ!",
+                "Jiùmìng!"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson45/please_help.jpeg",
+            "choices": [
+                "Call the police!",
+                "Please help me!",
+                "Help!",
+                "Thank you very much."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson45/wallet_lost.jpeg",
+            "choices": [
+                "My phone is lost.",
+                "I lost my bag.",
+                "My wallet is lost.",
+                "I’m lost."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson45/ambulance.jpeg",
+            "choices": [
+                "Call the doctor!",
+                "Call the police!",
+                "Call an ambulance!",
+                "I need help."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson45/not_well.jpeg",
+            "choices": [
+                "I am tired.",
+                "I am injured.",
+                "I don’t feel well.",
+                "I am fine."
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson45/its_okay.jpeg",
+            "choices": [
+                "Please help me.",
+                "I’m not okay.",
+                "It’s okay, I’m fine.",
+                "Thank you very much."
+            ],
+            "correct": 2
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "Jiùmìng!"
+                },
+                {
+                    "id": "m2",
+                    "label": "Qǐng bāngbāng wǒ!"
+                },
+                {
+                    "id": "m3",
+                    "label": "Wǒ mílù le."
+                },
+                {
+                    "id": "m4",
+                    "label": "Wǒ de qiánbāo diū le."
+                },
+                {
+                    "id": "m5",
+                    "label": "Jiào jǐngchá!"
+                },
+                {
+                    "id": "m6",
+                    "label": "Jiào jiùhùchē!"
+                },
+                {
+                    "id": "m7",
+                    "label": "Wǒ bú shūfu."
+                },
+                {
+                    "id": "m8",
+                    "label": "Wǒ yào kàn yīshēng."
+                },
+                {
+                    "id": "m9",
+                    "label": "Méiguānxi, wǒ méishì."
+                },
+                {
+                    "id": "m10",
+                    "label": "Fēicháng gǎnxiè."
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "Help!"
+                },
+                {
+                    "id": "r2",
+                    "label": "Please help me!"
+                },
+                {
+                    "id": "r3",
+                    "label": "I’m lost."
+                },
+                {
+                    "id": "r4",
+                    "label": "My wallet is lost."
+                },
+                {
+                    "id": "r5",
+                    "label": "Call the police!"
+                },
+                {
+                    "id": "r6",
+                    "label": "Call an ambulance!"
+                },
+                {
+                    "id": "r7",
+                    "label": "I don’t feel well."
+                },
+                {
+                    "id": "r8",
+                    "label": "I need to see a doctor."
+                },
+                {
+                    "id": "r9",
+                    "label": "It’s okay, I’m fine."
+                },
+                {
+                    "id": "r10",
+                    "label": "Thank you very much."
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "Jiùmìng!",
+            "audioText": "Jiùmìng!",
+            "choices": [
+                "Qǐng bāngbāng wǒ!",
+                "Jiùmìng!",
+                "Jiào jǐngchá!",
+                "Fēicháng gǎnxiè."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a2",
+            "chinese": "Qǐng bāngbāng wǒ!",
+            "audioText": "Qǐng bāngbāng wǒ!",
+            "choices": [
+                "Jiùmìng!",
+                "Qǐng bāngbāng wǒ!",
+                "Wǒ bú shūfu.",
+                "Méiguānxi, wǒ méishì."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "Wǒ mílù le.",
+            "audioText": "Wǒ mílù le.",
+            "choices": [
+                "Wǒ mílù le.",
+                "Wǒ de qiánbāo diū le.",
+                "Jiào jǐngchá!",
+                "Jiào jiùhùchē!"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a4",
+            "chinese": "Wǒ de qiánbāo diū le.",
+            "audioText": "Wǒ de qiánbāo diū le.",
+            "choices": [
+                "Wǒ bú shūfu.",
+                "Wǒ de qiánbāo diū le.",
+                "Wǒ yào kàn yīshēng.",
+                "Fēicháng gǎnxiè."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "Jiào jǐngchá!",
+            "audioText": "Jiào jǐngchá!",
+            "choices": [
+                "Jiào jǐngchá!",
+                "Jiào jiùhùchē!",
+                "Qǐng bāngbāng wǒ!",
+                "Jiùmìng!"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a6",
+            "chinese": "Jiào jiùhùchē!",
+            "audioText": "Jiào jiùhùchē!",
+            "choices": [
+                "Jiào jiùhùchē!",
+                "Wǒ bú shūfu.",
+                "Wǒ yào kàn yīshēng.",
+                "Méiguānxi, wǒ méishì."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a7",
+            "chinese": "Wǒ bú shūfu.",
+            "audioText": "Wǒ bú shūfu.",
+            "choices": [
+                "Wǒ bú shūfu.",
+                "Wǒ yào kàn yīshēng.",
+                "Jiào jiùhùchē!",
+                "Wǒ de qiánbāo diū le."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a8",
+            "chinese": "Wǒ yào kàn yīshēng.",
+            "audioText": "Wǒ yào kàn yīshēng.",
+            "choices": [
+                "Wǒ bú shūfu.",
+                "Wǒ yào kàn yīshēng.",
+                "Fēicháng gǎnxiè.",
+                "Jiùmìng!"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a9",
+            "chinese": "Méiguānxi, wǒ méishì.",
+            "audioText": "Méiguānxi, wǒ méishì.",
+            "choices": [
+                "Méiguānxi, wǒ méishì.",
+                "Fēicháng gǎnxiè.",
+                "Wǒ bú shūfu.",
+                "Qǐng bāngbāng wǒ!"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a10",
+            "chinese": "Fēicháng gǎnxiè.",
+            "audioText": "Fēicháng gǎnxiè.",
+            "choices": [
+                "Fēicháng gǎnxiè.",
+                "Jiùmìng!",
+                "Wǒ mílù le.",
+                "Wǒ yào kàn yīshēng."
+            ],
+            "correct": 0
+        }
+    ]
+}

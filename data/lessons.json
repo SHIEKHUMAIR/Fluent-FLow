@@ -92,7 +92,7 @@
         },
         {
             "id": 10,
-            "category": "intermediate",
+            "category": "beginner",
             "title": "Lesson 10 - Colors & Descriptions",
             "desc": "Learn colors in Mandarin and how to describe objects.",
             "duration": "12 min",
@@ -101,7 +101,7 @@
         },
         {
             "id": 11,
-            "category": "intermediate",
+            "category": "beginner",
             "title": "Lesson 11 - Foods & Drinks",
             "desc": "Learn common foods, drinks, and eating-related phrases in Mandarin.",
             "duration": "15 min",
@@ -110,7 +110,7 @@
         },
         {
             "id": 12,
-            "category": "intermediate",
+            "category": "beginner",
             "title": "Lesson 12 - Weather & Nature",
             "desc": "Learn weather terms, nature words, and environmental phrases.",
             "duration": "13 min",
@@ -119,7 +119,7 @@
         },
         {
             "id": 13,
-            "category": "intermediate",
+            "category": "beginner",
             "title": "Lesson 13 - Daily Activities",
             "desc": "Learn daily routine verbs and expressions in Mandarin.",
             "duration": "14 min",
@@ -128,7 +128,7 @@
         },
         {
             "id": 14,
-            "category": "intermediate",
+            "category": "beginner",
             "title": "Lesson 14 - At the Market",
             "desc": "Learn shopping phrases, fruits, vegetables, and bargaining words.",
             "duration": "16 min",
@@ -137,7 +137,7 @@
         },
         {
             "id": 15,
-            "category": "intermediate",
+            "category": "beginner",
             "title": "Lesson 15 - Clothes & Shopping",
             "desc": "Learn clothing items, shopping phrases, and sizes in Mandarin.",
             "duration": "12 min",
@@ -146,7 +146,7 @@
         },
         {
             "id": 16,
-            "category": "intermediate",
+            "category": "beginner",
             "title": "Lesson 16 - Transport & Directions",
             "desc": "Learn transport vocabulary and giving or following directions.",
             "duration": "15 min",
@@ -155,7 +155,7 @@
         },
         {
             "id": 17,
-            "category": "intermediate",
+            "category": "beginner",
             "title": "Lesson 17 - Review & Speaking",
             "desc": "Review lessons and practice speaking with real-life projects.",
             "duration": "18 min",
@@ -305,6 +305,123 @@
             "duration": "18 min",
             "progress": 0,
             "path": "/modules/unit04/lesson33"
+        },
+        {
+            "id": 34,
+            "category": "intermediate",
+            "title": "Lesson 34 - At the Restaurant",
+            "desc": "Learn how to ask for the menu, order food and drinks, express taste preferences, and handle the bill in a restaurant.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit05/lesson34"
+        },
+        {
+            "id": 35,
+            "category": "intermediate",
+            "title": "Lesson 35 - Asking for Directions",
+            "desc": "Learn to ask for and give directions, understand location phrases, and express distance in Chinese.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit05/lesson35"
+        },
+        {
+            "id": 36,
+            "category": "intermediate",
+            "title": "Lesson 36 - Travel Sentences",
+            "desc": "Learn travel-related sentences for going to the airport or train station, asking about tickets, schedules, reservations, and taxi services.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit05/lesson36"
+        },
+        {
+            "id": 37,
+            "category": "intermediate",
+            "title": "Lesson 37 - Emergency Sentences",
+            "desc": "Learn how to ask for help, report lost items, call the police or ambulance, and express health issues or gratitude in emergencies.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit05/lesson37"
+        },
+        {
+            "id": 38,
+            "category": "intermediate",
+            "title": "Lesson 38 - Everyday Small Talk",
+            "desc": "Learn common small talk phrases for talking about the weather, food preferences, daily activities, and greeting for weekends, birthdays, and New Year.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit05/lesson38"
+        },
+        {
+            "id": 39,
+            "category": "intermediate",
+            "title": "Lesson 39",
+            "desc": "Intermediate lesson content from Unit 5.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit06/lesson39"
+        },
+        {
+            "id": 40,
+            "category": "intermediate",
+            "title": "Lesson 40",
+            "desc": "Intermediate lesson content from Unit 6.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit06/lesson40"
+        },
+        {
+            "id": 41,
+            "category": "intermediate",
+            "title": "Lesson 41",
+            "desc": "Intermediate lesson content from Unit 6.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit06/lesson41"
+        },
+        {
+            "id": 42,
+            "category": "intermediate",
+            "title": "Lesson 42",
+            "desc": "Intermediate lesson content from Unit 6.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit06/lesson42"
+        },
+        {
+            "id": 43,
+            "category": "intermediate",
+            "title": "Lesson 43 - Asking for Directions",
+            "desc": "Learn phrases to ask for toilets, banks, and other locations, understand instructions like left, right, straight, and express distance or thanks.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit06/lesson43"
+        },
+        {
+            "id": 44,
+            "category": "intermediate",
+            "title": "Lesson 44 - Travel Sentences",
+            "desc": "Learn to talk about going to airports, train stations, asking ticket prices, departure and arrival times, making reservations, requesting room keys and Wi-Fi, and calling taxis.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit06/lesson44"
+        },
+        {
+            "id": 45,
+            "category": "intermediate",
+            "title": "Lesson 45 - Emergency Sentences",
+            "desc": "Learn emergency phrases including asking for help, reporting lost wallets, calling police or ambulance, expressing illness, seeing a doctor, and reassuring others.",
+            "duration": "15 min",
+            "progress": 0,
+            "path": "/modules/unit06/lesson45"
+        },
+        {
+            "id": 46,
+            "category": "intermediate",
+            "title": "Lesson 46 - Everyday Small Talk",
+            "desc": "Learn small talk phrases to discuss weather, food preferences, destinations, daily routines, and greetings for weekends, birthdays, and New Year.",
+            "duration": "14 min",
+            "progress": 0,
+            "path": "/modules/unit06/lesson46"
         }
     ]
 }

@@ -1,0 +1,69 @@
+{
+  "learningSlides": [
+    { "id": "l39_1", "chinese": "你好，我叫李明。", "pinyin": "Nǐ hǎo, wǒ jiào Lǐ Míng.", "english": "Hello, my name is Li Ming.", "image": "/assets/lesson39/hello_name.jpeg" },
+    { "id": "l39_2", "chinese": "你好吗？", "pinyin": "Nǐ hǎo ma?", "english": "How are you?", "image": "/assets/lesson39/howareyou.jpeg" },
+    { "id": "l39_3", "chinese": "我很好，谢谢。", "pinyin": "Wǒ hěn hǎo, xièxie.", "english": "I’m fine, thank you.", "image": "/assets/lesson39/imfine.jpeg" },
+    { "id": "l39_4", "chinese": "请问，你叫什么名字？", "pinyin": "Qǐngwèn, nǐ jiào shénme míngzi?", "english": "What’s your name?", "image": "/assets/lesson39/whatsyourname.jpeg" },
+    { "id": "l39_5", "chinese": "认识你很高兴。", "pinyin": "Rènshi nǐ hěn gāoxìng.", "english": "Nice to meet you.", "image": "/assets/lesson39/nicetomeetyou.jpeg" },
+    { "id": "l39_6", "chinese": "你是哪国人？", "pinyin": "Nǐ shì nǎ guó rén?", "english": "Which country are you from?", "image": "/assets/lesson39/whichcountry.jpeg" },
+    { "id": "l39_7", "chinese": "我来自美国。", "pinyin": "Wǒ láizì Měiguó.", "english": "I’m from the U.S.", "image": "/assets/lesson39/fromusa.jpeg" },
+    { "id": "l39_8", "chinese": "你会说中文吗？", "pinyin": "Nǐ huì shuō Zhōngwén ma?", "english": "Can you speak Chinese?", "image": "/assets/lesson39/canspeakchinese.jpeg" },
+    { "id": "l39_9", "chinese": "我会说一点点。", "pinyin": "Wǒ huì shuō yì diǎndiǎn.", "english": "I can speak a little.", "image": "/assets/lesson39/canspeakalittle.jpeg" },
+    { "id": "l39_10", "chinese": "慢慢说，好吗？", "pinyin": "Mànmàn shuō, hǎo ma?", "english": "Please speak slowly, okay?", "image": "/assets/lesson39/speakslowly.jpeg" }
+  ],
+
+  "mcqQuestions": [
+    { "id": "q1", "image": "/assets/lesson39/howareyou.jpeg", "choices": ["Wǒ hěn hǎo, xièxie.", "Nǐ hǎo ma?", "Rènshi nǐ hěn gāoxìng.", "Nǐ shì nǎ guó rén?"], "correct": 1 },
+    { "id": "q2", "image": "/assets/lesson39/nicetomeetyou.jpeg", "choices": ["Mànmàn shuō, hǎo ma?", "Rènshi nǐ hěn gāoxìng.", "Wǒ láizì Měiguó.", "Nǐ huì shuō Zhōngwén ma?"], "correct": 1 },
+    { "id": "q3", "image": "/assets/lesson39/whatsyourname.jpeg", "choices": ["Qǐngwèn, nǐ jiào shénme míngzi?", "Nǐ hǎo ma?", "Wǒ hěn hǎo, xièxie.", "Nǐ shì nǎ guó rén?"], "correct": 0 },
+    { "id": "q4", "image": "/assets/lesson39/canspeakchinese.jpeg", "choices": ["Wǒ huì shuō yì diǎndiǎn.", "Nǐ huì shuō Zhōngwén ma?", "Mànmàn shuō, hǎo ma?", "Rènshi nǐ hěn gāoxìng."], "correct": 1 },
+    { "id": "q5", "image": "/assets/lesson39/speakslowly.jpeg", "choices": ["Wǒ láizì Měiguó.", "Nǐ hǎo ma?", "Mànmàn shuō, hǎo ma?", "Wǒ hěn hǎo, xièxie."], "correct": 2 },
+    { "id": "q6", "image": "/assets/lesson39/whichcountry.jpeg", "choices": ["What’s your name?", "Where are you from?", "How are you?", "Can you speak Chinese?"], "correct": 1 },
+    { "id": "q7", "image": "/assets/lesson39/imfine.jpeg", "choices": ["Nice to meet you.", "I’m fine, thank you.", "I’m from the U.S.", "Please speak slowly."], "correct": 1 },
+    { "id": "q8", "image": "/assets/lesson39/canspeakalittle.jpeg", "choices": ["I can speak a little.", "Can you speak Chinese?", "I’m learning Chinese.", "Please repeat."], "correct": 0 },
+    { "id": "q9", "image": "/assets/lesson39/fromusa.jpeg", "choices": ["I live in China.", "I like America.", "I’m from the U.S.", "I want to go to the U.S."], "correct": 2 },
+    { "id": "q10", "image": "/assets/lesson39/canspeakchinese.jpeg", "choices": ["Do you like Chinese food?", "Can you speak Chinese?", "Are you Chinese?", "What is Chinese?"], "correct": 1 }
+  ],
+
+  "matchingTasks": {
+    "review": {
+      "left": [
+        { "id": "m1", "label": "Nǐ hǎo, wǒ jiào Lǐ Míng." },
+        { "id": "m2", "label": "Nǐ hǎo ma?" },
+        { "id": "m3", "label": "Wǒ hěn hǎo, xièxie." },
+        { "id": "m4", "label": "Qǐngwèn, nǐ jiào shénme míngzi?" },
+        { "id": "m5", "label": "Rènshi nǐ hěn gāoxìng." },
+        { "id": "m6", "label": "Nǐ shì nǎ guó rén?" },
+        { "id": "m7", "label": "Wǒ láizì Měiguó." },
+        { "id": "m8", "label": "Nǐ huì shuō Zhōngwén ma?" },
+        { "id": "m9", "label": "Wǒ huì shuō yì diǎndiǎn." },
+        { "id": "m10", "label": "Mànmàn shuō, hǎo ma?" }
+      ],
+      "right": [
+        { "id": "r1", "label": "Hello, my name is Li Ming." },
+        { "id": "r2", "label": "How are you?" },
+        { "id": "r3", "label": "I’m fine, thank you." },
+        { "id": "r4", "label": "What’s your name?" },
+        { "id": "r5", "label": "Nice to meet you." },
+        { "id": "r6", "label": "Which country are you from?" },
+        { "id": "r7", "label": "I’m from the U.S." },
+        { "id": "r8", "label": "Can you speak Chinese?" },
+        { "id": "r9", "label": "I can speak a little." },
+        { "id": "r10", "label": "Please speak slowly, okay?" }
+      ]
+    }
+},
+
+  "audioQuiz": [
+    { "id": "a1", "chinese": "你好，我叫李明。", "audioText": "你好，我叫李明。", "choices": ["Nǐ hǎo ma?", "Nǐ hǎo, wǒ jiào Lǐ Míng.", "Wǒ hěn hǎo, xièxie.", "Rènshi nǐ hěn gāoxìng."], "correct": 1 },
+    { "id": "a2", "chinese": "你好吗？", "audioText": "你好吗？", "choices": ["Wǒ hěn hǎo, xièxie.", "Nǐ hǎo ma?", "Rènshi nǐ hěn gāoxìng.", "Nǐ shì nǎ guó rén?"], "correct": 1 },
+    { "id": "a3", "chinese": "我很好，谢谢。", "audioText": "我很好，谢谢。", "choices": ["Wǒ hěn hǎo, xièxie.", "Rènshi nǐ hěn gāoxìng.", "Wǒ láizì Měiguó.", "Mànmàn shuō, hǎo ma?"], "correct": 0 },
+    { "id": "a4", "chinese": "请问，你叫什么名字？", "audioText": "请问，你叫什么名字？", "choices": ["Qǐngwèn, nǐ jiào shénme míngzi?", "Nǐ hǎo ma?", "Wǒ hěn hǎo, xièxie.", "Nǐ shì nǎ guó rén?"], "correct": 0 },
+    { "id": "a5", "chinese": "认识你很高兴。", "audioText": "认识你很高兴。", "choices": ["Rènshi nǐ hěn gāoxìng.", "Mànmàn shuō, hǎo ma?", "Wǒ huì shuō yì diǎndiǎn.", "Nǐ huì shuō Zhōngwén ma?"], "correct": 0 },
+    { "id": "a6", "chinese": "你是哪国人？", "audioText": "你是哪国人？", "choices": ["What’s your name?", "Where are you from?", "How are you?", "Can you speak Chinese?"], "correct": 1 },
+    { "id": "a7", "chinese": "我来自美国。", "audioText": "我来自美国。", "choices": ["I live in China.", "I like America.", "I’m from the U.S.", "I want to go to the U.S."], "correct": 2 },
+    { "id": "a8", "chinese": "你会说中文吗？", "audioText": "你会说中文吗？", "choices": ["Do you like Chinese food?", "Can you speak Chinese?", "Are you Chinese?", "What is Chinese?"], "correct": 1 },
+    { "id": "a9", "chinese": "我会说一点点。", "audioText": "我会说一点点。", "choices": ["I can speak a little.", "Can you speak Chinese?", "I’m learning Chinese.", "Please repeat."], "correct": 0 },
+    { "id": "a10", "chinese": "慢慢说，好吗？", "audioText": "慢慢说，好吗？", "choices": ["Please speak slowly, okay?", "Nice to meet you.", "Can you speak Chinese?", "What’s your name?"], "correct": 0 }
+  ]
+}

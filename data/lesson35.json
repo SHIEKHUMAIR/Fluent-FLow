@@ -1,0 +1,282 @@
+{
+    "learningSlides": [
+        {
+            "id": "l35_1",
+            "chinese": "下个星期",
+            "pinyin": "xià ge xīngqī",
+            "english": "next week",
+            "image": "/assets/lesson35/nextweek.jpeg"
+        },
+        {
+            "id": "l35_2",
+            "chinese": "明年",
+            "pinyin": "míngnián",
+            "english": "next year",
+            "image": "/assets/lesson35/nextyear.jpeg"
+        },
+        {
+            "id": "l35_3",
+            "chinese": "将来",
+            "pinyin": "jiānglái",
+            "english": "future",
+            "image": "/assets/lesson35/future.jpeg"
+        },
+        {
+            "id": "l35_4",
+            "chinese": "准备",
+            "pinyin": "zhǔnbèi",
+            "english": "prepare",
+            "image": "/assets/lesson35/prepare.jpeg"
+        },
+        {
+            "id": "l35_5",
+            "chinese": "可能",
+            "pinyin": "kěnéng",
+            "english": "maybe",
+            "image": "/assets/lesson35/maybe.jpeg"
+        },
+        {
+            "id": "l35_6",
+            "chinese": "希望",
+            "pinyin": "xīwàng",
+            "english": "hope",
+            "image": "/assets/lesson35/hope.jpeg"
+        },
+        {
+            "id": "l35_7",
+            "chinese": "一定",
+            "pinyin": "yīdìng",
+            "english": "definitely",
+            "image": "/assets/lesson35/definitely.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson35/nextweek.jpeg",
+            "choices": [
+                "míngnián",
+                "xià ge xīngqī",
+                "jiānglái",
+                "yīdìng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson35/hope.jpeg",
+            "choices": [
+                "zhǔnbèi",
+                "xīwàng",
+                "kěnéng",
+                "jiānglái"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson35/maybe.jpeg",
+            "choices": [
+                "yīdìng",
+                "kěnéng",
+                "míngnián",
+                "xīwàng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson35/prepare.jpeg",
+            "choices": [
+                "jiānglái",
+                "kěnéng",
+                "zhǔnbèi",
+                "yīdìng"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson35/nextyear.jpeg",
+            "choices": [
+                "xià ge xīngqī",
+                "jiānglái",
+                "míngnián",
+                "yīdìng"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson35/future.jpeg",
+            "choices": [
+                "xīwàng",
+                "kěnéng",
+                "jiānglái",
+                "zhǔnbèi"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson35/definitely.jpeg",
+            "choices": [
+                "kěnéng",
+                "jiānglái",
+                "yīdìng",
+                "míngnián"
+            ],
+            "correct": 2
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "xià ge xīngqī"
+                },
+                {
+                    "id": "m2",
+                    "label": "míngnián"
+                },
+                {
+                    "id": "m3",
+                    "label": "jiānglái"
+                },
+                {
+                    "id": "m4",
+                    "label": "zhǔnbèi"
+                },
+                {
+                    "id": "m5",
+                    "label": "kěnéng"
+                },
+                {
+                    "id": "m6",
+                    "label": "xīwàng"
+                },
+                {
+                    "id": "m7",
+                    "label": "yīdìng"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "next week"
+                },
+                {
+                    "id": "r2",
+                    "label": "next year"
+                },
+                {
+                    "id": "r3",
+                    "label": "future"
+                },
+                {
+                    "id": "r4",
+                    "label": "prepare"
+                },
+                {
+                    "id": "r5",
+                    "label": "maybe"
+                },
+                {
+                    "id": "r6",
+                    "label": "hope"
+                },
+                {
+                    "id": "r7",
+                    "label": "definitely"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "下个星期",
+            "audioText": "下个星期",
+            "choices": [
+                "míngnián",
+                "xià ge xīngqī",
+                "jiānglái",
+                "yīdìng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a2",
+            "chinese": "明年",
+            "audioText": "明年",
+            "choices": [
+                "xià ge xīngqī",
+                "jiānglái",
+                "míngnián",
+                "yīdìng"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "a3",
+            "chinese": "将来",
+            "audioText": "将来",
+            "choices": [
+                "xīwàng",
+                "kěnéng",
+                "jiānglái",
+                "zhǔnbèi"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "a4",
+            "chinese": "准备",
+            "audioText": "准备",
+            "choices": [
+                "jiānglái",
+                "zhǔnbèi",
+                "kěnéng",
+                "yīdìng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "可能",
+            "audioText": "可能",
+            "choices": [
+                "yīdìng",
+                "kěnéng",
+                "míngnián",
+                "xīwàng"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a6",
+            "chinese": "希望",
+            "audioText": "希望",
+            "choices": [
+                "zhǔnbèi",
+                "xīwàng",
+                "kěnéng",
+                "jiānglái"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a7",
+            "chinese": "一定",
+            "audioText": "一定",
+            "choices": [
+                "kěnéng",
+                "jiānglái",
+                "yīdìng",
+                "míngnián"
+            ],
+            "correct": 2
+        }
+    ]
+}

@@ -1,0 +1,396 @@
+{
+    "learningSlides": [
+        {
+            "id": "l44_1",
+            "chinese": "我要去机场。",
+            "pinyin": "Wǒ yào qù jīchǎng.",
+            "english": "I want to go to the airport.",
+            "image": "/assets/lesson44/airport.jpeg"
+        },
+        {
+            "id": "l44_2",
+            "chinese": "火车站在哪里？",
+            "pinyin": "Huǒchē zhàn zài nǎlǐ?",
+            "english": "Where is the train station?",
+            "image": "/assets/lesson44/train_station.jpeg"
+        },
+        {
+            "id": "l44_3",
+            "chinese": "一张票多少钱？",
+            "pinyin": "Yī zhāng piào duōshao qián?",
+            "english": "How much is a ticket?",
+            "image": "/assets/lesson44/ticket.jpeg"
+        },
+        {
+            "id": "l44_4",
+            "chinese": "几点出发？",
+            "pinyin": "Jǐ diǎn chūfā?",
+            "english": "What time does it leave?",
+            "image": "/assets/lesson44/departure.jpeg"
+        },
+        {
+            "id": "l44_5",
+            "chinese": "几点到？",
+            "pinyin": "Jǐ diǎn dào?",
+            "english": "What time does it arrive?",
+            "image": "/assets/lesson44/arrival.jpeg"
+        },
+        {
+            "id": "l44_6",
+            "chinese": "我有预订。",
+            "pinyin": "Wǒ yǒu yùdìng.",
+            "english": "I have a reservation.",
+            "image": "/assets/lesson44/reservation.jpeg"
+        },
+        {
+            "id": "l44_7",
+            "chinese": "请给我房间钥匙。",
+            "pinyin": "Qǐng gěi wǒ fángjiān yàoshi.",
+            "english": "Please give me the room key.",
+            "image": "/assets/lesson44/room_key.jpeg"
+        },
+        {
+            "id": "l44_8",
+            "chinese": "有没有无线网？",
+            "pinyin": "Yǒu méiyǒu wúxiànwǎng?",
+            "english": "Do you have Wi-Fi?",
+            "image": "/assets/lesson44/wifi.jpeg"
+        },
+        {
+            "id": "l44_9",
+            "chinese": "可以帮我叫出租车吗？",
+            "pinyin": "Kěyǐ bāng wǒ jiào chūzūchē ma?",
+            "english": "Can you call me a taxi?",
+            "image": "/assets/lesson44/taxi.jpeg"
+        },
+        {
+            "id": "l44_10",
+            "chinese": "祝你旅途愉快。",
+            "pinyin": "Zhù nǐ lǚtú yúkuài.",
+            "english": "Have a good trip.",
+            "image": "/assets/lesson44/have_trip.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson44/train_station.jpeg",
+            "choices": [
+                "Yī zhāng piào duōshao qián?",
+                "Huǒchē zhàn zài nǎlǐ?",
+                "Jǐ diǎn chūfā?",
+                "Yǒu méiyǒu wúxiànwǎng?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson44/airport.jpeg",
+            "choices": [
+                "Wǒ yǒu yùdìng.",
+                "Wǒ yào qù jīchǎng.",
+                "Zhù nǐ lǚtú yúkuài.",
+                "Kěyǐ bāng wǒ jiào chūzūchē ma?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson44/wifi.jpeg",
+            "choices": [
+                "Yǒu méiyǒu wúxiànwǎng?",
+                "Jǐ diǎn dào?",
+                "Qǐng gěi wǒ fángjiān yàoshi.",
+                "Jǐ diǎn chūfā?"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson44/reservation.jpeg",
+            "choices": [
+                "Kěyǐ bāng wǒ jiào chūzūchē ma?",
+                "Wǒ yǒu yùdìng.",
+                "Yī zhāng piào duōshao qián?",
+                "Zhù nǐ lǚtú yúkuài."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson44/taxi.jpeg",
+            "choices": [
+                "Jǐ diǎn chūfā?",
+                "Qǐng gěi wǒ fángjiān yàoshi.",
+                "Kěyǐ bāng wǒ jiào chūzūchē ma?",
+                "Huǒchē zhàn zài nǎlǐ?"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson44/ticket.jpeg",
+            "choices": [
+                "How much is the ticket in total?",
+                "How much is one ticket?",
+                "Where can I buy a ticket?",
+                "Do you have a ticket?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson44/departure.jpeg",
+            "choices": [
+                "What time does it arrive?",
+                "What time does it leave?",
+                "How long does it take?",
+                "Where does it go?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson44/arrival.jpeg",
+            "choices": [
+                "What time does it arrive?",
+                "What time does it leave?",
+                "Is it on time?",
+                "Where is it now?"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson44/room_key.jpeg",
+            "choices": [
+                "Please show me the room.",
+                "Please give me the room key.",
+                "Please clean the room.",
+                "Please reserve a room."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson44/have_trip.jpeg",
+            "choices": [
+                "Safe travels.",
+                "Have a good trip.",
+                "See you next time.",
+                "Welcome back."
+            ],
+            "correct": 1
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "Wǒ yào qù jīchǎng."
+                },
+                {
+                    "id": "m2",
+                    "label": "Huǒchē zhàn zài nǎlǐ?"
+                },
+                {
+                    "id": "m3",
+                    "label": "Yī zhāng piào duōshao qián?"
+                },
+                {
+                    "id": "m4",
+                    "label": "Jǐ diǎn chūfā?"
+                },
+                {
+                    "id": "m5",
+                    "label": "Jǐ diǎn dào?"
+                },
+                {
+                    "id": "m6",
+                    "label": "Wǒ yǒu yùdìng."
+                },
+                {
+                    "id": "m7",
+                    "label": "Qǐng gěi wǒ fángjiān yàoshi."
+                },
+                {
+                    "id": "m8",
+                    "label": "Yǒu méiyǒu wúxiànwǎng?"
+                },
+                {
+                    "id": "m9",
+                    "label": "Kěyǐ bāng wǒ jiào chūzūchē ma?"
+                },
+                {
+                    "id": "m10",
+                    "label": "Zhù nǐ lǚtú yúkuài."
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "I want to go to the airport."
+                },
+                {
+                    "id": "r2",
+                    "label": "Where is the train station?"
+                },
+                {
+                    "id": "r3",
+                    "label": "How much is a ticket?"
+                },
+                {
+                    "id": "r4",
+                    "label": "What time does it leave?"
+                },
+                {
+                    "id": "r5",
+                    "label": "What time does it arrive?"
+                },
+                {
+                    "id": "r6",
+                    "label": "I have a reservation."
+                },
+                {
+                    "id": "r7",
+                    "label": "Please give me the room key."
+                },
+                {
+                    "id": "r8",
+                    "label": "Do you have Wi-Fi?"
+                },
+                {
+                    "id": "r9",
+                    "label": "Can you call me a taxi?"
+                },
+                {
+                    "id": "r10",
+                    "label": "Have a good trip."
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "Wǒ yào qù jīchǎng.",
+            "audioText": "Wǒ yào qù jīchǎng.",
+            "choices": [
+                "Wǒ yào qù jīchǎng.",
+                "Huǒchē zhàn zài nǎlǐ?",
+                "Yī zhāng piào duōshao qián?",
+                "Jǐ diǎn chūfā?"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a2",
+            "chinese": "Huǒchē zhàn zài nǎlǐ?",
+            "audioText": "Huǒchē zhàn zài nǎlǐ?",
+            "choices": [
+                "Wǒ yào qù jīchǎng.",
+                "Huǒchē zhàn zài nǎlǐ?",
+                "Jǐ diǎn dào?",
+                "Wǒ yǒu yùdìng."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "Yī zhāng piào duōshao qián?",
+            "audioText": "Yī zhāng piào duōshao qián?",
+            "choices": [
+                "Jǐ diǎn chūfā?",
+                "Yī zhāng piào duōshao qián?",
+                "Zhù nǐ lǚtú yúkuài.",
+                "Kěyǐ bāng wǒ jiào chūzūchē ma?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a4",
+            "chinese": "Jǐ diǎn chūfā?",
+            "audioText": "Jǐ diǎn chūfā?",
+            "choices": [
+                "Jǐ diǎn chūfā?",
+                "Jǐ diǎn dào?",
+                "Wǒ yǒu yùdìng.",
+                "Qǐng gěi wǒ fángjiān yàoshi."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a5",
+            "chinese": "Jǐ diǎn dào?",
+            "audioText": "Jǐ diǎn dào?",
+            "choices": [
+                "Jǐ diǎn chūfā?",
+                "Jǐ diǎn dào?",
+                "Yǒu méiyǒu wúxiànwǎng?",
+                "Zhù nǐ lǚtú yúkuài."
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a6",
+            "chinese": "Wǒ yǒu yùdìng.",
+            "audioText": "Wǒ yǒu yùdìng.",
+            "choices": [
+                "Wǒ yǒu yùdìng.",
+                "Qǐng gěi wǒ fángjiān yàoshi.",
+                "Kěyǐ bāng wǒ jiào chūzūchē ma?",
+                "Yǒu méiyǒu wúxiànwǎng?"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a7",
+            "chinese": "Qǐng gěi wǒ fángjiān yàoshi.",
+            "audioText": "Qǐng gěi wǒ fángjiān yàoshi.",
+            "choices": [
+                "Wǒ yǒu yùdìng.",
+                "Qǐng gěi wǒ fángjiān yàoshi.",
+                "Zhù nǐ lǚtú yúkuài.",
+                "Huǒchē zhàn zài nǎlǐ?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a8",
+            "chinese": "Yǒu méiyǒu wúxiànwǎng?",
+            "audioText": "Yǒu méiyǒu wúxiànwǎng?",
+            "choices": [
+                "Yǒu méiyǒu wúxiànwǎng?",
+                "Kěyǐ bāng wǒ jiào chūzūchē ma?",
+                "Jǐ diǎn chūfā?",
+                "Wǒ yǒu yùdìng."
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a9",
+            "chinese": "Kěyǐ bāng wǒ jiào chūzūchē ma?",
+            "audioText": "Kěyǐ bāng wǒ jiào chūzūchē ma?",
+            "choices": [
+                "Zhù nǐ lǚtú yúkuài.",
+                "Kěyǐ bāng wǒ jiào chūzūchē ma?",
+                "Wǒ yào qù jīchǎng.",
+                "Huǒchē zhàn zài nǎlǐ?"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a10",
+            "chinese": "Zhù nǐ lǚtú yúkuài.",
+            "audioText": "Zhù nǐ lǚtú yúkuài.",
+            "choices": [
+                "Have a good trip.",
+                "Please give me the room key.",
+                "Do you have Wi-Fi?",
+                "Where is the train station?"
+            ],
+            "correct": 0
+        }
+    ]
+}

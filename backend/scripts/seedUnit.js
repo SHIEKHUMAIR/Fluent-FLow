@@ -87,9 +87,9 @@ async function seedUnit(unitNumber) {
     } else if (unitNumber === 4) {
       lessonRange = { start: 26, end: 33 };
     } else if (unitNumber === 5) {
-      lessonRange = { start: 34, end: 41 };
+      lessonRange = { start: 34, end: 38 };
     } else if (unitNumber === 6) {
-      lessonRange = { start: 42, end: 49 };
+      lessonRange = { start: 39, end: 46 };
     } else {
       console.error(`❌ Invalid unit number: ${unitNumber}`);
       process.exit(1);
@@ -120,8 +120,16 @@ async function seedUnit(unitNumber) {
         });
         console.log(`  ✅ Created lesson ${lessonMeta.id}`);
       } else {
-        console.log(`  ⏭️  Lesson ${lessonMeta.id} already exists, skipping...`);
-        continue;
+        // Update lesson
+        lesson = await Lesson.update(lesson.id, {
+          category: lessonMeta.category,
+          title: lessonMeta.title,
+          description: lessonMeta.desc,
+          duration: lessonMeta.duration,
+          path: lessonMeta.path,
+          orderIndex: lessonMeta.id
+        });
+        console.log(`  🔄 Updated lesson ${lessonMeta.id}`);
       }
 
       // Load lesson JSON file

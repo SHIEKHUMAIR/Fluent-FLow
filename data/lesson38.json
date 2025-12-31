@@ -1,0 +1,320 @@
+{
+    "learningSlides": [
+        {
+            "id": "l38_1",
+            "chinese": "讲",
+            "pinyin": "jiǎng",
+            "english": "explain",
+            "image": "/assets/lesson38/explain.jpg"
+        },
+        {
+            "id": "l38_2",
+            "chinese": "听",
+            "pinyin": "tīng",
+            "english": "listen",
+            "image": "/assets/lesson38/listen.jpg"
+        },
+        {
+            "id": "l38_3",
+            "chinese": "记得",
+            "pinyin": "jìde",
+            "english": "remember",
+            "image": "/assets/lesson38/remember.jpg"
+        },
+        {
+            "id": "l38_4",
+            "chinese": "开始",
+            "pinyin": "kāishǐ",
+            "english": "start",
+            "image": "/assets/lesson38/start.jpg"
+        },
+        {
+            "id": "l38_5",
+            "chinese": "结束",
+            "pinyin": "jiéshù",
+            "english": "finish",
+            "image": "/assets/lesson38/finish.jpg"
+        },
+        {
+            "id": "l38_6",
+            "chinese": "练习",
+            "pinyin": "liànxí",
+            "english": "practice",
+            "image": "/assets/lesson38/practice.jpg"
+        },
+        {
+            "id": "l38_7",
+            "chinese": "复习",
+            "pinyin": "fùxí",
+            "english": "review",
+            "image": "/assets/lesson38/review.jpg"
+        },
+        {
+            "id": "l38_8",
+            "chinese": "提高",
+            "pinyin": "tígāo",
+            "english": "improve",
+            "image": "/assets/lesson38/improve.jpg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson38/explain.jpg",
+            "choices": [
+                "tīng",
+                "jiǎng",
+                "kāishǐ",
+                "tígāo"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson38/remember.jpg",
+            "choices": [
+                "fùxí",
+                "jìde",
+                "liànxí",
+                "jiéshù"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson38/start.jpg",
+            "choices": [
+                "jiéshù",
+                "kāishǐ",
+                "tīng",
+                "tígāo"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson38/practice.jpg",
+            "choices": [
+                "fùxí",
+                "jiǎng",
+                "liànxí",
+                "tīng"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson38/finish.jpg",
+            "choices": [
+                "start",
+                "finish",
+                "review",
+                "improve"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson38/listen.jpg",
+            "choices": [
+                "speak",
+                "explain",
+                "listen",
+                "remember"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson38/review.jpg",
+            "choices": [
+                "practice",
+                "improve",
+                "review",
+                "start"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson38/improve.jpg",
+            "choices": [
+                "remember",
+                "improve",
+                "finish",
+                "practice"
+            ],
+            "correct": 1
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "jiǎng"
+                },
+                {
+                    "id": "m2",
+                    "label": "tīng"
+                },
+                {
+                    "id": "m3",
+                    "label": "jìde"
+                },
+                {
+                    "id": "m4",
+                    "label": "kāishǐ"
+                },
+                {
+                    "id": "m5",
+                    "label": "jiéshù"
+                },
+                {
+                    "id": "m6",
+                    "label": "liànxí"
+                },
+                {
+                    "id": "m7",
+                    "label": "fùxí"
+                },
+                {
+                    "id": "m8",
+                    "label": "tígāo"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "explain"
+                },
+                {
+                    "id": "r2",
+                    "label": "listen"
+                },
+                {
+                    "id": "r3",
+                    "label": "remember"
+                },
+                {
+                    "id": "r4",
+                    "label": "start"
+                },
+                {
+                    "id": "r5",
+                    "label": "finish"
+                },
+                {
+                    "id": "r6",
+                    "label": "practice"
+                },
+                {
+                    "id": "r7",
+                    "label": "review"
+                },
+                {
+                    "id": "r8",
+                    "label": "improve"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "讲",
+            "audioText": "讲",
+            "choices": [
+                "tīng",
+                "jiǎng",
+                "kāishǐ",
+                "tígāo"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a2",
+            "chinese": "听",
+            "audioText": "听",
+            "choices": [
+                "fùxí",
+                "tīng",
+                "liànxí",
+                "jiéshù"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "记得",
+            "audioText": "记得",
+            "choices": [
+                "fùxí",
+                "jìde",
+                "liànxí",
+                "jiéshù"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a4",
+            "chinese": "开始",
+            "audioText": "开始",
+            "choices": [
+                "jiéshù",
+                "kāishǐ",
+                "tīng",
+                "tígāo"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a5",
+            "chinese": "结束",
+            "audioText": "结束",
+            "choices": [
+                "start",
+                "finish",
+                "review",
+                "improve"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a6",
+            "chinese": "练习",
+            "audioText": "练习",
+            "choices": [
+                "fùxí",
+                "jiǎng",
+                "liànxí",
+                "tīng"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "a7",
+            "chinese": "复习",
+            "audioText": "复习",
+            "choices": [
+                "practice",
+                "improve",
+                "review",
+                "start"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "a8",
+            "chinese": "提高",
+            "audioText": "提高",
+            "choices": [
+                "remember",
+                "improve",
+                "finish",
+                "practice"
+            ],
+            "correct": 1
+        }
+    ]
+}

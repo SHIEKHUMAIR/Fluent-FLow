@@ -1,0 +1,460 @@
+{
+    "learningSlides": [
+        {
+            "id": "l36_1",
+            "chinese": "因为",
+            "pinyin": "yīnwèi",
+            "english": "because",
+            "image": "/assets/lesson36/because.jpeg"
+        },
+        {
+            "id": "l36_2",
+            "chinese": "所以",
+            "pinyin": "suǒyǐ",
+            "english": "so",
+            "image": "/assets/lesson36/so.jpeg"
+        },
+        {
+            "id": "l36_3",
+            "chinese": "虽然",
+            "pinyin": "suīrán",
+            "english": "although",
+            "image": "/assets/lesson36/although.jpeg"
+        },
+        {
+            "id": "l36_4",
+            "chinese": "但是",
+            "pinyin": "dànshì",
+            "english": "but",
+            "image": "/assets/lesson36/but.jpeg"
+        },
+        {
+            "id": "l36_5",
+            "chinese": "如果",
+            "pinyin": "rúguǒ",
+            "english": "if",
+            "image": "/assets/lesson36/if.jpeg"
+        },
+        {
+            "id": "l36_6",
+            "chinese": "就",
+            "pinyin": "jiù",
+            "english": "then",
+            "image": "/assets/lesson36/then.jpeg"
+        },
+        {
+            "id": "l36_7",
+            "chinese": "可是",
+            "pinyin": "kěshì",
+            "english": "however",
+            "image": "/assets/lesson36/however.jpeg"
+        },
+        {
+            "id": "l36_8",
+            "chinese": "而且",
+            "pinyin": "érqiě",
+            "english": "moreover",
+            "image": "/assets/lesson36/moreover.jpeg"
+        },
+        {
+            "id": "l36_9",
+            "chinese": "不过",
+            "pinyin": "búguò",
+            "english": "yet",
+            "image": "/assets/lesson36/yet.jpeg"
+        },
+        {
+            "id": "l36_10",
+            "chinese": "还是",
+            "pinyin": "háishi",
+            "english": "or",
+            "image": "/assets/lesson36/or.jpeg"
+        },
+        {
+            "id": "l36_11",
+            "chinese": "而",
+            "pinyin": "ér",
+            "english": "contrast / but",
+            "image": "/assets/lesson36/contrast.jpeg"
+        },
+        {
+            "id": "l36_12",
+            "chinese": "因此",
+            "pinyin": "yīncǐ",
+            "english": "therefore",
+            "image": "/assets/lesson36/therefore.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson36/because.jpeg",
+            "choices": [
+                "kěshì",
+                "yīnwèi",
+                "yīncǐ",
+                "dànshì"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson36/but.jpeg",
+            "choices": [
+                "kěshì",
+                "yīnwèi",
+                "yīncǐ",
+                "dànshì"
+            ],
+            "correct": 3
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson36/therefore.jpeg",
+            "choices": [
+                "kěshì",
+                "yīnwèi",
+                "yīncǐ",
+                "dànshì"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson36/however.jpeg",
+            "choices": [
+                "kěshì",
+                "suǒyǐ",
+                "búguò",
+                "érqiě"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson36/so.jpeg",
+            "choices": [
+                "jiù",
+                "suǒyǐ",
+                "búguò",
+                "érqiě"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson36/although.jpeg",
+            "choices": [
+                "rúguǒ",
+                "suīrán",
+                "háishi",
+                "yīnwèi"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson36/if.jpeg",
+            "choices": [
+                "jiù",
+                "kěshì",
+                "rúguǒ",
+                "ér"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson36/moreover.jpeg",
+            "choices": [
+                "búguò",
+                "érqiě",
+                "suǒyǐ",
+                "yīncǐ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q9",
+            "image": "/assets/lesson36/or.jpeg",
+            "choices": [
+                "búguò",
+                "háishi",
+                "jiù",
+                "dànshì"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q10",
+            "image": "/assets/lesson36/then.jpeg",
+            "choices": [
+                "yīncǐ",
+                "jiù",
+                "kěshì",
+                "érqiě"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q11",
+            "image": "/assets/lesson36/yet.jpeg",
+            "choices": [
+                "háishi",
+                "búguò",
+                "suǒyǐ",
+                "suīrán"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q12",
+            "image": "/assets/lesson36/contrast.jpeg",
+            "choices": [
+                "yīnwèi",
+                "ér",
+                "yīncǐ",
+                "rúguǒ"
+            ],
+            "correct": 1
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "yīnwèi"
+                },
+                {
+                    "id": "m2",
+                    "label": "dànshì"
+                },
+                {
+                    "id": "m3",
+                    "label": "yīncǐ"
+                },
+                {
+                    "id": "m4",
+                    "label": "kěshì"
+                },
+                {
+                    "id": "m5",
+                    "label": "suǒyǐ"
+                },
+                {
+                    "id": "m6",
+                    "label": "suīrán"
+                },
+                {
+                    "id": "m7",
+                    "label": "rúguǒ"
+                },
+                {
+                    "id": "m8",
+                    "label": "érqiě"
+                },
+                {
+                    "id": "m9",
+                    "label": "búguò"
+                },
+                {
+                    "id": "m10",
+                    "label": "háishi"
+                },
+                {
+                    "id": "m11",
+                    "label": "ér"
+                },
+                {
+                    "id": "m12",
+                    "label": "jiù"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "because"
+                },
+                {
+                    "id": "r2",
+                    "label": "but"
+                },
+                {
+                    "id": "r3",
+                    "label": "therefore"
+                },
+                {
+                    "id": "r4",
+                    "label": "however"
+                },
+                {
+                    "id": "r5",
+                    "label": "so"
+                },
+                {
+                    "id": "r6",
+                    "label": "although"
+                },
+                {
+                    "id": "r7",
+                    "label": "if"
+                },
+                {
+                    "id": "r8",
+                    "label": "moreover"
+                },
+                {
+                    "id": "r9",
+                    "label": "yet"
+                },
+                {
+                    "id": "r10",
+                    "label": "or"
+                },
+                {
+                    "id": "r11",
+                    "label": "contrast / but"
+                },
+                {
+                    "id": "r12",
+                    "label": "then"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "因为",
+            "audioText": "因为",
+            "choices": [
+                "kěshì",
+                "yīnwèi",
+                "yīncǐ",
+                "dànshì"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a2",
+            "chinese": "所以",
+            "audioText": "所以",
+            "choices": [
+                "jiù",
+                "suǒyǐ",
+                "búguò",
+                "érqiě"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "虽然",
+            "audioText": "虽然",
+            "choices": [
+                "rúguǒ",
+                "suīrán",
+                "háishi",
+                "yīnwèi"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a4",
+            "chinese": "但是",
+            "audioText": "但是",
+            "choices": [
+                "kěshì",
+                "yīnwèi",
+                "yīncǐ",
+                "dànshì"
+            ],
+            "correct": 3
+        },
+        {
+            "id": "a5",
+            "chinese": "如果",
+            "audioText": "如果",
+            "choices": [
+                "jiù",
+                "kěshì",
+                "rúguǒ",
+                "ér"
+            ],
+            "correct": 2
+        },
+        {
+            "id": "a6",
+            "chinese": "而且",
+            "audioText": "而且",
+            "choices": [
+                "búguò",
+                "érqiě",
+                "suǒyǐ",
+                "yīncǐ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a7",
+            "chinese": "不过",
+            "audioText": "不过",
+            "choices": [
+                "háishi",
+                "búguò",
+                "suǒyǐ",
+                "suīrán"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a8",
+            "chinese": "还是",
+            "audioText": "还是",
+            "choices": [
+                "búguò",
+                "háishi",
+                "jiù",
+                "dànshì"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a9",
+            "chinese": "而",
+            "audioText": "而",
+            "choices": [
+                "yīnwèi",
+                "ér",
+                "yīncǐ",
+                "rúguǒ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a10",
+            "chinese": "就",
+            "audioText": "就",
+            "choices": [
+                "yīncǐ",
+                "jiù",
+                "kěshì",
+                "érqiě"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a11",
+            "chinese": "因此",
+            "audioText": "因此",
+            "choices": [
+                "kěshì",
+                "yīnwèi",
+                "yīncǐ",
+                "dànshì"
+            ],
+            "correct": 2
+        }
+    ]
+}

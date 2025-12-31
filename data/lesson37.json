@@ -1,0 +1,320 @@
+{
+    "learningSlides": [
+        {
+            "id": "l37_1",
+            "chinese": "要是",
+            "pinyin": "yàoshi",
+            "english": "if",
+            "image": "/assets/lesson37/if.jpeg"
+        },
+        {
+            "id": "l37_2",
+            "chinese": "除了",
+            "pinyin": "chúle",
+            "english": "besides",
+            "image": "/assets/lesson37/besides.jpeg"
+        },
+        {
+            "id": "l37_3",
+            "chinese": "以外",
+            "pinyin": "yǐwài",
+            "english": "apart from",
+            "image": "/assets/lesson37/apartfrom.jpeg"
+        },
+        {
+            "id": "l37_4",
+            "chinese": "否则",
+            "pinyin": "fǒuzé",
+            "english": "otherwise",
+            "image": "/assets/lesson37/otherwise.jpeg"
+        },
+        {
+            "id": "l37_5",
+            "chinese": "只要",
+            "pinyin": "zhǐyào",
+            "english": "as long as",
+            "image": "/assets/lesson37/aslongas.jpeg"
+        },
+        {
+            "id": "l37_6",
+            "chinese": "就可以",
+            "pinyin": "jiù kěyǐ",
+            "english": "then can",
+            "image": "/assets/lesson37/thencan.jpeg"
+        },
+        {
+            "id": "l37_7",
+            "chinese": "即使",
+            "pinyin": "jíshǐ",
+            "english": "even if",
+            "image": "/assets/lesson37/evenif.jpeg"
+        },
+        {
+            "id": "l37_8",
+            "chinese": "无论",
+            "pinyin": "wúlùn",
+            "english": "no matter",
+            "image": "/assets/lesson37/nomatter.jpeg"
+        }
+    ],
+    "mcqQuestions": [
+        {
+            "id": "q1",
+            "image": "/assets/lesson37/if.jpeg",
+            "choices": [
+                "jíshǐ",
+                "yàoshi",
+                "wúlùn",
+                "fǒuzé"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q2",
+            "image": "/assets/lesson37/besides.jpeg",
+            "choices": [
+                "yǐwài",
+                "chúle",
+                "zhǐyào",
+                "jiù kěyǐ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q3",
+            "image": "/assets/lesson37/otherwise.jpeg",
+            "choices": [
+                "fǒuzé",
+                "wúlùn",
+                "jíshǐ",
+                "yàoshi"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "q4",
+            "image": "/assets/lesson37/aslongas.jpeg",
+            "choices": [
+                "jiù kěyǐ",
+                "zhǐyào",
+                "yǐwài",
+                "chúle"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q5",
+            "image": "/assets/lesson37/apartfrom.jpeg",
+            "choices": [
+                "besides",
+                "apart from",
+                "no matter",
+                "even if"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q6",
+            "image": "/assets/lesson37/thencan.jpeg",
+            "choices": [
+                "as long as",
+                "then can",
+                "otherwise",
+                "if"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q7",
+            "image": "/assets/lesson37/evenif.jpeg",
+            "choices": [
+                "no matter",
+                "even if",
+                "apart from",
+                "besides"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "q8",
+            "image": "/assets/lesson37/nomatter.jpeg",
+            "choices": [
+                "even if",
+                "otherwise",
+                "no matter",
+                "if"
+            ],
+            "correct": 2
+        }
+    ],
+    "matchingTasks": {
+        "review": {
+            "left": [
+                {
+                    "id": "m1",
+                    "label": "yàoshi"
+                },
+                {
+                    "id": "m2",
+                    "label": "chúle"
+                },
+                {
+                    "id": "m3",
+                    "label": "yǐwài"
+                },
+                {
+                    "id": "m4",
+                    "label": "fǒuzé"
+                },
+                {
+                    "id": "m5",
+                    "label": "zhǐyào"
+                },
+                {
+                    "id": "m6",
+                    "label": "jiù kěyǐ"
+                },
+                {
+                    "id": "m7",
+                    "label": "jíshǐ"
+                },
+                {
+                    "id": "m8",
+                    "label": "wúlùn"
+                }
+            ],
+            "right": [
+                {
+                    "id": "r1",
+                    "label": "if"
+                },
+                {
+                    "id": "r2",
+                    "label": "besides"
+                },
+                {
+                    "id": "r3",
+                    "label": "apart from"
+                },
+                {
+                    "id": "r4",
+                    "label": "otherwise"
+                },
+                {
+                    "id": "r5",
+                    "label": "as long as"
+                },
+                {
+                    "id": "r6",
+                    "label": "then can"
+                },
+                {
+                    "id": "r7",
+                    "label": "even if"
+                },
+                {
+                    "id": "r8",
+                    "label": "no matter"
+                }
+            ]
+        }
+    },
+    "audioQuiz": [
+        {
+            "id": "a1",
+            "chinese": "要是",
+            "audioText": "要是",
+            "choices": [
+                "jíshǐ",
+                "yàoshi",
+                "wúlùn",
+                "fǒuzé"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a2",
+            "chinese": "除了",
+            "audioText": "除了",
+            "choices": [
+                "yǐwài",
+                "chúle",
+                "zhǐyào",
+                "jiù kěyǐ"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a3",
+            "chinese": "以外",
+            "audioText": "以外",
+            "choices": [
+                "besides",
+                "apart from",
+                "no matter",
+                "even if"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a4",
+            "chinese": "否则",
+            "audioText": "否则",
+            "choices": [
+                "fǒuzé",
+                "wúlùn",
+                "jíshǐ",
+                "yàoshi"
+            ],
+            "correct": 0
+        },
+        {
+            "id": "a5",
+            "chinese": "只要",
+            "audioText": "只要",
+            "choices": [
+                "jiù kěyǐ",
+                "zhǐyào",
+                "yǐwài",
+                "chúle"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a6",
+            "chinese": "就可以",
+            "audioText": "就可以",
+            "choices": [
+                "as long as",
+                "then can",
+                "otherwise",
+                "if"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a7",
+            "chinese": "即使",
+            "audioText": "即使",
+            "choices": [
+                "no matter",
+                "even if",
+                "apart from",
+                "besides"
+            ],
+            "correct": 1
+        },
+        {
+            "id": "a8",
+            "chinese": "无论",
+            "audioText": "无论",
+            "choices": [
+                "even if",
+                "otherwise",
+                "no matter",
+                "if"
+            ],
+            "correct": 2
+        }
+    ]
+}

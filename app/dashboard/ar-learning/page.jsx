@@ -8,10 +8,14 @@ const ARLearningPage = () => {
     const [permissionGranted, setPermissionGranted] = useState(false);
     const videoRef = useRef(null);
     const streamRef = useRef(null);
+    const containerRef = useRef(null);
     const [result, setResult] = useState(null);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [capturedImage, setCapturedImage] = useState(null);
     const [error, setError] = useState(null);
+
+    // Circle size controls the focus area (in pixels on screen)
+    const CIRCLE_SIZE = 500;
 
     const handleStartCamera = async () => {
         try {
@@ -34,16 +38,58 @@ const ARLearningPage = () => {
     };
 
     const captureImage = async () => {
-        if (!videoRef.current) return;
+        if (!videoRef.current || !containerRef.current) return;
 
         setIsAnalyzing(true);
         const video = videoRef.current;
+        const container = containerRef.current;
+
+        // Calculate crop coordinates
+        const videoW = video.videoWidth;
+        const videoH = video.videoHeight;
+        const containerW = container.clientWidth;
+        const containerH = container.clientHeight;
+
+        const videoAspect = videoW / videoH;
+        const containerAspect = containerW / containerH;
+
+        let scale;
+        // Object-fit: cover logic
+        if (containerAspect > videoAspect) {
+            // Container is wider than video (relatively) -> video is fitted by width, top/bottom cropped
+            // Actually if container is wider, we scale video up to match container width. 
+            // Height will be larger.
+            scale = containerW / videoW;
+        } else {
+            // Container is taller -> video fitted by height, sides cropped
+            scale = containerH / videoH;
+        }
+
+        // The circle is centered in the container.
+        // We want the corresponding region in the video source.
+        // Circle size on screen is CIRCLE_SIZE.
+        const regionSizeInSource = CIRCLE_SIZE / scale;
+
+        // Center of video source
+        const centerX = videoW / 2;
+        const centerY = videoH / 2;
+
+        const cropX = centerX - (regionSizeInSource / 2);
+        const cropY = centerY - (regionSizeInSource / 2);
+
         const canvas = document.createElement("canvas");
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
+        // We want the output to be square, matching the crop
+        canvas.width = regionSizeInSource;
+        canvas.height = regionSizeInSource;
 
         const ctx = canvas.getContext("2d");
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        // Draw only the cropped region
+        ctx.drawImage(
+            video,
+            cropX, cropY, regionSizeInSource, regionSizeInSource, // Source x, y, w, h
+            0, 0, canvas.width, canvas.height                 // Dest x, y, w, h
+        );
 
         // Set captured image for display
         const imageUrl = canvas.toDataURL("image/jpeg");
@@ -130,16 +176,20 @@ const ARLearningPage = () => {
 
 
     return (
-        <div className="min-h-screen bg-slate-900 relative overflow-hidden flex flex-col">
+        <div ref={containerRef} className="min-h-screen bg-slate-900 relative overflow-hidden flex flex-col">
 
             {/* Background / Camera Feed */}
             <div className="absolute inset-0 z-0">
                 {capturedImage ? (
-                    <img
-                        src={capturedImage}
-                        alt="Captured"
-                        className="w-full h-full object-cover"
-                    />
+                    <div className="w-full h-full flex items-center justify-center bg-black">
+                        {/* Show the clipped rounded image to match the circle view */}
+                        <img
+                            src={capturedImage}
+                            alt="Captured"
+                            style={{ width: CIRCLE_SIZE, height: CIRCLE_SIZE }}
+                            className="rounded-full object-cover border-4 border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.5)]"
+                        />
+                    </div>
                 ) : permissionGranted ? (
                     <video
                         ref={videoRef}
@@ -178,11 +228,38 @@ const ARLearningPage = () => {
                 )}
             </div>
 
-            {/* Overlay UI */}
-            <div className="relative z-20 flex-1 flex flex-col p-6">
+            {/* Dark Overlay with Circular Hole */}
+            {isScanning && !capturedImage && (
+                <div className="absolute inset-0 z-10 pointer-events-none">
+                    {/* 
+                       Using a large box-shadow on a centered element is a performant way to create a 'hole' 
+                     */}
+                    <div
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 border-white/50 shadow-[0_0_0_9999px_rgba(0,0,0,0.7)]"
+                        style={{ width: CIRCLE_SIZE, height: CIRCLE_SIZE }}
+                    >
+                        {/* Scanning beam animation inside the circle */}
+                        <motion.div
+                            className="absolute top-0 left-0 w-full h-full rounded-full overflow-hidden opacity-50"
+                        >
+                            <motion.div
+                                className="w-full h-[20%] bg-blue-500/30 blur-md absolute top-[-20%]"
+                                animate={{ top: ['-20%', '120%'] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                            />
+                        </motion.div>
+                    </div>
 
-                {/* Top Bar */}
-                <div className="flex items-center justify-between mb-8">
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white/50 text-sm font-medium mt-[180px]">
+                        Align object in circle
+                    </div>
+                </div>
+            )}
+
+            {/* Overlay UI */}
+            <div className="relative z-20 flex-1 flex flex-col p-6 pointer-events-none">
+                {/* Navbar needs pointer-events-auto */}
+                <div className="flex items-center justify-between mb-8 pointer-events-auto">
                     <Link href="/dashboard">
                         <button className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-3 rounded-full transition-all border border-white/5">
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -193,52 +270,22 @@ const ARLearningPage = () => {
                     <div className="bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 shadow-lg">
                         <span className="text-white text-sm font-medium tracking-wider">AR SCANNER</span>
                     </div>
-                    <div className="w-10" /> {/* Spacer for balance */}
+                    <div className="w-10" />
                 </div>
 
-                {/* Main Content Area */}
-                <div className="flex-1 flex flex-col items-center justify-center relative">
-
-                    {/* Scanning Frame */}
-                    {!result && !error && (
-                        <div className="relative w-72 h-72 sm:w-80 sm:h-80 border-2 border-white/30 rounded-3xl overflow-hidden">
-                            {/* Corner Markers */}
-                            <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-blue-500 rounded-tl-xl" />
-                            <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-blue-500 rounded-tr-xl" />
-                            <div className="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-blue-500 rounded-bl-xl" />
-                            <div className="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-blue-500 rounded-br-xl" />
-
-                            {/* Scanning Animation */}
-                            {isScanning && !capturedImage && (
-                                <motion.div
-                                    className="absolute top-0 left-0 w-full h-1 bg-blue-400/80 shadow-[0_0_15px_rgba(96,165,250,0.8)]"
-                                    animate={{ top: ["0%", "100%", "0%"] }}
-                                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                                />
-                            )}
-
-                            {/* Center Crosshair */}
-                            <div className="absolute inset-0 flex items-center justify-center opacity-30">
-                                <div className="w-4 h-4 border border-white rounded-full" />
-                            </div>
-                        </div>
-                    )}
+                {/* Main Content Area - Just for messages/results */}
+                <div className="flex-1 flex flex-col items-center justify-center relative pointer-events-auto">
 
                     {/* Instructions */}
-                    {!result && !error && (
+                    {!result && !error && !capturedImage && (
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="mt-8 text-center max-w-xs"
+                            className="absolute bottom-24 text-center max-w-xs"
                         >
-                            <h3 className="text-2xl font-bold text-white mb-2">
-                                {isAnalyzing ? "Analyzing..." : (isScanning ? (capturedImage ? "Processing..." : "Scanning Object...") : "Object Recognition")}
+                            <h3 className="text-2xl font-bold text-white mb-2 shadow-black drop-shadow-lg">
+                                {isAnalyzing ? "Analyzing..." : (isScanning ? "" : "Object Recognition")}
                             </h3>
-                            <p className="text-slate-300 text-sm leading-relaxed">
-                                {isScanning
-                                    ? (capturedImage ? "Identifying the object in the frame." : "Tap the capture button to identify the object.")
-                                    : "Point your camera at everyday objects to learn their names in Mandarin."}
-                            </p>
                         </motion.div>
                     )}
 
@@ -305,8 +352,8 @@ const ARLearningPage = () => {
 
                 </div>
 
-                {/* Bottom Controls */}
-                <div className="mt-8 flex justify-center pb-8">
+                {/* Bottom Controls needs pointer-events-auto */}
+                <div className="mt-8 flex justify-center pb-8 pointer-events-auto">
                     {!isScanning ? (
                         <button
                             onClick={handleStartCamera}

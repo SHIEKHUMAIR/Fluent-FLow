@@ -30,19 +30,56 @@ exports.getProfile = async (req, res) => {
 // Update user profile
 exports.updateProfile = async (req, res) => {
   try {
-    const userId = req.user?.id || req.body?.userId || req.query?.userId;
-    const { firstName, lastName, profileImage, phone, dateOfBirth, country, residenceCountry } = req.body;
+    // Debug logging
+    console.log("--- Profile Update Debug ---");
+    console.log("req.user:", req.user);
+    console.log("req.user.id:", req.user?.id);
+    
+    if (!req.user || !req.user.id) {
+      console.error("❌ req.user or req.user.id is missing!");
+      return res.status(401).json({ 
+        success: false, 
+        message: "User ID is required. Please log in again.",
+        debug: { hasUser: !!req.user, userId: req.user?.id }
+      });
+    }
+    
+    let userId = req.user.id;
+    
+    // Ensure userId is an integer
+    if (typeof userId === 'string') {
+        userId = parseInt(userId);
+    }
+    
+    if (isNaN(userId)) {
+      console.error("❌ Invalid userId:", req.user.id);
+      return res.status(400).json({ 
+        success: false, 
+        message: "Invalid user ID format",
+        debug: { originalUserId: req.user.id, type: typeof req.user.id }
+      });
+    }
+    
+    const { 
+      firstName, 
+      lastName, 
+      profileImage, 
+      phone, 
+      dateOfBirth, 
+      country, 
+      residenceCountry,
+      notificationTime,
+      timezone
+    } = req.body;
 
     // Debug logging
     console.log("Profile update request:", {
       userId,
       hasProfileImage: profileImage !== undefined,
-      profileImageLength: profileImage ? profileImage.length : 0
+      profileImageLength: profileImage ? profileImage.length : 0,
+      notificationTime,
+      timezone
     });
-
-    if (!userId) {
-      return res.status(401).json({ success: false, message: "User ID is required" });
-    }
 
     const userIdInt = parseInt(userId);
     if (isNaN(userIdInt)) {
@@ -57,6 +94,8 @@ exports.updateProfile = async (req, res) => {
     if (dateOfBirth !== undefined) updates.dateOfBirth = dateOfBirth;
     if (country !== undefined) updates.country = country;
     if (residenceCountry !== undefined) updates.residenceCountry = residenceCountry;
+    if (notificationTime !== undefined) updates.notificationTime = notificationTime;
+    if (timezone !== undefined) updates.timezone = timezone;
 
     const updatedUser = await User.update(userIdInt, updates);
     if (!updatedUser) {

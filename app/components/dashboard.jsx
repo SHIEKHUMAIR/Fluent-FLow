@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { API_ENDPOINTS } from '../../lib/config'
 import { apiGet, apiPost, getUserId } from '../../lib/api'
 import AchievementModal from './AchievementModal'
+import NotificationSettings from './NotificationSettings'
 
 const dashboard = () => {
   const [userName, setUserName] = useState('');
@@ -646,6 +647,9 @@ const dashboard = () => {
             </div>
           </div>
           <div className="space-y-6" id="el-egbjj2j3">
+            {/* Notification Widget */}
+            <NotificationSettings />
+
             <a href="/dashboard/ar-learning" className="block transform transition-all duration-300 hover:scale-[1.02] group" id="el-sbp1qzyc">
               <div className="bg-blue-900 rounded-2xl p-10 shadow-lg hover:shadow-xl hover:bg-blue-800 transition-all duration-300 flex flex-col items-center justify-center text-center relative overflow-hidden">
                 {/* Background Pattern */}

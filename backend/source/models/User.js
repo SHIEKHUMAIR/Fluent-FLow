@@ -76,6 +76,18 @@ class User {
       fields.push(`residence_country = $${paramCount++}`);
       values.push(updates.residenceCountry);
     }
+    if (updates.notificationTime !== undefined) {
+      fields.push(`notification_time = $${paramCount++}`);
+      values.push(updates.notificationTime);
+    }
+    if (updates.timezone !== undefined) {
+      fields.push(`timezone = $${paramCount++}`);
+      values.push(updates.timezone);
+    }
+    if (updates.pushSubscription !== undefined) {
+      fields.push(`push_subscription = $${paramCount++}`);
+      values.push(typeof updates.pushSubscription === 'string' ? updates.pushSubscription : JSON.stringify(updates.pushSubscription));
+    }
 
     if (fields.length === 0) return null;
 
@@ -109,6 +121,8 @@ class User {
       dateOfBirth: user.date_of_birth,
       country: user.country,
       residenceCountry: user.residence_country,
+      notificationTime: user.notification_time,
+      timezone: user.timezone,
       createdAt: user.created_at,
       updatedAt: user.updated_at
     };

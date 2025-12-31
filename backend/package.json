@@ -22,7 +22,9 @@
     "express": "^5.1.0",
     "google-auth-library": "^10.3.0",
     "jsonwebtoken": "^9.0.2",
-    "pg": "^8.11.3"
+    "node-cron": "^4.2.1",
+    "pg": "^8.11.3",
+    "web-push": "^3.6.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

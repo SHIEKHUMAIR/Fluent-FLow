@@ -1,10 +1,11 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 const express = require("express");
 const cors = require("cors");
-const dotenv = require("dotenv");
 const { connectDB } = require("./source/configuration/dbConfig");
 const authRoutes = require("./source/routes/auth");
-
-dotenv.config();
+const { initWebPush, startScheduler } = require("./source/services/notificationService");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -37,6 +38,12 @@ app.use("/api/lessons", require("./source/routes/lessons"));
 app.use("/api/progress", require("./source/routes/progress"));
 app.use("/api/profile", require("./source/routes/profile"));
 app.use("/api/leaderboard", require("./source/routes/leaderboard"));
+app.use("/api/notifications", require("./source/routes/notifications"));
+
+// Init notifications
+initWebPush();
+startScheduler();
+
 
 // Start
 connectDB().then(() => {

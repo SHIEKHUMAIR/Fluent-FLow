@@ -8,6 +8,26 @@ const AssessmentPage = () => {
     const [score, setScore] = useState(0);
     const [showResult, setShowResult] = useState(false);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
+    const [units, setUnits] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchUnits = async () => {
+            try {
+                const response = await fetch('http://localhost:4000/api/lessons/units');
+                const data = await response.json();
+                if (data.success) {
+                    setUnits(data.data.sort((a, b) => a.unit_number - b.unit_number));
+                }
+            } catch (error) {
+                console.error("Failed to fetch units:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchUnits();
+    }, []);
 
     const questions = [
         {
@@ -40,29 +60,62 @@ const AssessmentPage = () => {
                 { text: "None / Very few", points: 0 },
                 { text: "Around 50-100", points: 1 },
                 { text: "Around 150-300", points: 2 },
-                { text: "More than 300", points: 3 },
+                { text: "More than 500", points: 3 },
             ],
         },
         {
             id: 4,
-            question: "Can you understand simple spoken Chinese?",
-            icon: "👂",
+            question: "Can you handle basic travel situations?",
+            icon: "✈️",
             options: [
-                { text: "Not at all.", points: 0 },
-                { text: "Only isolated words (Hello, Thank you).", points: 1 },
-                { text: "I can understand simple greetings.", points: 2 },
-                { text: "I can follow basic conversations.", points: 3 },
+                { text: "No, I would be lost.", points: 0 },
+                { text: "I can say 'taxi' and 'hotel'.", points: 1 },
+                { text: "I can buy tickets and order food.", points: 2 },
+                { text: "I can handle check-ins and travel issues.", points: 3 },
             ],
         },
         {
             id: 5,
-            question: "Can you form sentences to introduce yourself?",
-            icon: "🗣️",
+            question: "Can you talk about your daily life and routine?",
+            icon: "📅",
             options: [
-                { text: "No, I can't.", points: 0 },
-                { text: "Just 'My name is...'", points: 1 },
-                { text: "Yes, name, nationality, and job.", points: 2 },
-                { text: "Yes, fluently and with detail.", points: 3 },
+                { text: "Not really.", points: 0 },
+                { text: "I can say times and dates.", points: 1 },
+                { text: "I can describe my day simply.", points: 2 },
+                { text: "I can freely discuss my schedule and habits.", points: 3 },
+            ],
+        },
+        {
+            id: 6,
+            question: "How are you with complex sentence structures?",
+            icon: "🏗️",
+            options: [
+                { text: "I only use simple Subject-Verb-Object.", points: 0 },
+                { text: "I can use 'le' (了) and 'de' (的) sometimes.", points: 1 },
+                { text: "I use conjunctions and relative clauses.", points: 2 },
+                { text: "I use formal structures and idioms.", points: 3 },
+            ],
+        },
+        {
+            id: 7,
+            question: "Can you handle an emergency situation in China?",
+            icon: "🚑",
+            options: [
+                { text: "I wouldn't know what to say.", points: 0 },
+                { text: "I can shout 'Help!'", points: 1 },
+                { text: "I can explain I'm sick or lost.", points: 2 },
+                { text: "I can describe symptoms and police reports.", points: 3 },
+            ],
+        },
+        {
+            id: 8,
+            question: "Can you discuss social topics or news?",
+            icon: "📰",
+            options: [
+                { text: "No, that's too hard.", points: 0 },
+                { text: "Maybe very simple topics.", points: 1 },
+                { text: "I can give my opinion on familiar topics.", points: 2 },
+                { text: "Yes, I can discuss abstract ideas.", points: 3 },
             ],
         },
     ];
@@ -83,60 +136,88 @@ const AssessmentPage = () => {
     };
 
     const getRecommendation = () => {
-        // Max score = 15
-        // 0-5: Unit 1
-        // 6-10: Unit 2
-        // 11-15: Unit 3
+        if (units.length === 0) return null;
 
-        if (score <= 5) {
-            return {
-                unit: "Unit 1: Foundation",
-                badge: "Beginner",
-                color: "blue",
-                description: "Your journey starts here! We'll help you master the essential sounds, tones, and your first words in Mandarin.",
-                reason: "Perfect for building a rock-solid foundation from scratch.",
-                link: "/modules/unit01"
-            };
-        } else if (score <= 10) {
-            return {
-                unit: "Unit 2: Daily Life & Words",
-                badge: "Intermediate",
-                color: "green",
-                description: "You have the basics down. Now it's time to expand your vocabulary and start navigating daily life situations.",
-                reason: "Great for bridging the gap between sounds and real sentences.",
-                link: "/modules/unit02"
-            };
-        } else {
-            return {
-                unit: "Unit 3: Elementary Mandarin",
-                badge: "Elementary" ,
-                color: "purple",
-                description: "You're ready for the next level! Dive into sentence structures, grammar, and more complex conversations.",
-                reason: "Designed to take your conversational skills to new heights.",
-                link: "/modules/unit03"
-            };
+        // Calculate max possible score: 8 questions * 3 points max = 24 points
+        const maxScore = questions.length * 3;
+
+        // Calculate points per unit based on the number of available units
+        const pointsPerUnit = maxScore / units.length;
+
+        // Determine the unit index based on the user's score
+        // Example: Score 5. 24/6 = 4 points per unit.
+        // 0-4: Unit 1, 5-8: Unit 2, etc.
+        // Index = floor(5 / 4) = 1 (Unit 2)
+        // Ensure index doesn't exceed units.length - 1 (for max score)
+        let unitIndex = Math.floor(score / pointsPerUnit);
+
+        // Clamp the index to be valid
+        if (unitIndex >= units.length) {
+            unitIndex = units.length - 1;
         }
+
+        const recommendedUnit = units[unitIndex];
+
+        // Format the link: /modules/unit01, /modules/unit02, etc.
+        // Assuming unit_number is 1, 2, 3...
+        const unitNumberPadded = recommendedUnit.unit_number.toString().padStart(2, '0');
+
+        // Strip "UNIT X:" prefix for cleaner badge text if present
+        const cleanTitle = recommendedUnit.title.replace(/^UNIT \d+:\s*/i, '');
+
+        return {
+            unit: recommendedUnit.title,
+            badge: `${cleanTitle} Level`, // Or map to badges if you have them separately
+            color: "blue", // Forced blue theme as requested
+            description: recommendedUnit.description,
+            reason: `Based on your assessment, this unit matches your current tailored proficiency level.`,
+            link: `/modules/unit${unitNumberPadded}`
+        };
     };
 
     const recommendation = showResult ? getRecommendation() : null;
 
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-blue-50 flex items-center justify-center">
+                <div className="w-16 h-16 border-4 border-blue-100 border-t-blue-600 rounded-full animate-spin"></div>
+            </div>
+        );
+    }
+
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-blue-50 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center font-sans">
-            <div className="max-w-3xl w-full">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-blue-50 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center font-sans relative">
+            {/* Back Button */}
+            <div className="absolute top-6 left-6 sm:top-8 sm:left-8 z-50">
+                <Link href="/modules">
+                    <button
+                        className="flex items-center gap-2 bg-blue-900 text-white hover:translate-x-2 font-medium px-4 py-2 rounded-full shadow-sm transition-all duration-200"
+                    >
+                        <img
+                            src="/assets/arrow-small.png"
+                            alt="Back"
+                            className="w-5 h-5"
+                        />
+                        <span className="hidden sm:inline">Back</span>
+                    </button>
+                </Link>
+            </div>
+
+            <div className="max-w-3xl w-full relative">
 
                 {/* Header */}
                 {!showResult && !isAnalyzing && (
-                    <div className="text-center mb-10">
-                        <h1 className="text-4xl font-extrabold text-blue-900 mb-2">
+                    <div className="text-center mb-8">
+                        <h1 className="text-3xl font-extrabold text-blue-900 mb-2">
                             Let's Find Your Level
                         </h1>
-                        <p className="text-lg text-slate-600 font-medium">
-                            Answer 5 quick questions to get your personalized learning path.
+                        <p className="text-base text-slate-600 font-medium">
+                            Answer {questions.length} quick questions to get your personalized learning path.
                         </p>
                     </div>
                 )}
 
-                <div className="bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border border-white/50 p-8 md:p-12 overflow-hidden relative min-h-[500px] flex flex-col justify-center">
+                <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl border border-white/50 p-6 md:p-8 overflow-hidden relative min-h-[400px] flex flex-col justify-center">
 
                     {/* Progress Bar */}
                     {!showResult && !isAnalyzing && (
@@ -178,8 +259,8 @@ const AssessmentPage = () => {
                                 className="w-full"
                             >
                                 <div className="flex items-center gap-4 mb-8">
-                                    <span className="text-4xl bg-blue-50 p-4 rounded-2xl shadow-sm">{questions[step].icon}</span>
-                                    <h2 className="text-2xl md:text-3xl font-bold text-blue-900 leading-tight">
+                                    <span className="text-3xl bg-blue-50 p-3 rounded-xl shadow-sm">{questions[step].icon}</span>
+                                    <h2 className="text-xl md:text-2xl font-bold text-blue-900 leading-tight">
                                         {questions[step].question}
                                     </h2>
                                 </div>
@@ -191,13 +272,13 @@ const AssessmentPage = () => {
                                             whileHover={{ scale: 1.02, backgroundColor: "rgba(239, 246, 255, 0.8)" }}
                                             whileTap={{ scale: 0.98 }}
                                             onClick={() => handleAnswer(option.points)}
-                                            className="w-full text-left p-6 rounded-2xl border-2 border-slate-100 hover:border-blue-500 bg-white transition-all duration-200 group shadow-sm hover:shadow-md"
+                                            className="w-full text-left p-4 rounded-xl border-2 border-slate-100 hover:border-blue-500 bg-white transition-all duration-200 group shadow-sm hover:shadow-md"
                                         >
                                             <div className="flex items-center justify-between">
-                                                <span className="text-xl text-slate-700 group-hover:text-blue-900 font-semibold">
+                                                <span className="text-lg text-slate-700 group-hover:text-blue-900 font-semibold">
                                                     {option.text}
                                                 </span>
-                                                <span className="w-6 h-6 rounded-full border-2 border-slate-200 group-hover:border-blue-900 group-hover:bg-blue-900 transition-colors"></span>
+                                                <span className="w-5 h-5 rounded-full border-2 border-slate-200 group-hover:border-blue-900 group-hover:bg-blue-900 transition-colors"></span>
                                             </div>
                                         </motion.button>
                                     ))}
@@ -215,6 +296,7 @@ const AssessmentPage = () => {
                                 className="text-center w-full"
                             >
                                 {(() => {
+                                    // Forced Blue Theme
                                     const themes = {
                                         blue: {
                                             badge: "bg-white/40 text-[#1E3A8A] backdrop-blur-md border border-white/30",
@@ -223,59 +305,42 @@ const AssessmentPage = () => {
                                             boxTitle: "text-[#1E3A8A]",
                                             boxText: "text-slate-700",
                                             button: "bg-gradient-to-r from-blue-900  to-[#1E3A8A] shadow-lg shadow-indigo-200/40",
-                                        },
-                                        green: {
-                                            badge: "bg-white/40 text-[#1E3A8A] backdrop-blur-md border border-white/30",
-                                            title: "from-blue-900  to-[#1E3A8A]",
-                                            box: "bg-white/50 backdrop-blur-xl border border-white/40 shadow-xl",
-                                            boxTitle: "text-[#1E3A8A]",
-                                            boxText: "text-slate-700",
-                                            button: "bg-gradient-to-r from-blue-900  to-[#1E3A8A] shadow-lg shadow-indigo-200/40",
-                                        },
-                                        purple: {
-                                            badge: "bg-white/40 text-[#1E3A8A] backdrop-blur-md border border-white/30",
-                                            title: "from-blue-900  to-[#1E3A8A]",
-                                            box: "bg-white/50 backdrop-blur-xl border border-white/40 shadow-xl",
-                                            boxTitle: "text-[#1E3A8A]",
-                                            boxText: "text-slate-700",
-                                            button: "bg-gradient-to-r from-blue-900  to-[#1E3A8A] shadow-lg shadow-indigo-200/40",
-                                        },
+                                        }
                                     };
 
-
-                                    const theme = themes[recommendation.color] || themes.blue;
+                                    const theme = themes.blue;
 
                                     return (
                                         <>
-                                            <div className={`inline-block px-6 py-2 rounded-full ${theme.badge} text-sm font-bold mb-8 tracking-wide uppercase shadow-md`}>
+                                            <div className={`inline-block px-4 py-1.5 rounded-full ${theme.badge} text-xs font-bold mb-6 tracking-wide uppercase shadow-sm`}>
                                                 Recommended Path: {recommendation.badge}
                                             </div>
 
-                                            <h2 className={`text-4xl md:text-6xl font-extrabold bg-gradient-to-r ${theme.title} bg-clip-text text-transparent mb-8`}>
+                                            <h2 className={`text-3xl md:text-4xl font-extrabold bg-gradient-to-r ${theme.title} bg-clip-text text-transparent mb-6`}>
                                                 {recommendation.unit}
                                             </h2>
 
-                                            <div className={` rounded-3xl p-8 mb-10 max-w-2xl mx-auto`}>
-                                                <h4 className={`font-bold ${theme.boxTitle} text-xl mb-3 flex items-center justify-center gap-2`}>
-                                                    <span className="text-2xl">🎯</span> Why this unit?
+                                            <div className={`rounded-2xl p-6 mb-8 max-w-xl mx-auto`}>
+                                                <h4 className={`font-bold ${theme.boxTitle} text-lg mb-2 flex items-center justify-center gap-2`}>
+                                                    <span className="text-xl">🎯</span> Why this unit?
                                                 </h4>
-                                                <p className={`${theme.boxText} text-lg leading-relaxed`}>
+                                                <p className={`${theme.boxText} text-base leading-relaxed`}>
                                                     {recommendation.reason}
                                                 </p>
                                             </div>
 
-                                            <p className="text-xl text-slate-600 mb-12 leading-relaxed max-w-2xl mx-auto">
+                                            <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto">
                                                 {recommendation.description}
                                             </p>
 
-                                            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                                            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
                                                 <Link href={recommendation.link} className="w-full sm:w-auto">
-                                                    <button className={`w-full sm:w-auto ${theme.button} text-white px-12 py-5 rounded-2xl text-xl font-bold transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1`}>
+                                                    <button className={`w-full sm:w-auto ${theme.button} text-white px-8 py-3 rounded-xl text-lg font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5`}>
                                                         Start Learning Now
                                                     </button>
                                                 </Link>
                                                 <Link href="/modules" className="w-full sm:w-auto">
-                                                    <button className="w-full sm:w-auto bg-white text-slate-600 border-2 border-slate-200 px-12 py-5 rounded-2xl text-xl font-bold hover:bg-slate-50 hover:border-slate-300 transition-all">
+                                                    <button className="w-full sm:w-auto bg-white text-slate-600 border border-slate-200 px-8 py-3 rounded-xl text-lg font-bold hover:bg-slate-50 hover:border-slate-300 transition-all">
                                                         View All Units
                                                     </button>
                                                 </Link>

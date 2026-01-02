@@ -7,7 +7,7 @@ services:
     branch: main
     rootDir: backend
     buildCommand: npm install
-    startCommand: node --dns-result-order=ipv4first app.js
+    startCommand: node app.js
     envVars:
       - key: PORT
         value: 10000

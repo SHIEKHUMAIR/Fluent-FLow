@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: fluent-flow-backend
+    runtime: node
+    region: singapore
+    plan: free
+    branch: main
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node app.js
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_VERSION
+        value: 18.17.0
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_SSL
+        value: true
+      - key: VAPID_PUBLIC_KEY
+        generateValue: true
+      - key: VAPID_PRIVATE_KEY
+        generateValue: true

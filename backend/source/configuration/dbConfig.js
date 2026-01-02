@@ -182,6 +182,7 @@ async function connectDB() {
         current_streak INTEGER DEFAULT 0,
         longest_streak INTEGER DEFAULT 0,
         last_study_date DATE,
+        daily_xp INTEGER DEFAULT 0,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
@@ -241,6 +242,9 @@ async function connectDB() {
         END IF;
         IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_stats' AND column_name='streak_recovery_badges') THEN
           ALTER TABLE user_stats ADD COLUMN streak_recovery_badges INTEGER DEFAULT 0;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_stats' AND column_name='daily_xp') THEN
+          ALTER TABLE user_stats ADD COLUMN daily_xp INTEGER DEFAULT 0;
         END IF;
       END $$;
     `);

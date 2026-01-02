@@ -54,6 +54,15 @@ async function connectDB() {
         IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='users' AND column_name='residence_country') THEN
           ALTER TABLE users ADD COLUMN residence_country VARCHAR(100);
         END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='users' AND column_name='push_subscription') THEN
+          ALTER TABLE users ADD COLUMN push_subscription TEXT;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='users' AND column_name='notification_time') THEN
+          ALTER TABLE users ADD COLUMN notification_time VARCHAR(10);
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='users' AND column_name='timezone') THEN
+          ALTER TABLE users ADD COLUMN timezone VARCHAR(100);
+        END IF;
       END $$;
     `);
     

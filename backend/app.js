@@ -1,3 +1,10 @@
+const dns = require("dns");
+try {
+    dns.setDefaultResultOrder("ipv4first");
+} catch (e) {
+    console.log("Could not set dns result order:", e);
+}
+
 const dotenv = require("dotenv");
 dotenv.config();
 

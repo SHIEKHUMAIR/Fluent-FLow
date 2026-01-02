@@ -22,6 +22,13 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 const NotificationSettings = () => {
+    // Configuration for API URL
+    const API_URL_LOCAL = "http://localhost:4000";
+    const API_URL_DEPLOYED = "https://your-backend-app.onrender.com"; // UPDATE THIS AFTER DEPLOYING
+
+    // Toggle this to switch between local and deployed versions
+    const API_URL = API_URL_LOCAL;
+
     const [isSubscribed, setIsSubscribed] = useState(false);
     const [isSupported, setIsSupported] = useState(false);
     const [notificationTime, setNotificationTime] = useState("");
@@ -48,7 +55,7 @@ const NotificationSettings = () => {
         try {
             const subscriptionData = subscription.toJSON ? subscription.toJSON() : subscription;
 
-            const response = await fetch('http://localhost:4000/api/notifications/subscribe', {
+            const response = await fetch(`${API_URL}/api/notifications/subscribe`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -98,7 +105,7 @@ const NotificationSettings = () => {
                             syncSubscription(subscription, false);
 
                             // Also fetch profile to get stored notification time
-                            fetch('http://localhost:4000/api/profile', {
+                            fetch(`${API_URL}/api/profile`, {
                                 headers: { 'Authorization': `Bearer ${token}` }
                             })
                                 .then(res => res.json())
@@ -190,7 +197,7 @@ const NotificationSettings = () => {
 
             const token = getAuthToken();
             if (token) {
-                await fetch('http://localhost:4000/api/notifications/subscribe', {
+                await fetch(`${API_URL}/api/notifications/subscribe`, {
                     method: 'DELETE',
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -230,7 +237,7 @@ const NotificationSettings = () => {
         try {
             const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-            const response = await fetch('http://localhost:4000/api/profile/update', {
+            const response = await fetch(`${API_URL}/api/profile/update`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -273,7 +280,7 @@ const NotificationSettings = () => {
                 return;
             }
 
-            const response = await fetch('http://localhost:4000/api/notifications/test', {
+            const response = await fetch(`${API_URL}/api/notifications/test`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -317,7 +324,7 @@ const NotificationSettings = () => {
                         </span>
                     </div>
 
-                   
+
                     <label className="ff-toggle">
                         <input
                             type="checkbox"

@@ -101,8 +101,15 @@ const ARLearningPage = () => {
             const formData = new FormData();
             formData.append("file", blob, "capture.jpg");
 
+            // Configuration for AR Module URL
+            const API_URL_LOCAL = "http://localhost:7860/analyze";
+            const API_URL_DEPLOYED = "https://shiekhumair-ar-object-detector.hf.space/analyze";
+
+            // Toggle this to switch between local and deployed versions
+            const API_URL = API_URL_DEPLOYED;
+
             try {
-                const response = await fetch("http://localhost:8000/analyze", {
+                const response = await fetch(API_URL, {
                     method: "POST",
                     body: formData,
                 });

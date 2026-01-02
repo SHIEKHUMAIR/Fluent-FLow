@@ -4,6 +4,13 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const AssessmentPage = () => {
+    // Configuration for API URL
+    const API_URL_LOCAL = "http://localhost:4000";
+    const API_URL_DEPLOYED = "https://your-backend-app.onrender.com"; // UPDATE THIS AFTER DEPLOYING
+
+    // Toggle this to switch between local and deployed versions
+    const API_URL = API_URL_LOCAL;
+
     const [step, setStep] = useState(0);
     const [score, setScore] = useState(0);
     const [showResult, setShowResult] = useState(false);
@@ -14,7 +21,7 @@ const AssessmentPage = () => {
     useEffect(() => {
         const fetchUnits = async () => {
             try {
-                const response = await fetch('http://localhost:4000/api/lessons/units');
+                const response = await fetch(`${API_URL}/api/lessons/units`);
                 const data = await response.json();
                 if (data.success) {
                     setUnits(data.data.sort((a, b) => a.unit_number - b.unit_number));

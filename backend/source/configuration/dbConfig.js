@@ -219,6 +219,7 @@ async function connectDB() {
         id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
         achievement_id INTEGER REFERENCES achievements(id) ON DELETE CASCADE,
+        is_seen BOOLEAN DEFAULT FALSE,
         earned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         UNIQUE(user_id, achievement_id)
       )
@@ -245,6 +246,9 @@ async function connectDB() {
         END IF;
         IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_stats' AND column_name='daily_xp') THEN
           ALTER TABLE user_stats ADD COLUMN daily_xp INTEGER DEFAULT 0;
+        END IF;
+        IF NOT EXISTS (SELECT 1 FROM information_schema.columns WHERE table_name='user_achievements' AND column_name='is_seen') THEN
+          ALTER TABLE user_achievements ADD COLUMN is_seen BOOLEAN DEFAULT FALSE;
         END IF;
       END $$;
     `);

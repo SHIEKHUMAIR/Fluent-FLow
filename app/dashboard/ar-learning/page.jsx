@@ -106,7 +106,7 @@ const ARLearningPage = () => {
             const API_URL_DEPLOYED = "https://shiekhumair-ar-object-detector.hf.space/analyze";
 
             // Use environment variable first, then fallback to DEPLOYED
-            const API_URL = process.env.NEXT_PUBLIC_AR_API_URL || API_URL_DEPLOYED;
+            const API_URL = API_URL_DEPLOYED;
 
             try {
                 const response = await fetch(API_URL, {

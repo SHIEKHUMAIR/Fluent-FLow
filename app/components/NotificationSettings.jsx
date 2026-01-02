@@ -27,7 +27,7 @@ const NotificationSettings = () => {
     const API_URL_DEPLOYED = "https://fluent-flow-backend.onrender.com";
 
     // Use environment variable first, then fallback to DEPLOYED
-    const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || API_URL_DEPLOYED;
+    const API_URL = API_URL_DEPLOYED;
 
     const [isSubscribed, setIsSubscribed] = useState(false);
     const [isSupported, setIsSupported] = useState(false);

@@ -9,7 +9,7 @@ const AssessmentPage = () => {
     const API_URL_DEPLOYED = "https://fluent-flow-backend.onrender.com";
 
     // Use environment variable first, then fallback to DEPLOYED
-    const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || API_URL_DEPLOYED;
+    const API_URL = API_URL_DEPLOYED;
 
     const [step, setStep] = useState(0);
     const [score, setScore] = useState(0);

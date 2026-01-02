@@ -24,10 +24,10 @@ function urlBase64ToUint8Array(base64String) {
 const NotificationSettings = () => {
     // Configuration for API URL
     const API_URL_LOCAL = "http://localhost:4000";
-    const API_URL_DEPLOYED = "https://fluent-flow-backend.onrender.com"; // UPDATE THIS AFTER DEPLOYING
+    const API_URL_DEPLOYED = "https://fluent-flow-backend.onrender.com";
 
-    // Toggle this to switch between local and deployed versions
-    const API_URL = API_URL_DEPLOYED;
+    // Use environment variable first, then fallback to DEPLOYED
+    const API_URL = process.env.NEXT_PUBLIC_API_BASE_URL || API_URL_DEPLOYED;
 
     const [isSubscribed, setIsSubscribed] = useState(false);
     const [isSupported, setIsSupported] = useState(false);

@@ -214,11 +214,6 @@ const NotificationSettings = () => {
 
     const handleTimeSave = (newTime) => {
         setNotificationTime(newTime);
-        // We need to call savePreferences but it relies on state. 
-        // Since setNotificationTime is async, we should use a useEffect or pass it.
-        // Let's modify savePreferences to accept an arg or just wait?
-        // Better: update state then trigger save. OR easier: call API directly here?
-        // Let's just update state and call savePreferences immediately with the new value manually passed
         savePreferences(newTime);
     };
 
@@ -309,7 +304,7 @@ const NotificationSettings = () => {
     }
 
     return (
-        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm mt-6">
+        <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
             <h3 className="text-xl font-bold text-slate-900 mb-4">Notification Settings</h3>
 
             <div className="flex flex-col gap-4">
@@ -322,12 +317,7 @@ const NotificationSettings = () => {
                         </span>
                     </div>
 
-                    {/* Only show loading or disable/enable toggle if not subscribed. 
-                        If subscribed, user wants to see "Set Timer" potentially? 
-                        The prompt says "when we enable it i want it to be like on upper side as it is now but for setiing time their should be button of set timer"
-                        "upper side" refers to the current enable/disable toggle probably.
-                        So we keep the toggle. The "Set Timer" button replaces the OLD time input.
-                    */}
+                   
                     <label className="ff-toggle">
                         <input
                             type="checkbox"

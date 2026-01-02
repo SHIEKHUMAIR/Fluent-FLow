@@ -1,8 +1,12 @@
+"use client";
+
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { GoogleLogin } from "@react-oauth/google";
 import { API_ENDPOINTS } from "../../lib/config";
 
 const RegisterForm = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -24,14 +28,18 @@ const RegisterForm = () => {
 
     try {
       const response = await fetch(API_ENDPOINTS.AUTH.SIGNUP, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       const data = await response.json();
       if (response.ok) {
         setMessage("✅ " + data.message);
+        // Redirect to login page after 2 seconds
+        setTimeout(() => {
+          router.push('/auth?tab=login');
+        }, 2000);
       } else {
         setMessage("❌ " + data.message);
       }
@@ -45,27 +53,27 @@ const RegisterForm = () => {
   const handleGoogleSuccess = async (credentialResponse) => {
     try {
       const res = await fetch(API_ENDPOINTS.AUTH.GOOGLE_LOGIN, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ token: credentialResponse.credential }),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: credentialResponse.credential }),
       });
 
       const data = await res.json();
       if (res.ok) {
         console.log("Google signup success:", data.user);
         setMessage("✅ Google signup successful!");
-        
+
         // Store token (Google login uses 7-day expiry, so use localStorage)
         const token = data.token;
         if (token) {
           localStorage.setItem("token", token);
         }
-        
+
         // Store user info
         try {
           // Store user ID
           if (data?.user?.id) localStorage.setItem("userId", data.user.id.toString());
-          
+
           // Ensure email is stored
           if (data.user && data.user.email) {
             localStorage.setItem("userEmail", data.user.email);
@@ -73,25 +81,25 @@ const RegisterForm = () => {
           } else {
             console.error("No email in response:", data);
           }
-          
+
           // Store user name
           const fullName = data.user?.firstName && data.user?.lastName
             ? `${data.user.firstName} ${data.user.lastName}`.trim()
             : data.user?.firstName || data.user?.lastName || data.user?.email || 'User';
-          
+
           if (fullName) {
             localStorage.setItem("userName", fullName);
           }
-          
+
           // Store profile image if available
           if (data?.user?.profileImage) localStorage.setItem("profileImage", data.user.profileImage);
         } catch (err) {
           console.error("Error storing user data:", err);
         }
-        
+
         // Dispatch event to update sidebar immediately
         window.dispatchEvent(new CustomEvent('userLoggedIn'));
-        
+
         // Redirect or refresh to update UI
         setTimeout(() => {
           window.location.reload();
@@ -132,19 +140,19 @@ const RegisterForm = () => {
       </form>
 
       {message && <p className="mt-4 text-center font-medium">{message}</p>}
-<div className="relative mt-8">
-          <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t border-neutral-200/60" />
-          </div>
-          <div className="relative flex justify-center text-sm">
-            <span className="px-4 bg-white/80 text-neutral-500 font-medium rounded-full">
-              Or continue with
-            </span>
-          </div>
+      <div className="relative mt-8">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-neutral-200/60" />
         </div>
-         <div className="mt-6 flex justify-center">
-          <div
-             className="
+        <div className="relative flex justify-center text-sm">
+          <span className="px-4 bg-white/80 text-neutral-500 font-medium rounded-full">
+            Or continue with
+          </span>
+        </div>
+      </div>
+      <div className="mt-6 flex justify-center">
+        <div
+          className="
              
            rounded-3xl 
       shadow-md 
@@ -155,18 +163,18 @@ const RegisterForm = () => {
       duration-200
       active:scale-95
             "
-          >
-            <GoogleLogin
-              onSuccess={handleGoogleSuccess} onError={() => setMessage("❌ Google signup failed")}
-              theme="outline"       // cleaner look
-              size="3-xl"          // bigger button
-              shape="pill"          // rounded
-              width="100%"           // consistent width
-              text="signin_with"    // "Sign in with Google"
-              logo_alignment="left" // logo on left
-            />
-          </div>
+        >
+          <GoogleLogin
+            onSuccess={handleGoogleSuccess} onError={() => setMessage("❌ Google signup failed")}
+            theme="outline"       // cleaner look
+            size="3-xl"          // bigger button
+            shape="pill"          // rounded
+            width="100%"           // consistent width
+            text="signin_with"    // "Sign in with Google"
+            logo_alignment="left" // logo on left
+          />
         </div>
+      </div>
       {/* <div className="mt-8">
         
         <GoogleLogin onSuccess={handleGoogleSuccess} onError={() => setMessage("❌ Google signup failed")} />

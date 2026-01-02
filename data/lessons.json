@@ -13,7 +13,7 @@
             "id": 1,
             "category": "beginner",
             "title": "Lesson 1 - Tones",
-            "desc": "Learn the 4 tones of Mandarin with examples and practice audio.",
+            "desc": "Learn how Mandarin tones change meaning. Train your ear to recognize tone differences.",
             "duration": "12 min",
             "progress": 0,
             "path": "/modules/unit01/lesson1"
@@ -21,8 +21,8 @@
         {
             "id": 2,
             "category": "beginner",
-            "title": "Lesson 2 - Basic Greetings",
-            "desc": "Learn greetings, introductions, and farewells in Chinese.",
+            "title": "Lesson 2 - Greetings",
+            "desc": "Learn common greetings and polite expressions. Understand how to greet and respond naturally.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit01/lesson2"
@@ -31,7 +31,7 @@
             "id": 3,
             "category": "beginner",
             "title": "Lesson 3 - Relationships",
-            "desc": "Explore family and relationship words in Mandarin.",
+            "desc": "Learn words for family members and relationships. Recognize how people are referred to in Mandarin.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit01/lesson3"
@@ -40,7 +40,7 @@
             "id": 4,
             "category": "beginner",
             "title": "Lesson 4 - Pronouns",
-            "desc": "Learn I, You, He, She, and They in Chinese.",
+            "desc": "Understand personal pronouns and demonstratives. Learn how Mandarin refers to people and things.",
             "duration": "9 min",
             "progress": 0,
             "path": "/modules/unit01/lesson4"
@@ -48,8 +48,8 @@
         {
             "id": 5,
             "category": "beginner",
-            "title": "Lesson 5 - Numbers 0 to 10",
-            "desc": "Master counting from 1 to 10 in Chinese.",
+            "title": "Lesson 5 - Numbers 0–10",
+            "desc": "Learn basic numbers from zero to ten. Build the foundation for counting and quantities.",
             "duration": "11 min",
             "progress": 0,
             "path": "/modules/unit01/lesson5"
@@ -57,8 +57,8 @@
         {
             "id": 6,
             "category": "beginner",
-            "title": "Lesson 6 - Yes / No Basics",
-            "desc": "Understand how to say yes and no in conversations.",
+            "title": "Lesson 6 - Yes / No & Basics",
+            "desc": "Learn basic sentence particles and responses. Understand simple questions and confirmations.",
             "duration": "8 min",
             "progress": 0,
             "path": "/modules/unit01/lesson6"
@@ -67,7 +67,7 @@
             "id": 7,
             "category": "beginner",
             "title": "Lesson 7 - Polite Phrases & Needs",
-            "desc": "Say please, thank you, and express needs politely.",
+            "desc": "Learn polite expressions and common needs. Understand how to ask and respond politely.",
             "duration": "13 min",
             "progress": 0,
             "path": "/modules/unit01/lesson7"
@@ -76,7 +76,7 @@
             "id": 8,
             "category": "beginner",
             "title": "Lesson 8 - Days & Time",
-            "desc": "Talk about days, weeks, and time in Chinese.",
+            "desc": "Learn words for time, dates, and daily references. Understand how Mandarin talks about time.",
             "duration": "12 min",
             "progress": 0,
             "path": "/modules/unit01/lesson8"
@@ -84,8 +84,8 @@
         {
             "id": 9,
             "category": "beginner",
-            "title": "Lesson 9 - Country & Introduction",
-            "desc": "Learn to say where you’re from and your nationality.",
+            "title": "Lesson 9 - Review & Self-Intro",
+            "desc": "Review basic vocabulary through self-introduction. Understand simple personal information exchanges.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit01/lesson9"
@@ -94,7 +94,7 @@
             "id": 10,
             "category": "beginner",
             "title": "Lesson 10 - Colors & Descriptions",
-            "desc": "Learn colors in Mandarin and how to describe objects.",
+            "desc": "Learn common colors and basic descriptions. Understand how objects are visually described.",
             "duration": "12 min",
             "progress": 0,
             "path": "/modules/unit02/lesson10"
@@ -102,8 +102,8 @@
         {
             "id": 11,
             "category": "beginner",
-            "title": "Lesson 11 - Foods & Drinks",
-            "desc": "Learn common foods, drinks, and eating-related phrases in Mandarin.",
+            "title": "Lesson 11 - Food & Drinks",
+            "desc": "Learn names of common foods and drinks. Recognize everyday dining vocabulary.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit02/lesson11"
@@ -112,7 +112,7 @@
             "id": 12,
             "category": "beginner",
             "title": "Lesson 12 - Weather & Nature",
-            "desc": "Learn weather terms, nature words, and environmental phrases.",
+            "desc": "Learn words for weather and natural elements. Understand how nature is described in Mandarin.",
             "duration": "13 min",
             "progress": 0,
             "path": "/modules/unit02/lesson12"
@@ -121,7 +121,7 @@
             "id": 13,
             "category": "beginner",
             "title": "Lesson 13 - Daily Activities",
-            "desc": "Learn daily routine verbs and expressions in Mandarin.",
+            "desc": "Learn verbs for everyday actions and routines. Recognize common daily activities.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit02/lesson13"
@@ -130,7 +130,7 @@
             "id": 14,
             "category": "beginner",
             "title": "Lesson 14 - At the Market",
-            "desc": "Learn shopping phrases, fruits, vegetables, and bargaining words.",
+            "desc": "Learn vocabulary for shopping and prices. Understand basic market and buying terms.",
             "duration": "16 min",
             "progress": 0,
             "path": "/modules/unit02/lesson14"
@@ -139,7 +139,7 @@
             "id": 15,
             "category": "beginner",
             "title": "Lesson 15 - Clothes & Shopping",
-            "desc": "Learn clothing items, shopping phrases, and sizes in Mandarin.",
+            "desc": "Learn clothing names and shopping expressions. Understand how items and sizes are described.",
             "duration": "12 min",
             "progress": 0,
             "path": "/modules/unit02/lesson15"
@@ -148,7 +148,7 @@
             "id": 16,
             "category": "beginner",
             "title": "Lesson 16 - Transport & Directions",
-            "desc": "Learn transport vocabulary and giving or following directions.",
+            "desc": "Learn transport modes and direction words. Understand how movement and locations are expressed.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit02/lesson16"
@@ -156,8 +156,8 @@
         {
             "id": 17,
             "category": "beginner",
-            "title": "Lesson 17 - Review & Speaking",
-            "desc": "Review lessons and practice speaking with real-life projects.",
+            "title": "Lesson 17 - Review & Places",
+            "desc": "Review common public places and locations. Understand everyday place-related vocabulary.",
             "duration": "18 min",
             "progress": 0,
             "path": "/modules/unit02/lesson17"
@@ -166,7 +166,7 @@
             "id": 18,
             "category": "elementary",
             "title": "Lesson 18 - Describing People",
-            "desc": "Learn how to describe people in Mandarin: appearance, age, and personality.",
+            "desc": "Learn words to describe people and appearance. Understand basic physical descriptions.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit03/lesson18"
@@ -175,7 +175,7 @@
             "id": 19,
             "category": "elementary",
             "title": "Lesson 19 - Feelings & Health",
-            "desc": "Learn how to express feelings, emotions, and talk about health.",
+            "desc": "Learn vocabulary for emotions and health. Understand how feelings and conditions are expressed.",
             "duration": "13 min",
             "progress": 0,
             "path": "/modules/unit03/lesson19"
@@ -184,7 +184,7 @@
             "id": 20,
             "category": "elementary",
             "title": "Lesson 20 - Question Words",
-            "desc": "Learn basic question words to ask questions in Mandarin.",
+            "desc": "Learn essential question words in Mandarin. Understand how information is asked for.",
             "duration": "12 min",
             "progress": 0,
             "path": "/modules/unit03/lesson20"
@@ -193,7 +193,7 @@
             "id": 21,
             "category": "elementary",
             "title": "Lesson 21 - Numbers 11–100",
-            "desc": "Learn numbers from 11 to 100 and how to use them in sentences.",
+            "desc": "Learn larger numbers and counting patterns. Build confidence with quantities and amounts.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit03/lesson21"
@@ -202,7 +202,7 @@
             "id": 22,
             "category": "elementary",
             "title": "Lesson 22 - House & Rooms",
-            "desc": "Learn vocabulary related to houses, rooms, and furniture.",
+            "desc": "Learn words for rooms and household items. Understand basic home-related vocabulary.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit03/lesson22"
@@ -211,7 +211,7 @@
             "id": 23,
             "category": "elementary",
             "title": "Lesson 23 - School & Learning",
-            "desc": "Learn words related to school, studying, exams, and classroom objects.",
+            "desc": "Learn vocabulary related to school and study. Understand common academic terms.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit03/lesson23"
@@ -220,7 +220,7 @@
             "id": 24,
             "category": "elementary",
             "title": "Lesson 24 - Technology",
-            "desc": "Learn vocabulary for technology, devices, internet, apps, and software.",
+            "desc": "Learn words for digital and modern technology. Understand basic tech-related vocabulary.",
             "duration": "16 min",
             "progress": 0,
             "path": "/modules/unit03/lesson24"
@@ -228,8 +228,8 @@
         {
             "id": 25,
             "category": "elementary",
-            "title": "Lesson 25 - Review & Speaking Project",
-            "desc": "Review previous lessons and practice speaking with projects.",
+            "title": "Lesson 25 - Review & Communication Skills",
+            "desc": "Review communication-related verbs and actions. Strengthen understanding of everyday interactions.",
             "duration": "18 min",
             "progress": 0,
             "path": "/modules/unit03/lesson25"
@@ -237,8 +237,8 @@
         {
             "id": 26,
             "category": "elementary",
-            "title": "Lesson 26 - At the Restaurant",
-            "desc": "Learn restaurant vocabulary: menu, ordering, food, and tableware.",
+            "title": "Lesson 26 - Hobbies & Free Time",
+            "desc": "Learn words for hobbies and leisure activities. Understand how free time is described.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit04/lesson26"
@@ -246,8 +246,8 @@
         {
             "id": 27,
             "category": "elementary",
-            "title": "Lesson 27 - At the Market",
-            "desc": "Learn market vocabulary: fruits, prices, weighing, and cashier terms.",
+            "title": "Lesson 27 - At the Restaurant",
+            "desc": "Learn dining and ordering vocabulary. Understand common restaurant expressions.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit04/lesson27"
@@ -255,8 +255,8 @@
         {
             "id": 28,
             "category": "elementary",
-            "title": "Lesson 28 - Travel & Hotel",
-            "desc": "Learn travel and hotel vocabulary: tickets, passports, luggage, and check-in.",
+            "title": "Lesson 28 - At the Market",
+            "desc": "Learn shopping and pricing expressions. Understand everyday buying situations.",
             "duration": "16 min",
             "progress": 0,
             "path": "/modules/unit04/lesson28"
@@ -264,8 +264,8 @@
         {
             "id": 29,
             "category": "elementary",
-            "title": "Lesson 29 - Emergency & Help",
-            "desc": "Learn emergency and help-related vocabulary: police, fire, danger, and first aid.",
+            "title": "Lesson 29 - Travel & Hotel",
+            "desc": "Learn travel and accommodation vocabulary. Understand common travel-related terms.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit04/lesson29"
@@ -273,8 +273,8 @@
         {
             "id": 30,
             "category": "elementary",
-            "title": "Lesson 30 - Making Plans",
-            "desc": "Learn making plans vocabulary: time, date, meeting, and place.",
+            "title": "Lesson 30 - Emergency & Help",
+            "desc": "Learn words used in emergencies and help situations. Understand urgent and safety-related expressions.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit04/lesson30"
@@ -282,8 +282,8 @@
         {
             "id": 31,
             "category": "elementary",
-            "title": "Lesson 31 - Work & Business Basics",
-            "desc": "Learn work and business basics vocabulary: company, boss, colleagues, and meetings.",
+            "title": "Lesson 31 - Making Plans",
+            "desc": "Learn time-related words for planning. Understand how arrangements are discussed.",
             "duration": "16 min",
             "progress": 0,
             "path": "/modules/unit04/lesson31"
@@ -291,8 +291,8 @@
         {
             "id": 32,
             "category": "elementary",
-            "title": "Lesson 32 - Review & Speaking Project",
-            "desc": "Review recent lessons and practice speaking with projects.",
+            "title": "Lesson 32 - Work & Business Basics",
+            "desc": "Learn essential workplace and business vocabulary. Understand common professional terms.",
             "duration": "18 min",
             "progress": 0,
             "path": "/modules/unit04/lesson32"
@@ -300,8 +300,8 @@
         {
             "id": 33,
             "category": "elementary",
-            "title": "Lesson 33 - Advanced Work & Communication",
-            "desc": "Learn advanced vocabulary for work, communication, emails, and arranging tasks.",
+            "title": "Lesson 33 - Review & Work Life",
+            "desc": "Review work-related actions and routines. Strengthen understanding of daily professional language.",
             "duration": "18 min",
             "progress": 0,
             "path": "/modules/unit04/lesson33"
@@ -309,8 +309,8 @@
         {
             "id": 34,
             "category": "intermediate",
-            "title": "Lesson 34 - At the Restaurant",
-            "desc": "Learn how to ask for the menu, order food and drinks, express taste preferences, and handle the bill in a restaurant.",
+            "title": "Lesson 34 - Talking About the Past",
+            "desc": "Learn words used to describe past events. Understand how time references work.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit05/lesson34"
@@ -318,8 +318,8 @@
         {
             "id": 35,
             "category": "intermediate",
-            "title": "Lesson 35 - Asking for Directions",
-            "desc": "Learn to ask for and give directions, understand location phrases, and express distance in Chinese.",
+            "title": "Lesson 35 - Talking About the Future",
+            "desc": "Learn expressions related to future plans. Understand intention and possibility words.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit05/lesson35"
@@ -327,8 +327,8 @@
         {
             "id": 36,
             "category": "intermediate",
-            "title": "Lesson 36 - Travel Sentences",
-            "desc": "Learn travel-related sentences for going to the airport or train station, asking about tickets, schedules, reservations, and taxi services.",
+            "title": "Lesson 36 - Because / So / But",
+            "desc": "Learn connectors for cause and contrast. Understand how ideas are linked.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit05/lesson36"
@@ -336,8 +336,8 @@
         {
             "id": 37,
             "category": "intermediate",
-            "title": "Lesson 37 - Emergency Sentences",
-            "desc": "Learn how to ask for help, report lost items, call the police or ambulance, and express health issues or gratitude in emergencies.",
+            "title": "Lesson 37 - If / Besides",
+            "desc": "Learn conditional and additional expressions. Understand logical connections between ideas.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit05/lesson37"
@@ -345,8 +345,8 @@
         {
             "id": 38,
             "category": "intermediate",
-            "title": "Lesson 38 - Everyday Small Talk",
-            "desc": "Learn common small talk phrases for talking about the weather, food preferences, daily activities, and greeting for weekends, birthdays, and New Year.",
+            "title": "Lesson 38 - Review Conversation Skills",
+            "desc": "Review verbs used in conversations. Strengthen understanding of interaction skills.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit05/lesson38"
@@ -354,8 +354,8 @@
         {
             "id": 39,
             "category": "intermediate",
-            "title": "Lesson 39",
-            "desc": "Intermediate lesson content from Unit 5.",
+            "title": "Lesson 39 - Meeting New People",
+            "desc": "Understand basic introduction conversations. Recognize common greeting exchanges.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit06/lesson39"
@@ -363,8 +363,8 @@
         {
             "id": 40,
             "category": "intermediate",
-            "title": "Lesson 40",
-            "desc": "Intermediate lesson content from Unit 6.",
+            "title": "Lesson 40 - Talking About Daily Life",
+            "desc": "Understand sentences about daily routines. Recognize everyday life conversations.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit06/lesson40"
@@ -372,8 +372,8 @@
         {
             "id": 41,
             "category": "intermediate",
-            "title": "Lesson 41",
-            "desc": "Intermediate lesson content from Unit 6.",
+            "title": "Lesson 41 - Shopping Sentences",
+            "desc": "Understand common shopping conversations. Recognize buying and payment expressions.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit06/lesson41"
@@ -381,8 +381,8 @@
         {
             "id": 42,
             "category": "intermediate",
-            "title": "Lesson 42",
-            "desc": "Intermediate lesson content from Unit 6.",
+            "title": "Lesson 42 - In a Restaurant",
+            "desc": "Understand full dining conversations. Recognize ordering and service expressions.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit06/lesson42"
@@ -391,7 +391,7 @@
             "id": 43,
             "category": "intermediate",
             "title": "Lesson 43 - Asking for Directions",
-            "desc": "Learn phrases to ask for toilets, banks, and other locations, understand instructions like left, right, straight, and express distance or thanks.",
+            "desc": "Understand how directions are given. Recognize location-based conversations.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit06/lesson43"
@@ -400,7 +400,7 @@
             "id": 44,
             "category": "intermediate",
             "title": "Lesson 44 - Travel Sentences",
-            "desc": "Learn to talk about going to airports, train stations, asking ticket prices, departure and arrival times, making reservations, requesting room keys and Wi-Fi, and calling taxis.",
+            "desc": "Understand travel-related conversations. Recognize transportation and accommodation sentences.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit06/lesson44"
@@ -409,7 +409,7 @@
             "id": 45,
             "category": "intermediate",
             "title": "Lesson 45 - Emergency Sentences",
-            "desc": "Learn emergency phrases including asking for help, reporting lost wallets, calling police or ambulance, expressing illness, seeing a doctor, and reassuring others.",
+            "desc": "Understand urgent and emergency conversations. Recognize safety-related expressions.",
             "duration": "15 min",
             "progress": 0,
             "path": "/modules/unit06/lesson45"
@@ -418,7 +418,7 @@
             "id": 46,
             "category": "intermediate",
             "title": "Lesson 46 - Everyday Small Talk",
-            "desc": "Learn small talk phrases to discuss weather, food preferences, destinations, daily routines, and greetings for weekends, birthdays, and New Year.",
+            "desc": "Understand casual daily conversations. Recognize friendly and social expressions.",
             "duration": "14 min",
             "progress": 0,
             "path": "/modules/unit06/lesson46"

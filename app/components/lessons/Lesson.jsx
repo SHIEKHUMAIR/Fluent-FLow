@@ -1,8 +1,5 @@
 "use client";
 import LessonContent from "./LessonContent";
-
-// General lesson component that works for all units
-// Automatically determines unit number based on lesson number if not provided
 const Lesson = ({ selectedCategory, unitNumber, lessonNumber, lessonId }) => {
   // Extract lesson number from selectedCategory if not provided
   const lessonNum = lessonNumber || (selectedCategory ? parseInt(selectedCategory.replace("lesson", "")) : 1);

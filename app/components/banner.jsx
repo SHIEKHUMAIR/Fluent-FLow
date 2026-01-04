@@ -25,7 +25,7 @@ const banner = () => {
     </h1>
 
     <p className="text-lg sm:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-      Practice real conversations, scan real-world objects, and track your learning journey—all through an intelligent, gamified platform built for modern Chinese learners.
+      Practice real conversations, scan real world objects, and track your learning journey all through an intelligent, gamified platform built for modern Chinese learners.
     </p>
 
     {/* Feature Cards */}
@@ -80,9 +80,9 @@ const banner = () => {
     </div>
 
     {/* Footer info */}
-    <div className="text-center">
+    {/* <div className="text-center">
       <p className="text-slate-400 mb-4">Trusted by 10,000+ learners worldwide</p>
-    </div>
+    </div> */}
   </div>
 </section>
 

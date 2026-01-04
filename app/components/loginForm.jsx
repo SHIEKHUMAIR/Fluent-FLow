@@ -111,7 +111,8 @@ const LoginForm = () => {
         if (token) {
           localStorage.setItem("token", token);
           // Set cookie for middleware (Google login usually durable, so 7 days)
-          document.cookie = `authToken=${token}; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Strict`;
+          // Use 'Lax' for SameSite to ensure cookie sends on navigation from external (Google)
+          document.cookie = `authToken=${token}; path=/; max-age=${60 * 60 * 24 * 7}; SameSite=Lax`;
         }
 
         // Store user info

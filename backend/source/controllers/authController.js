@@ -97,6 +97,11 @@ async function login(req, res) {
 async function googleLogin(req, res) {
   try {
     const { token } = req.body;
+    
+    console.log("Google Login Attempt:");
+    console.log("Received Token length:", token ? token.length : "null");
+    console.log("Backend GOOGLE_CLIENT_ID:", process.env.GOOGLE_CLIENT_ID);
+
     if (!token) return res.status(400).json({ message: "Token is required" });
 
     const ticket = await client.verifyIdToken({
@@ -132,8 +137,9 @@ async function googleLogin(req, res) {
       token: jwtToken
     });
   } catch (err) {
-    console.error("Google login error:", err);
-    return res.status(500).json({ message: "Server error" });
+    console.error("Google login error details:", err);
+    console.error("Backend configured Client ID:", process.env.GOOGLE_CLIENT_ID);
+    return res.status(500).json({ message: "Google login verification failed", error: err.message });
   }
 }
 

@@ -99,7 +99,7 @@ const LoginForm = () => {
       const res = await fetch(API_ENDPOINTS.AUTH.GOOGLE_LOGIN, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: credentialResponse.credential }),
+        body: JSON.stringify({ token: credentialResponse.credential, isSignup: false }),
       });
 
       const data = await res.json();
@@ -149,9 +149,17 @@ const LoginForm = () => {
         window.dispatchEvent(new CustomEvent('userLoggedIn'));
         window.dispatchEvent(new CustomEvent('profileUpdated'));
 
-        router.replace('/dashboard');
+        // Use hard navigation to ensure cookies are sent to server/middleware
+        window.location.href = '/dashboard';
       } else {
         setMessage(`❌ ${data.message}`);
+
+        // Clear any stale data to prevent sidebar from showing logged-in state
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('profileImage');
       }
     } catch (err) {
       console.error(err);

@@ -36,6 +36,15 @@ const RegisterForm = () => {
       const data = await response.json();
       if (response.ok) {
         setMessage("✅ " + data.message);
+
+        // Ensure strictly logged out state
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('profileImage');
+        document.cookie = 'authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
         // Redirect to login page after 2 seconds
         setTimeout(() => {
           router.push('/auth?tab=login');
@@ -55,7 +64,7 @@ const RegisterForm = () => {
       const res = await fetch(API_ENDPOINTS.AUTH.GOOGLE_LOGIN, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token: credentialResponse.credential }),
+        body: JSON.stringify({ token: credentialResponse.credential, isSignup: true }),
       });
 
       const data = await res.json();
@@ -107,6 +116,13 @@ const RegisterForm = () => {
       } else {
         console.error("Google signup failed:", data.message);
         setMessage(`❌ ${data.message}`);
+
+        // Clear any stale data to prevent sidebar from showing logged-in state
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
+        localStorage.removeItem('profileImage');
       }
     } catch (err) {
       console.error("Error sending token to backend:", err);

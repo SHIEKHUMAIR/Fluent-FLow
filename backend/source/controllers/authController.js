@@ -96,11 +96,12 @@ async function login(req, res) {
 // -----------------------------
 async function googleLogin(req, res) {
   try {
-    const { token } = req.body;
+    const { token, isSignup } = req.body;
     
     console.log("Google Login Attempt:");
     console.log("Received Token length:", token ? token.length : "null");
     console.log("Backend GOOGLE_CLIENT_ID:", process.env.GOOGLE_CLIENT_ID);
+    console.log("Operation Mode:", isSignup ? "Signup" : "Login");
 
     if (!token) return res.status(400).json({ message: "Token is required" });
 
@@ -114,13 +115,25 @@ async function googleLogin(req, res) {
 
     let user = await User.findByEmail(email);
 
+    // If user does not exist...
     if (!user) {
+      // If performing a Login, reject it
+      if (!isSignup) {
+        return res.status(404).json({ message: "User not found. Please sign up first." });
+      }
+
+      // If Signup, create the user
       user = await User.create({
         firstName: given_name || "User",
         lastName: family_name || "",
         email,
         password: await bcrypt.hash(Math.random().toString(36).slice(-8), 10),
       });
+    } else {
+        // If user DOES exist and it's a Signup attempt, reject it
+        if (isSignup) {
+          return res.status(400).json({ message: "User already registered with this email. Please log in." });
+        }
     }
 
     const safeUser = User.toSafeUser(user);

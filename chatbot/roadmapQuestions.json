@@ -1,0 +1,1184 @@
+{
+    "profile": [
+        {
+            "id": "goal",
+            "text": "What is your main goal for learning Chinese?",
+            "options": [
+                {
+                    "label": "Travel & Tourism",
+                    "value": "travel"
+                },
+                {
+                    "label": "Career & Business",
+                    "value": "career"
+                },
+                {
+                    "label": "HSK Exams",
+                    "value": "exams"
+                },
+                {
+                    "label": "Culture & Hobby",
+                    "value": "hobby"
+                }
+            ]
+        },
+        {
+            "id": "time",
+            "text": "How much time can you study daily?",
+            "options": [
+                {
+                    "label": "5-10 mins",
+                    "value": "casual"
+                },
+                {
+                    "label": "20-30 mins",
+                    "value": "regular"
+                },
+                {
+                    "label": "1+ hour",
+                    "value": "intense"
+                }
+            ]
+        },
+        {
+            "id": "selfLevel",
+            "text": "How would you describe your current level?",
+            "options": [
+                {
+                    "label": "Complete Beginner (Start from Unit 1)",
+                    "value": "beginner"
+                },
+                {
+                    "label": "Some Knowledge (I know Pinyin/Basics)",
+                    "value": "intermediate"
+                },
+                {
+                    "label": "Advanced (I can read characters)",
+                    "value": "advanced"
+                }
+            ]
+        }
+    ],
+    "assessment": {
+        "beginner": [
+            {
+                "id": "b1",
+                "text": "What is the Pinyin for 'Mother' (妈)?",
+                "options": [
+                    {
+                        "label": "mā",
+                        "correct": true
+                    },
+                    {
+                        "label": "má",
+                        "correct": false
+                    },
+                    {
+                        "label": "mǎ",
+                        "correct": false
+                    },
+                    {
+                        "label": "mà",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b2",
+                "text": "Which character means 'Eight'?",
+                "options": [
+                    {
+                        "label": "八",
+                        "correct": true
+                    },
+                    {
+                        "label": "六",
+                        "correct": false
+                    },
+                    {
+                        "label": "人",
+                        "correct": false
+                    },
+                    {
+                        "label": "大",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b3",
+                "text": "How do you say 'Hello'?",
+                "options": [
+                    {
+                        "label": "Nǐ hǎo",
+                        "correct": true
+                    },
+                    {
+                        "label": "Zài jiàn",
+                        "correct": false
+                    },
+                    {
+                        "label": "Xiè xie",
+                        "correct": false
+                    },
+                    {
+                        "label": "Duì bu qǐ",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b4",
+                "text": "Select the Pinyin for 'Horse' (马).",
+                "options": [
+                    {
+                        "label": "mā",
+                        "correct": false
+                    },
+                    {
+                        "label": "má",
+                        "correct": false
+                    },
+                    {
+                        "label": "mǎ",
+                        "correct": true
+                    },
+                    {
+                        "label": "mà",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b5",
+                "text": "What does 'Bàba' (爸爸) mean?",
+                "options": [
+                    {
+                        "label": "Dad",
+                        "correct": true
+                    },
+                    {
+                        "label": "Mom",
+                        "correct": false
+                    },
+                    {
+                        "label": "Brother",
+                        "correct": false
+                    },
+                    {
+                        "label": "Sister",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b6",
+                "text": "Which of these is the number 1?",
+                "options": [
+                    {
+                        "label": "yi",
+                        "correct": true
+                    },
+                    {
+                        "label": "er",
+                        "correct": false
+                    },
+                    {
+                        "label": "san",
+                        "correct": false
+                    },
+                    {
+                        "label": "si",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b7",
+                "text": "What does 'Xiè xie' (谢谢) mean?",
+                "options": [
+                    {
+                        "label": "Thank you",
+                        "correct": true
+                    },
+                    {
+                        "label": "Sorry",
+                        "correct": false
+                    },
+                    {
+                        "label": "Goodbye",
+                        "correct": false
+                    },
+                    {
+                        "label": "Please",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b8",
+                "text": "What is the tone mark for the 4th tone?",
+                "options": [
+                    {
+                        "label": "à (Falling)",
+                        "correct": true
+                    },
+                    {
+                        "label": "á (Rising)",
+                        "correct": false
+                    },
+                    {
+                        "label": "ǎ (Falling-Rising)",
+                        "correct": false
+                    },
+                    {
+                        "label": "ā (Flat)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b9",
+                "text": "Which word means 'I' or 'Me'?",
+                "options": [
+                    {
+                        "label": "Wǒ",
+                        "correct": true
+                    },
+                    {
+                        "label": "Nǐ",
+                        "correct": false
+                    },
+                    {
+                        "label": "Tā",
+                        "correct": false
+                    },
+                    {
+                        "label": "Shéi",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "b10",
+                "text": "Choose the correct Pinyin for 'No' / 'Not'.",
+                "options": [
+                    {
+                        "label": "Bù",
+                        "correct": true
+                    },
+                    {
+                        "label": "Shì",
+                        "correct": false
+                    },
+                    {
+                        "label": "Hǎo",
+                        "correct": false
+                    },
+                    {
+                        "label": "Yǒu",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "intermediate": [
+            {
+                "id": "i11",
+                "text": "How do you ask 'How are you?'",
+                "options": [
+                    {
+                        "label": "Nǐ hǎo ma?",
+                        "correct": true
+                    },
+                    {
+                        "label": "Nǐ shì shéi?",
+                        "correct": false
+                    },
+                    {
+                        "label": "Nǐ qù nǎr?",
+                        "correct": false
+                    },
+                    {
+                        "label": "Zài jiàn",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i12",
+                "text": "Which character means 'Water'?",
+                "options": [
+                    {
+                        "label": "水 (Shuǐ)",
+                        "correct": true
+                    },
+                    {
+                        "label": "火 (Huǒ)",
+                        "correct": false
+                    },
+                    {
+                        "label": "木 (Mù)",
+                        "correct": false
+                    },
+                    {
+                        "label": "山 (Shān)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i13",
+                "text": "What is the measure word for flat objects (paper, tables)?",
+                "options": [
+                    {
+                        "label": "Zhāng (张)",
+                        "correct": true
+                    },
+                    {
+                        "label": "Gè (个)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Tiáo (条)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Běi (杯)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i14",
+                "text": "Translate: 'I am American.'",
+                "options": [
+                    {
+                        "label": "Wǒ shì Měiguó rén.",
+                        "correct": true
+                    },
+                    {
+                        "label": "Wǒ zài Měiguó.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Wǒ qù Měiguó.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Wǒ xǐhuān Měiguó.",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i15",
+                "text": "What is the opposite of 'Dà' (大 - Big)?",
+                "options": [
+                    {
+                        "label": "Xiǎo (小)",
+                        "correct": true
+                    },
+                    {
+                        "label": "Duō (多)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Shǎo (少)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Kuài (快)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i16",
+                "text": "Which word means 'Today'?",
+                "options": [
+                    {
+                        "label": "Jīntiān",
+                        "correct": true
+                    },
+                    {
+                        "label": "Míngtiān",
+                        "correct": false
+                    },
+                    {
+                        "label": "Zuótiān",
+                        "correct": false
+                    },
+                    {
+                        "label": "Xiànzài",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i17",
+                "text": "Complete the sentence: 'Wǒ ___ chī fàn.' (I want to eat).",
+                "options": [
+                    {
+                        "label": "xiǎng (想)",
+                        "correct": true
+                    },
+                    {
+                        "label": "kàn (看)",
+                        "correct": false
+                    },
+                    {
+                        "label": "tīng (听)",
+                        "correct": false
+                    },
+                    {
+                        "label": "shuō (说)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i18",
+                "text": "What is 'Friend' in Chinese?",
+                "options": [
+                    {
+                        "label": "Péngyǒu",
+                        "correct": true
+                    },
+                    {
+                        "label": "Lǎoshī",
+                        "correct": false
+                    },
+                    {
+                        "label": "Xuésheng",
+                        "correct": false
+                    },
+                    {
+                        "label": "Yīshēng",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i19",
+                "text": "How do you say 'Where is the bathroom?'",
+                "options": [
+                    {
+                        "label": "Xǐshǒujiān zài nǎr?",
+                        "correct": true
+                    },
+                    {
+                        "label": "Nǐ shì nǎr?",
+                        "correct": false
+                    },
+                    {
+                        "label": "Nǐ yào shénme?",
+                        "correct": false
+                    },
+                    {
+                        "label": "Cèsuǒ yǒu ma?",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i20",
+                "text": "What means 'Happy'?",
+                "options": [
+                    {
+                        "label": "Gāoxìng",
+                        "correct": true
+                    },
+                    {
+                        "label": "Nánguò",
+                        "correct": false
+                    },
+                    {
+                        "label": "Shēngqì",
+                        "correct": false
+                    },
+                    {
+                        "label": "Lèi",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i21",
+                "text": "Translate: 'I don't know.'",
+                "options": [
+                    {
+                        "label": "Wǒ bù zhīdào.",
+                        "correct": true
+                    },
+                    {
+                        "label": "Wǒ bù míngbai.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Wǒ bù kěyǐ.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Wǒ méiyǒu.",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i22",
+                "text": "Which is the verb 'To Go'?",
+                "options": [
+                    {
+                        "label": "Qù",
+                        "correct": true
+                    },
+                    {
+                        "label": "Lái",
+                        "correct": false
+                    },
+                    {
+                        "label": "Zài",
+                        "correct": false
+                    },
+                    {
+                        "label": "Huí",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i23",
+                "text": "What is 'Book'?",
+                "options": [
+                    {
+                        "label": "Shū",
+                        "correct": true
+                    },
+                    {
+                        "label": "Bǐ",
+                        "correct": false
+                    },
+                    {
+                        "label": "Zhǐ",
+                        "correct": false
+                    },
+                    {
+                        "label": "Bāo",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i24",
+                "text": "Which character means 'Month' or 'Moon'?",
+                "options": [
+                    {
+                        "label": "Yue (月)",
+                        "correct": true
+                    },
+                    {
+                        "label": "Ri (日)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Nian (年)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Tian (天)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "i25",
+                "text": "How do you say 'Sorry'?",
+                "options": [
+                    {
+                        "label": "Duì bu qǐ",
+                        "correct": true
+                    },
+                    {
+                        "label": "Méi guānxi",
+                        "correct": false
+                    },
+                    {
+                        "label": "Bú kèqi",
+                        "correct": false
+                    },
+                    {
+                        "label": "Qǐng wèn",
+                        "correct": false
+                    }
+                ]
+            }
+        ],
+        "advanced": [
+            {
+                "id": "a26",
+                "text": "Select the correct particle for completed action: 'Wǒ chī ___ fàn.'",
+                "options": [
+                    {
+                        "label": "le (了)",
+                        "correct": true
+                    },
+                    {
+                        "label": "de (的)",
+                        "correct": false
+                    },
+                    {
+                        "label": "ma (吗)",
+                        "correct": false
+                    },
+                    {
+                        "label": "nē (呢)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a27",
+                "text": "Which idiom means 'Horse horse tiger tiger' (So-so)?",
+                "options": [
+                    {
+                        "label": "Mǎ mǎ hū hū",
+                        "correct": true
+                    },
+                    {
+                        "label": "Mǎ dào chéng gōng",
+                        "correct": false
+                    },
+                    {
+                        "label": "Hé qì shēng cái",
+                        "correct": false
+                    },
+                    {
+                        "label": "Yī lù píng ān",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a28",
+                "text": "What is 'Airport' in Chinese?",
+                "options": [
+                    {
+                        "label": "Jīchǎng",
+                        "correct": true
+                    },
+                    {
+                        "label": "Chēzhàn",
+                        "correct": false
+                    },
+                    {
+                        "label": "Dìtiě",
+                        "correct": false
+                    },
+                    {
+                        "label": "Gōngjiāo",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a29",
+                "text": "Translate: 'If it rains tomorrow, I won't go.'",
+                "options": [
+                    {
+                        "label": "Rúguǒ míngtiān xià yǔ, wǒ jiù bú qù.",
+                        "correct": true
+                    },
+                    {
+                        "label": "Yīnwèi míngtiān xià yǔ, suǒyǐ wǒ bú qù.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Suīrán míngtiān xià yǔ, dànshì wǒ bú qù.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Míngtiān xià yǔ, wǒ bù qù.",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a30",
+                "text": "What is the difference between 'Èr' (二) and 'Liǎng' (两)?",
+                "options": [
+                    {
+                        "label": "Liǎng is used for counting quantity, Èr for numbers.",
+                        "correct": true
+                    },
+                    {
+                        "label": "They are exactly the same.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Èr is for money only.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Liǎng is for written Chinese only.",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a31",
+                "text": "Which word means 'Introduction'?",
+                "options": [
+                    {
+                        "label": "Jièshào",
+                        "correct": true
+                    },
+                    {
+                        "label": "Kāishǐ",
+                        "correct": false
+                    },
+                    {
+                        "label": "Jiéshù",
+                        "correct": false
+                    },
+                    {
+                        "label": "Zhǔnbèi",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a32",
+                "text": "What does 'Kěyǐ' (可以) express?",
+                "options": [
+                    {
+                        "label": "Permission / Ability",
+                        "correct": true
+                    },
+                    {
+                        "label": "Future tense",
+                        "correct": false
+                    },
+                    {
+                        "label": "Past tense",
+                        "correct": false
+                    },
+                    {
+                        "label": "Location",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a33",
+                "text": "Choose the formal 'You'.",
+                "options": [
+                    {
+                        "label": "Nín (您)",
+                        "correct": true
+                    },
+                    {
+                        "label": "Nǐ (你)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Tā (他)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Dàjiā (大家)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a34",
+                "text": "What is the meaning of 'Xīwàng' (希望)?",
+                "options": [
+                    {
+                        "label": "Hope",
+                        "correct": true
+                    },
+                    {
+                        "label": "Disappoint",
+                        "correct": false
+                    },
+                    {
+                        "label": "Waiting",
+                        "correct": false
+                    },
+                    {
+                        "label": "Believe",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a35",
+                "text": "Translate: 'Please wait a moment.'",
+                "options": [
+                    {
+                        "label": "Qǐng děng yīxià.",
+                        "correct": true
+                    },
+                    {
+                        "label": "Qǐng jìn.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Qǐng zuò.",
+                        "correct": false
+                    },
+                    {
+                        "label": "Qǐng hē chá.",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a36",
+                "text": "Which conjunction means 'Because'?",
+                "options": [
+                    {
+                        "label": "Yīnwèi",
+                        "correct": true
+                    },
+                    {
+                        "label": "Suǒyǐ",
+                        "correct": false
+                    },
+                    {
+                        "label": "Dànshì",
+                        "correct": false
+                    },
+                    {
+                        "label": "Háishì",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a37",
+                "text": "What implies an ongoing action (Present Continuous)?",
+                "options": [
+                    {
+                        "label": "Zài (在) + Verb",
+                        "correct": true
+                    },
+                    {
+                        "label": "Guò (过)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Le (了)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Huì (会)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a38",
+                "text": "Which word means 'Culture'?",
+                "options": [
+                    {
+                        "label": "Wénhuà",
+                        "correct": true
+                    },
+                    {
+                        "label": "Lìshǐ",
+                        "correct": false
+                    },
+                    {
+                        "label": "Jīngjì",
+                        "correct": false
+                    },
+                    {
+                        "label": "Shèhuì",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a39",
+                "text": "How do you say 'Computer'?",
+                "options": [
+                    {
+                        "label": "Diànnǎo",
+                        "correct": true
+                    },
+                    {
+                        "label": "Diànhuà",
+                        "correct": false
+                    },
+                    {
+                        "label": "Diànshì",
+                        "correct": false
+                    },
+                    {
+                        "label": "Diànyǐng",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a40",
+                "text": "What implies past experience?",
+                "options": [
+                    {
+                        "label": "Guò (过)",
+                        "correct": true
+                    },
+                    {
+                        "label": "Le (了)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Zài (在)",
+                        "correct": false
+                    },
+                    {
+                        "label": "Zhe (着)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a41",
+                "text": "Translate 'Restaurant'.",
+                "options": [
+                    {
+                        "label": "Fànguǎn",
+                        "correct": true
+                    },
+                    {
+                        "label": "Yīyuàn",
+                        "correct": false
+                    },
+                    {
+                        "label": "Xuéxiào",
+                        "correct": false
+                    },
+                    {
+                        "label": "Yínháng",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a42",
+                "text": "Which is correct for asking price?",
+                "options": [
+                    {
+                        "label": "Duōshao qián?",
+                        "correct": true
+                    },
+                    {
+                        "label": "Jǐ gè qián?",
+                        "correct": false
+                    },
+                    {
+                        "label": "Shénme qián?",
+                        "correct": false
+                    },
+                    {
+                        "label": "Nǎr qián?",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a43",
+                "text": "What does 'Kuàilè' (快乐) mean?",
+                "options": [
+                    {
+                        "label": "Happy",
+                        "correct": true
+                    },
+                    {
+                        "label": "Fast",
+                        "correct": false
+                    },
+                    {
+                        "label": "Slow",
+                        "correct": false
+                    },
+                    {
+                        "label": "Sad",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a44",
+                "text": "Translate 'Interesting'.",
+                "options": [
+                    {
+                        "label": "Yǒu yìsi",
+                        "correct": true
+                    },
+                    {
+                        "label": "Méi yìsi",
+                        "correct": false
+                    },
+                    {
+                        "label": "Hǎo kàn",
+                        "correct": false
+                    },
+                    {
+                        "label": "Nán kàn",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a45",
+                "text": "What is the particle for possession?",
+                "options": [
+                    {
+                        "label": "de (的)",
+                        "correct": true
+                    },
+                    {
+                        "label": "de (得)",
+                        "correct": false
+                    },
+                    {
+                        "label": "de (地)",
+                        "correct": false
+                    },
+                    {
+                        "label": "le (了)",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a46",
+                "text": "How do you say 'Weather'?",
+                "options": [
+                    {
+                        "label": "Tiānqì",
+                        "correct": true
+                    },
+                    {
+                        "label": "Kōngqì",
+                        "correct": false
+                    },
+                    {
+                        "label": "Fēngjǐng",
+                        "correct": false
+                    },
+                    {
+                        "label": "Huánjìng",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a47",
+                "text": "What means 'To Exercise'?",
+                "options": [
+                    {
+                        "label": "Yùndòng",
+                        "correct": true
+                    },
+                    {
+                        "label": "Xiūxi",
+                        "correct": false
+                    },
+                    {
+                        "label": "Shuìjiào",
+                        "correct": false
+                    },
+                    {
+                        "label": "Gōngzuò",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a48",
+                "text": "Translate 'Help'.",
+                "options": [
+                    {
+                        "label": "Bāngzhù",
+                        "correct": true
+                    },
+                    {
+                        "label": "Gàosu",
+                        "correct": false
+                    },
+                    {
+                        "label": "Zhīdào",
+                        "correct": false
+                    },
+                    {
+                        "label": "Wèntí",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a49",
+                "text": "Which word means 'Problem' or 'Question'?",
+                "options": [
+                    {
+                        "label": "Wèntí",
+                        "correct": true
+                    },
+                    {
+                        "label": "Dá'àn",
+                        "correct": false
+                    },
+                    {
+                        "label": "Bànfǎ",
+                        "correct": false
+                    },
+                    {
+                        "label": "Yìjiàn",
+                        "correct": false
+                    }
+                ]
+            },
+            {
+                "id": "a50",
+                "text": "What does 'Suízhe' (随着) mean?",
+                "options": [
+                    {
+                        "label": "Along with",
+                        "correct": true
+                    },
+                    {
+                        "label": "Because of",
+                        "correct": false
+                    },
+                    {
+                        "label": "In order to",
+                        "correct": false
+                    },
+                    {
+                        "label": "Even if",
+                        "correct": false
+                    }
+                ]
+            }
+        ]
+    },
+    "recommendations": {
+        "beginner": {
+            "text": "Great! You should start with **Unit 1: Basics** to build a strong foundation in Pinyin and greetings.",
+            "unit": 1
+        },
+        "intermediate": {
+            "text": "You have a solid base! We recommend starting at **Unit 3: Daily Conversation** to practice sentence structures.",
+            "unit": 3
+        },
+        "advanced": {
+            "text": "Impressive! You are ready for **Unit 5: Advanced Topics** and reading practice.",
+            "unit": 5
+        }
+    }
+}

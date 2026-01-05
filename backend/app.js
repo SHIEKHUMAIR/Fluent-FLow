@@ -46,6 +46,8 @@ app.use("/api/progress", require("./source/routes/progress"));
 app.use("/api/profile", require("./source/routes/profile"));
 app.use("/api/leaderboard", require("./source/routes/leaderboard"));
 app.use("/api/notifications", require("./source/routes/notifications"));
+app.use("/api/chatbot", require("./source/routes/chatbot"));
+
 
 // Init notifications
 initWebPush();

@@ -1,0 +1,7 @@
+requests
+reportlab
+google-genai
+python-dotenv
+fastapi
+uvicorn
+python-multipart

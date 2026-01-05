@@ -1,5 +1,6 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
+import { API_BASE_URL, API_PYTHON_URL } from '../../lib/config';
 
 export default function ChatbotWidget() {
   const [open, setOpen] = useState(false);
@@ -8,6 +9,10 @@ export default function ChatbotWidget() {
   ]);
   const [input, setInput] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
+  const [pdfBlob, setPdfBlob] = useState(null);
+  const [pdfFileName, setPdfFileName] = useState('');
+  const [pdfUrl, setPdfUrl] = useState(null);
 
   // Roadmap State
   const [roadmapState, setRoadmapState] = useState({
@@ -67,10 +72,26 @@ export default function ChatbotWidget() {
     }
   }, [isAuthenticated, open]);
 
+  // Cleanup PDF URL on unmount
+  useEffect(() => {
+    return () => {
+      if (pdfUrl) {
+        URL.revokeObjectURL(pdfUrl);
+      }
+    };
+  }, [pdfUrl]);
+
   // --- Roadmap Logic ---
 
   const startRoadmap = () => {
     if (!roadmapData) return;
+    // Reset PDF state when starting new roadmap
+    if (pdfUrl) {
+      URL.revokeObjectURL(pdfUrl);
+    }
+    setPdfBlob(null);
+    setPdfFileName('');
+    setPdfUrl(null);
     setRoadmapState(prev => ({ ...prev, active: true, phase: 'profile' }));
     askProfileQuestion(0);
   };
@@ -203,27 +224,95 @@ export default function ChatbotWidget() {
     }
   };
 
-  const completeRoadmap = (status, score = 0) => {
-    let recKey = 'beginner';
-    const selfLevel = roadmapState.profile.selfLevel;
-
-    if (status === 'beginner') {
-      recKey = 'beginner';
-    } else if (status === 'downgrade') {
-      // If they failed the quiz for their level, recommend one step down or just review
-      recKey = selfLevel === 'advanced' ? 'intermediate' : 'beginner';
-    } else if (status === 'finished') {
-      // If they passed mostly
-      recKey = score > 5 ? selfLevel : (selfLevel === 'advanced' ? 'intermediate' : 'beginner');
-    }
-
-    const rec = roadmapData.recommendations[recKey];
+  const completeRoadmap = async (status, score = 0) => {
+    setIsGeneratingPDF(true);
+    
+    // Show generating message
     setMessages(prev => [...prev, {
       role: 'assistant',
-      content: `Analysis Complete! 🧠\n\nGoal: ${roadmapState.profile.goal}\nCommitment: ${roadmapState.profile.time}\n\n${rec.text}`
+      content: '🎯 Analysis Complete! Generating your personalized roadmap PDF...'
     }]);
 
-    setRoadmapState(prev => ({ ...prev, active: false, phase: 'complete' }));
+    try {
+      // Get user info
+      const userId = localStorage.getItem('userId');
+      const userName = localStorage.getItem('userName') || 'Learner';
+
+      if (!userId) {
+        throw new Error('User ID not found. Please log in.');
+      }
+
+      // Collect all answers (profile + quiz answers if any)
+      const answers = { ...roadmapState.profile };
+      
+      // Add quiz score if available
+      if (roadmapState.quiz.score !== undefined) {
+        answers.quizScore = roadmapState.quiz.score;
+        answers.quizStrikes = roadmapState.quiz.strikes;
+      }
+
+      // Construct payload for Python API
+      const payload = {
+        userId: userId,
+        answers: answers,
+        userName: userName,
+        backendUrl: API_BASE_URL
+      };
+
+      console.log('Generating Roadmap with payload:', payload);
+
+      // Call Python API to generate PDF
+      const response = await fetch(`${API_PYTHON_URL}/api/generate-roadmap`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'accept': 'application/pdf'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        let errorText = 'Failed to generate roadmap via Python API';
+        try {
+          const errorData = await response.json();
+          errorText = errorData.detail || errorData.message || errorData.error || errorText;
+        } catch {
+          // If not JSON, try text
+          try {
+            errorText = await response.text();
+          } catch {
+            errorText = `Server error: ${response.status} ${response.statusText}`;
+          }
+        }
+        console.error('Roadmap generation error:', errorText);
+        throw new Error(errorText);
+      }
+
+      // Store PDF blob for display in chat
+      const blob = await response.blob();
+      const fileName = `Roadmap_${userName.replace(/\s+/g, '_')}.pdf`;
+      const blobUrl = URL.createObjectURL(blob);
+      setPdfBlob(blob);
+      setPdfFileName(fileName);
+      setPdfUrl(blobUrl);
+
+      // Show success message with PDF preview
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: '✅ Your personalized roadmap PDF is ready! Click the button below to download.',
+        hasPDF: true
+      }]);
+
+    } catch (err) {
+      console.error('Roadmap Generation Error:', err);
+      setMessages(prev => [...prev, {
+        role: 'assistant',
+        content: `❌ Error: ${err.message}\n\nPlease try again or contact support.`
+      }]);
+    } finally {
+      setIsGeneratingPDF(false);
+      setRoadmapState(prev => ({ ...prev, active: false, phase: 'complete' }));
+    }
   };
 
   if (!isAuthenticated) return null;
@@ -250,6 +339,17 @@ export default function ChatbotWidget() {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
+    }
+  };
+
+  const handleDownloadPDF = () => {
+    if (pdfBlob) {
+      const a = document.createElement('a');
+      a.href = pdfUrl || URL.createObjectURL(pdfBlob);
+      a.download = pdfFileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   };
 
@@ -289,9 +389,55 @@ export default function ChatbotWidget() {
             <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
               <div className={`${m.role === 'user' ? 'bg-blue-900 text-white rounded-2xl rounded-br-sm' : 'bg-white/80 text-slate-800 rounded-2xl rounded-bl-sm border border-white/40'} px-3 py-2 max-w-[85%] whitespace-pre-wrap shadow-sm`}>
                 {m.content}
+                {/* PDF Preview and Download Button */}
+                {m.hasPDF && pdfBlob && (
+                  <div className="mt-3 pt-3 border-t border-slate-200">
+                    <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+                      <div className="flex-shrink-0">
+                        <svg className="w-10 h-10 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-slate-800 truncate">{pdfFileName}</p>
+                        <p className="text-xs text-slate-500">Your personalized learning roadmap</p>
+                      </div>
+                      <button
+                        onClick={handleDownloadPDF}
+                        className="flex-shrink-0 px-4 py-2 bg-blue-900 hover:bg-blue-800 text-white text-sm font-semibold rounded-lg transition-colors flex items-center gap-2"
+                      >
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Download
+                      </button>
+                    </div>
+                    {/* PDF Preview iframe */}
+                    {pdfUrl && (
+                      <div className="mt-2 rounded-lg overflow-hidden border border-slate-200 bg-slate-50">
+                        <iframe
+                          src={pdfUrl}
+                          className="w-full h-64"
+                          title="PDF Preview"
+                        />
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           ))}
+          {/* Loading indicator for PDF generation */}
+          {isGeneratingPDF && (
+            <div className="flex justify-start">
+              <div className="bg-white/80 text-slate-800 rounded-2xl rounded-bl-sm border border-white/40 px-3 py-2 shadow-sm">
+                <div className="flex items-center gap-2">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-900"></div>
+                  <span>Generating your roadmap PDF...</span>
+                </div>
+              </div>
+            </div>
+          )}
           {/* Options Renderer */}
           {currentQuestion && (
             <div className="flex flex-wrap gap-2 mt-2">

@@ -108,9 +108,9 @@ const startScheduler = () => {
                 if (!user.timezone || !user.notification_time) continue;
                 
                 try {
-                     const userTime = new Date().toLocaleTimeString("en-US", {
+                    const userTime = new Date().toLocaleTimeString("en-US", {
                         timeZone: user.timezone,
-                        hour12: false,
+                        hourCycle: 'h23',
                         hour: "2-digit",
                         minute: "2-digit"
                     });
@@ -166,7 +166,7 @@ const startScheduler = () => {
                 
                  try {
                      const userDate = new Date();
-                     const hour = parseInt(userDate.toLocaleTimeString("en-US", { timeZone: user.timezone, hour12: false, hour: "numeric" }));
+                     const hour = parseInt(userDate.toLocaleTimeString("en-US", { timeZone: user.timezone, hourCycle: 'h23', hour: "numeric" }));
                      
                      // Target 10 PM (22:00) window
                      if (hour === 22) {

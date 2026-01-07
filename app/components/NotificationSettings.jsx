@@ -22,7 +22,6 @@ function urlBase64ToUint8Array(base64String) {
 }
 
 const NotificationSettings = () => {
-    // Configuration for API URL
     const API_URL_LOCAL = "http://localhost:4000";
     const API_URL_DEPLOYED = "https://fluent-flow-backend.onrender.com";
 

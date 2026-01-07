@@ -181,3 +181,14 @@ exports.sendTestNotification = async (req, res) => {
         });
     }
 };
+
+exports.getPublicKey = (req, res) => {
+    const { getVapidPublicKey } = require("../services/notificationService");
+    const key = getVapidPublicKey();
+    
+    if (!key) {
+        return res.status(500).json({ error: "VAPID public key not configured" });
+    }
+    
+    res.status(200).json({ publicKey: key });
+};

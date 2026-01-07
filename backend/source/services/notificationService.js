@@ -67,6 +67,10 @@ const sendNotification = async (subscription, payload) => {
             // Subscription not found
             console.error("❌ Subscription not found (404):", err.message);
             throw { ...err, notFound: true };
+        } else if (err.statusCode === 403) {
+            // Forbidden - likely key mismatch
+            console.error("❌ Subscription forbidden (403):", err.message);
+            throw { ...err, expired: true }; // Treat as expired to remove it
         } else if (err.statusCode === 400) {
             // Bad request - invalid subscription
             console.error("❌ Invalid subscription (400):", err.message);
@@ -231,4 +235,8 @@ const startScheduler = () => {
     });
 };
 
-module.exports = { initWebPush, sendNotification, startScheduler };
+const getVapidPublicKey = () => {
+    return process.env.VAPID_PUBLIC_KEY;
+};
+
+module.exports = { initWebPush, sendNotification, startScheduler, getVapidPublicKey };

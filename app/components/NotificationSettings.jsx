@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TimeSelectionModal from './TimeSelectionModal';
 
 // VAPID Public Key - should match backend
-const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY || "BFaip3G8l84m-VkODczkj2759AI5SPMnCGeYGTj-38GNfw2ikJIhkh1BPhtfPsvISeukD4BYA7rmnIk13fFTAgU";
+// VAPID Public Key - fetches from backend now
 
 // Convert VAPID key from base64 URL to Uint8Array
 function urlBase64ToUint8Array(base64String) {
@@ -130,7 +130,6 @@ const NotificationSettings = () => {
         }
     }, []);
 
-    // Subscribe to push notifications
     const subscribeUser = async () => {
         const token = getAuthToken();
         if (!token) {
@@ -144,6 +143,21 @@ const NotificationSettings = () => {
         setStatus("loading");
 
         try {
+            // Fetch VAPID Key from backend
+            const keyResponse = await fetch(`${API_URL}/api/notifications/vapid-public-key`, {
+                headers: { 'Authorization': `Bearer ${token}` }
+            });
+
+            if (!keyResponse.ok) {
+                throw new Error("Failed to fetch VAPID public key");
+            }
+
+            const { publicKey } = await keyResponse.json();
+
+            if (!publicKey) {
+                throw new Error("VAPID public key not found in response");
+            }
+
             let permission = Notification.permission;
             if (permission === 'default') {
                 permission = await Notification.requestPermission();
@@ -162,7 +176,39 @@ const NotificationSettings = () => {
             if (!subscription) {
                 subscription = await registration.pushManager.subscribe({
                     userVisibleOnly: true,
-                    applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+                    applicationServerKey: urlBase64ToUint8Array(publicKey)
+                });
+            } else {
+                // Check if key matches? Hard to do with existing subscription. 
+                // If we are here, we have a subscription. 
+                // We should probably just sync it?
+                // But if the key changed, the existing subscription is invalid for the *new* key.
+                // However, we don't know if the key changed unless we compare. 
+                // Ideally: Unsubscribe and Resubscribe to ensure we are on the latest key.
+                // Let's force update if we are explicitly clicking "enable" (switch toggled on).
+
+                // If the user *already* had a subscription, `useEffect` checked it.
+                // `subscribeUser` is called when user toggles the switch ON.
+                // So if they are toggling ON, we might want to ensure it's fresh.
+
+                // Let's try to unsubscribe and resubscribe to be safe?
+                // Or just trust `getSubscription`.
+                // If the old one was created with a different key, `syncSubscription` will send it to backend.
+                // Backend will store it. Attempts to send might fail if the key doesn't match the backend's *private* key.
+                // Wait, Subscription is bound to the pair (public, private).
+                // If the browser thinks it's valid, it means it's valid for *that* public key.
+                // If we send it to the backend, and the backend uses a *different* private key (mismatch),
+                // then sending will fail (403).
+
+                // So, to fix the "mismatch", we MUST ensure the client subscription is created with the CURRENT backend public key.
+                // The only way to ensure that is to unsubscribe and resubscribe if we can't validate the key.
+                // Let's modify logic: If we have a subscription, we unsubscribe first, then resubscribe with new key.
+                // This guarantees consistency.
+
+                await subscription.unsubscribe();
+                subscription = await registration.pushManager.subscribe({
+                    userVisibleOnly: true,
+                    applicationServerKey: urlBase64ToUint8Array(publicKey)
                 });
             }
 

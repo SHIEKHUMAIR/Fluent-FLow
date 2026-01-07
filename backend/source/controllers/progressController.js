@@ -189,7 +189,7 @@ exports.updateProgress = async (req, res) => {
       });
     }
 
-    if (completed && !oldProgress) {
+    if (completed && (!oldProgress || !oldProgress.completed)) {
        // Just marking as completed for stats if it's the first time
        statsUpdates.lessonsCompleted = 1;
     }

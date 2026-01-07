@@ -217,6 +217,22 @@ exports.updateProgress = async (req, res) => {
             const result = await Achievement.awardToUser(userIdInt, ach.id);
             if (result) { // If inserted (not already owned)
                 awardedBadges.push(ach);
+
+                // Award XP if applicable
+                if (ach.xp_reward > 0) {
+                    await UserStats.update(userIdInt, { 
+                        totalXp: ach.xp_reward, 
+                        dailyXp: ach.xp_reward 
+                    });
+                    
+                    // Create Activity for the achievement
+                    await UserActivity.create({
+                        userId: userIdInt,
+                        activityType: "achievement_unlocked",
+                        activityDescription: `Unlocked "${ach.title}" (+${ach.xp_reward} XP)`,
+                        xpEarned: ach.xp_reward
+                    });
+                }
             }
         }
     };

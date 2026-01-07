@@ -89,7 +89,6 @@ const sendNotification = async (subscription, payload) => {
 const startScheduler = () => {
     console.log("Starting notification scheduler...");
 
-    // Check every minute for reminders
     cron.schedule("* * * * *", async () => {
         console.log("⏰ Cron job running: checking daily reminders...");
         try {
